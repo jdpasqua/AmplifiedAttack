@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>currentDocument</key>
+	<string>../../Desktop/main.lua</string>
+	<key>documents</key>
+	<array>
+		<dict>
+			<key>filename</key>
+			<string>../../Desktop/main.lua</string>
+			<key>lastUsed</key>
+			<date>2012-01-25T21:43:34Z</date>
+		</dict>
+	</array>
+	<key>fileHierarchyDrawerWidth</key>
+	<integer>159</integer>
+	<key>metaData</key>
+	<dict>
+		<key>../../Desktop/main.lua</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>39</integer>
+				<key>line</key>
+				<integer>18</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>143</integer>
+		</dict>
+	</dict>
+	<key>openDocuments</key>
+	<array>
+		<string>../../Desktop/main.lua</string>
+	</array>
+	<key>shellVariables</key>
+	<array>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>value</key>
+			<string>iPad2</string>
+			<key>variable</key>
+			<string>SKIN</string>
+		</dict>
+	</array>
+	<key>showFileHierarchyDrawer</key>
+	<true/>
+	<key>windowFrame</key>
+	<string>{{82, 125}, {569, 607}}</string>
+</dict>
+</plist>
