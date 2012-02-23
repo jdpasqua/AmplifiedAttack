@@ -7,6 +7,12 @@ module(..., package.seeall)
 new = function ( params )
 	
 	------------------
+	-- Variables
+	------------------
+	
+	local gameIsActive = true
+	
+	------------------
 	-- Imports
 	------------------
 	
@@ -21,8 +27,6 @@ new = function ( params )
 	------------------
 	-- Display Objects
 	------------------
-	
-	--local background = display.newImage( "assets/graphics/background2.png" )
 
 	-- Layers (Groups). Think as Photoshop layers: you can order things with Corona groups,
 	-- as well have display objects on the same group render together at once. 
@@ -38,10 +42,53 @@ new = function ( params )
 	-- Functions
 	------------------
 	
+	
+	-- Handler that gets notified when the alert closes
+	local function onComplete( event )
+	        print( "index => ".. event.index .. "    action => " .. event.action )
+
+	        local action = event.action
+	        if "clicked" == event.action then
+	                if 1 == event.index then
+						-- Main Menu
+						director:changeScene( "menu", "fade" )
+					elseif 2 == event.index then
+						-- Change Level
+						director:changeScene( "levelSelector", "fade" )
+	                elseif 3 == event.index then
+						-- Resume Game
+						print "RESUME GAME"
+						gameIsActive = true
+						physics.start()
+					end
+	        end
+	end
+	
+	local btPauset = function ( event )
+		if event.phase == "release" then
+			gameIsActive = false
+			physics.pause()
+			
+			-- Show alert
+			local alert = native.showAlert( "Game Options", "Choose one:", 
+				{ "Main Menu", "Change Level", "Resume Game" }, onComplete )
+		end
+	end
+	
+	-- Show alert
+	--local alert = native.showAlert( "Corona", "Dream. Build. Ship.", { "OK", "Learn More" }, onComplete )
+	
 	------------------
 	-- UI Objects
 	------------------
 
+	local btPause = ui.newButton{
+					default = "assets/graphics/bt_pause.png",
+					over = "assets/graphics/bt_pause.png",
+					onEvent = btPauset,
+					id = "btPause"
+	}
+	
 	--====================================================================--
 	-- INITIALIZE
 	--====================================================================--
@@ -71,10 +118,8 @@ new = function ( params )
 		-- but I'm going with gravity for the sake of simplicity. !!
 		physics.setGravity(0, 20)
 
-	
-
 		-- Declare variables
-		local gameIsActive = true
+		--local gameIsActive = true
 		local scoreText
 		local sounds
 		local score = 0
@@ -89,6 +134,10 @@ new = function ( params )
 		textureCache[1].isVisible = false;
 		textureCache[2] = display.newImage("assets/graphics/bullet.png"); 
 		textureCache[2].isVisible = false;
+		textureCache[3] = display.newImage("assets/graphics/bt_pause.png"); 
+		textureCache[3].isVisible = false;
+		textureCache[4] = display.newImage("assets/graphics/bt_play.png"); 
+		textureCache[4].isVisible = false;
 		local halfEnemyWidth = textureCache[1].contentWidth * .5
 
 		-- Adjust the volume
@@ -168,6 +217,10 @@ new = function ( params )
 		scoreText.x = 30
 		scoreText.y = 25
 		gameLayer:insert(scoreText)
+		btPause.x = 300
+		btPause.y = 25
+		localGroup:insert( btPause )
+
 
 		--------------------------------------------------------------------------------
 		-- Game loop
@@ -251,12 +304,12 @@ new = function ( params )
 
 		-- Player will listen to touches
 		player:addEventListener("touch", playerMovement)
-				
 		
 	end
 	
-	initVars()
 	
+	initVars()
+		
 	return localGroup
 	
 end
