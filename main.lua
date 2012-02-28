@@ -49,7 +49,7 @@ local main = function ()
 	-- Change scene without effects
 	------------------
 	
-	director:changeScene("menu")
+	director:changeScene("level1")
 	
 	------------------
 	-- Return

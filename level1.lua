@@ -11,12 +11,41 @@ new = function ( params )
 	------------------
 	
 	local gameIsActive = true
+	-----------MIDI TEST ZONE - STAY OUT
+
+
+	--playTime = 35000--2750
+	---------
 	
 	------------------
 	-- Imports
 	------------------
 	
 	local ui = require ( "ui" )
+	
+	
+	
+	---------------------------------------------------------------------------------------
+	--  Music Channels
+	--1 = Background Music
+	--2 = Player Music
+	--3 = Enemy Music
+
+	--Background music
+	--backgroundMusic = audio.loadStream("assets/music/topGear_bg2.mp3")
+	backgroundMusic = audio.loadStream("assets/sounds/topGear.mp3")
+
+	backgroundMusicChannel = audio.play(backgroundMusic, { channel=1, loops=-1, fadein=0 })
+
+	--Player Music
+	--playerMusic = audio.loadStream("assets/music/topGear_PlayerSounds.mp3")
+	--playerMusicChannel = audio.play(playerMusic, { channel=2, loops=-1, fadein=0 })
+
+	--Enemy Music
+	--enemyMusic = audio.loadStream("assets/music/topGear_EnemySounds2.mp3")
+	--enemyMusicChannel = audio.play(enemyMusic, { channel=3, loops=-1, fadein=0 })
+
+	----------------------------------------------------------------------------------------
 	
 	------------------
 	-- Groups
@@ -89,6 +118,37 @@ new = function ( params )
 					id = "btPause"
 	}
 	
+	------------------
+	-- Track to Array
+	------------------
+	
+	local function init_p1_track()--(fh)
+
+		--fh is assumed to be open
+		local path = system.pathForFile("assets/midi/trackTimes4.txt")
+		--local path = system.pathForFile("trackTimes4Trim.txt")
+
+		local tt_p1 = io.open(path, "r")
+
+		local num = tt_p1:read("*l")
+		local i = 1
+
+		if tt_p1 then
+			while num do
+				p1_track[i] = tonumber(num)
+				num = tt_p1:read("*l")
+				i = i + 1
+			end
+		else	
+		end
+	end
+	
+	local timeout = function ( event )
+		local o
+		o = event.time
+		return o
+	end
+	
 	--====================================================================--
 	-- INITIALIZE
 	--====================================================================--
@@ -127,6 +187,15 @@ new = function ( params )
 		local background
 		local player
 		local halfPlayerWidth
+		--
+		p1_track = {}
+		--track_to_array("assets/sounds/topGear.mp3", p1_track)
+		p1_track[1] = 0
+		pos = 0
+		valDiff = 0
+	
+		playTime = 3100 --2750
+	
 
 		-- Keep the texture for the enemy and bullet on memory, so Corona doesn't load them everytime
 		local textureCache = {}
@@ -145,9 +214,9 @@ new = function ( params )
 
 		-- Pre-load our sounds
 		sounds = {
-			pew = audio.loadSound("assets/sounds/pew.wav"),
-			boom = audio.loadSound("assets/sounds/boom.wav"),
-			gameOver = audio.loadSound("assets/sounds/gameOver.wav")
+		--	pew = audio.loadSound("assets/sounds/pew.wav"),
+		--	boom = audio.loadSound("assets/sounds/boom.wav"),
+		--	gameOver = audio.loadSound("assets/sounds/gameOver.wav")
 		}
 
 		-- Blue background
@@ -176,17 +245,17 @@ new = function ( params )
 				table.insert(toRemove, event.other)
 
 			-- Player collision - GAME OVER	
-			elseif self.name == "player" and event.other.name == "enemy" then
-				audio.play(sounds.gameOver)
+		--	elseif self.name == "player" and event.other.name == "enemy" then
+		--		audio.play(sounds.gameOver)
 
-				local gameoverText = display.newText("Game Over!", 0, 0, "HelveticaNeue", 35)
-				gameoverText:setTextColor(255, 255, 255)
-				gameoverText.x = display.contentCenterX
-				gameoverText.y = display.contentCenterY
-				gameLayer:insert(gameoverText)
+		--		local gameoverText = display.newText("Game Over!", 0, 0, "HelveticaNeue", 35)
+		--		gameoverText:setTextColor(255, 255, 255)
+		--		gameoverText.x = display.contentCenterX
+		--		gameoverText.y = display.contentCenterY
+		--		gameLayer:insert(gameoverText)
 
 				-- This will stop the gameLoop
-				gameIsActive = false
+		--		gameIsActive = false
 			end
 		end
 
@@ -229,6 +298,13 @@ new = function ( params )
 		local bulletInterval = 1000
 
 		local function gameLoop(event)
+			
+			if p1_track[1] == 0 then
+			--	local offset = timer.performWithDelay(0, timeout )
+			--	playTime = playTime + offset
+				init_p1_track()--(tt_p1)
+			end
+			
 			if gameIsActive then
 				-- Remove collided enemy planes
 				for i = 1, #toRemove do
@@ -254,8 +330,9 @@ new = function ( params )
 				end
 
 				-- Spawn a bullet
-				if event.time - timeLastBullet >= math.random(250, 300) then
+				if event.time - timeLastBullet >= playTime then
 					local bullet = display.newImage("assets/graphics/bullet.png")
+					local temp = playTime
 					bullet.x = player.x
 					bullet.y = player.y - halfPlayerWidth
 
@@ -270,7 +347,15 @@ new = function ( params )
 					gameLayer:insert(bullet)
 
 					-- Pew-pew sound!
-					audio.play(sounds.pew)
+					--audio.play(sounds.pew)
+					
+					pos = pos + 1
+					valDiff = p1_track[pos+1] - p1_track[pos]
+					playTime = valDiff * 1764.7058823
+
+					--This takes care of the error 
+					playTime = playTime - ((event.time - timeLastBullet) - temp) --playTime * 0.5
+
 
 					-- Move it to the top.
 					-- When the movement is complete, it will remove itself: the onComplete event
