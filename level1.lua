@@ -126,7 +126,7 @@ new = function ( params )
 	end
 	
 	local function updateBackground()
-		if (frameNumber % 1 == 0) then
+		if (frameNumber % 2 == 0) then
 			background1.y = background1.y + 1
 			background2.y = background2.y + 1
 		end
@@ -268,11 +268,11 @@ new = function ( params )
 	        for i = stars_total,1, -1 do
 	                if (i < stars_field1) then
 	                        stars[i].object:setFillColor(150,150,150)
-	                        starspeed = 0.3
+	                        starspeed = 0.6
 	                end
 	                if (i < stars_field2 and i > stars_field1) then
 	                        stars[i].object:setFillColor(175,175,175)
-	                        starspeed = 0.6
+	                        starspeed = 1
 	                end
 	                if (i < stars_field3 and i > stars_field2) then
 	                        stars[i].object:setFillColor(175,175,175)
@@ -349,7 +349,7 @@ new = function ( params )
 		scoreText.x = 30
 		scoreText.y = 25
 		gameLayer:insert(scoreText)
-		btPause.x = 300
+		btPause.x = 740
 		btPause.y = 25
 		localGroup:insert( btPause )
 
@@ -396,7 +396,7 @@ new = function ( params )
 
 				-- Spawn a bullet
 				if event.time - timeLastBullet >= playTime then
-					local bullet = display.newImage("assets/graphics/bullet4.png")
+					local bullet = display.newImage("assets/graphics/bullet5.png")
 					local temp = playTime
 					bullet.x = player.x
 					bullet.y = player.y - halfPlayerWidth
