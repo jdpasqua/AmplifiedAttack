@@ -120,7 +120,7 @@ new = function ( params )
 	
 	local function drawPlayer()
 		-- Load and position the player
-		player = display.newImage("assets/graphics/Ship4Blue.png")
+		player = display.newImage("assets/graphics/antmaker.png")
 		player.x = display.contentCenterX
 		player.y = display.contentHeight - player.contentHeight
 	end
