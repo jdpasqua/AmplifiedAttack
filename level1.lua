@@ -264,29 +264,31 @@ new = function ( params )
 	end
 	
 	-- update star locations and setcolor
-	local function udpdatestars(event)
-	        for i = stars_total,1, -1 do
-	                if (i < stars_field1) then
-	                        stars[i].object:setFillColor(150,150,150)
-	                        starspeed = 0.6
-	                end
-	                if (i < stars_field2 and i > stars_field1) then
-	                        stars[i].object:setFillColor(175,175,175)
-	                        starspeed = 1
-	                end
-	                if (i < stars_field3 and i > stars_field2) then
-	                        stars[i].object:setFillColor(175,175,175)
-	                        starspeed = 2.5
-	                end
-					if (i < stars_field4 and i > stars_field3) then
-	                        stars[i].object:setFillColor(200,200,200)
-	                        starspeed = 4
-	                end
-	                stars[i].object.y  = stars[i].object.y + starspeed      
-	                if (stars[i].object.y > display.contentHeight) then
-	                        stars[i].object.y = stars[i].object.y-display.contentHeight
-	                end
-	        end
+	local function updateStars(event)
+			if (gameIsActive) then
+	        	for i = stars_total,1, -1 do
+		                if (i < stars_field1) then
+		                        stars[i].object:setFillColor(150,150,150)
+		                        starspeed = 0.6
+		                end
+		                if (i < stars_field2 and i > stars_field1) then
+		                        stars[i].object:setFillColor(175,175,175)
+		                        starspeed = 1
+		                end
+		                if (i < stars_field3 and i > stars_field2) then
+		                        stars[i].object:setFillColor(175,175,175)
+		                        starspeed = 2.5
+		                end
+						if (i < stars_field4 and i > stars_field3) then
+		                        stars[i].object:setFillColor(200,200,200)
+		                        starspeed = 4
+		                end
+		                stars[i].object.y  = stars[i].object.y + starspeed      
+		                if (stars[i].object.y > display.contentHeight) then
+		                        stars[i].object.y = stars[i].object.y-display.contentHeight
+		                end
+		        end
+			end
 	end
 	
 	--====================================================================--
@@ -361,7 +363,7 @@ new = function ( params )
 			
 			frameNumber = frameNumber + 1
 			
-			updateBackground()
+			
 			 
 			if p1_track[1] == 0 then
 			--	local offset = timer.performWithDelay(0, timeout )
@@ -376,6 +378,8 @@ new = function ( params )
 					toRemove[i].parent:remove(toRemove[i])
 					toRemove[i] = nil
 				end
+				
+				updateBackground()
 
 				-- Check if it's time to spawn another enemy,
 				-- based on a random range and last spawn (timeLastEnemy)
@@ -445,7 +449,7 @@ new = function ( params )
 		Runtime:addEventListener("enterFrame", gameLoop)
 		-- Player will listen to touches
 		player:addEventListener("touch", playerMovement)
-		Runtime:addEventListener("enterFrame", udpdatestars)		
+		Runtime:addEventListener("enterFrame", updateStars)		
 		
 	end	
 	
