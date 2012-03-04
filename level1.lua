@@ -381,7 +381,13 @@ new = function ( params )
 				-- based on a random range and last spawn (timeLastEnemy)
 				if event.time - timeLastEnemy >= math.random(600, 1000) then
 					-- Randomly position it on the top of the screen
-					local enemy = display.newImage("assets/graphics/enemy.png")
+					--local enemy = display.newImage("assets/graphics/enemy.png")
+					
+					local enemy = display.newLine( 0,-110, 27,-35 )
+					  enemy:append( 105,-35, 43,16, 65,90, 0,45, -65,90, -43,15, -105,-35, -27,-35, 0,-110 )
+					  enemy:setColor( 255, 255, 255, 255 )
+					  enemy.width = 6
+					
 					enemy.x = math.random(halfEnemyWidth, display.contentWidth - halfEnemyWidth)
 					enemy.y = -enemy.contentHeight
 
