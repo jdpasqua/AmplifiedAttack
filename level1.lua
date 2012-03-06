@@ -27,7 +27,8 @@ new = function ( params )
 	local stars_field4= 154
 	local star_radius_min  = 2
 	local star_radius_max  = 3
-	local p1_track = {0}	
+	local p1_track = {0}
+	local p2_track = {0}	
 	local pos = 0
 	local valDiff = 0
 	local playTime = 3300
@@ -35,6 +36,9 @@ new = function ( params )
 	local timeLastBullet, timeLastEnemy = 0, 0
 	local bulletInterval = 1000
 	local frameNumber = 0
+	local totalPauseTime = 0
+	local pauseStart
+	local pauseEnd
 	textureCache[1] = display.newImage("assets/graphics/enemy.png"); 
 	textureCache[1].isVisible = false;
 	textureCache[2] = display.newImage("assets/graphics/bullet.png"); 
@@ -74,7 +78,8 @@ new = function ( params )
 	------------------
 	
 	local ui = require ( "ui" )
-	
+	local transitionManager = require('transitionManager')
+	local Hopper = require("hopper")
 	------------------
 	-- Groups
 	------------------
@@ -123,6 +128,34 @@ new = function ( params )
 		player = display.newImage("assets/graphics/antmaker.png")
 		player.x = display.contentCenterX
 		player.y = display.contentHeight - player.contentHeight
+	end
+	
+	local function spawnFloaters()
+		local obj = display.newGroup()
+		--Level.decorate(obj)
+
+		--obj.bg = display.newImage(obj, "level1.png", 320, 480)
+		--obj.bg.x = 160 obj.bg.y = 240
+
+		--obj:setup_walls()
+
+		--moving entities
+		obj.entities = {}
+		for i = 1, 10 do
+			obj.entities[i] = display.newImage(obj, "assets/graphics/square.png", 16, 16)
+			obj.entities[i].x = 50 * i + 70
+			obj.entities[i].y = 0
+			Hopper.decorate(obj.entities[i])
+		end
+
+	--	obj.button = ui.newButton{
+	--		defaultSrc = "up.png", defaultX = 30, defaultY = 30,
+		--	overSrc = "down.png", overX = 30, overY = 30,
+		--	onRelease = func
+		--}
+		--obj:insert(obj.button)
+		--obj.button.x = 300
+		--obj.button.y = 20
 	end
 	
 	local function updateBackground()
@@ -190,7 +223,10 @@ new = function ( params )
 	-- Handler that gets notified when the alert closes
 	local function onComplete( event )
 	        print( "index => ".. event.index .. "    action => " .. event.action )
-
+			pauseEnd = system.getTimer()
+			totalPauseTime = totalPauseTime + (pauseEnd - pauseStart)
+			print ("TOTAL PAUSE TIME")
+			print (totalPauseTime)
 	        local action = event.action
 	        if "clicked" == event.action then
 	                if 1 == event.index then
@@ -205,6 +241,7 @@ new = function ( params )
 						-- Resume Game
 						print "RESUME GAME"
 						gameIsActive = true
+						audio.resume(backgroundMusicChannel)
 						physics.start()
 					end
 	        end
@@ -214,7 +251,9 @@ new = function ( params )
 		if event.phase == "release" then
 			gameIsActive = false
 			physics.pause()
-			
+			print (system.getTimer())
+			audio.pause(backgroundMusicChannel)
+			pauseStart = system.getTimer()
 			-- Show alert
 			local alert = native.showAlert( "Game Options", "Choose one:", 
 				{ "Main Menu", "Change Level", "Resume Game" }, onComplete )
@@ -236,10 +275,10 @@ new = function ( params )
 	-- Track to Array
 	------------------
 	
-	local function init_p1_track()--(fh)
+	local function init_track(track, file)--(fh)
 
 		--fh is assumed to be open
-		local path = system.pathForFile("assets/midi/trackTimes4.txt")
+		local path = system.pathForFile(file)
 		--local path = system.pathForFile("trackTimes4Trim.txt")
 
 		local tt_p1 = io.open(path, "r")
@@ -249,7 +288,7 @@ new = function ( params )
 
 		if tt_p1 then
 			while num do
-				p1_track[i] = tonumber(num)
+				track[i] = tonumber(num)
 				num = tt_p1:read("*l")
 				i = i + 1
 			end
@@ -313,7 +352,7 @@ new = function ( params )
 		-- Load and start physics
 		local physics = require("physics")
 		physics.start()
-		physics.setGravity(0, 20)		
+		physics.setGravity(0, 5)		
 		
 		-- Adjust the volume
 		audio.setMaxVolume( 0.85, { channel=1 } )
@@ -321,6 +360,7 @@ new = function ( params )
 		drawStars()
 		drawBackground()
 		drawPlayer()
+		spawnFloaters()
 		
 		gameLayer:insert(background1)
 		gameLayer:insert(background2)
@@ -368,22 +408,23 @@ new = function ( params )
 			if p1_track[1] == 0 then
 			--	local offset = timer.performWithDelay(0, timeout )
 			--	playTime = playTime + offset
-				init_p1_track()--(tt_p1)
+				init_track(p1_track, "assets/midi/trackTimes4.txt")
+				init_track(p2_track, "assets/midi/trackTimes4.txt")
 			end
 			
 			
 			if gameIsActive then
 				-- Remove collided enemy planes
 				for i = 1, #toRemove do
-					toRemove[i].parent:remove(toRemove[i])
-					toRemove[i] = nil
+					--toRemove[i].parent:remove(toRemove[i])
+					--toRemove[i] = nil
 				end
 				
 				updateBackground()
 
 				-- Check if it's time to spawn another enemy,
 				-- based on a random range and last spawn (timeLastEnemy)
-				if event.time - timeLastEnemy >= math.random(600, 1000) then
+				if false then --event.time - timeLastEnemy >= math.random(600, 1000) then
 					-- Randomly position it on the top of the screen
 					--local enemy = display.newImage("assets/graphics/enemy.png")
 					
@@ -405,7 +446,9 @@ new = function ( params )
 				end
 
 				-- Spawn a bullet
-				if event.time - timeLastBullet >= playTime then
+				--print ("EVENT TIME:")
+				--print (event.time)
+				if event.time - timeLastBullet - totalPauseTime >= playTime then
 					local bullet = display.newImage("assets/graphics/bullet5.png")
 					local temp = playTime
 					bullet.x = player.x
@@ -420,9 +463,6 @@ new = function ( params )
 					bullet:addEventListener("collision", bullet)
 
 					gameLayer:insert(bullet)
-
-					-- Pew-pew sound!
-					--audio.play(sounds.pew)
 					
 					pos = pos + 1
 					valDiff = p1_track[pos+1] - p1_track[pos]
@@ -431,13 +471,25 @@ new = function ( params )
 					--This takes care of the error 
 					playTime = playTime - ((event.time - timeLastBullet) - temp) --playTime * 0.5
 
-
+					
 					-- Move it to the top.
 					-- When the movement is complete, it will remove itself: the onComplete event
 					-- creates a function to will store information about this bullet and then remove it.
-					transition.to(bullet, {time = 1000, y = -bullet.contentHeight,
+					
+					duration = math.max(playTime, 1000)
+					duration = math.min(duration, 5000)
+					print("DURATION")
+					print(duration)
+					local trans1 = transitionManager:newTransition(bullet, {time = duration, y = player.y - 1000,
 						onComplete = function(self) self.parent:remove(self); self = nil; end
 					})
+					
+					--      trans1 = tnt:newTransition(object, {time = 1000, x = 480}, 'Slide Transition', {data = 'User data'})
+					--  Name and userData arguments are optional. userData can be anything.
+					--  Every instance has pause(), resume() and cancel() methods.
+					--  You can manage all timers and transitions with function like tnt:pauseAllTimers(), tnt:resumeAllTransitions() etc.
+					--  For speed adjustment first pause all timers and transitions, then modify tnt.speed to say 0.5, which means 2 times faster
+					--  and lastly resume all paused instances.
 
 					timeLastBullet = event.time
 				end
@@ -447,9 +499,8 @@ new = function ( params )
 		-- Call the gameLoop function EVERY frame,
 		-- e.g. gameLoop() will be called 30 times per second in our case.
 		Runtime:addEventListener("enterFrame", gameLoop)
-		-- Player will listen to touches
-		player:addEventListener("touch", playerMovement)
 		Runtime:addEventListener("enterFrame", updateStars)		
+		player:addEventListener("touch", playerMovement)
 		
 	end	
 	
