@@ -63,7 +63,7 @@ new = function ( params )
 	
 	-- Background music
 	backgroundMusic = audio.loadStream("assets/sounds/topGear.mp3")
-	backgroundMusicChannel = audio.play(backgroundMusic, { channel=1, loops=-1, fadein=0 })
+	--backgroundMusicChannel = audio.play(backgroundMusic, { channel=1, loops=-1, fadein=0 })
 
 	-- Player Music
 	--playerMusic = audio.loadStream("assets/music/topGear_PlayerSounds.mp3")
@@ -80,6 +80,10 @@ new = function ( params )
 	local ui = require ( "ui" )
 	local transitionManager = require('transitionManager')
 	local Hopper = require("hopper")
+	local Enemy = require("enemy")
+	local Teleporter = require("teleporter")
+
+
 	------------------
 	-- Groups
 	------------------
@@ -206,17 +210,17 @@ new = function ( params )
 			table.insert(toRemove, event.other)
 
 		-- Player collision - GAME OVER	
-	--	elseif self.name == "player" and event.other.name == "enemy" then
-	--		audio.play(sounds.gameOver)
+		elseif false then --self.name == "player" and event.other.name == "enemy" then
+			audio.play(sounds.gameOver)
 
-	--		local gameoverText = display.newText("Game Over!", 0, 0, "HelveticaNeue", 35)
-	--		gameoverText:setTextColor(255, 255, 255)
-	--		gameoverText.x = display.contentCenterX
-	--		gameoverText.y = display.contentCenterY
-	--		gameLayer:insert(gameoverText)
+			local gameoverText = display.newText("Game Over!", 0, 0, "HelveticaNeue", 35)
+			gameoverText:setTextColor(255, 255, 255)
+			gameoverText.x = display.contentCenterX
+			gameoverText.y = display.contentCenterY
+			gameLayer:insert(gameoverText)
 
 			-- This will stop the gameLoop
-	--		gameIsActive = false
+			gameIsActive = false
 		end
 	end
 	
@@ -279,8 +283,7 @@ new = function ( params )
 
 		--fh is assumed to be open
 		local path = system.pathForFile(file)
-		--local path = system.pathForFile("trackTimes4Trim.txt")
-
+		
 		local tt_p1 = io.open(path, "r")
 
 		local num = tt_p1:read("*l")
@@ -383,7 +386,7 @@ new = function ( params )
 		-- Load and start physics
 		local physics = require("physics")
 		physics.start()
-		physics.setGravity(0, 5)		
+		physics.setGravity(0, 10)		
 		
 		-- Adjust the volume
 		audio.setMaxVolume( 0.85, { channel=1 } )
@@ -391,7 +394,7 @@ new = function ( params )
 		drawStars()
 		drawBackground()
 		drawPlayer()
-		spawnFloaters()
+		--spawnFloaters()
 		
 		gameLayer:insert(background1)
 		gameLayer:insert(background2)
@@ -447,22 +450,27 @@ new = function ( params )
 			if gameIsActive then
 				-- Remove collided enemy planes
 				for i = 1, #toRemove do
-					--toRemove[i].parent:remove(toRemove[i])
-					--toRemove[i] = nil
+					if (toRemove[i]) then
+						toRemove[i].parent:remove(toRemove[i])
+						toRemove[i] = nil
+					end
 				end
 				
 				updateBackground()
 
 				-- Check if it's time to spawn another enemy,
 				-- based on a random range and last spawn (timeLastEnemy)
-				if false then --event.time - timeLastEnemy >= math.random(600, 1000) then
-					-- Randomly position it on the top of the screen
-					--local enemy = display.newImage("assets/graphics/enemy.png")
-					
-					local enemy = display.newLine( 0,-110, 27,-35 )
-					  enemy:append( 105,-35, 43,16, 65,90, 0,45, -65,90, -43,15, -105,-35, -27,-35, 0,-110 )
-					  enemy:setColor( 255, 255, 255, 255 )
-					  enemy.width = 6
+				if ((event.time - timeLastEnemy) >= (math.random(1000, 1500))) then
+
+					if (frameNumber % 2 == 0) then
+						enemy = display.newImage("assets/graphics/enemy1.png")
+					else
+						enemy = display.newImage("assets/graphics/enemy2.png")
+					end
+					--local enemy = display.newLine( 0,-110, 27,-35 )
+					--enemy:append( 105,-35, 43,16, 65,90, 0,45, -65,90, -43,15, -105,-35, -27,-35, 0,-110 )
+					--enemy:setColor( 255, 255, 255, 255 )
+					-- enemy.width = 6
 					
 					enemy.x = math.random(halfEnemyWidth, display.contentWidth - halfEnemyWidth)
 					enemy.y = -enemy.contentHeight
@@ -479,7 +487,7 @@ new = function ( params )
 				-- Spawn a bullet
 				--print ("EVENT TIME:")
 				--print (event.time)
-				if event.time - timeLastBullet - totalPauseTime >= playTime then
+				if (event.time - timeLastBullet - totalPauseTime >= playTime) then
 					local bullet = display.newImage("assets/graphics/bullet5.png")
 					local temp = playTime
 					bullet.x = player.x
