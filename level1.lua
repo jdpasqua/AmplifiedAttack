@@ -263,6 +263,7 @@ new = function ( params )
 	
 	local function init_track(track, file)--(fh)
 
+		print ("INIT TRACK")
 		--fh is assumed to be open
 		local path = system.pathForFile(file)
 		
@@ -286,28 +287,28 @@ new = function ( params )
 		o = event.time
 		return o
 	end
----------------------------
-	local function init_track(songTitle, trackNo)--(fh)
 
-		local notes = ""
-		--fh is assumed to be open
-		local path = system.pathForFile(file)
-		--local path = system.pathForFile("trackTimes4Trim.txt")
+	--local function init_track(songTitle, trackNo)--(fh)
 
-		local tt_p1 = io.open(path, "r")
-
-		local num = tt_p1:read("*l")
-		local i = 1
-
-		if tt_p1 then
-			while num do
-				track[i] = tonumber(num)
-				num = tt_p1:read("*l")
-				i = i + 1
-			end
-		else	
-		end
-	end
+--		local notes = ""
+--		--fh is assumed to be open
+--		local path = system.pathForFile(file)
+--		--local path = system.pathForFile("trackTimes4Trim.txt")
+--
+--		local tt_p1 = io.open(path, "r")
+--
+--		local num = tt_p1:read("*l")
+--		local i = 1
+--
+--		if tt_p1 then
+--			while num do
+--				track[i] = tonumber(num)
+--				num = tt_p1:read("*l")
+--				i = i + 1
+--			end
+--		else	
+--		end
+--	end
 	
 	local timeout = function ( event )
 		local o
