@@ -39,6 +39,8 @@ new = function ( params )
 	local totalPauseTime = 0
 	local pauseStart
 	local pauseEnd
+	local basicBox
+	local extendedBox
 	textureCache[1] = display.newImage("assets/graphics/enemy.png"); 
 	textureCache[1].isVisible = false;
 	textureCache[2] = display.newImage("assets/graphics/bullet.png"); 
@@ -63,7 +65,7 @@ new = function ( params )
 	
 	-- Background music
 	backgroundMusic = audio.loadStream("assets/sounds/topGear.mp3")
-	--backgroundMusicChannel = audio.play(backgroundMusic, { channel=1, loops=-1, fadein=0 })
+	backgroundMusicChannel = audio.play(backgroundMusic, { channel=1, loops=-1, fadein=0 })
 
 	-- Player Music
 	--playerMusic = audio.loadStream("assets/music/topGear_PlayerSounds.mp3")
@@ -82,6 +84,8 @@ new = function ( params )
 	local Hopper = require("hopper")
 	local Enemy = require("enemy")
 	local Teleporter = require("teleporter")
+	local BasicBox = require("BasicBox")
+	local ExtendedBox = require("ExtendedBox")
 
 
 	------------------
@@ -96,7 +100,7 @@ new = function ( params )
 
 	-- Layers (Groups). Think as Photoshop layers: you can order things with Corona groups,
 	-- as well have display objects on the same group render together at once. 
-	local gameLayer    = display.newGroup()
+ 	_G.gameLayer    = display.newGroup()
 	local bulletsLayer = display.newGroup()
 	local enemiesLayer = display.newGroup()
 	local starsLayer = display.newGroup()
@@ -134,34 +138,6 @@ new = function ( params )
 		player.y = display.contentHeight - player.contentHeight
 	end
 	
-	local function spawnFloaters()
-		local obj = display.newGroup()
-		--Level.decorate(obj)
-
-		--obj.bg = display.newImage(obj, "level1.png", 320, 480)
-		--obj.bg.x = 160 obj.bg.y = 240
-
-		--obj:setup_walls()
-
-		--moving entities
-		obj.entities = {}
-		for i = 1, 10 do
-			obj.entities[i] = display.newImage(obj, "assets/graphics/square.png", 16, 16)
-			obj.entities[i].x = 50 * i + 70
-			obj.entities[i].y = 0
-			Hopper.decorate(obj.entities[i])
-		end
-
-	--	obj.button = ui.newButton{
-	--		defaultSrc = "up.png", defaultX = 30, defaultY = 30,
-		--	overSrc = "down.png", overX = 30, overY = 30,
-		--	onRelease = func
-		--}
-		--obj:insert(obj.button)
-		--obj.button.x = 300
-		--obj.button.y = 20
-	end
-	
 	local function updateBackground()
 		if (frameNumber % 2 == 0) then
 			background1.y = background1.y + 1
@@ -175,6 +151,12 @@ new = function ( params )
 		end
 	end
 	
+	local function pulseBeat()
+		local event = { name="pulse", target=BasicBox }
+		Runtime:dispatchEvent( event )
+		timer.performWithDelay(1000, pulseBeat )
+	end
+
 	--------------------------------------------------------------------------------
 	-- Basic controls
 	--------------------------------------------------------------------------------
@@ -217,7 +199,7 @@ new = function ( params )
 			gameoverText:setTextColor(255, 255, 255)
 			gameoverText.x = display.contentCenterX
 			gameoverText.y = display.contentCenterY
-			gameLayer:insert(gameoverText)
+			_G.gameLayer:insert(gameoverText)
 
 			-- This will stop the gameLoop
 			gameIsActive = false
@@ -225,7 +207,7 @@ new = function ( params )
 	end
 	
 	-- Handler that gets notified when the alert closes
-	local function onComplete( event )
+	local function onPauseSelection( event )
 	        print( "index => ".. event.index .. "    action => " .. event.action )
 			pauseEnd = system.getTimer()
 			totalPauseTime = totalPauseTime + (pauseEnd - pauseStart)
@@ -260,7 +242,7 @@ new = function ( params )
 			pauseStart = system.getTimer()
 			-- Show alert
 			local alert = native.showAlert( "Game Options", "Choose one:", 
-				{ "Main Menu", "Change Level", "Resume Game" }, onComplete )
+				{ "Main Menu", "Change Level", "Resume Game" }, onPauseSelection )
 		end
 	end
 
@@ -343,7 +325,7 @@ new = function ( params )
 		-- Inserts
 		------------------
 		
-		localGroup:insert( gameLayer )
+		localGroup:insert( _G.gameLayer )
 
 		------------------
 		-- Positions
@@ -355,7 +337,7 @@ new = function ( params )
 		-- Load and start physics
 		local physics = require("physics")
 		physics.start()
-		physics.setGravity(0, 10)		
+		physics.setGravity(0, 0)		
 		
 		-- Adjust the volume
 		audio.setMaxVolume( 0.85, { channel=1 } )
@@ -363,13 +345,12 @@ new = function ( params )
 		drawStars()
 		drawBackground()
 		drawPlayer()
-		--spawnFloaters()
 		
-		gameLayer:insert(background1)
-		gameLayer:insert(background2)
-		gameLayer:insert(starsLayer)
-		gameLayer:insert(bulletsLayer)
-		gameLayer:insert(enemiesLayer)
+		_G.gameLayer:insert(background1)
+		_G.gameLayer:insert(background2)
+		_G.gameLayer:insert(starsLayer)
+		_G.gameLayer:insert(bulletsLayer)
+		_G.gameLayer:insert(enemiesLayer)
 
 		-- Add a physics body. It is kinematic, so it doesn't react to gravity.
 		physics.addBody(player, "kinematic", {bounce = 0})
@@ -382,7 +363,7 @@ new = function ( params )
 		player:addEventListener("collision", player)
 
 		-- Add to main layer
-		gameLayer:insert(player)
+		_G.gameLayer:insert(player)
 
 		-- Store half width, used on the game loop
 		halfPlayerWidth = player.contentWidth * .5
@@ -393,10 +374,11 @@ new = function ( params )
 		scoreText:setTextColor(255, 255, 255)
 		scoreText.x = 30
 		scoreText.y = 25
-		gameLayer:insert(scoreText)
+		_G.gameLayer:insert(scoreText)
 		btPause.x = 740
 		btPause.y = 25
 		localGroup:insert( btPause )
+		pulseBeat()
 
 		--------------------------------------------------------------------------------
 		-- Game loop
@@ -405,9 +387,7 @@ new = function ( params )
 		local function gameLoop(event)
 			
 			frameNumber = frameNumber + 1
-			
-			
-			 
+ 
 			if p1_track[1] == 0 then
 			--	local offset = timer.performWithDelay(0, timeout )
 			--	playTime = playTime + offset
@@ -430,32 +410,12 @@ new = function ( params )
 				-- Check if it's time to spawn another enemy,
 				-- based on a random range and last spawn (timeLastEnemy)
 				if ((event.time - timeLastEnemy) >= (math.random(1000, 1500))) then
-
-					if (frameNumber % 2 == 0) then
-						enemy = display.newImage("assets/graphics/enemy1.png")
-					else
-						enemy = display.newImage("assets/graphics/enemy2.png")
-					end
-					--local enemy = display.newLine( 0,-110, 27,-35 )
-					--enemy:append( 105,-35, 43,16, 65,90, 0,45, -65,90, -43,15, -105,-35, -27,-35, 0,-110 )
-					--enemy:setColor( 255, 255, 255, 255 )
-					-- enemy.width = 6
-					
-					enemy.x = math.random(halfEnemyWidth, display.contentWidth - halfEnemyWidth)
-					enemy.y = -enemy.contentHeight
-
-					-- This has to be dynamic, making it react to gravity, so it will
-					-- fall to the bottom of the screen.
-					physics.addBody(enemy, "dynamic", {bounce = 0})
-					enemy.name = "enemy"
-
-					enemiesLayer:insert(enemy)
+					basicBox = BasicBox.new()
+					basicBox.init()
 					timeLastEnemy = event.time
 				end
 
 				-- Spawn a bullet
-				--print ("EVENT TIME:")
-				--print (event.time)
 				if (event.time - timeLastBullet - totalPauseTime >= playTime) then
 					local bullet = display.newImage("assets/graphics/bullet5.png")
 					local temp = playTime
@@ -470,7 +430,7 @@ new = function ( params )
 					bullet.collision = onCollision
 					bullet:addEventListener("collision", bullet)
 
-					gameLayer:insert(bullet)
+					_G.gameLayer:insert(bullet)
 					
 					pos = pos + 1
 					valDiff = p1_track[pos+1] - p1_track[pos]
@@ -486,18 +446,9 @@ new = function ( params )
 					
 					duration = math.max(playTime, 1000)
 					duration = math.min(duration, 5000)
-					print("DURATION")
-					print(duration)
 					local trans1 = transitionManager:newTransition(bullet, {time = duration, y = player.y - 1000,
 						onComplete = function(self) self.parent:remove(self); self = nil; end
 					})
-					
-					--      trans1 = tnt:newTransition(object, {time = 1000, x = 480}, 'Slide Transition', {data = 'User data'})
-					--  Name and userData arguments are optional. userData can be anything.
-					--  Every instance has pause(), resume() and cancel() methods.
-					--  You can manage all timers and transitions with function like tnt:pauseAllTimers(), tnt:resumeAllTransitions() etc.
-					--  For speed adjustment first pause all timers and transitions, then modify tnt.speed to say 0.5, which means 2 times faster
-					--  and lastly resume all paused instances.
 
 					timeLastBullet = event.time
 				end
