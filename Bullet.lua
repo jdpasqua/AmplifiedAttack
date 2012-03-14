@@ -8,8 +8,8 @@ function new(xPos, yPos, type)
 	
 	local bullet = display.newCircle( xPos, yPos, 10 )
 	
-	function endBullet()
-		display.remove(bullet);
+	function bullet:removeBullet()
+		bullet:removeSelf()
 	end
 	
 	function bullet:init()
@@ -26,7 +26,7 @@ function new(xPos, yPos, type)
 		bullet.collision = onCollision
 		bullet:addEventListener("collision", bullet)
 		
-		transition.to( bullet, { time=1500, y=bullet.y + 1000, onComplete = endBullet} )
+		transition.to( bullet, { time=1500, y=bullet.y + 1100, onComplete = endBullet, onComplete = bullet.removeBullet} )
 				
 		_G.gameLayer:insert(bullet)
 	end
