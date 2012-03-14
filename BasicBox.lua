@@ -2,9 +2,14 @@ module (..., package.seeall)
 
 function new()
 	
+	local StraightBullet = require("StraightBullet")
+	
 	local box = display.newRect( 0, 0, 30, 30 )
 	
+	local straightBullet
+	
 	function box:init()
+
 		-- Physics
 		physics.addBody(box, "dynamic", {bounce = 0})
 		
@@ -35,6 +40,7 @@ function new()
 			rotationAngle = 0
 		end
 		transition.to( box, { rotation = rotationAngle, time=900, x=math.random(display.contentWidth), y=math.random(display.contentHeight / 2)} )
+	
 	end
 	
 	function box:setColor()
@@ -42,11 +48,13 @@ function new()
 	end
 	
 	function box:shoot()
-	
+		-- Fire a bullet!
+		straightBullet = StraightBullet.new(box.x, box.y)
 	end
 	
 	function box:pulse( event )
-		box.move()
+		box.move()	
+		box.shoot()
 	end
 		
 	return box
