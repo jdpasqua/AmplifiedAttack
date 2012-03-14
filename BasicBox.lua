@@ -28,11 +28,21 @@ function new()
 	end
 	
 	function box:move()
-		transition.to( box, { time=900, x=math.random(display.contentWidth), y=math.random(display.contentHeight / 2)} )
+		local rotationAngle
+		if (box.rotation == 0) then
+			rotationAngle = 360
+		else
+			rotationAngle = 0
+		end
+		transition.to( box, { rotation = rotationAngle, time=900, x=math.random(display.contentWidth), y=math.random(display.contentHeight / 2)} )
 	end
 	
 	function box:setColor()
 		box:setFillColor(math.random(255), math.random(255), math.random(255))
+	end
+	
+	function box:shoot()
+	
 	end
 	
 	function box:pulse( event )
