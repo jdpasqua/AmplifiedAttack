@@ -2,7 +2,7 @@ module (..., package.seeall)
 
 function new()
 	
-	local StraightBullet = require("StraightBullet")
+	local Bullet = require("Bullet")
 	
 	local box = display.newRect( 0, 0, 30, 30 )
 	
@@ -49,7 +49,7 @@ function new()
 	
 	function box:shoot()
 		-- Fire a bullet!
-		straightBullet = StraightBullet.new(box.x, box.y)
+		straightBullet = Bullet.new(box.x, box.y)
 	end
 	
 	function box:pulse( event )
