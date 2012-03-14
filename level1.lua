@@ -152,8 +152,8 @@ new = function ( params )
 	end
 	
 	local function pulseBeat()
-		local event = { name="pulse", target=BasicBox }
-		Runtime:dispatchEvent( event )
+		local event = { name="pulse"}
+		Runtime:dispatchEvent( event)
 		timer.performWithDelay(1000, pulseBeat )
 	end
 
@@ -190,7 +190,8 @@ new = function ( params )
 			-- We can't remove a body inside a collision event, so queue it to removal.
 			-- It will be removed on the next frame inside the game loop.
 			table.insert(toRemove, event.other)
-
+			Runtime:removeEventListener("pulse", event.other)
+						
 		-- Player collision - GAME OVER	
 		elseif false then --self.name == "player" and event.other.name == "enemy" then
 			audio.play(sounds.gameOver)
@@ -263,7 +264,6 @@ new = function ( params )
 	
 	local function init_track(track, file)--(fh)
 
-		print ("INIT TRACK")
 		--fh is assumed to be open
 		local path = system.pathForFile(file)
 		

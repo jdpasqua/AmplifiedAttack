@@ -8,6 +8,8 @@ function new()
 	
 	local straightBullet
 	
+	local transitionManager = require('transitionManager')
+	
 	function box:init()
 
 		-- Physics
@@ -39,7 +41,8 @@ function new()
 		else
 			rotationAngle = 0
 		end
-		transition.to( box, { rotation = rotationAngle, time=900, x=math.random(display.contentWidth), y=math.random(display.contentHeight / 2)} )
+		local trans1 = transitionManager:newTransition( box, { rotation = rotationAngle, 
+			time=900, x=math.random(display.contentWidth), y=math.random(display.contentHeight / 2)} )
 	
 	end
 	
@@ -53,7 +56,7 @@ function new()
 	end
 	
 	function box:pulse( event )
-		box.move()	
+		box.move()
 		box.shoot()
 	end
 		
