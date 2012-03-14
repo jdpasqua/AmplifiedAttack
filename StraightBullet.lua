@@ -26,7 +26,7 @@ function new(xPos, yPos, type)
 		straightBullet.collision = onCollision
 		straightBullet:addEventListener("collision", straightBullet)
 		
-		transition.to( straightBullet, { time=1500, y=straightBullet.y + 200, onComplete = endBullet} )
+		transition.to( straightBullet, { time=1500, y=straightBullet.y + 1000, onComplete = endBullet} )
 				
 		_G.gameLayer:insert(straightBullet)
 	end
