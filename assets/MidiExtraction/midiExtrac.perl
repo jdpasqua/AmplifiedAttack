@@ -9,7 +9,6 @@ while (<MYFILE>) {
   $temp = $_;
 
   if ($temp =~ /TR\s+(\d+)/) {
-    print f0 $temp;
     $printTo = $1;
   
     $tempo = ">>track" . $printTo . "_tempo.txt";
