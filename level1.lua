@@ -27,8 +27,36 @@ new = function ( params )
 	local stars_field4= 154
 	local star_radius_min  = 2
 	local star_radius_max  = 3
-	local p1_track = {0}
-	local p2_track = {0}	
+	
+	local areTracksInit = 0
+	
+	local tempo = {}
+	tempo[1] = {}
+	tempo[2] = {}
+	tempo[3] = {}
+	tempo[4] = {}
+	tempo[5] = {}
+	tempo[6] = {}
+	tempo[7] = {}
+	tempo[8] = {}
+	tempo[9] = {}
+	tempo[10] = {}
+	tempo[11] = {}
+	
+	local notes = {}
+	notes[1] = {}
+	notes[2] = {}
+	notes[3] = {}
+	notes[4] = {}
+	notes[5] = {}
+	notes[6] = {}
+	notes[7] = {}
+	notes[8] = {}
+	notes[9] = {}
+	notes[10] = {}
+	notes[11] = {}
+	
+		
 	local pos = 0
 	local valDiff = 0
 	local playTime = 3300
@@ -262,23 +290,43 @@ new = function ( params )
 	-- Track to Array
 	------------------
 	
-	local function init_track(track, file)--(fh)
+	local function init_tracks(track, file)--(fh)
+		for i = 1, 11 do
+			
+			--format file names
+			local tempofn = string.format("assets/MidiExtraction/TopGear/track%u_tempo.txt", i)
+			local notefn = string.format("assets/MidiExtraction/TopGear/track%u_notes.txt", i)
+			
+			local tempofile = system.pathForFile(tempofn)
+			local notefile = system.pathForFile(notefn)
+			
+			--open tempo and note files
+			local track_tempo = io.open(tempofile, "r")
+			local track_notes = io.open(notefile, "r")
+			
+			--read tempos into array
+			local num = track_tempo:read("*l")
+			local j = 1
 
-		--fh is assumed to be open
-		local path = system.pathForFile(file)
-		
-		local tt_p1 = io.open(path, "r")
-
-		local num = tt_p1:read("*l")
-		local i = 1
-
-		if tt_p1 then
-			while num do
-				track[i] = tonumber(num)
-				num = tt_p1:read("*l")
-				i = i + 1
+			if track_tempo then
+				while num do
+					tempo[i][j] = tonumber(num)
+					num = track_tempo:read("*l")
+					j = j + 1
+				end
 			end
-		else	
+			
+			--read notes into array
+			local num = track_notes:read("*l")
+			local j = 1
+
+			if track_notes then
+				while num do
+					notes[i][j] = tonumber(num)
+					num = track_notes:read("*l")
+					j = j + 1
+				end
+			end
 		end
 	end
 	
@@ -420,11 +468,9 @@ new = function ( params )
 			
 			frameNumber = frameNumber + 1
  
-			if p1_track[1] == 0 then
-			--	local offset = timer.performWithDelay(0, timeout )
-			--	playTime = playTime + offset
-				init_track(p1_track, "assets/midi/trackTimes4.txt")
-				init_track(p2_track, "assets/midi/trackTimes4.txt")
+			if areTracksInit == 0 then
+				init_tracks()
+				areTracksInit = 1
 			end
 			
 			
@@ -465,7 +511,8 @@ new = function ( params )
 					_G.gameLayer:insert(bullet)
 					
 					pos = pos + 1
-					valDiff = p1_track[pos+1] - p1_track[pos]
+				--	valDiff = p1_track[pos+1] - p1_track[pos]
+					valDiff = tempo[4][pos+1] - tempo[4][pos]
 					playTime = valDiff * 1764.7058823
 
 					--This takes care of the error 
