@@ -4,7 +4,8 @@ function new()
 	
 	local Bullet = require("Bullet")
 	
-	local box = display.newRect( 0, 0, 30, 30 )
+	local num = math.random(30,100)
+	local box = display.newRect( 0, 0, num, num )
 	
 	local straightBullet
 	
@@ -17,6 +18,7 @@ function new()
 		
 		-- Name
 		box.name = "enemy"
+		box.alive = "yes"
 		
 		-- Position
 		box.x = math.random(display.contentWidth)

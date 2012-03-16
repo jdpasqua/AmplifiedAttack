@@ -6,7 +6,7 @@ function new(xPos, yPos, type)
 		return nil
 	end
 	
-	local bullet = display.newCircle( xPos, yPos, 10 )
+	local bullet = display.newCircle( xPos, yPos, 7 )
 	
 	function bullet:removeBullet()
 		bullet:removeSelf()
