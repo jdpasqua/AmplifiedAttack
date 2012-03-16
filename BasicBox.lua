@@ -5,6 +5,7 @@ function new(type)
 	local Bullet = require("Bullet")
 	local easingx  = require("easing")
 	
+
 	local box
 	if (math.random(10) > 7) then 
 		box = display.newImage("assets/graphics/enemy5.png")
@@ -24,6 +25,7 @@ function new(type)
 		
 		-- Name
 		box.name = "enemy"
+		box.alive = "yes"
 		
 		box:setReferencePoint( display.CenterReferencePoint )
 		

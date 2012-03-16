@@ -7,7 +7,7 @@ function new(xPos, yPos, type)
 	end
 	
 	local bullet = display.newImage("assets/graphics/bullet10.png", xPos, yPos)
-	
+
 	function bullet:removeBullet()
 		bullet:removeSelf()
 	end
