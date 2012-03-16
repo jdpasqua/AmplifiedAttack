@@ -6,7 +6,7 @@ function new(xPos, yPos, type)
 		return nil
 	end
 	
-	local bullet = display.newCircle( xPos, yPos, 10 )
+	local bullet = display.newImage("assets/graphics/bullet10.png", xPos, yPos)
 	
 	function bullet:removeBullet()
 		bullet:removeSelf()
@@ -19,12 +19,14 @@ function new(xPos, yPos, type)
 		-- Name
 		bullet.name = "bullet"
 		
+		bullet:setReferencePoint( display.CenterReferencePoint )
+		
 		-- Color
-		bullet.setColor()
+		--bullet.setColor()
 		
 		-- Event Listener		
-		bullet.collision = onCollision
-		bullet:addEventListener("collision", bullet)
+		--bullet.collision = onCollision
+		--bullet:addEventListener("collision", bullet)
 		
 		transition.to( bullet, { time=1500, y=bullet.y + 1100, onComplete = endBullet, onComplete = bullet.removeBullet} )
 				
