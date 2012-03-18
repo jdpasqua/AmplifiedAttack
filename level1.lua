@@ -27,11 +27,46 @@ new = function ( params )
 	local stars_field4= 154
 	local star_radius_min  = 2
 	local star_radius_max  = 3
-	local p1_track = {0}
-	local p2_track = {0}	
+	
+	local areTracksInit = 0
+	
+	local tempo = {}
+	tempo[1] = {}
+	tempo[2] = {}
+	tempo[3] = {}
+	tempo[4] = {}
+	tempo[5] = {}
+	tempo[6] = {}
+	tempo[7] = {}
+	tempo[8] = {}
+	tempo[9] = {}
+	tempo[10] = {}
+	tempo[11] = {}
+	
+	local notes = {}
+	notes[1] = {}
+	notes[2] = {}
+	notes[3] = {}
+	notes[4] = {}
+	notes[5] = {}
+	notes[6] = {}
+	notes[7] = {}
+	notes[8] = {}
+	notes[9] = {}
+	notes[10] = {}
+	notes[11] = {}
+	
+	local bpm = 110;
+	local timeConvert = 0;
+	
+	local track1_LastBullet = 0; 
+	local track1_pos = 0
+	local track1_valDiff = 0
+	local track1_playTime = 3300	
+		
 	local pos = 0
 	local valDiff = 0
-	local playTime = 3300
+	local playTime = 15000 --3300
 	local textureCache = {}
 	local timeLastBullet, timeLastEnemy = 0, 0
 	local bulletInterval = 1000
@@ -64,7 +99,7 @@ new = function ( params )
 	-----------------------
 	
 	-- Background music
-	backgroundMusic = audio.loadStream("assets/sounds/topGear.mp3")
+	backgroundMusic = audio.loadStream("assets/sounds/8BitShuffle.mp3")
 	backgroundMusicChannel = audio.play(backgroundMusic, { channel=1, loops=-1, fadein=0 })
 
 	-- Player Music
@@ -152,9 +187,9 @@ new = function ( params )
 	end
 	
 	local function pulseBeat()
-		local event = { name="pulse"}
-		Runtime:dispatchEvent( event)
-		timer.performWithDelay(1000, pulseBeat )
+		local event = { name="pulse" }
+		Runtime:dispatchEvent( event )
+		timer.performWithDelay( 3900, pulseBeat )
 	end
 
 	--------------------------------------------------------------------------------
@@ -179,11 +214,12 @@ new = function ( params )
 	-- Take care of collisions
 	local function onCollision(self, event)
 		-- Bullet hit enemy
-		if self.name == "bullet" and event.other.name == "enemy" and gameIsActive then
+		if self.name == "bullet" and event.other.name == "enemy" and gameIsActive and event.other then --and event.other.alive == "yes"
 			-- Increase score
 			score = score + 1
 			scoreText.text = score
-
+			
+			--event.other.alive = "no"
 			-- Play Sound
 			audio.play(sounds.boom)
 
@@ -262,59 +298,61 @@ new = function ( params )
 	-- Track to Array
 	------------------
 	
-	local function init_track(track, file)--(fh)
+	local function init_tracks(track, file)--(fh)
+		for i = 1, 8 do --11
+			
+			--format file names
+			local tempofn = string.format("assets/MidiExtraction/8BitShuffle/track%u_tempo.txt", i)
+			local notefn = string.format("assets/MidiExtraction/8BitShuffle/track%u_notes.txt", i)
+			
+			local tempofile = system.pathForFile(tempofn)
+			local notefile = system.pathForFile(notefn)
+			
+			--open tempo and note files
+			local track_tempo = io.open(tempofile, "r")
+			local track_notes = io.open(notefile, "r")
+			
+			--read tempos into array
+			local num = track_tempo:read("*l")
+			local j = 1
 
-		--fh is assumed to be open
-		local path = system.pathForFile(file)
-		
-		local tt_p1 = io.open(path, "r")
-
-		local num = tt_p1:read("*l")
-		local i = 1
-
-		if tt_p1 then
-			while num do
-				track[i] = tonumber(num)
-				num = tt_p1:read("*l")
-				i = i + 1
+			if track_tempo then
+				while num do
+					tempo[i][j] = tonumber(num)
+					num = track_tempo:read("*l")
+					j = j + 1
+				end
 			end
-		else	
+			
+			--read notes into array
+			note = track_notes:read("*l")
+			j = 1
+
+			if track_notes then
+				while note ~= nil do
+					notes[i][j] = note
+					note = track_notes:read("*l")
+					j = j + 1
+				end
+			else 
+				print ("\n\nKABOOM\n\n")
+			end
 		end
 	end
 	
-	local timeout = function ( event )
-		local o
-		o = event.time
-		return o
+	local function calc_tempo_conversion ()
+			local bps = bpm / 60
+			local time = (1 / bps) * 4 * 1000
+			return time
 	end
-
-	--local function init_track(songTitle, trackNo)--(fh)
-
---		local notes = ""
---		--fh is assumed to be open
---		local path = system.pathForFile(file)
---		--local path = system.pathForFile("trackTimes4Trim.txt")
---
---		local tt_p1 = io.open(path, "r")
---
---		local num = tt_p1:read("*l")
---		local i = 1
---
---		if tt_p1 then
---			while num do
---				track[i] = tonumber(num)
---				num = tt_p1:read("*l")
---				i = i + 1
---			end
---		else	
---		end
---	end
+	
 	
 	local timeout = function ( event )
 		local o
 		o = event.time
 		return o
 	end
+
 
 
 
@@ -410,8 +448,8 @@ new = function ( params )
 		btPause.x = 740
 		btPause.y = 25
 		localGroup:insert( btPause )
-		pulseBeat()
 
+		pulseBeat()
 		--------------------------------------------------------------------------------
 		-- Game loop
 		--------------------------------------------------------------------------------
@@ -420,18 +458,18 @@ new = function ( params )
 			
 			frameNumber = frameNumber + 1
  
-			if p1_track[1] == 0 then
-			--	local offset = timer.performWithDelay(0, timeout )
-			--	playTime = playTime + offset
-				init_track(p1_track, "assets/midi/trackTimes4.txt")
-				init_track(p2_track, "assets/midi/trackTimes4.txt")
+			if areTracksInit == 0 then
+				init_tracks()
+				areTracksInit = 1
+				timeConvert = calc_tempo_conversion()
+				--print (string.format("===================TIME CONVERT=%d", timeConvert)) -- TIME CONVERT CHECK
 			end
 			
 			
 			if gameIsActive then
 				-- Remove collided enemy planes
 				for i = 1, #toRemove do
-					if (toRemove[i]) then
+					if (toRemove[i] and toRemove[i].parent) then
 						toRemove[i].parent:remove(toRemove[i])
 						toRemove[i] = nil
 					end
@@ -464,13 +502,22 @@ new = function ( params )
 
 					_G.gameLayer:insert(bullet)
 					
+				--	local pos2 = pos + 1
+				--	valDiff = p1_track[pos+1] - p1_track[pos]
+				--	while (notes[4][pos2] ~= "C--") do
 					pos = pos + 1
-					valDiff = p1_track[pos+1] - p1_track[pos]
-					playTime = valDiff * 1764.7058823
-
-					--This takes care of the error 
+				--		print (string.format("---pos2 = ", notes[4][pos2]))
+				--	end	
+				
+					if tempo[4][pos+1] == nil then
+						pos = 1
+					end 
+					valDiff = tempo[4][pos+1] - tempo[4][pos]
+					
+					playTime = valDiff * timeConvert --1764.7058823
+					--This takes care of the error ratio
 					playTime = playTime - ((event.time - timeLastBullet) - temp) --playTime * 0.5
-
+	--	pulseBeat()
 					
 					-- Move it to the top.
 					-- When the movement is complete, it will remove itself: the onComplete event
@@ -484,6 +531,19 @@ new = function ( params )
 
 					timeLastBullet = event.time
 				end
+				
+			--	if (event.time - track1_LastBullet - totalPauseTime >= 3000) then
+		--			local temp = track1_playTime
+		--			track1_pos = track1_pos + 1
+		--			track1_valDiff = tempo[4][pos+1] - tempo[4][pos]
+		--			track1_playTime = track1_valDiff * 1764.7058823
+--
+					--This takes care of the error ratio 
+--					track1_playTime = track1_playTime - ((event.time - track1_LastBullet) - temp)
+				
+--					pulseBeat()
+					
+--				end
 			end
 		end
 
