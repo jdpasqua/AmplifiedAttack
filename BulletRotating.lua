@@ -36,9 +36,9 @@ function new(xPos, yPos, rotationAngle)
 		--bullet:addEventListener("collision", bullet)
 		
 		--transition.to( bullet, { time=1500, y=bullet.y + 1100, onComplete = endBullet, onComplete = bullet.removeBullet} )
-		local bulletSpeed = 1000
+		local bulletSpeed = 300
 		bullet:setLinearVelocity(math.sin(math.rad(bullet.rotation))*bulletSpeed,math.cos(math.rad(bullet.rotation))*-bulletSpeed)
-		timer.performWithDelay(2000, bullet.removeBullet)
+		timer.performWithDelay(10000, bullet.removeBullet)
 
 		_G.gameLayer:insert(bullet)
 	end
