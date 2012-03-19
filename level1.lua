@@ -75,6 +75,8 @@ new = function ( params )
 	local pauseStart
 	local pauseEnd
 	local basicBox
+	local playerCollisionFilter = { categoryBits = 1, maskBits = 12 }
+	local playerBulletCollisionFilter = { categoryBits = 2, maskBits = 4 }
 	local extendedBox
 	textureCache[1] = display.newImage("assets/graphics/enemy.png"); 
 	textureCache[1].isVisible = false;
@@ -121,6 +123,7 @@ new = function ( params )
 	local Teleporter = require("teleporter")
 	local BasicBox = require("BasicBox")
 	local ExtendedBox = require("ExtendedBox")
+	local Skrillot = require("Skrillot")
 
 
 	------------------
@@ -139,6 +142,7 @@ new = function ( params )
 	local bulletsLayer = display.newGroup()
 	local enemiesLayer = display.newGroup()
 	local starsLayer = display.newGroup()
+	
 	-- create table
 	local stars = {}
 	
@@ -189,7 +193,7 @@ new = function ( params )
 	local function pulseBeat()
 		local event = { name="pulse" }
 		Runtime:dispatchEvent( event )
-		timer.performWithDelay( 3900, pulseBeat )
+		timer.performWithDelay( 1000, pulseBeat )
 	end
 
 	--------------------------------------------------------------------------------
@@ -213,6 +217,7 @@ new = function ( params )
 	
 	-- Take care of collisions
 	local function onCollision(self, event)
+		
 		-- Bullet hit enemy
 		if self.name == "bullet" and event.other.name == "enemy" and gameIsActive and event.other then --and event.other.alive == "yes"
 			-- Increase score
@@ -423,7 +428,7 @@ new = function ( params )
 		_G.gameLayer:insert(enemiesLayer)
 
 		-- Add a physics body. It is kinematic, so it doesn't react to gravity.
-		physics.addBody(player, "kinematic", {bounce = 0})
+		physics.addBody(player, "kinematic", {bounce = 0, filter = playerCollisionFilter})
 
 		-- This is necessary so we know who hit who when taking care of a collision event
 		player.name = "player"
@@ -480,7 +485,7 @@ new = function ( params )
 				-- Check if it's time to spawn another enemy,
 				-- based on a random range and last spawn (timeLastEnemy)
 				if ((event.time - timeLastEnemy) >= (math.random(1000, 1500))) then
-					basicBox = BasicBox.new()
+					basicBox = Skrillot.new()
 					basicBox.init()
 					timeLastEnemy = event.time
 				end
@@ -493,7 +498,7 @@ new = function ( params )
 					bullet.y = player.y - halfPlayerWidth
 
 					-- Kinematic, so it doesn't react to gravity.
-					physics.addBody(bullet, "kinematic", {bounce = 0})
+					physics.addBody(bullet, "dynamic", {bounce = 0, filter = playerBulletCollisionFilter})
 					bullet.name = "bullet"
 
 					-- Listen to collisions, so we may know when it hits an enemy.

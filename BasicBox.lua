@@ -17,11 +17,13 @@ function new(type)
 	local straightBullet
 	
 	local transitionManager = require('transitionManager')
-
+	
 	function box:init()
 
+		local enemyCollisionFilter = { categoryBits = 4, maskBits = 3 }
+		
 		-- Physics
-		physics.addBody(box, "dynamic", {bounce = 0})
+		physics.addBody(box, "dynamic", {bounce = 0, filter = enemyCollisionFilter})
 		
 		-- Name
 		box.name = "enemy"
@@ -39,8 +41,8 @@ function new(type)
 		-- Event Listener
 		Runtime:addEventListener( "pulse", box )
 		
-		box.collision = onCollision
-		box:addEventListener("collision", box)
+		--box.collision = onCollision
+		--box:addEventListener("collision", box)
 				
 		_G.gameLayer:insert(box)
 	end

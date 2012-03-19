@@ -6,15 +6,18 @@ function new(xPos, yPos, type)
 		return nil
 	end
 	
-	local bullet = display.newImage("assets/graphics/bullet10.png", xPos, yPos)
+	local bullet = display.newImage("assets/graphics/bullet10.png", xPos, yPos + 40)
 
 	function bullet:removeBullet()
 		bullet:removeSelf()
 	end
 	
 	function bullet:init()
+		
+		local enemyBulletCollisionFilter = { categoryBits = 8, maskBits = 1 }
+		
 		-- Physics
-		physics.addBody(bullet, "dynamic", {bounce = 0})
+		physics.addBody(bullet, "dynamic", {bounce = 0, filter = enemyBulletCollisionFilter})
 		
 		-- Name
 		bullet.name = "bullet"
@@ -24,11 +27,7 @@ function new(xPos, yPos, type)
 		-- Color
 		--bullet.setColor()
 		
-		-- Event Listener		
-		--bullet.collision = onCollision
-		--bullet:addEventListener("collision", bullet)
-		
-		transition.to( bullet, { time=1500, y=bullet.y + 1100, onComplete = endBullet, onComplete = bullet.removeBullet} )
+		transition.to( bullet, { time=1500, y=bullet.y + 1100, onComplete = endBullet, onComplete = bullet.removeBullet} )	
 				
 		_G.gameLayer:insert(bullet)
 	end
