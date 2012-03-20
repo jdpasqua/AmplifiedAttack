@@ -56,6 +56,16 @@ new = function ( params )
 	notes[10] = {}
 	notes[11] = {}
 	
+	local playhead = {}
+	playhead[1] = 1
+	playhead[2] = 1
+	playhead[3] = 1
+	playhead[4] = 1
+	playhead[5] = 1
+	playhead[6] = 1
+	playhead[7] = 1
+	playhead[8] = 1
+
 	local bpm = 110;
 	local timeConvert = 0;
 	
@@ -194,6 +204,31 @@ new = function ( params )
 		local event = { name="pulse" }
 		Runtime:dispatchEvent( event )
 		--timer.performWithDelay( 500, pulseBeat )
+	end
+
+	local function trackEvent(trackno)
+		local event = {name==string.format("track%d", trackno)}
+		print (string.format(".......              %d\n", trackno))
+		Runtime:dispatchEvent( event )
+		local pos = playhead[trackno]
+		print (string.format(".......              %d\n", pos))
+		
+		
+		--check if you are at the end of the track
+		if tempo[trackno][pos+1] == nil then
+			playhead[trackno] =  1
+			pos = 1
+		end 
+		
+		local valDiff = tempo[trackno][pos+1] - tempo[trackno][pos]
+		local playTime = valDiff * timeConvert --1764.7058823
+		--This takes care of the error ratio
+	--	playTime = playTime - ((event.time - timeLastBullet) - temp) --playTime * 0.5
+		
+		playhead[trackno] = pos + 1
+		
+		local myClosure = function() return trackEvent(trackno) end
+		timer.performWithDelay(playTime, myClosure, 1)
 	end
 
 	--------------------------------------------------------------------------------
@@ -468,6 +503,16 @@ new = function ( params )
 				init_tracks()
 				areTracksInit = 1
 				timeConvert = calc_tempo_conversion()
+
+				trackEvent(1)
+				trackEvent(2)
+				trackEvent(3)
+				trackEvent(4)
+				trackEvent(5)
+				trackEvent(6)
+				trackEvent(7)
+				trackEvent(8)
+
 				--print (string.format("===================TIME CONVERT=%d", timeConvert)) -- TIME CONVERT CHECK
 			end
 			
