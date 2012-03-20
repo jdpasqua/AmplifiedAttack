@@ -139,7 +139,7 @@ new = function ( params )
 	-- Layers (Groups). Think as Photoshop layers: you can order things with Corona groups,
 	-- as well have display objects on the same group render together at once. 
  	_G.gameLayer    = display.newGroup()
-	local bulletsLayer = display.newGroup()
+	_G.bulletsLayer = display.newGroup()
 	local enemiesLayer = display.newGroup()
 	local starsLayer = display.newGroup()
 	
@@ -193,7 +193,7 @@ new = function ( params )
 	local function pulseBeat()
 		local event = { name="pulse" }
 		Runtime:dispatchEvent( event )
-		timer.performWithDelay( 1000, pulseBeat )
+		--timer.performWithDelay( 500, pulseBeat )
 	end
 
 	--------------------------------------------------------------------------------
@@ -217,7 +217,6 @@ new = function ( params )
 	
 	-- Take care of collisions
 	local function onCollision(self, event)
-		
 		-- Bullet hit enemy
 		if self.name == "bullet" and event.other.name == "enemy" and gameIsActive and event.other then --and event.other.alive == "yes"
 			-- Increase score
@@ -234,17 +233,20 @@ new = function ( params )
 			Runtime:removeEventListener("pulse", event.other)
 						
 		-- Player collision - GAME OVER	
-		elseif false then --self.name == "player" and event.other.name == "enemy" then
-			audio.play(sounds.gameOver)
+		elseif self.name == "player" and event.other.name == "enemyBullet" then
+			
+			event.other.isVisible = false
+			
+			--audio.play(sounds.gameOver)
 
-			local gameoverText = display.newText("Game Over!", 0, 0, "HelveticaNeue", 35)
-			gameoverText:setTextColor(255, 255, 255)
-			gameoverText.x = display.contentCenterX
-			gameoverText.y = display.contentCenterY
-			_G.gameLayer:insert(gameoverText)
+			--local gameoverText = display.newText("Game Over!", 0, 0, "HelveticaNeue", 35)
+			--gameoverText:setTextColor(255, 255, 255)
+			--gameoverText.x = display.contentCenterX
+			--gameoverText.y = display.contentCenterY
+			--_G.gameLayer:insert(gameoverText)
 
 			-- This will stop the gameLoop
-			gameIsActive = false
+			--gameIsActive = false
 		end
 	end
 	
@@ -253,7 +255,6 @@ new = function ( params )
 	        print( "index => ".. event.index .. "    action => " .. event.action )
 			pauseEnd = system.getTimer()
 			totalPauseTime = totalPauseTime + (pauseEnd - pauseStart)
-			print ("TOTAL PAUSE TIME")
 			print (totalPauseTime)
 	        local action = event.action
 	        if "clicked" == event.action then
@@ -522,7 +523,8 @@ new = function ( params )
 					playTime = valDiff * timeConvert --1764.7058823
 					--This takes care of the error ratio
 					playTime = playTime - ((event.time - timeLastBullet) - temp) --playTime * 0.5
-	--	pulseBeat()
+					
+					pulseBeat()
 					
 					-- Move it to the top.
 					-- When the movement is complete, it will remove itself: the onComplete event
