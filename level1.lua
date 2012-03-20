@@ -17,7 +17,6 @@ new = function ( params )
 	local toRemove = {}
 	local background1
 	local background2
-	local player
 	local halfPlayerWidth
 	local halfPlayerHeight
 	local stars_total = 153
@@ -62,11 +61,11 @@ new = function ( params )
 	local track1_LastBullet = 0; 
 	local track1_pos = 0
 	local track1_valDiff = 0
-	local track1_playTime = 3300	
+	local track1_playTime = 4300	
 		
 	local pos = 0
 	local valDiff = 0
-	local playTime = 15000 --3300
+	local playTime = 15300 --3300
 	local textureCache = {}
 	local timeLastBullet, timeLastEnemy = 0, 0
 	local bulletInterval = 1000
@@ -172,9 +171,9 @@ new = function ( params )
 	
 	local function drawPlayer()
 		-- Load and position the player
-		player = display.newImage("assets/graphics/antmaker.png")
-		player.x = display.contentCenterX
-		player.y = display.contentHeight - player.contentHeight
+		_G.player = display.newImage("assets/graphics/antmaker.png")
+		_G.player.x = display.contentCenterX
+		_G.player.y = display.contentHeight - _G.player.contentHeight
 	end
 	
 	local function updateBackground()
@@ -193,7 +192,7 @@ new = function ( params )
 	local function pulseBeat()
 		local event = { name="pulse" }
 		Runtime:dispatchEvent( event )
-		--timer.performWithDelay( 500, pulseBeat )
+		timer.performWithDelay( 500, pulseBeat )
 	end
 
 	--------------------------------------------------------------------------------
@@ -206,11 +205,11 @@ new = function ( params )
 		-- Only move to the screen boundaries
 		if event.x >= halfPlayerWidth and event.x <= display.contentWidth - halfPlayerWidth then
 			-- Update player x axis
-			player.x = event.x
+			_G.player.x = event.x
 		end
 		if event.y >= halfPlayerHeight and event.y <= display.contentHeight - halfPlayerHeight then
 			-- Update player y axis
-			player.y = event.y
+			_G.player.y = event.y
 		end
 	end
 	
@@ -429,21 +428,21 @@ new = function ( params )
 		_G.gameLayer:insert(enemiesLayer)
 
 		-- Add a physics body. It is kinematic, so it doesn't react to gravity.
-		physics.addBody(player, "kinematic", {bounce = 0, filter = playerCollisionFilter})
+		physics.addBody(_G.player, "kinematic", {bounce = 0, filter = playerCollisionFilter})
 
 		-- This is necessary so we know who hit who when taking care of a collision event
-		player.name = "player"
-		player:toFront()
+		_G.player.name = "player"
+		_G.player:toFront()
 		-- Listen to collisions
-		player.collision = onCollision
-		player:addEventListener("collision", player)
+		_G.player.collision = onCollision
+		_G.player:addEventListener("collision", _G.player)
 
 		-- Add to main layer
-		_G.gameLayer:insert(player)
+		_G.gameLayer:insert(_G.player)
 
 		-- Store half width, used on the game loop
-		halfPlayerWidth = player.contentWidth * .5
-		halfPlayerHeight = player.contentHeight * .5
+		halfPlayerWidth = _G.player.contentWidth * .5
+		halfPlayerHeight = _G.player.contentHeight * .5
 		
 		-- Show the score
 		scoreText = display.newText(score, 0, 0, "HelveticaNeue", 35)
@@ -495,8 +494,8 @@ new = function ( params )
 				if (event.time - timeLastBullet - totalPauseTime >= playTime) then
 					local bullet = display.newImage("assets/graphics/bullet5.png")
 					local temp = playTime
-					bullet.x = player.x
-					bullet.y = player.y - halfPlayerWidth
+					bullet.x = _G.player.x
+					bullet.y = _G.player.y - halfPlayerWidth
 
 					-- Kinematic, so it doesn't react to gravity.
 					physics.addBody(bullet, "dynamic", {bounce = 0, filter = playerBulletCollisionFilter})
@@ -505,6 +504,7 @@ new = function ( params )
 					-- Listen to collisions, so we may know when it hits an enemy.
 					bullet.collision = onCollision
 					bullet:addEventListener("collision", bullet)
+					bullet.alive = true
 
 					_G.gameLayer:insert(bullet)
 					
@@ -532,7 +532,7 @@ new = function ( params )
 					
 					duration = math.max(playTime, 1000)
 					duration = math.min(duration, 5000)
-					local trans1 = transitionManager:newTransition(bullet, {time = duration, y = player.y - 1000,
+					local trans1 = transitionManager:newTransition(bullet, {time = duration, y = _G.player.y - 1000,
 						onComplete = function(self) self.parent:remove(self); self = nil; end
 					})
 
@@ -558,7 +558,7 @@ new = function ( params )
 		-- e.g. gameLoop() will be called 30 times per second in our case.
 		Runtime:addEventListener("enterFrame", gameLoop)
 		Runtime:addEventListener("enterFrame", updateStars)		
-		player:addEventListener("touch", playerMovement)
+		_G.player:addEventListener("touch", playerMovement)
 		
 	end	
 	
