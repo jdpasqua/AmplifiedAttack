@@ -21,26 +21,21 @@ function new(xPos, yPos, rotationAngle)
 		physics.addBody(bullet, "dynamic", {bounce = 0, filter = enemyBulletCollisionFilter})
 		
 		-- Name
-		bullet.name = "bullet"
+		bullet.name = "enemyBullet"
 		
 		bullet:setReferencePoint( display.CenterReferencePoint )
 		
 		-- Color
-		--bullet.setColor()
-		--print ("ROTATION ANGLE" .. rotationAngle)
+		bullet.setColor()
 		bullet.rotation = rotationAngle
 		bullet.isFixedRotation = true
-		
-		-- Event Listener		
-		--bullet.collision = onCollision
-		--bullet:addEventListener("collision", bullet)
-		
-		--transition.to( bullet, { time=1500, y=bullet.y + 1100, onComplete = endBullet, onComplete = bullet.removeBullet} )
+	
 		local bulletSpeed = 300
-		bullet:setLinearVelocity(math.sin(math.rad(bullet.rotation))*bulletSpeed,math.cos(math.rad(bullet.rotation))*-bulletSpeed)
+		bullet:setLinearVelocity(math.sin(math.rad(bullet.rotation))*bulletSpeed,
+								 math.cos(math.rad(bullet.rotation))*-bulletSpeed)
 		timer.performWithDelay(10000, bullet.removeBullet)
 
-		_G.gameLayer:insert(bullet)
+		_G.bulletsLayer:insert(bullet)
 	end
 	
 	function bullet:move()
@@ -48,7 +43,7 @@ function new(xPos, yPos, rotationAngle)
 	end
 	
 	function bullet:setColor()
-		bullet:setFillColor(math.random(255), math.random(255), math.random(255))
+		bullet:setFillColor(131, 245, 44)
 	end
 	
 	bullet:init()	
