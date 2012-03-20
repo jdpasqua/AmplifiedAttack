@@ -76,7 +76,7 @@ new = function ( params )
 		
 	local pos = 0
 	local valDiff = 0
-	local playTime = 15000 --3300
+	local playTime = 3300 --15000
 	local textureCache = {}
 	local timeLastBullet, timeLastEnemy = 0, 0
 	local bulletInterval = 1000
@@ -111,16 +111,8 @@ new = function ( params )
 	-----------------------
 	
 	-- Background music
-	backgroundMusic = audio.loadStream("assets/sounds/8BitShuffle.mp3")
+	backgroundMusic = audio.loadStream("assets/sounds/TopGear2.mp3")
 	backgroundMusicChannel = audio.play(backgroundMusic, { channel=1, loops=-1, fadein=0 })
-
-	-- Player Music
-	--playerMusic = audio.loadStream("assets/music/topGear_PlayerSounds.mp3")
-	--playerMusicChannel = audio.play(playerMusic, { channel=2, loops=-1, fadein=0 })
-
-	-- Enemy Music
-	--enemyMusic = audio.loadStream("assets/music/topGear_EnemySounds2.mp3")
-	--enemyMusicChannel = audio.play(enemyMusic, { channel=3, loops=-1, fadein=0 })
 	
 	------------------
 	-- Imports
@@ -207,12 +199,13 @@ new = function ( params )
 	end
 
 	local function trackEvent(trackno)
-		local event = {name==string.format("track%d", trackno)}
-		print (string.format(".......              %d\n", trackno))
+        local eName = "track" .. trackno
+        local event = {name=eName, note=notes[trackno][playhead[trackno]]}--, target=player}
+	--	print (string.format(".......              %d\n", trackno))
 		Runtime:dispatchEvent( event )
 		local pos = playhead[trackno]
-		print (string.format(".......              %d\n", pos))
-		
+		--print (string.format(".......              %d\n", pos))
+		--print (string.format("track%d", trackno))
 		
 		--check if you are at the end of the track
 		if tempo[trackno][pos+1] == nil then
@@ -255,18 +248,23 @@ new = function ( params )
 		-- Bullet hit enemy
 		if self.name == "bullet" and event.other.name == "enemy" and gameIsActive and event.other then --and event.other.alive == "yes"
 			-- Increase score
-			score = score + 1
-			scoreText.text = score
-			
-			--event.other.alive = "no"
-			-- Play Sound
-			audio.play(sounds.boom)
+            event.other.hp = event.other.hp - 1
 
-			-- We can't remove a body inside a collision event, so queue it to removal.
-			-- It will be removed on the next frame inside the game loop.
-			table.insert(toRemove, event.other)
-			Runtime:removeEventListener("pulse", event.other)
-						
+            if event.other.hp <= 0 then
+
+    			score = score + 1
+    			scoreText.text = score
+			
+	    		--event.other.alive = "no"
+	    		-- Play Sound
+	    		audio.play(sounds.boom)
+
+    			-- We can't remove a body inside a collision event, so queue it to removal.
+    			-- It will be removed on the next frame inside the game loop.
+    			table.insert(toRemove, event.other)
+    			Runtime:removeEventListener("pulse", event.other)
+	        end
+
 		-- Player collision - GAME OVER	
 		elseif self.name == "player" and event.other.name == "enemyBullet" then
 			
@@ -343,8 +341,8 @@ new = function ( params )
 		for i = 1, 8 do --11
 			
 			--format file names
-			local tempofn = string.format("assets/MidiExtraction/8BitShuffle/track%u_tempo.txt", i)
-			local notefn = string.format("assets/MidiExtraction/8BitShuffle/track%u_notes.txt", i)
+			local tempofn = string.format("assets/MidiExtraction/TopGear/track%u_tempo.txt", i)
+			local notefn = string.format("assets/MidiExtraction/TopGear/track%u_notes.txt", i)
 			
 			local tempofile = system.pathForFile(tempofn)
 			local notefile = system.pathForFile(notefn)
@@ -394,10 +392,14 @@ new = function ( params )
 		return o
 	end
 
+    -- Spawn Enemy
+    local spawnEnemy = function ( event )
+        local basicBox = Skrillot.new()
+		basicBox.init()
+        print ("It's trying to Work!\n")
+   		--timeLastEnemy = event.time
+    end
 
-
-
-	
 	-- update star locations and setcolor
 	local function updateStars(event)
 			if (gameIsActive) then
@@ -491,6 +493,7 @@ new = function ( params )
 		localGroup:insert( btPause )
 
 		pulseBeat()
+        Runtime:addEventListener("track4", spawnEnemy)
 		--------------------------------------------------------------------------------
 		-- Game loop
 		--------------------------------------------------------------------------------
@@ -498,7 +501,7 @@ new = function ( params )
 		local function gameLoop(event)
 			
 			frameNumber = frameNumber + 1
- 
+
 			if areTracksInit == 0 then
 				init_tracks()
 				areTracksInit = 1
@@ -530,11 +533,11 @@ new = function ( params )
 
 				-- Check if it's time to spawn another enemy,
 				-- based on a random range and last spawn (timeLastEnemy)
-				if ((event.time - timeLastEnemy) >= (math.random(1000, 1500))) then
+			--[[ if ((event.time - timeLastEnemy) >= (math.random(1000, 1500))) then
 					basicBox = Skrillot.new()
 					basicBox.init()
 					timeLastEnemy = event.time
-				end
+				end]]
 
 				-- Spawn a bullet
 				if (event.time - timeLastBullet - totalPauseTime >= playTime) then

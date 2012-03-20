@@ -26,6 +26,7 @@ function new(type)
 		-- Name
 		box.name = "enemy"
 		box.alive = "yes"
+        box.hp = 5
 		
 		box:setReferencePoint( display.CenterReferencePoint )
 		
