@@ -3,10 +3,7 @@ module (..., package.seeall)
 function new(xPos, yPos)
 	
 	local BulletRotating = require("BulletRotating")
-	local easingx  = require("easing")
 
-	local bullet1
-	local bullet2
 	local explosion = display.newCircle(xPos, yPos, 1)
 	
 	function explosion:init()
