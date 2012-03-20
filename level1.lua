@@ -202,16 +202,14 @@ new = function ( params )
 	local function pulseBeat()
 		local event = { name="pulse" }
 		Runtime:dispatchEvent( event )
-		timer.performWithDelay( 500, pulseBeat )
+		--timer.performWithDelay( 500, pulseBeat )
 	end
 
+	local count = 0
 	local function trackEvent(trackno)
-		local event = {name==string.format("track%d", trackno)}
-		print (string.format(".......              %d\n", trackno))
+		local event = {name=string.format("track%d", trackno)}
 		Runtime:dispatchEvent( event )
-		local pos = playhead[trackno]
-		print (string.format(".......              %d\n", pos))
-		
+		local pos = playhead[trackno]		
 		
 		--check if you are at the end of the track
 		if tempo[trackno][pos+1] == nil then
@@ -264,8 +262,11 @@ new = function ( params )
 			-- We can't remove a body inside a collision event, so queue it to removal.
 			-- It will be removed on the next frame inside the game loop.
 			table.insert(toRemove, event.other)
-			Runtime:removeEventListener("pulse", event.other)
-						
+			if (event.other.type == "Skrillot") then
+				Runtime:removeEventListener("track1", event.other)
+			else	
+				Runtime:removeEventListener("pulse", event.other)
+			end			
 		-- Player collision - GAME OVER	
 		elseif self.name == "player" and event.other.name == "enemyBullet" then
 			
@@ -376,7 +377,7 @@ new = function ( params )
 				end
 			else 
 				print ("\n\nKABOOM\n\n")
-			end
+			end			
 		end
 	end
 	
@@ -511,7 +512,6 @@ new = function ( params )
 				trackEvent(6)
 				trackEvent(7)
 				trackEvent(8)
-
 				--print (string.format("===================TIME CONVERT=%d", timeConvert)) -- TIME CONVERT CHECK
 			end
 			
