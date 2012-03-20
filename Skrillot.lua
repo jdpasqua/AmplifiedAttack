@@ -3,6 +3,7 @@ module (..., package.seeall)
 function new(type)
 	
 	local BulletRotating = require("BulletRotating")
+	local BulletHoming = require("BulletHoming")
 	local easingx  = require("easing")
 	
 	local box = display.newImage("assets/graphics/Skrillot.png")
@@ -12,6 +13,8 @@ function new(type)
 	local rotationAngle = 135
 	local isShooting = false 
 	local transitionManager = require('transitionManager')
+	
+	box.type = "Skrillot"
 	
 	function box:enableShooting() 
 		isShooting = true
@@ -33,6 +36,8 @@ function new(type)
 		box.x = math.floor(math.random(display.contentWidth))
 		box.y = math.floor(math.random(display.contentHeight / 2) - display.contentHeight + 30)
 		
+	--	box.setColor()
+		
 		transition.to(box, {
 		                time = 4000,
 		                x = math.floor(math.random(display.contentWidth - 80) + 40),
@@ -41,7 +46,7 @@ function new(type)
 		 				onComplete = box.enableShooting })
 						
 		-- Event Listener
-		Runtime:addEventListener( "pulse", box )
+		Runtime:addEventListener( "track1", box )
 
 		_G.gameLayer:insert(box)
 	end
@@ -57,12 +62,12 @@ function new(type)
 	function box:shoot()
 		-- Fire a bullet!
 		if (isShooting) then
-			straightBullet = BulletRotating.new(box.x, box.y + math.floor(box.height / 2), rotationAngle)
-			rotationAngle = rotationAngle + 10
+			straightBullet = BulletHoming.new(box.x, box.y + math.floor(box.height / 2))
+			rotationAngle = rotationAngle + 15
 		end
 	end
 	
-	function box:pulse( event )
+	function box:track1( event )
 		box.move()
 		box.shoot()
 	end
