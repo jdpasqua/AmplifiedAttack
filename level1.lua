@@ -205,7 +205,6 @@ new = function ( params )
 		--timer.performWithDelay( 500, pulseBeat )
 	end
 
-	local count = 0
 	local function trackEvent(trackno)
 		local event = {name=string.format("track%d", trackno)}
 		Runtime:dispatchEvent( event )
