@@ -20,7 +20,7 @@ function new(xPos, yPos, type)
 		physics.addBody(bullet, "dynamic", {bounce = 0, filter = enemyBulletCollisionFilter})
 		
 		-- Name
-		bullet.name = "bullet"
+		bullet.name = "enemyBullet"
 		
 		bullet:setReferencePoint( display.CenterReferencePoint )
 		
