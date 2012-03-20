@@ -1,17 +1,18 @@
 module (..., package.seeall)
 
-function new(xPos, yPos)
+function new(xPos, yPos, type)
 	
 	if ((xPos == nil) or (yPos == nil)) then
 		return nil
 	end
-	
+		
 	local bullet = display.newCircle(xPos, yPos, 6)
 	--display.newImage("assets/graphics/bullet10.png", xPos, yPos + 40)
 
 	function bullet:removeBullet()
-		Runtime:removeEventListener("track1", bullet)
+		Runtime:removeEventListener("track4", bullet)
 		bullet:removeSelf()
+		bullet.isAlive = false
 	end
 	
 	local speed = 0.6
@@ -25,40 +26,41 @@ function new(xPos, yPos)
 		
 		-- Name
 		bullet.name = "enemyBullet"
+		bullet.isAlive = true
 		
 		bullet:setReferencePoint( display.CenterReferencePoint )
 		
 		-- Color
 		bullet.setColor()
 
-		timer.performWithDelay(5000, bullet.removeBullet)
+		timer.performWithDelay(3000, bullet.removeBullet)
 		-- Event Listener
-		Runtime:addEventListener( "track1", bullet )
+		--Runtime:addEventListener( "track4", bullet )
 		bullet.move()
 		_G.bulletsLayer:insert(bullet)
 	end
 	
 	function bullet:move()
-		local xSpeed
-		local ySpeed
-		xSpeed = speed * (_G.player.x - bullet.x)
-			if (xSpeed < 0 and xSpeed > -150) then
-				xSpeed = -150
-			end
-			if (xSpeed >= 0 and xSpeed < 150) then
-				xSpeed = 150
-			end
-		bullet:setLinearVelocity(xSpeed,
-								 speed * (_G.player.y - bullet.y))
+		if (bullet.isAlive == true) then
+		
+		if (type == "left") then
+			bullet:setLinearVelocity(50, 200)
+			type = "right"
+		elseif (type == "right") then
+			bullet:setLinearVelocity(-50, 200)
+			type = "left"
+		end
+			--timer.performWithDelay(200, bullet.move)
+		end
 	end
 	
 	function bullet:setColor()
-		bullet:setFillColor(131, 245, 44)
+		bullet:setFillColor(0, 255, 102)
 	end
 	
-	function bullet:track1( event )
-		bullet.move()
-	end
+	--function bullet:track4( event )
+	--	bullet.move()
+	--end
 	
 	bullet:init()	
 		
