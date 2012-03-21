@@ -4,12 +4,16 @@ function new(type)
 	
 	local BulletRotating = require("BulletRotating")
 	local BulletHoming = require("BulletHoming")
+	local BulletSplitter = require ("BulletSpreader")
+	local BulletExplosion = require ("BulletExplosion")
 	local easingx  = require("easing")
+	local trackno = "track7"
 	
 	local box = display.newImage("assets/graphics/Skrillot.png")
 	box:scale(2, 2)
 	
-	local straightBullet
+	local bullet1
+	local bullet2
 	local rotationAngle = 135
 	local isShooting = false 
 	local transitionManager = require('transitionManager')
@@ -47,9 +51,16 @@ function new(type)
 		 				onComplete = box.enableShooting })
 						
 		-- Event Listener
-		Runtime:addEventListener( "track1", box )
-
+		Runtime:addEventListener( trackno, box )
+		
 		_G.gameLayer:insert(box)
+	end
+	
+	function box:removeSkrillot()
+		Runtime:removeEventListener("track7", bullet)
+		if (box) then
+			box:removeSelf()
+		end
 	end
 	
 	function box:move()
@@ -63,15 +74,18 @@ function new(type)
 	function box:shoot()
 		-- Fire a bullet!
 		if (isShooting) then
-			straightBullet = BulletHoming.new(box.x, box.y + math.floor(box.height / 2))
+			bullet1 = BulletRotating.new(box.x, box.y + math.floor(box.height / 2), rotationAngle)
 			rotationAngle = rotationAngle + 15
+			--local explosion = BulletExplosion.new(box.x, box.y)
 		end
 	end
 	
-	function box:track1( event )
+	function box:track7( event )
 		box.move()
 		box.shoot()
 	end
+	
+	box.init()
 		
 	return box
 	
