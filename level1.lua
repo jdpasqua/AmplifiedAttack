@@ -161,7 +161,7 @@ new = function ( params )
 	        	star.object = display.newCircle(math.random(display.contentWidth),math.random(display.contentHeight),math.random(star_radius_min,star_radius_max))
 	        	stars[ i ] = star
 				starsLayer:insert(star.object)
-			end
+		end
 	end
 	
 	local function drawBackground()
@@ -198,8 +198,8 @@ new = function ( params )
 	end
 
 	local function trackEvent(trackno)
-	        local eName = "track" .. trackno
-       		local event = {name=eName, note=notes[trackno][playhead[trackno]]}--, target=player}
+	    local eName = "track" .. trackno
+        local event = {name=eName, note=notes[trackno][playhead[trackno]]}--, target=player}
 	--	print (string.format(".......              %d\n", trackno))
 		Runtime:dispatchEvent( event )
 		local pos = playhead[trackno]
@@ -256,16 +256,17 @@ new = function ( params )
 			
 			--event.other.alive = "no"
 			-- Play Sound
-			audio.play(sounds.boom)
+				audio.play(sounds.boom)
 
 			-- We can't remove a body inside a collision event, so queue it to removal.
 			-- It will be removed on the next frame inside the game loop.
-			table.insert(toRemove, event.other)
-			if (event.other.type == "Skrillot") then
-				Runtime:removeEventListener("track1", event.other)
-			else	
-				Runtime:removeEventListener("pulse", event.other)
-			end			
+				table.insert(toRemove, event.other)
+				if (event.other.type == "Skrillot") then
+					Runtime:removeEventListener("track1", event.other)
+				else	
+					Runtime:removeEventListener("pulse", event.other)
+				end	
+			end		
 
 		-- Player collision - GAME OVER	
 		elseif self.name == "player" and event.other.name == "enemyBullet" then
@@ -340,7 +341,7 @@ new = function ( params )
 	------------------
 	
 	local function init_tracks(track, file)--(fh)
-		for i = 1, 8 do --11
+		for i = 1, 11 do --11
 			
 			--format file names
 			local tempofn = string.format("assets/MidiExtraction/TopGear/track%u_tempo.txt", i)
@@ -496,6 +497,8 @@ new = function ( params )
 
 		pulseBeat()
         Runtime:addEventListener("track4", spawnEnemy)
+
+	
 		--------------------------------------------------------------------------------
 		-- Game loop
 		--------------------------------------------------------------------------------
@@ -617,4 +620,5 @@ new = function ( params )
 	return localGroup
 	
 end
+
 
