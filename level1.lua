@@ -110,7 +110,7 @@ new = function ( params )
 	-----------------------
 
 	-- Background music
-	backgroundMusic = audio.loadStream("assets/sounds/topGear.mp3")
+	backgroundMusic = audio.loadStream("assets/sounds/TopGear2.mp3")
 	backgroundMusicChannel = audio.play(backgroundMusic, { channel=1, loops=-1, fadein=0 })
 
 	-- Player Music
