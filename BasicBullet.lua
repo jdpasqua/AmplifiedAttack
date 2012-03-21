@@ -1,10 +1,13 @@
 module (..., package.seeall)
 
 function new(xPos, yPos, name, image, isEnemyBullet)
-
-	local bullet = display.newImage(image, xPos, yPos)
-
-	bullet.hp = hp
+	
+	local bullet
+	if (image == "circle") then 
+		bullet = display.newCircle(xPos, yPos, 5)
+	else 
+		bullet = display.newImage(image, xPos, yPos)
+	end
 
 	local collisionFilter 
 	if (isEnemyBullet) then
