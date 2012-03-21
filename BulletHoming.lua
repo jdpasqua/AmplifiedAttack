@@ -10,7 +10,7 @@ function new(xPos, yPos)
 	--display.newImage("assets/graphics/bullet10.png", xPos, yPos + 40)
 
 	function bullet:removeBullet()
-		Runtime:removeEventListener("track1", bullet)
+		Runtime:removeEventListener("track4", bullet)
 		bullet:removeSelf()
 	end
 	
@@ -33,7 +33,7 @@ function new(xPos, yPos)
 
 		timer.performWithDelay(5000, bullet.removeBullet)
 		-- Event Listener
-		Runtime:addEventListener( "track1", bullet )
+		Runtime:addEventListener( "track4", bullet )
 		bullet.move()
 		_G.bulletsLayer:insert(bullet)
 	end
@@ -53,10 +53,10 @@ function new(xPos, yPos)
 	end
 	
 	function bullet:setColor()
-		bullet:setFillColor(131, 245, 44)
+		bullet:setFillColor(243, 132, 0)
 	end
 	
-	function bullet:track1( event )
+	function bullet:track4( event )
 		bullet.move()
 	end
 	
