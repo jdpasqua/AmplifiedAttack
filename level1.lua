@@ -388,8 +388,6 @@ new = function ( params )
 	local spawnEnemy = function ( event )
 		local basicBox = Skrillot.new()
 		basicBox.init()
-		print ("It's trying to Work!\n")
-		--timeLastEnemy = event.time
 	end
 
 	-- update star locations and setcolor
