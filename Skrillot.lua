@@ -74,7 +74,7 @@ function new(type)
 	function box:shoot()
 		-- Fire a bullet!
 		if (isShooting) then
-			bullet1 = BulletRotating.new(box.x, box.y + math.floor(box.height / 2), rotationAngle)
+			bullet1 = BulletRotating.new(box.x, box.y, rotationAngle)
 			rotationAngle = rotationAngle + 15
 			--local explosion = BulletExplosion.new(box.x, box.y)
 		end
