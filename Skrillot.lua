@@ -9,84 +9,71 @@ function new(type)
 	local easingx  = require("easing")
 	local trackno = "track7"
 	
-	local box = display.newImage("assets/graphics/Skrillot.png")
-	box:scale(2, 2)
+	local BasicEnemy = require("BasicEnemy")
+	local enemy = BasicEnemy.new("Skrillot", "assets/graphics/Skrillot.png", trackno, 1)
 	
 	local bullet1
 	local bullet2
 	local rotationAngle = 135
 	local isShooting = false 
-	local transitionManager = require('transitionManager')
 	
-	box.type = "Skrillot"
-	
-	function box:enableShooting() 
+	function enemy:enableShooting() 
 		isShooting = true
 	end
 	
-	function box:init()
-
-		local enemyCollisionFilter = { categoryBits = 4, maskBits = 3 }
-		-- Physics
-		physics.addBody(box, "dynamic", {bounce = 0, filter = enemyCollisionFilter})
-		
-		-- Name
-		box.name = "enemy"
-		box.alive = "yes"
-        box.hp = 5
-		
-		box:setReferencePoint( display.CenterReferencePoint )
+	function enemy:init()	
 		
 		-- Position
-		box.x = math.floor(math.random(display.contentWidth))
-		box.y = math.floor(math.random(display.contentHeight / 2) - display.contentHeight + 30)
+		enemy.x = math.floor(math.random(display.contentWidth))
+		enemy.y = math.floor(math.random(display.contentHeight / 2) - display.contentHeight + 30)
 		
-	--	box.setColor()
+	--	enemy.setColor()
 		
-		transition.to(box, {
+		transition.to(enemy, {
 		                time = 4000,
 		                x = math.floor(math.random(display.contentWidth - 80) + 40),
 		                y = math.floor(math.random(display.contentHeight / 2)),
 		                transition = easingx.easeOutBack,
-		 				onComplete = box.enableShooting })
+		 				onComplete = enemy.enableShooting })
 						
 		-- Event Listener
-		Runtime:addEventListener( trackno, box )
+		Runtime:addEventListener( trackno, enemy )
 		
-		_G.gameLayer:insert(box)
+		_G.gameLayer:insert(enemy)
 	end
 	
-	function box:removeSkrillot()
+	function enemy:removeSkrillot()
+		print("REMOVE SKRILLOT")
 		Runtime:removeEventListener("track7", bullet)
-		if (box) then
-			box:removeSelf()
+		if (enemy) then
+			enemy:removeSelf()
 		end
 	end
 	
-	function box:move()
+	function enemy:move()
 
 	end
 	
-	function box:setColor()
-		box:setFillColor(math.random(255), math.random(255), math.random(255))
+	function enemy:setColor()
+		enemy:setFillColor(math.random(255), math.random(255), math.random(255))
 	end
 	
-	function box:shoot()
+	function enemy:shoot()
 		-- Fire a bullet!
-		if (isShooting) then
-			bullet1 = BulletRotating.new(box.x, box.y, rotationAngle)
+		if (isShooting and enemy.x and enemy.y) then
+			bullet1 = BulletRotating.new(enemy.x, enemy.y, rotationAngle)
 			rotationAngle = rotationAngle + 15
-			--local explosion = BulletExplosion.new(box.x, box.y)
+			--local explosion = BulletExplosion.new(enemy.x, enemy.y)
 		end
 	end
 	
-	function box:track7( event )
-		box.move()
-		box.shoot()
+	function enemy:track7( event )
+		enemy.move()
+		enemy.shoot()
 	end
 	
-	box.init()
+	enemy.init()
 		
-	return box
+	return enemy
 	
 end
