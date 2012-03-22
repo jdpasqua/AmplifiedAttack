@@ -64,18 +64,16 @@ new = function ( params )
 	playhead[6] = 1
 	playhead[7] = 1
 	playhead[8] = 1
-
-	local bpm = 110;
-	local timeConvert = 0;
-
-	local track1_LastBullet = 0; 
-	local track1_pos = 0
-	local track1_valDiff = 0
-	local track1_playTime = 4300	
+	playhead[9] = 1
+	playhead[10] = 1
+	playhead[11] = 1
+	
+	local bpm = 136;
+	local timeConvert = 0;	
 
 	local pos = 0
 	local valDiff = 0
-	local playTime = 3350
+--	local playTime = 3350
 	local textureCache = {}
 	local timeLastBullet, timeLastEnemy = 0, 0
 	local bulletInterval = 1000
@@ -201,32 +199,32 @@ new = function ( params )
 	end
 
 	local function trackEvent(trackno)
-		local eName = "track" .. trackno
-		local event = {name=eName, note=notes[trackno][playhead[trackno]]}--, target=player}
-		--	print (string.format(".......              %d\n", trackno))
-		Runtime:dispatchEvent( event )
+		local curTime = system.getTimer()--os.difftime(os.time(), launchTime)
 		local pos = playhead[trackno]
-		--print (string.format(".......              %d\n", pos))
-		--print (string.format("track%d", trackno))
+		local eName = "track" .. trackno
+		local event = {name=eName}--, note=notes[trackno][pos]}
+		local targetTime = tempo[trackno][pos] * timeConvert
+		
+	--	print (string.format("..............%f\n", pos))
+		
+		local playTime = 0
 
-		--check if you are at the end of the track
-		if tempo[trackno][pos+1] == nil then
-			playhead[trackno] =  1
-			pos = 1
-		end 
-
-		local valDiff = tempo[trackno][pos+1] - tempo[trackno][pos]
-		local playTime = valDiff * timeConvert --1764.7058823
-		--This takes care of the error ratio
-		--	playTime = playTime - ((event.time - timeLastBullet) - temp) --playTime * 0.5
-
+		if pos > 1 then
+			Runtime:dispatchEvent( event )
+			local prevTargetTime = tempo[trackno][pos - 1] * timeConvert
+			playTime = targetTime - prevTargetTime--1764.7058823
+			--fixes error in the playTime calculation (thinking you are in the right place when you aren't)
+			playTime = playTime - (curTime - prevTargetTime) --playTime * 0.5
+		--	print (string.format("playTime = %f     targetTime = %f     prevTargetTime = %f     curTime = %d\n", playTime, targetTime, prevTargetTime, curTime))
+		else
+			playTime = tempo[trackno][pos] * timeConvert		
+		end
+	
 		playhead[trackno] = pos + 1
-
+		
 		local myClosure = function() return trackEvent(trackno) end
-		timer.performWithDelay(playTime, myClosure, 1)
+		timer.performWithDelay(playTime, myClosure)	
 	end
-
-
 
 	-- Take care of collisions
 	local function onCollision(self, event)
@@ -341,8 +339,10 @@ new = function ( params )
 			local j = 1
 
 			if track_tempo then
+			--	print ("*********************")
 				while num do
 					tempo[i][j] = tonumber(num)
+				--	print (string.format("%f", tempo[i][j]))
 					num = track_tempo:read("*l")
 					j = j + 1
 				end
@@ -368,7 +368,7 @@ new = function ( params )
 
 	local function calc_tempo_conversion ()
 		local bps = bpm / 60
-		local time = (1 / bps) * 4 * 1000
+		local time = (1 / bps) * 1000
 		return time
 	end
 
@@ -500,73 +500,7 @@ new = function ( params )
 
 				updateBackground()
 
-				--[[ if ((event.time - timeLastEnemy) >= (math.random(1000, 1500))) then
-				basicBox = Skrillot.new()
-				basicBox.init()
-				timeLastEnemy = event.time
-				end]]
 
-				-- Spawn a bullet
-				if (event.time - timeLastBullet - totalPauseTime >= playTime) then
-					local bullet = display.newImage("assets/graphics/bullet5.png")
-					local temp = playTime
-					bullet.x = _G.player.x
-					bullet.y = _G.player.y
-
-					-- Kinematic, so it doesn't react to gravity.
-					physics.addBody(bullet, "dynamic", {bounce = 0, filter = playerBulletCollisionFilter})
-					bullet.name = "bullet"
-
-					-- Listen to collisions, so we may know when it hits an enemy.
-					bullet.collision = onCollision
-					bullet:addEventListener("collision", bullet)
-					bullet.alive = true
-
-					_G.gameLayer:insert(bullet)
-
-					--	local pos2 = pos + 1
-					--	valDiff = p1_track[pos+1] - p1_track[pos]
-					--	while (notes[4][pos2] ~= "C--") do
-					pos = pos + 1
-					--		print (string.format("---pos2 = ", notes[4][pos2]))
-					--	end	
-					local playerTrack = 4
-					if tempo[playerTrack][pos+1] == nil then
-						pos = 1
-					end 
-					valDiff = tempo[playerTrack][pos+1] - tempo[playerTrack][pos]
-
-					playTime = valDiff * timeConvert --1764.7058823
-					--This takes care of the error ratio
-					playTime = playTime - ((event.time - timeLastBullet) - temp) --playTime * 0.5
-
-					pulseBeat()
-
-					-- Move it to the top.
-					-- When the movement is complete, it will remove itself: the onComplete event
-					-- creates a function to will store information about this bullet and then remove it.
-
-						duration = math.max(playTime, 1000)
-						duration = math.min(duration, 5000)
-						local trans1 = transitionManager:newTransition(bullet, {time = duration, y = _G.player.y - 1000,
-						onComplete = function(self) self.parent:remove(self); self = nil; end
-					})
-
-					timeLastBullet = event.time
-				end
-
-				--	if (event.time - track1_LastBullet - totalPauseTime >= 3000) then
-				--			local temp = track1_playTime
-				--			track1_pos = track1_pos + 1
-				--			track1_valDiff = tempo[4][pos+1] - tempo[4][pos]
-				--			track1_playTime = track1_valDiff * 1764.7058823
-				--
-				--This takes care of the error ratio 
-				--					track1_playTime = track1_playTime - ((event.time - track1_LastBullet) - temp)
-
-				--					pulseBeat()
-
-				--				end
 			end
 		end
 

@@ -46,15 +46,22 @@ function new()
 		-- Add to main layer
 		_G.gameLayer:insert(player)
 		player:addEventListener("touch", playerMovement)
+		Runtime:addEventListener("track4", player)
 
 	end
 
 	function player:setColor()
 		player:setFillColor(243, 132, 0)
 	end
+	
+	function player:shoot()
+		print ("SHOOT!")
+
+	end
 
 	function player:track4( event )
-		player.move()
+		player.shoot()
+	--	player.move()
 	end
 
 	function player:removePlayer()
