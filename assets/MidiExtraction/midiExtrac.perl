@@ -1,6 +1,6 @@
-\#!/usr/bin/perl
+#!/usr/bin/perl
 
-open (MYFILE, 'topGearMidi.txt');
+open (MYFILE, 'topGear.txt');
 
 $printTo = 0;
 
@@ -18,14 +18,12 @@ while (<MYFILE>) {
     open (FILE1, $tempo);
     open (FILE2, $notes);
 
-    if ($temp =~ /BA\s+(\d+)\s+CR\s+(\S+).*\s+NT\s*(\S+)/) {
+    if ($temp =~ /CR\s+(\S+).*\s+NT\s*(\S+)/) {
       $bar = int($1);
 
-      $qn = eval($2);
-      $qn = $qn/4;
-      $qn = $bar + $qn;
-
-      $note = $3; 
+      $qn = eval($1);
+ 
+      $note = $2; 
 
       #Print to Files
       print FILE1 $qn."\n";
