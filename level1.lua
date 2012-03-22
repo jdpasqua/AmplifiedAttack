@@ -247,13 +247,8 @@ new = function ( params )
 				-- We can't remove a body inside a collision event, so queue it to removal.
 				-- It will be removed on the next frame inside the game loop.
 				table.insert(toRemove, event.other)
-				if (event.other.type == "Skrillot") then
-					Runtime:removeEventListener("track7", event.other)
-				elseif (event.other.type == "Skrillot") then
-					Runtime:removeEventListener("track7", event.other)
-				else	
-					Runtime:removeEventListener("pulse", event.other)
-				end			
+				event.other._functionListeners = nil
+				event.other._tableListeners = nil		
 
 				-- Player collision - GAME OVER	
 			elseif self.name == "player" and event.other.name == "enemyBullet" then
