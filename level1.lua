@@ -12,9 +12,8 @@ new = function ( params )
 
 	_G.gameIsActive = true
 	local scoreText
-	local sounds
-	local score = 0
-	local toRemove = {}
+	_G.score = 0
+	_G.toRemove = {}
 	local background1
 	local background2
 	local halfPlayerWidth
@@ -226,47 +225,6 @@ new = function ( params )
 		timer.performWithDelay(playTime, myClosure)	
 	end
 
-	-- Take care of collisions
-	local function onCollision(self, event)
-		-- Bullet hit enemy
-		if self.name == "bullet" and event.other.name == "enemy" and _G.gameIsActive and event.other then --and event.other.alive == "yes"
-			-- Increase score
-			event.other.hp = event.other.hp - 1
-
-			if event.other.hp <= 0 then
-
-				score = score + 1
-				scoreText.text = score
-
-				--event.other.alive = "no"
-				-- Play Sound
-				audio.play(sounds.boom)
-
-				-- We can't remove a body inside a collision event, so queue it to removal.
-				-- It will be removed on the next frame inside the game loop.
-				table.insert(toRemove, event.other)
-				event.other._functionListeners = nil
-				event.other._tableListeners = nil		
-
-				-- Player collision - GAME OVER	
-			elseif self.name == "player" and event.other.name == "enemyBullet" then
-
-				event.other.isVisible = false
-
-				--audio.play(sounds.gameOver)
-
-				--local gameoverText = display.newText("Game Over!", 0, 0, "HelveticaNeue", 35)
-				--gameoverText:setTextColor(255, 255, 255)
-				--gameoverText.x = display.contentCenterX
-				--gameoverText.y = display.contentCenterY
-				--_G.gameLayer:insert(gameoverText)
-
-				-- This will stop the gameLoop
-				--_G.gameIsActive = false
-			end
-		end
-	end
-
 	-- Handler that gets notified when the alert closes
 	local function onPauseSelection( event )
 		print( "index => ".. event.index .. "    action => " .. event.action )
@@ -380,9 +338,11 @@ new = function ( params )
 	end
 
 	-- Spawn Enemy
-	local spawnEnemy = function ( event )
+	local function spawnEnemy (event)
+		print("SPAWN")
 		local basicBox = Skrillot.new()
 		basicBox.init()
+		timer.performWithDelay(3000, spawnEnemy)
 	end
 
 	-- update star locations and setcolor
@@ -463,7 +423,8 @@ new = function ( params )
 		pulseBeat()
 
 		_G.player = Player.new()
-		Runtime:addEventListener("track4", spawnEnemy)
+		--Runtime:addEventListener("track4", spawnEnemy)
+		spawnEnemy()
 		--------------------------------------------------------------------------------
 		-- Game loop
 		--------------------------------------------------------------------------------
@@ -491,10 +452,10 @@ new = function ( params )
 
 			if _G.gameIsActive then
 				-- Remove collided enemy planes
-				for i = 1, #toRemove do
-					if (toRemove[i] and toRemove[i].parent) then
-						toRemove[i].parent:remove(toRemove[i])
-						toRemove[i] = nil
+				for i = 1, #_G.toRemove do
+					if (_G.toRemove[i] and _G.toRemove[i].parent) then
+						_G.toRemove[i].parent:remove(_G.toRemove[i])
+						_G.toRemove[i] = nil
 					end
 				end
 
