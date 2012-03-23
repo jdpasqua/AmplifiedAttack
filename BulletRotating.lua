@@ -1,10 +1,9 @@
 module (..., package.seeall)
 
-function new(xPos, yPos, rotationAngle)
+function new(xPos, yPos, rotationAngle, isEnemy)
 	
 	local BasicBullet = require("BasicBullet")
-
-	local bullet = BasicBullet.new(xPos, yPos, "enemyBullet", "assets/graphics/bullet10.png", true)
+	local bullet = BasicBullet.new(xPos, yPos, "enemyBullet", "assets/graphics/bullet10.png", isEnemy)
 	
 	function bullet:init()
 		

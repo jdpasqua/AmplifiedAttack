@@ -61,7 +61,7 @@ function new(type)
 	function enemy:shoot()
 		-- Fire a bullet!
 		if (isShooting and enemy.x and enemy.y) then
-			bullet1 = BulletRotating.new(enemy.x, enemy.y, rotationAngle)
+			bullet1 = BulletRotating.new(enemy.x, enemy.y, rotationAngle, true)
 			rotationAngle = rotationAngle + 15
 			--local explosion = BulletExplosion.new(enemy.x, enemy.y)
 		end
