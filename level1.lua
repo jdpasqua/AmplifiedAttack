@@ -11,7 +11,6 @@ new = function ( params )
 	------------------
 
 	_G.gameIsActive = true
-	local scoreText
 	_G.score = 0
 	_G.toRemove = {}
 	local background1
@@ -339,10 +338,10 @@ new = function ( params )
 
 	-- Spawn Enemy
 	local function spawnEnemy (event)
-		print("SPAWN")
+	--	print("SPAWN")
 		local basicBox = Skrillot.new()
 		basicBox.init()
-		timer.performWithDelay(3000, spawnEnemy)
+		timer.performWithDelay(11000, spawnEnemy)
 	end
 
 	-- update star locations and setcolor
@@ -411,11 +410,11 @@ new = function ( params )
 		_G.gameLayer:insert(enemiesLayer)
 
 		-- Show the score
-		scoreText = display.newText(score, 0, 0, "HelveticaNeue", 35)
-		scoreText:setTextColor(255, 255, 255)
-		scoreText.x = 30
-		scoreText.y = 25
-		_G.gameLayer:insert(scoreText)
+		_G.scoreText = display.newText(score, 0, 0, "HelveticaNeue", 35)
+		_G.scoreText:setTextColor(255, 255, 255)
+		_G.scoreText.x = 30
+		_G.scoreText.y = 25
+		_G.gameLayer:insert(_G.scoreText)
 		btPause.x = 740
 		btPause.y = 25
 		localGroup:insert( btPause )

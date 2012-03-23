@@ -2,34 +2,47 @@ module (..., package.seeall)
 
 function new(xPos, yPos, name, image, isEnemyBullet)
 	
+	local bullet
+	if (image == "circle") then 
+		bullet = display.newCircle(xPos, yPos, 5)
+	else 
+		bullet = display.newImage(image, xPos, yPos)
+	end
+	
 	-- Take care of collisions
-	local function onCollision(self, event)
+	local function onCollision(event)
 		
-		print ("COLLISION")
+	--	print ("COLLISION: " .. event.object1.name .. " WITH " .. event.object2.name)
 		-- Bullet hit enemy
-		if self.name == "bullet" and event.other.name == "enemy" and _G.gameIsActive and event.other then --and event.other.alive == "yes"
-			-- Increase score
-			event.other.hp = event.other.hp - 1
 
-			if event.other.hp <= 0 then
+		--if (event.phase == "ended" and event.object1.name == "enemy" and event.object2.name == "playerBullet" and _G.gameIsActive and event.object2) then --and event.object2.alive == "yes"
+		if (event.object1.name == "enemy" and event.object2.name == "playerBullet") then
+			print("KILL ENEMY")
+			
+			-- Increase score
+			event.object1.hp = event.object1.hp - 1
+
+			if event.object1.hp <= 10 then
 
 				_G.score = _G.score + 1
-				_G.scoreText.text = score
+				print (_G.score)
+				_G.scoreText.text = _G.score
 
-				--event.other.alive = "no"
+				--event.object2.alive = "no"
 				-- Play Sound
 				--audio.play(_G.sounds.boom)
 
 				-- We can't remove a body inside a collision event, so queue it to removal.
 				-- It will be removed on the next frame inside the game loop.
-				table.insert(_G.toRemove, event.other)
-				event.other._functionListeners = nil
-				event.other._tableListeners = nil		
+				table.insert(_G.toRemove, event.object1)
+				event.object1._functionListeners = nil
+				event.object1._tableListeners = nil	
+				event.object1.isAlive = false	
 
 				-- Player collision - GAME OVER	
-			elseif self.name == "player" and event.other.name == "enemyBullet" then
+			elseif event.object1.name == "player" and event.object2.name == "enemyBullet" then
 
-				event.other.isVisible = false
+				event.object2.isVisible = false
 
 				--audio.play(sounds.gameOver)
 
@@ -43,13 +56,6 @@ function new(xPos, yPos, name, image, isEnemyBullet)
 				--_G.gameIsActive = false
 			end
 		end
-	end
-	
-	local bullet
-	if (image == "circle") then 
-		bullet = display.newCircle(xPos, yPos, 5)
-	else 
-		bullet = display.newImage(image, xPos, yPos)
 	end
 
 	local collisionFilter 
@@ -67,9 +73,9 @@ function new(xPos, yPos, name, image, isEnemyBullet)
 
 	bullet:setReferencePoint( display.CenterReferencePoint )
 	
-	bullet.onCollision = bullet.onCollision
-	bullet:addEventListener("collision", bullet)
-
+	--bullet.onCollision = bullet.onCollision
+	Runtime:addEventListener( "collision", onCollision )
+	
 	_G.bulletsLayer:insert(bullet)
 
 	return bullet
