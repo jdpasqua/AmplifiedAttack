@@ -23,6 +23,7 @@ function new(xPos, yPos)
 	function bullet:move()
 		local xSpeed
 		local ySpeed
+		local speed = 0.6
 		xSpeed = speed * (_G.player.x - bullet.x)
 		if (xSpeed < 0 and xSpeed > -150) then
 			xSpeed = -150
