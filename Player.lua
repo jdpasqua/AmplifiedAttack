@@ -2,6 +2,7 @@ module (..., package.seeall)
 
 function new()
 
+	local BulletRotating = require("BulletRotating")
 	local player = display.newImage("assets/graphics/antmaker.png")
 	local halfPlayerWidth
 	local halfPlayerHeight
@@ -32,6 +33,8 @@ function new()
 		-- Store half width, used on the game loop
 		halfPlayerWidth = player.contentWidth * .5
 		halfPlayerHeight = player.contentHeight * .5
+		
+		player:setReferencePoint( display.CenterReferencePoint )
 
 		local playerCollisionFilter = { categoryBits = 1, maskBits = 12 }
 
@@ -56,6 +59,7 @@ function new()
 	
 	function player:shoot()
 		print ("SHOOT!")
+		local bullet1 = BulletRotating.new(player.x - 11, player.y - 10, 0, false)
 
 	end
 
