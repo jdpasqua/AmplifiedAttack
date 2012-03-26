@@ -9,11 +9,11 @@ function new(type, image, trackno, hp)
 	enemy.name = "enemy"
 	enemy.type = "Skrillot"
 	enemy.trackno = trackno
-	enemy.alive = "yes"
+	enemy.isAlive = "alive"
 	enemy.hp = hp
 
 	-- Physics
-	physics.addBody(enemy, "dynamic", {bounce = 0, filter = enemyCollisionFilter})
+	physics.addBody(enemy, "kinematic", {density = 20, bounce = 0, filter = enemyCollisionFilter})
 
 	enemy:setReferencePoint( display.CenterReferencePoint )
 

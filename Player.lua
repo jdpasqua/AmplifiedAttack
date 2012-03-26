@@ -58,8 +58,8 @@ function new()
 	end
 	
 	function player:shoot()
-		print ("SHOOT!")
-		local bullet1 = BulletRotating.new(player.x - 11, player.y - 10, 0, false)
+		--print ("SHOOT!")
+		local bullet1 = BulletRotating.new(player.x - 18, player.y - 10, 0, false, "assets/graphics/bullet11.png")
 
 	end
 
