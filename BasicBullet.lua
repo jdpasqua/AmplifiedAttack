@@ -12,13 +12,8 @@ function new(xPos, yPos, name, image, isEnemyBullet)
 	-- Take care of collisions
 	local function onCollision(event)
 		
-	--	print ("COLLISION: " .. event.object1.name .. " WITH " .. event.object2.name)
-		-- Bullet hit enemy
-
-		--if (event.phase == "ended" and event.object1.name == "enemy" and event.object2.name == "playerBullet" and _G.gameIsActive and event.object2) then --and event.object2.alive == "yes"
-		if (event.object1.name == "enemy" and event.object2.name == "playerBullet") then
-			print("KILL ENEMY")
-			
+		if (event.object1.name == "enemy" and event.object2.name == "playerBullet" and event.object1.isAlive == "alive") then
+		
 			-- Increase score
 			event.object1.hp = event.object1.hp - 1
 
@@ -37,7 +32,7 @@ function new(xPos, yPos, name, image, isEnemyBullet)
 				table.insert(_G.toRemove, event.object1)
 				event.object1._functionListeners = nil
 				event.object1._tableListeners = nil	
-				event.object1.isAlive = false	
+				event.object1.isAlive = "dead"	
 
 				-- Player collision - GAME OVER	
 			elseif event.object1.name == "player" and event.object2.name == "enemyBullet" then
