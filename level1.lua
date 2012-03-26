@@ -66,7 +66,7 @@ new = function ( params )
 	playhead[10] = 1
 	playhead[11] = 1
 	
-	--swarms - this indicates how many enemies to send out each swarm (swarm = per note)
+	--swarms - this indicates how many enemies to send out each swarm (swarm = per note). Limit the notes in spawnEnemy funct.
 	local swarms = {2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
 	--these are enemy entrance/spawn instructions, even tho this is hard coded now, it will be easy to make a function to generate 
 	-- patterns eventually. Separate swarms with newlines to easily visualize. Max number of enemies can be set below.(see spawnData)
@@ -80,10 +80,13 @@ new = function ( params )
 	spawnEntrance[3] = {enemy = "Skrillot", xpos = 4 * display.contentWidth / 8, ypos = -50, direction = "straight", speed = 1000, distance = display.contentHeight / 2 - 300}
 
 	spawnEntrance[4] = {enemy = "Skrillot", xpos = display.contentWidth / 6 , ypos = -30, direction = "straight", speed = 2000, distance = display.contentHeight / 2 - 100}
+	
 	spawnEntrance[5] = {enemy = "Skrillot", xpos = 2 * display.contentWidth / 6, ypos = -30, direction = "straight", speed = 2000, distance = display.contentHeight / 2 - 50}
 
 	spawnEntrance[6] = {enemy = "Skrillot", xpos = 3 * display.contentWidth / 6, ypos = -30, direction = "straight", speed = 2000, distance = display.contentHeight / 2}
+	
 	spawnEntrance[7] = {enemy = "Skrillot", xpos = 4 * display.contentWidth / 6, ypos = -30, direction = "straight", speed = 2000, distance = display.contentHeight / 2 - 50}
+	
 	spawnEntrance[8] = {enemy = "Skrillot", xpos = 5 * display.contentWidth / 6, ypos = -30, direction = "straight", speed = 2000, distance = display.contentHeight / 2 - 100}
 	
 	local spawnData = {} -- {current number, max number, [...]}
@@ -365,7 +368,7 @@ new = function ( params )
 --	if (event.note == 'F--') then
 
 -- spawn enemy
-
+		local swarmed = false
 		for i = 1, swarms[1] do
 --			print ("SWARM!")
 			if (spawnData["Skrillot"].count < spawnData["Skrillot"].maxNum) then
@@ -377,13 +380,32 @@ new = function ( params )
 					table.remove(spawnEntrance, 1)
 					basicBox.init()
 					spawnData["Skrillot"].count = spawnData["Skrillot"].count + 1
+					swarmed = true
 				end
 			end
 		end
-		table.remove(swarms, 1)
+		if swarmed then
+			table.remove(swarms, 1)
+		end
 	--	timer.performWithDelay(11000, spawnEnemy)
 	end
-
+--[[	
+	local function generateEntrances()
+		-- swarmEnemies = random, ratio, or setType
+		-- formation
+		for i = 1, #swarms do 
+			if swarms[i] == 1 then
+				
+			elseif swarms[i] == 2 then
+			
+			elseif swarms[i] == 3 then
+				
+			elseif swarms[i] == 4 	
+			
+			end
+		end
+	end
+]]
 	-- update star locations and setcolor
 	local function updateStars(event)
 		if (_G.gameIsActive) then
