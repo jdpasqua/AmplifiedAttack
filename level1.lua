@@ -66,6 +66,29 @@ new = function ( params )
 	playhead[10] = 1
 	playhead[11] = 1
 	
+	--swarms - this indicates how many enemies to send out each swarm (swarm = per note)
+	local swarms = {2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
+	--these are enemy entrance/spawn instructions, even tho this is hard coded now, it will be easy to make a function to generate 
+	-- patterns eventually. Separate swarms with newlines to easily visualize. Max number of enemies can be set below.(see spawnData)
+	-- this will be heavily changed in structure as well, but thought I would commit for now anyways
+	local spawnEntrance = {}
+	--Swarm#1
+	spawnEntrance[1] = {enemy = "Skrillot", xpos = display.contentWidth / 8 , ypos = -50, direction = "straight", speed = 500, distance = display.contentHeight / 2 - 400}
+	spawnEntrance[2] = {enemy = "Skrillot", xpos = 7 * display.contentWidth / 8, ypos = -50, direction = "straight", speed = 500, distance = display.contentHeight / 2 - 400}
+
+	--Swarm#2
+	spawnEntrance[3] = {enemy = "Skrillot", xpos = 4 * display.contentWidth / 8, ypos = -50, direction = "straight", speed = 1000, distance = display.contentHeight / 2 - 300}
+
+	spawnEntrance[4] = {enemy = "Skrillot", xpos = display.contentWidth / 6 , ypos = -30, direction = "straight", speed = 2000, distance = display.contentHeight / 2 - 100}
+	spawnEntrance[5] = {enemy = "Skrillot", xpos = 2 * display.contentWidth / 6, ypos = -30, direction = "straight", speed = 2000, distance = display.contentHeight / 2 - 50}
+
+	spawnEntrance[6] = {enemy = "Skrillot", xpos = 3 * display.contentWidth / 6, ypos = -30, direction = "straight", speed = 2000, distance = display.contentHeight / 2}
+	spawnEntrance[7] = {enemy = "Skrillot", xpos = 4 * display.contentWidth / 6, ypos = -30, direction = "straight", speed = 2000, distance = display.contentHeight / 2 - 50}
+	spawnEntrance[8] = {enemy = "Skrillot", xpos = 5 * display.contentWidth / 6, ypos = -30, direction = "straight", speed = 2000, distance = display.contentHeight / 2 - 100}
+	
+	local spawnData = {} -- {current number, max number, [...]}
+	spawnData["Skrillot"] = {count = 0, maxNum = 5}
+	
 	local bpm = 136;
 	local timeConvert = 0;	
 
@@ -200,7 +223,7 @@ new = function ( params )
 		local curTime = system.getTimer()--os.difftime(os.time(), launchTime)
 		local pos = playhead[trackno]
 		local eName = "track" .. trackno
-		local event = {name=eName}--, note=notes[trackno][pos]}
+		local event = {name=eName, note=notes[trackno][pos]}
 		local targetTime = tempo[trackno][pos] * timeConvert
 		
 	--	print (string.format("..............%f\n", pos))
@@ -339,9 +362,26 @@ new = function ( params )
 	-- Spawn Enemy
 	local function spawnEnemy (event)
 	--	print("SPAWN")
-		local basicBox = Skrillot.new()
-		basicBox.init()
-		timer.performWithDelay(11000, spawnEnemy)
+--	if (event.note == 'F--') then
+
+-- spawn enemy
+
+		for i = 1, swarms[1] do
+--			print ("SWARM!")
+			if (spawnData["Skrillot"].count < spawnData["Skrillot"].maxNum) then
+				spawnData["Skrillot"].count = spawnData["Skrillot"].count + 1 
+--print ("VACANCY")
+				if (spawnEntrance[1].enemy == "Skrillot") then
+--					print ("FINALIZED")
+					local basicBox = Skrillot.new(1, spawnEntrance[1])
+					table.remove(spawnEntrance, 1)
+					basicBox.init()
+					spawnData["Skrillot"].count = spawnData["Skrillot"].count + 1
+				end
+			end
+		end
+		table.remove(swarms, 1)
+	--	timer.performWithDelay(11000, spawnEnemy)
 	end
 
 	-- update star locations and setcolor
@@ -422,8 +462,8 @@ new = function ( params )
 		pulseBeat()
 
 		_G.player = Player.new()
-		--Runtime:addEventListener("track4", spawnEnemy)
-		spawnEnemy()
+		Runtime:addEventListener("track4", spawnEnemy)
+	--	spawnEnemy()
 		--------------------------------------------------------------------------------
 		-- Game loop
 		--------------------------------------------------------------------------------

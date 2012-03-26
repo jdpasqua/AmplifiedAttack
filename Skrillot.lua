@@ -1,6 +1,6 @@
 module (..., package.seeall)
 
-function new(type)
+function new(type, entrance)
 	
 	local BulletRotating = require("BulletRotating")
 	local BulletHoming = require("BulletHoming")
@@ -24,18 +24,19 @@ function new(type)
 	function enemy:init()	
 		
 		-- Position
-		enemy.x = math.floor(math.random(display.contentWidth))
-		enemy.y = math.floor(math.random(display.contentHeight / 2) - display.contentHeight + 30)
+		enemy.x = entrance.xpos --math.floor(math.random(display.contentWidth))
+		enemy.y = entrance.ypos --math.floor(math.random(display.contentHeight / 2) - display.contentHeight + 30)
 		
 	--	enemy.setColor()
 		
-		transition.to(enemy, {
-		                time = 4000,
-		                x = math.floor(math.random(display.contentWidth - 80) + 40),
-		                y = math.floor(math.random(display.contentHeight / 2)),
-		                transition = easingx.easeOutBack,
-		 				onComplete = enemy.enableShooting })
-						
+		if (entrance.direction == "straight") then
+			transition.to(enemy, {
+		                	time = entrance.speed,
+		                	x = enemy.x, --math.floor(math.random(display.contentWidth - 80) + 40),
+		                	y = enemy.y + entrance.distance, -- math.floor(math.random(display.contentHeight / 2)),
+		                	--transition = easingx.easeIn, --OutBack,
+		 					onComplete = enemy.enableShooting })
+		end
 		-- Event Listener
 		Runtime:addEventListener( trackno, enemy )
 		
