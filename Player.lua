@@ -38,8 +38,10 @@ function new()
 
 		local playerCollisionFilter = { categoryBits = 1, maskBits = 12 }
 
+		triangularShape = { 0, -30, 30, 40, -30, 40 }
+
 		-- Add a physics body. It is kinematic, so it doesn't react to gravity.
-		physics.addBody(player, "kinematic", {bounce = 0, filter = playerCollisionFilter})
+		physics.addBody(player, "kinematic", {bounce = 0, filter = playerCollisionFilter, shape = triangularShape})
 
 		player.name = "player"
 		player:toFront()
