@@ -67,13 +67,22 @@ new = function ( params )
 	playhead[11] = 1
 	
 	--swarms - this indicates how many enemies to send out each swarm (swarm = per note). Limit the notes in spawnEnemy funct.
-	local swarms = {2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
+	--each element in the array is 1 swarm. The next swarm doesn't begin spawning until 
+	local swarms = {{{'s', 's'}, {'h'}},
+					{{'s', 's'}, {'h'}},
+					{{'s', 's'}, {'h'}},
+					{{'s', 's'}, {'h'}},
+					{{'s', 's'}, {'h'}},
+					{{'s', 's'}, {'h'}},
+					{{'s', 's'}, {'h'}},
+					{{'s', 's'}, {'h'}},
+					{{'s', 's'}, {'h'}}}
 	--these are enemy entrance/spawn instructions, even tho this is hard coded now, it will be easy to make a function to generate 
 	-- patterns eventually. Separate swarms with newlines to easily visualize. Max number of enemies can be set below.(see spawnData)
 	-- this will be heavily changed in structure as well, but thought I would commit for now anyways
 	local spawnEntrance = {}
 	--Swarm#1
-	spawnEntrance[1] = {enemy = "Skrillot", xpos = display.contentWidth / 8 , ypos = -50, direction = "straight", speed = 500, distance = display.contentHeight / 2 - 400}
+--[[	spawnEntrance[1] = {enemy = "Skrillot", xpos = display.contentWidth / 8 , ypos = -50, direction = "straight", speed = 500, distance = display.contentHeight / 2 - 400}
 	spawnEntrance[2] = {enemy = "Skrillot", xpos = 7 * display.contentWidth / 8, ypos = -50, direction = "straight", speed = 500, distance = display.contentHeight / 2 - 400}
 
 	--Swarm#2
@@ -88,9 +97,10 @@ new = function ( params )
 	spawnEntrance[7] = {enemy = "Skrillot", xpos = 4 * display.contentWidth / 6, ypos = -30, direction = "straight", speed = 2000, distance = display.contentHeight / 2 - 50}
 	
 	spawnEntrance[8] = {enemy = "Skrillot", xpos = 5 * display.contentWidth / 6, ypos = -30, direction = "straight", speed = 2000, distance = display.contentHeight / 2 - 100}
-	
+]]	
 	local spawnData = {} -- {current number, max number, [...]}
 	spawnData["Skrillot"] = {count = 0, maxNum = 5}
+	_G.enemyCount = 0
 	
 	local bpm = 136;
 	local timeConvert = 0;	
@@ -366,16 +376,41 @@ new = function ( params )
 	local function spawnEnemy (event)
 	--	print("SPAWN")
 --	if (event.note == 'F--') then
+--local swarmed = false
+if swarms[1][1] then
+	for i = 1, #swarms[1][1] do
+	--	if (spawnData["Skrillot"].count < spawnData["Skrillot"].maxNum) then
+	--		spawnData["Skrillot"].count = spawnData["Skrillot"].count + 1 
+			if (spawnEntrance[1].enemy == "Skrillot") then
+				local basicBox = Skrillot.new(1, spawnEntrance[1])
+				table.remove(spawnEntrance, 1)
+				basicBox.init()
+				spawnData["Skrillot"].count = spawnData["Skrillot"].count + 1
+				swarmed = true
+				_G.enemyCount = _G.enemyCount + 1
+			end
+	--	end
+	end
+	table.remove(swarms[1], 1)
+else 
+--	print ("TESTING")
+	if (swarms[1] and _G.enemyCount == 0) then
+--		print ("123")
+		table.remove(swarms, 1)
+	end
+end 
+--[[if swarmed then
+	table.remove(swarms, 1)
+end]]
+end
 
--- spawn enemy
-		local swarmed = false
+
+-- spawn enemy old
+--[[		local swarmed = false
 		for i = 1, swarms[1] do
---			print ("SWARM!")
 			if (spawnData["Skrillot"].count < spawnData["Skrillot"].maxNum) then
 				spawnData["Skrillot"].count = spawnData["Skrillot"].count + 1 
---print ("VACANCY")
 				if (spawnEntrance[1].enemy == "Skrillot") then
---					print ("FINALIZED")
 					local basicBox = Skrillot.new(1, spawnEntrance[1])
 					table.remove(spawnEntrance, 1)
 					basicBox.init()
@@ -387,25 +422,31 @@ new = function ( params )
 		if swarmed then
 			table.remove(swarms, 1)
 		end
+		]]
 	--	timer.performWithDelay(11000, spawnEnemy)
-	end
---[[	
+	--end
+	
 	local function generateEntrances()
 		-- swarmEnemies = random, ratio, or setType
 		-- formation
 		for i = 1, #swarms do 
-			if swarms[i] == 1 then
+			for j = 1, #swarms[i] do 
+				--for k = 2, swarms[i][j][1] do 
+					if #swarms[i][j] == 1 then
+						table.insert(spawnEntrance, {enemy = "Skrillot", xpos = display.contentWidth / 2 , ypos = -50, direction = "straight", speed = 500, distance = display.contentHeight / 2 - 300})
+					elseif #swarms[i][j] == 2 then
+						table.insert(spawnEntrance, {enemy = "Skrillot", xpos = display.contentWidth / 8 , ypos = -50, direction = "straight", speed = 500, distance = display.contentHeight / 2 - 400})
+						table.insert(spawnEntrance, {enemy = "Skrillot", xpos = 7 * display.contentWidth / 8 , ypos = -50, direction = "straight", speed = 500, distance = display.contentHeight / 2 - 400})
+					elseif swarms[i] == 3 then
 				
-			elseif swarms[i] == 2 then
+					elseif swarms[i] == 4 then
 			
-			elseif swarms[i] == 3 then
-				
-			elseif swarms[i] == 4 	
-			
-			end
+					end
+				--end
+			end 
 		end
 	end
-]]
+
 	-- update star locations and setcolor
 	local function updateStars(event)
 		if (_G.gameIsActive) then
@@ -507,6 +548,10 @@ new = function ( params )
 				trackEvent(6)
 				trackEvent(7)
 				trackEvent(8)
+				trackEvent(9)
+				trackEvent(10)
+				trackEvent(11)
+				generateEntrances()
 				--print (string.format("===================TIME CONVERT=%d", timeConvert)) -- TIME CONVERT CHECK
 			end
 

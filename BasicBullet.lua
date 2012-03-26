@@ -41,6 +41,8 @@ function new(xPos, yPos, name, image, isEnemyBullet)
 				print (_G.score)
 				_G.scoreText.text = _G.score
 
+				_G.enemyCount = _G.enemyCount - 1
+
 				--event.object2.alive = "no"
 				-- Play Sound
 				--audio.play(_G.sounds.boom)
