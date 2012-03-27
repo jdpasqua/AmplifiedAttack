@@ -1,5 +1,5 @@
 module(..., package.seeall)
-
+require "sprite"
 --====================================================================--
 -- SCENE: MAIN MENU
 --====================================================================--
@@ -69,7 +69,7 @@ new = function ( params )
 	--swarms - this indicates how many enemies to send out each swarm (swarm = per note). Limit the notes in spawnEnemy funct.
 	--each element in the array is 1 swarm. The next swarm doesn't begin spawning until 
 	local swarms = {{{'s', 's'}, {'h'}},
-					{{'s', 's'}, {'h'}},
+					{{'s', 's'}, {}, {}, {'h'}},
 					{{'s', 's'}, {'h'}},
 					{{'s', 's'}, {'h'}},
 					{{'s', 's'}, {'h'}},
@@ -128,9 +128,17 @@ new = function ( params )
 	textureCache[4] = display.newImage("assets/graphics/bt_play.png"); 
 	textureCache[4].isVisible = false;
 	local halfEnemyWidth = textureCache[1].contentWidth * .5
-	local sounds = {
+	local pow_sheet = sprite.newSpriteSheet("assets/graphics/pow2.png", 200, 145)
+	_G.pow_Set = sprite.newSpriteSet(pow_sheet, 1, 6)
+--	local powSet1 = sprite.newSpriteSet
+--	sprite.add( pow_sheet, "pow", 1, 4, 1000, 0 )
+	_G.trumpetQ = 1;
+	_G.trumpet = {
 		--	pew = audio.loadSound("assets/sounds/pew.wav"),
-		--	boom = audio.loadSound("assets/sounds/boom.wav"),
+			audio.loadSound("assets/sounds/trumpet_Bb.mp3"),
+			audio.loadSound("assets/sounds/trumpet_Eb.mp3"),
+			audio.loadSound("assets/sounds/trumpet_Db.mp3")
+			
 		--	gameOver = audio.loadSound("assets/sounds/gameOver.wav")
 	}
 
@@ -142,7 +150,7 @@ new = function ( params )
 	-----------------------
 
 	-- Background music
-	backgroundMusic = audio.loadStream("assets/sounds/TopGear2.mp3")
+	backgroundMusic = audio.loadStream("assets/sounds/TopGear3.mp3")
 	backgroundMusicChannel = audio.play(backgroundMusic, { channel=1, loops=-1, fadein=0 })
 
 	-- Player Music
@@ -377,54 +385,36 @@ new = function ( params )
 	--	print("SPAWN")
 --	if (event.note == 'F--') then
 --local swarmed = false
-if swarms[1][1] then
-	for i = 1, #swarms[1][1] do
-	--	if (spawnData["Skrillot"].count < spawnData["Skrillot"].maxNum) then
-	--		spawnData["Skrillot"].count = spawnData["Skrillot"].count + 1 
-			if (spawnEntrance[1].enemy == "Skrillot") then
-				local basicBox = Skrillot.new(1, spawnEntrance[1])
-				table.remove(spawnEntrance, 1)
-				basicBox.init()
-				spawnData["Skrillot"].count = spawnData["Skrillot"].count + 1
-				swarmed = true
-				_G.enemyCount = _G.enemyCount + 1
-			end
-	--	end
-	end
-	table.remove(swarms[1], 1)
-else 
---	print ("TESTING")
-	if (swarms[1] and _G.enemyCount == 0) then
---		print ("123")
-		table.remove(swarms, 1)
-	end
-end 
---[[if swarmed then
-	table.remove(swarms, 1)
-end]]
-end
-
-
--- spawn enemy old
---[[		local swarmed = false
-		for i = 1, swarms[1] do
-			if (spawnData["Skrillot"].count < spawnData["Skrillot"].maxNum) then
-				spawnData["Skrillot"].count = spawnData["Skrillot"].count + 1 
+		if swarms[1][1] then
+			for i = 1, #swarms[1][1] do
+				--	if (spawnData["Skrillot"].count < spawnData["Skrillot"].maxNum) then
+				--		spawnData["Skrillot"].count = spawnData["Skrillot"].count + 1 
 				if (spawnEntrance[1].enemy == "Skrillot") then
-					local basicBox = Skrillot.new(1, spawnEntrance[1])
+					basicBox = Skrillot.new(1, spawnEntrance[1])
+				else
+					basicBox = HomingHornet.new(1, spawnEntrance[1])
+				end
 					table.remove(spawnEntrance, 1)
 					basicBox.init()
 					spawnData["Skrillot"].count = spawnData["Skrillot"].count + 1
 					swarmed = true
-				end
+					_G.enemyCount = _G.enemyCount + 1
+			--	end
+				--	end
 			end
-		end
-		if swarmed then
-			table.remove(swarms, 1)
-		end
-		]]
-	--	timer.performWithDelay(11000, spawnEnemy)
-	--end
+			table.remove(swarms[1], 1)
+		else 
+			--	print ("TESTING")
+			if (swarms[1] and _G.enemyCount == 0) then
+				--		print ("123")
+				table.remove(swarms, 1)
+			end
+		end 
+--[[if swarmed then
+	table.remove(swarms, 1)
+end]]
+	end
+
 	
 	local function generateEntrances()
 		-- swarmEnemies = random, ratio, or setType
