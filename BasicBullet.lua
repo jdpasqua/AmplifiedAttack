@@ -93,7 +93,7 @@ function new(xPos, yPos, name, image, isEnemyBullet)
 	Runtime:addEventListener( "collision", onCollision )
 
 	_G.bulletsLayer:insert(bullet)
-	timer.performWithDelay(7000, destroyBullet)
+	timer.performWithDelay(10000, destroyBullet)
 
 	return bullet
 
