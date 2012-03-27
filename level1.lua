@@ -175,7 +175,8 @@ new = function ( params )
 	local Skrillot = require("Skrillot")
 	local HomingHornet = require("HomingHornet")
 	local Player = require("Player")
-
+	local TrackSwitching = require("trackSwitching")
+	local Boundaries = require("boundaries")
 
 	------------------
 	-- Groups
@@ -516,7 +517,11 @@ end]]
 
 		_G.player = Player.new()
 		Runtime:addEventListener("track4", spawnEnemy)
-	--	spawnEnemy()
+
+		_G.trackButtons = TrackSwitching.new()
+		
+		local boundaries = Boundaries.new()
+
 		--------------------------------------------------------------------------------
 		-- Game loop
 		--------------------------------------------------------------------------------
@@ -567,7 +572,20 @@ end]]
 			Runtime:addEventListener("enterFrame", updateStars)		
 
 	end	
+	
+	--[[
+	local monitorMem = function()
 
+	    collectgarbage()
+	    print( "MemUsage: " .. collectgarbage("count") )
+
+	    local textMem = system.getInfo( "textureMemoryUsed" ) / 1000000
+	    print( "TexMem:   " .. textMem )
+	end
+
+	Runtime:addEventListener( "enterFrame", monitorMem )
+	--]]
+	
 	initVars()
 
 	return localGroup

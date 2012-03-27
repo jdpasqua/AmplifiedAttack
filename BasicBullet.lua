@@ -1,6 +1,6 @@
 module (..., package.seeall)
 
-function new(xPos, yPos, name, image, isEnemyBullet)
+function new(xPos, yPos, name, image, isEnemyBullet, isBounded)
 
 	local bullet
 	if (image == "circle") then 
@@ -19,9 +19,9 @@ function new(xPos, yPos, name, image, isEnemyBullet)
 
 	-- Take care of collisions
 	local function onCollision(event)
-
+		
 	--	print ("COLLISION: " .. event.object1.name .. " WITH " .. event.object2.name)
-
+		
 		if (event.object1.name == "enemy" and event.object2.name == "playerBullet" 
 			and event.object1.isAlive == "alive" and event.object2.isActive == "active") then
 
@@ -74,11 +74,13 @@ function new(xPos, yPos, name, image, isEnemyBullet)
 				event.object1.isAlive = "dead"	
 			end
 		-- Player was hit!	
-		elseif event.object1.name == "player" and event.object2.name == "enemyBullet" then
+		elseif (event.object1.name == "player" and event.object2.name == "enemyBullet" and event.object2.isActive == "active") then			
 			-- destroy the enemy bullet
 			table.insert(_G.toRemove, event.object2)
+			event.object2.isVisible = false
 			event.object2._functionListeners = nil
 			event.object2._tableListeners = nil
+			event.object2.isActive = "inactive"
 
 			--audio.play(sounds.gameOver)
 
@@ -90,13 +92,22 @@ function new(xPos, yPos, name, image, isEnemyBullet)
 
 			-- This will stop the gameLoop
 			--_G.gameIsActive = false
-		end
+		
+		elseif (event.object1.name == "Boundary" and event.object2.isActive == "active") then
+			table.insert(_G.toRemove, event.object2)
+			event.object2.isVisible = false
+			event.object2._functionListeners = nil
+			event.object2._tableListeners = nil
+			event.object2.isActive = "inactive"
+		end	
 	end
 
 	local collisionFilter 
-	if (isEnemyBullet) then
+	if (isEnemyBullet and (isBounded == false)) then
 		collisionFilter = { categoryBits = 8, maskBits = 1 }
-	else
+	elseif (isEnemyBullet and isBounded) then
+		collisionFilter = { categoryBits = 16, maskBits = 33 }
+	elseif (isEnemyBullet == false) then
 		collisionFilter = { categoryBits = 2, maskBits = 4 }
 	end
 
@@ -112,7 +123,7 @@ function new(xPos, yPos, name, image, isEnemyBullet)
 	Runtime:addEventListener( "collision", onCollision )
 
 	_G.bulletsLayer:insert(bullet)
-	timer.performWithDelay(10000, destroyBullet)
+	--timer.performWithDelay(10000, destroyBullet)
 
 	return bullet
 

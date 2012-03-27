@@ -15,7 +15,7 @@ function new(xPos, yPos, rotationAngle, isEnemy, image)
 		image = "assets/graphics/bullet10.png"
 	end
 	
-	local bullet = BasicBullet.new(xPos, yPos, name, image, isEnemy)
+	local bullet = BasicBullet.new(xPos, yPos, name, image, isEnemy, true)
 	
 	function bullet:init()
 		

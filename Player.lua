@@ -37,7 +37,7 @@ function new()
 		
 		player:setReferencePoint( display.CenterReferencePoint )
 
-		local playerCollisionFilter = { categoryBits = 1, maskBits = 12 }
+		local playerCollisionFilter = { categoryBits = 1, maskBits = 28 }
 
 		triangularShape = { 0, -30, 30, 40, -30, 40 }
 
