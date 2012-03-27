@@ -1,6 +1,6 @@
 module (..., package.seeall)
 
-function new(type)
+function new(type, entrance)
 	
 	local BulletRotating = require("BulletRotating")
 	local BulletHoming = require("BulletHoming")
@@ -8,7 +8,7 @@ function new(type)
 	local BulletExplosion = require ("BulletExplosion")
 	local easingx  = require("easing")
 	
-	local box = display.newImage("assets/graphics/HomingHornet.png")
+	local box = display.newImage("assets/graphics/enemy1.png") --HomingHornet.png")
 	
 	local bullet1
 	local rotationAngle = 135
@@ -34,15 +34,15 @@ function new(type)
 		box:setReferencePoint( display.CenterReferencePoint )
 		
 		-- Position
-		box.x = math.floor(math.random(display.contentWidth))
-		box.y = math.floor(math.random(display.contentHeight / 2) - display.contentHeight + 30)
+		box.x = entrance.xpos --math.floor(math.random(display.contentWidth))
+		box.y = entrance.ypos --math.floor(math.random(display.contentHeight / 2) - display.contentHeight + 30)
 		
 	--	box.setColor()
 		
 		transition.to(box, {
-		                time = 4000,
-		                x = math.floor(math.random(display.contentWidth - 80) + 40),
-		                y = math.floor(math.random(display.contentHeight / 2)),
+		                time = entrance.speed,
+		                x = box.x, --math.floor(math.random(display.contentWidth - 80) + 40),
+		                y = box.y + entrance.distance, --math.floor(math.random(display.contentHeight / 2)),
 		                transition = easingx.easeOutBack,
 		 				onComplete = box.enableShooting })
 						

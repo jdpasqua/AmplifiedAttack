@@ -45,8 +45,18 @@ function new(xPos, yPos, name, image, isEnemyBullet)
 
 				--event.object2.alive = "no"
 				-- Play Sound
-				--audio.play(_G.sounds.boom)
-
+				audio.setVolume (0.30, {channel=3})
+				audio.play(_G.trumpet[_G.trumpetQ], {channel=3})
+				_G.trumpetQ = _G.trumpetQ + 1
+				if _G.trumpetQ > #_G.trumpet then
+					_G.trumpetQ = 1
+				end
+				sprite.add( _G.pow_Set, "pow", 1, 6, 300, -1 )
+				local powInst = sprite.newSprite ( _G.pow_Set )
+				powInst.x = event.object1.x
+				powInst.y = event.object1.y
+				powInst:prepare("pow")
+				powInst:play()
 				-- We can't remove a body inside a collision event, so queue it to removal.
 				-- It will be removed on the next frame inside the game loop.
 				table.insert(_G.toRemove, event.object1)
