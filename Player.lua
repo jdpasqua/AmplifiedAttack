@@ -6,6 +6,7 @@ function new()
 	local player = display.newImage("assets/graphics/antmaker.png")
 	local halfPlayerWidth
 	local halfPlayerHeight
+	local currentTrack = "track4"
 	
 	--------------------------------------------------------------------------------
 	-- Basic controls
@@ -51,7 +52,7 @@ function new()
 		-- Add to main layer
 		_G.gameLayer:insert(player)
 		player:addEventListener("touch", playerMovement)
-		Runtime:addEventListener("track4", player)
+		Runtime:addEventListener(currentTrack, player)
 
 	end
 
@@ -60,21 +61,32 @@ function new()
 	end
 	
 	function player:shoot()
-		--print ("SHOOT!")
 		local bullet1 = BulletRotating.new(player.x - 18, player.y - 10, 0, false, "assets/graphics/bullet11.png")
 
 	end
 
 	function player:track4( event )
 		player.shoot()
-	--	player.move()
+	end
+	
+	function player:track9( event )
+		player.shoot()
+	end
+	
+	function player:track10( event )
+		player.shoot()
 	end
 
 	function player:removePlayer()
-		Runtime:removeEventListener("track4", player)
+		Runtime:removeEventListener(currentTrack, player)
 		player:removeSelf()
 	end
 
+	function player:switchTrack(nextTrack)
+		Runtime:removeEventListener(currentTrack, player)
+		Runtime:addEventListener(nextTrack, player)
+		currentTrack = nextTrack
+	end
 
 	player:init()	
 
