@@ -45,8 +45,17 @@ function new(xPos, yPos, name, image, isEnemyBullet)
 
 				--event.object2.alive = "no"
 				-- Play Sound
-				audio.setVolume (0.30, {channel=3})
-				audio.play(_G.trumpet[_G.trumpetQ], {channel=3})
+				local chan = 3
+				if (audio.isChannelPlaying( 3 )) then
+					if (audio.isChannelPlaying( 4 )) then
+						chan = 5
+					else
+						chan = 4
+					end					
+				end
+				audio.setVolume (0.30, {channel=chan})
+					
+				audio.play(_G.trumpet[_G.trumpetQ], {channel=chan})
 				_G.trumpetQ = _G.trumpetQ + 1
 				if _G.trumpetQ > #_G.trumpet then
 					_G.trumpetQ = 1
