@@ -64,6 +64,8 @@ function new(xPos, yPos, name, image, isEnemyBullet, isBounded)
 				local powInst = sprite.newSprite ( _G.pow_Set )
 				powInst.x = event.object1.x
 				powInst.y = event.object1.y
+				powInst.xScale = 2
+				powInst.yScale = 2
 				powInst:prepare("pow")
 				powInst:play()
 				-- We can't remove a body inside a collision event, so queue it to removal.
