@@ -8,7 +8,8 @@ function new(xPos, yPos, trackno)
 	
 	function bullet:removeBullet()
 		Runtime:removeEventListener("track11", bullet)
-		bullet:removeSelf()
+		display.remove(bullet)
+		bullet = nil
 	end
 
 	function bullet:init()

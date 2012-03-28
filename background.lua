@@ -15,7 +15,6 @@ module (..., package.seeall)
 
 	local function drawStars() 
 		for i = 1, stars_total do
-			print ("Dsf")
 			local star = {} 
 			star.object = display.newCircle(math.random(display.contentWidth),math.random(display.contentHeight),math.random(star_radius_min,star_radius_max))
 			stars[ i ] = star
