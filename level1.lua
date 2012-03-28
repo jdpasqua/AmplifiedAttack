@@ -112,7 +112,7 @@ new = function ( params )
 	local timeLastBullet, timeLastEnemy = 0, 0
 	local bulletInterval = 1000
 	local frameNumber = 0
-	local totalPauseTime = 0
+	_G.totalPauseTime = 0
 	local pauseStart
 	local pauseEnd
 	local basicBox
@@ -156,7 +156,6 @@ new = function ( params )
 
 	-- Background music
 	backgroundMusic = audio.loadStream("assets/sounds/TopGear3.mp3")
-	backgroundMusicChannel = audio.play(backgroundMusic, { channel=1, loops=-1, fadein=0 })
 
 	-- Player Music
 	--playerMusic = audio.loadStream("assets/music/topGear_PlayerSounds.mp3")
@@ -218,21 +217,20 @@ new = function ( params )
 		local pos = playhead[trackno]
 		local eName = "track" .. trackno
 		local event = {name=eName, note=notes[trackno][pos]}
-		local targetTime = tempo[trackno][pos] * timeConvert
-		
+		local targetTime = (tempo[trackno][pos] * timeConvert) + _G.totalPauseTime
 	--	print (string.format("..............%f\n", pos))
 		
 		local playTime = 0
 
 		if pos > 1 then
 			Runtime:dispatchEvent( event )
-			local prevTargetTime = tempo[trackno][pos - 1] * timeConvert
-			playTime = targetTime - prevTargetTime--1764.7058823
+			local prevTargetTime = (tempo[trackno][pos - 1] * timeConvert) + _G.totalPauseTime
+			playTime = targetTime - prevTargetTime --1764.7058823
 			--fixes error in the playTime calculation (thinking you are in the right place when you aren't)
 			playTime = playTime - (curTime - prevTargetTime) --playTime * 0.5
 		--	print (string.format("playTime = %f     targetTime = %f     prevTargetTime = %f     curTime = %d\n", playTime, targetTime, prevTargetTime, curTime))
 		else
-			playTime = tempo[trackno][pos] * timeConvert		
+			playTime = (tempo[trackno][pos] * timeConvert) + _G.totalPauseTime		
 		end
 	
 		playhead[trackno] = pos + 1
@@ -245,8 +243,8 @@ new = function ( params )
 	local function onPauseSelection( event )
 		print( "index => ".. event.index .. "    action => " .. event.action )
 		pauseEnd = system.getTimer()
-		totalPauseTime = totalPauseTime + (pauseEnd - pauseStart)
-		print (totalPauseTime)
+		_G.totalPauseTime = _G.totalPauseTime + (pauseEnd - pauseStart)
+		print (_G.totalPauseTime)
 		local action = event.action
 		if "clicked" == event.action then
 			if 1 == event.index then
@@ -502,6 +500,10 @@ end]]
 			end
 		end
 
+		_G.totalPauseTime = system.getTimer()
+		print(_G.totalPauseTime)
+		backgroundMusicChannel = audio.play(backgroundMusic, { channel=1, loops=-1, fadein=0 })
+		
 		-- Call the gameLoop function EVERY frame,
 			-- e.g. gameLoop() will be called 30 times per second in our case.
 			Runtime:addEventListener("enterFrame", gameLoop)
