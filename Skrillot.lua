@@ -17,8 +17,10 @@ function new(type, entrance)
 	local rotationAngle = 135
 	local isShooting = false 
 	
-	function enemy:enableShooting() 
-		isShooting = true
+	function enemy:enableShooting()
+		if (enemy.isAlive == "alive") then  
+			isShooting = true
+		end
 	end
 	
 	function enemy:init()	

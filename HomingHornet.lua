@@ -14,7 +14,9 @@ function new(type, entrance)
 	local isShooting = false
 	local trackno = "track11" 
 		function enemy:enableShooting() 
-			isShooting = true
+			if (enemy.isAlive == "alive") then  
+				isShooting = true
+			end
 		end
 
 		function enemy:init()	
