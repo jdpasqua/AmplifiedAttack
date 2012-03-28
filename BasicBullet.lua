@@ -60,7 +60,7 @@ function new(xPos, yPos, name, image, isEnemyBullet, isBounded)
 				if _G.trumpetQ > #_G.trumpet then
 					_G.trumpetQ = 1
 				end
-				sprite.add( _G.pow_Set, "pow", 1, 6, 300, -1 )
+				sprite.add( _G.pow_Set, "pow", 1, 12, 500, 1 )
 				local powInst = sprite.newSprite ( _G.pow_Set )
 				powInst.x = event.object1.x
 				powInst.y = event.object1.y
