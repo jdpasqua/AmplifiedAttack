@@ -41,7 +41,7 @@ function new()
  	trackButtons[3] =  display.newImage("assets/graphics/button_up.png")
 	trackButtons[3].x = 40
 	trackButtons[3].y = 980
-	trackButtons[3].trackno = "track10"
+	trackButtons[3].trackno = "track11"
 	
 	local buttonDown = {}
 	buttonDown[1] = display.newImage("assets/graphics/button_down.png")
@@ -82,27 +82,40 @@ function new()
 
 	local function endPulse (num)
 		buttonPlayGlows[num].isVisible = false
-		--print ("TURN OFF")
-		--print (num)
-		
+		print ("TURN OFF")
+		print (num)
+	end
+
+	local function endOne()
+		buttonPlayGlows[1].isVisible = false
+	end
+
+	local function endTwo()
+		buttonPlayGlows[2].isVisible = false
+	end
+	
+	local function endThree()
+		buttonPlayGlows[3].isVisible = false
 	end
 
 	function pulseButton (event)
 --		print(event.name)
-		--num = 1
+		num = 0
 		if event.name == "track4" then
 			num = 1
+			timer.performWithDelay(50, endOne)
 		elseif event.name == "track9" then
+			timer.performWithDelay(50, endTwo)
 			num = 2
-		elseif event.name == "track10" then
+		elseif (event.name == "track11" and event.note == "E--") then
 			num = 3
-		--	print ("TURN ON")
-		--	print (num)
+			timer.performWithDelay(50, endThree)
 		end
-
-		buttonPlayGlows[num].isVisible = true
-		local myClosure = function() return endPulse(num) end
-		timer.performWithDelay(50, myClosure)
+		if (num > 0) then
+			buttonPlayGlows[num].isVisible = true
+			--local myClosure = function() return endPulse(num) end
+			--local timers = timer.performWithDelay(50, myClosure)
+		end
 	end
 	
 	trackButtons[1]:addEventListener("touch", trackSwitch)
@@ -111,7 +124,7 @@ function new()
 	
 	Runtime:addEventListener("track4", pulseButton)
 	Runtime:addEventListener("track9", pulseButton)
-	Runtime:addEventListener("track10", pulseButton)
+	Runtime:addEventListener("track11", pulseButton)
 
 	_G.gameLayer:insert(buttonGlows[1])
 	_G.gameLayer:insert(buttonGlows[2])

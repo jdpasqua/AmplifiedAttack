@@ -114,7 +114,6 @@ function new()
 	end
 	
 	function shoot(type)
-		print(type)
 		if (type == "A") then
 			local bullet = BulletRotating.new(player.x - 18, player.y - 10, 0, false, "assets/graphics/basicBulletBlue.png")
 		elseif (type == "B") then
@@ -132,8 +131,10 @@ function new()
 		shoot("B")
 	end
 	
-	function player:track10( event )
-		shoot("C")
+	function player:track11( event )
+		if (event.note == "E--") then
+			shoot("C")
+		end
 	end
 
 	function player:removePlayer()
