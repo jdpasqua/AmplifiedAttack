@@ -62,7 +62,11 @@ new = function ( params )
 	
 	--swarms - this indicates how many enemies to send out each swarm (swarm = per note). Limit the notes in spawnEnemy funct.
 	--each element in the array is 1 swarm. The next swarm doesn't begin spawning until 
-	local swarms = {{{"Skrillot", "Skrillot"}, {"HomingHornet"}},
+	local swarms = {{{"Skrillot", "Skrillot"}, {"Skrillot"}},
+					{{"Skrillot", "Skrillot"}, {"Skrillot"}},
+					{{"Skrillot", "Skrillot"}, {"Skrillot"}},
+					{{"Skrillot", "Skrillot"}, {"Skrillot"}},
+					{{"Skrillot", "Skrillot"}, {"HomingHornet"}},
 					{{"HomingHornet", "Skrillot"}, {"HomingHornet"}},
 					{{"Skrillot", "Skrillot"}, {"HomingHornet"}, {"Skrillot", "HomingHornet"}},
 					{{"HomingHornet", "Skrillot"}, {"HomingHornet"}, {"HomingHornet"}},
