@@ -10,7 +10,7 @@ function new(type, entrance)
 	local trackno = "track7"
 	
 	local BasicEnemy = require("BasicEnemy")
-	local enemy = BasicEnemy.new("Skrillot", "assets/graphics/Skrillot.png", trackno, 3)
+	local enemy = BasicEnemy.new("Skrillot", "assets/graphics/skrillot2.png", trackno, 3)
 	
 	local bullet1
 	local bullet2
