@@ -18,6 +18,16 @@ function new(type, image, trackno, hp)
 	enemy:setReferencePoint( display.CenterReferencePoint )
 
 	_G.gameLayer:insert(enemy)
+	
+	function enemy:_resetColor()
+		if (enemy ~= nil and enemy.setFillColor) then
+			enemy:setFillColor(255, 255, 255)
+		end
+	end
+	
+	function enemy:resetColor()
+		timer.performWithDelay(200, enemy._resetColor) 
+	end
 
 	return enemy
 

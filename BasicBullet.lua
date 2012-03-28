@@ -53,7 +53,9 @@ function new(xPos, yPos, name, image, isEnemyBullet, isBounded)
 		bullet._functionListeners = nil
 		bullet._tableListeners = nil
 		bullet.isActive = "inactive"
-
+		enemy:setFillColor(255, 100, 100)
+		enemy:resetColor()
+		
 		if enemy.hp <= 1 then
 			_G.score = _G.score + 1
 			print (_G.score)
