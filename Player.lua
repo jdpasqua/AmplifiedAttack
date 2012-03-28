@@ -51,10 +51,14 @@ function new()
 		end
 	end
 	
+	function player:activateTouch()
+		player:addEventListener("touch", playerMovement)
+	end		
+	
 	function player:init()
 		
 		player.x = display.contentCenterX
-		player.y = display.contentHeight - player.contentHeight
+		player.y = display.contentHeight + player.contentHeight
 		
 		playerLEFT.x = display.contentCenterX
 		playerLEFT.y = display.contentHeight - player.contentHeight
@@ -90,7 +94,12 @@ function new()
 		_G.gameLayer:insert(playerRIGHT)
 		
 		player:addEventListener("touch", playerMovement)
+
 		Runtime:addEventListener(currentTrack, player)
+		
+		transition.to(player, {time = 1000, 
+							   y = player.y - (2 * player.contentHeight),
+							   onComplete = player.activateTouch })
 
 	end
 
