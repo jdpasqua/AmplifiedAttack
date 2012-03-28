@@ -62,15 +62,17 @@ new = function ( params )
 	
 	--swarms - this indicates how many enemies to send out each swarm (swarm = per note). Limit the notes in spawnEnemy funct.
 	--each element in the array is 1 swarm. The next swarm doesn't begin spawning until 
-	local swarms = {{{'s', 's'}, {'h'}},
-					{{'s', 's'}, {}, {}, {'h'}},
-					{{'s', 's'}, {'h'}},
-					{{'s', 's'}, {'h'}},
-					{{'s', 's'}, {'h'}},
-					{{'s', 's'}, {'h'}},
-					{{'s', 's'}, {'h'}},
-					{{'s', 's'}, {'h'}},
-					{{'s', 's'}, {'h'}}}
+	local swarms = {{{"Skrillot", "Skrillot"}, {"HomingHornet"}},
+					{{"HomingHornet", "Skrillot"}, {"HomingHornet"}},
+					{{"Skrillot", "Skrillot"}, {"HomingHornet"}, {"Skrillot", "HomingHornet"}},
+					{{"HomingHornet", "Skrillot"}, {"HomingHornet"}, {"HomingHornet"}},
+					{{"Skrillot", "HomingHornet"}, {"HomingHornet"}, {"Skrillot"}, {"HomingHornet"}},
+					{{"Skrillot", "Skrillot"}, {"HomingHornet"}, {"HomingHornet"}},
+					{{"HomingHornet", "Skrillot"}, {"HomingHornet"}},
+					{{"Skrillot", "Skrillot"}, {"HomingHornet"}},
+					{{"HomingHornet", "Skrillot"}, {"HomingHornet"}},
+					{{"Skrillot", "HomingHornet"}, {"Skrillot"}},
+					{{"Skrillot", "HomingHornet"}, {"HomingHornet"}}}
 	--these are enemy entrance/spawn instructions, even tho this is hard coded now, it will be easy to make a function to generate 
 	-- patterns eventually. Separate swarms with newlines to easily visualize. Max number of enemies can be set below.(see spawnData)
 	-- this will be heavily changed in structure as well, but thought I would commit for now anyways
@@ -387,12 +389,14 @@ end]]
 		-- formation
 		for i = 1, #swarms do 
 			for j = 1, #swarms[i] do 
-				--for k = 2, swarms[i][j][1] do 
+				--for k = 2, swarms[i][j][1] do
 					if #swarms[i][j] == 1 then
-						table.insert(spawnEntrance, {enemy = "Skrillot", xpos = display.contentWidth / 2 , ypos = -50, direction = "straight", speed = 500, distance = display.contentHeight / 2 - 300})
+						local rand = math.random(1,7)
+						table.insert(spawnEntrance, {enemy = swarms[i][j][1], xpos = rand * display.contentWidth / 8 , ypos = -50, direction = "straight", speed = 500, distance = display.contentHeight / 2 - 300})
 					elseif #swarms[i][j] == 2 then
-						table.insert(spawnEntrance, {enemy = "HomingHornet", xpos = display.contentWidth / 8 , ypos = -50, direction = "straight", speed = 500, distance = display.contentHeight / 2 - 400})
-						table.insert(spawnEntrance, {enemy = "HomingHornet", xpos = 7 * display.contentWidth / 8 , ypos = -50, direction = "straight", speed = 500, distance = display.contentHeight / 2 - 400})
+						local rand = math.random(1,3)
+						table.insert(spawnEntrance, {enemy = swarms[i][j][1], xpos = rand * display.contentWidth / 8 , ypos = -50, direction = "straight", speed = 500, distance = display.contentHeight / 2 - 400})
+						table.insert(spawnEntrance, {enemy = swarms[i][j][2], xpos = (8 - rand) * display.contentWidth / 8 , ypos = -50, direction = "straight", speed = 500, distance = display.contentHeight / 2 - 400})
 					elseif swarms[i] == 3 then
 				
 					elseif swarms[i] == 4 then
