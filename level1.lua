@@ -213,24 +213,24 @@ new = function ( params )
 	end
 
 	local function trackEvent(trackno)
-		local curTime = system.getTimer()--os.difftime(os.time(), launchTime)
+		local curTime = system.getTimer() - _G.totalPauseTime --os.difftime(os.time(), launchTime)
 		local pos = playhead[trackno]
 		local eName = "track" .. trackno
 		local event = {name=eName, note=notes[trackno][pos]}
-		local targetTime = (tempo[trackno][pos] * timeConvert) + _G.totalPauseTime
+		local targetTime = (tempo[trackno][pos] * timeConvert)
 	--	print (string.format("..............%f\n", pos))
 		
 		local playTime = 0
 
 		if pos > 1 then
 			Runtime:dispatchEvent( event )
-			local prevTargetTime = (tempo[trackno][pos - 1] * timeConvert) + _G.totalPauseTime
+			local prevTargetTime = (tempo[trackno][pos - 1] * timeConvert) 
 			playTime = targetTime - prevTargetTime --1764.7058823
 			--fixes error in the playTime calculation (thinking you are in the right place when you aren't)
 			playTime = playTime - (curTime - prevTargetTime) --playTime * 0.5
 		--	print (string.format("playTime = %f     targetTime = %f     prevTargetTime = %f     curTime = %d\n", playTime, targetTime, prevTargetTime, curTime))
 		else
-			playTime = (tempo[trackno][pos] * timeConvert) + _G.totalPauseTime		
+			playTime = (tempo[trackno][pos] * timeConvert)		
 		end
 	
 		playhead[trackno] = pos + 1
