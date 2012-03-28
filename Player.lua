@@ -17,6 +17,12 @@ function new()
 		-- Doesn't respond if the game is ended
 		if not _G.gameIsActive then return false end
 
+		playerLEFT.x = player.x 
+		playerRIGHT.x = player.x
+		
+		playerLEFT.y = player.y + 2
+		playerRIGHT.y = player.y + 2
+		
 		if event.x > player.x then
 		--	player.isVisible = false
 			playerLEFT.isVisible = false
@@ -60,12 +66,6 @@ function new()
 		player.x = display.contentCenterX
 		player.y = display.contentHeight + player.contentHeight
 		
-		playerLEFT.x = display.contentCenterX
-		playerLEFT.y = display.contentHeight - player.contentHeight
-		
-		playerRIGHT.x = display.contentCenterX
-		playerRIGHT.y = display.contentHeight - player.contentHeight
-		
 		-- Store half width, used on the game loop
 		halfPlayerWidth = player.contentWidth * .5
 		halfPlayerHeight = player.contentHeight * .5
@@ -93,14 +93,20 @@ function new()
 		_G.gameLayer:insert(playerLEFT)
 		_G.gameLayer:insert(playerRIGHT)
 		
-		player:addEventListener("touch", playerMovement)
+		--player:addEventListener("touch", playerMovement)
 
 		Runtime:addEventListener(currentTrack, player)
 		
 		transition.to(player, {time = 1000, 
 							   y = player.y - (2 * player.contentHeight),
 							   onComplete = player.activateTouch })
+--[[						
+						playerLEFT.x = display.contentCenterX
+							playerLEFT.y = display.contentHeight - player.contentHeight
 
+							playerRIGHT.x = display.contentCenterX
+							playerRIGHT.y = display.contentHeight - player.contentHeight
+]]
 	end
 
 	function player:setColor()
