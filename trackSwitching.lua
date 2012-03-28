@@ -7,52 +7,52 @@ function new()
 	local buttonPlayGlows = {}
 	local selectedTrack = 1
 	
-	buttonGlows[1] =  display.newImage("assets/graphics/blue_glow.png")--display.newCircle(40, 840, 30)
+	buttonGlows[1] =  display.newImage("assets/graphics/blue_glow2.png")
 	buttonGlows[1].x = 40
-	buttonGlows[1].y = 850
-	buttonPlayGlows[1] = display.newImage("assets/graphics/blue_PlayGlow.png")--display.newCircle(40, 840, 30)
+	buttonGlows[1].y = 840
+	buttonPlayGlows[1] = display.newImage("assets/graphics/blue_PlayGlow2.png")
 	buttonPlayGlows[1].x = 40
-	buttonPlayGlows[1].y = 850
+	buttonPlayGlows[1].y = 840
 	buttonPlayGlows[1].isVisible = false
-	trackButtons[1] =  display.newImage("assets/graphics/button_up.png")--display.newCircle(40, 840, 30)
+	trackButtons[1] =  display.newImage("assets/graphics/button_up.png")
 	trackButtons[1].x = 40
-	trackButtons[1].y = 850	
+	trackButtons[1].y = 840	
 	trackButtons[1].trackno = "track4"
 	
-	buttonGlows[2] =  display.newImage("assets/graphics/green_glow.png")--display.newCircle(40, 840, 30)
+	buttonGlows[2] =  display.newImage("assets/graphics/green_glow.png")
 	buttonGlows[2].x = 40
-	buttonGlows[2].y = 915
-	buttonPlayGlows[2] = display.newImage("assets/graphics/green_PlayGlow.png")--display.newCircle(40, 840, 30)
+	buttonGlows[2].y = 910
+	buttonPlayGlows[2] = display.newImage("assets/graphics/green_PlayGlow.png")
 	buttonPlayGlows[2].x = 40
-	buttonPlayGlows[2].y = 915
+	buttonPlayGlows[2].y = 910
 	buttonPlayGlows[2].isVisible = false
- 	trackButtons[2] =  display.newImage("assets/graphics/button_up.png")--display.newCircle(40, 840, 30)
+ 	trackButtons[2] =  display.newImage("assets/graphics/button_up.png")
 	trackButtons[2].x = 40
-	trackButtons[2].y = 915
+	trackButtons[2].y = 910
 	trackButtons[2].trackno = "track9"
 	
-	buttonGlows[3] =  display.newImage("assets/graphics/red_glow.png")--display.newCircle(40, 840, 30)
+	buttonGlows[3] =  display.newImage("assets/graphics/red_glow.png")
 	buttonGlows[3].x = 40
 	buttonGlows[3].y = 980
-	buttonPlayGlows[3] = display.newImage("assets/graphics/red_PlayGlow.png")--display.newCircle(40, 840, 30)
+	buttonPlayGlows[3] = display.newImage("assets/graphics/red_PlayGlow.png")
 	buttonPlayGlows[3].x = 40
 	buttonPlayGlows[3].y = 980
 	buttonPlayGlows[3].isVisible = false
- 	trackButtons[3] =  display.newImage("assets/graphics/button_up.png")--display.newCircle(40, 840, 30)
+ 	trackButtons[3] =  display.newImage("assets/graphics/button_up.png")
 	trackButtons[3].x = 40
 	trackButtons[3].y = 980
 	trackButtons[3].trackno = "track10"
 	
 	local buttonDown = {}
-	buttonDown[1] = display.newImage("assets/graphics/button_down.png")--display.newCircle(40, 840, 30)
+	buttonDown[1] = display.newImage("assets/graphics/button_down.png")
 	buttonDown[1].x = 40
-	buttonDown[1].y = 850
+	buttonDown[1].y = 840
 		
-	buttonDown[2] = display.newImage("assets/graphics/button_down.png")--display.newCircle(40, 840, 30)
+	buttonDown[2] = display.newImage("assets/graphics/button_down.png")
 	buttonDown[2].x = 40
-	buttonDown[2].y = 915
+	buttonDown[2].y = 910
 		
-	buttonDown[3] = display.newImage("assets/graphics/button_down.png")--display.newCircle(40, 840, 30)
+	buttonDown[3] = display.newImage("assets/graphics/button_down.png")
 	buttonDown[3].x = 40
 	buttonDown[3].y = 980
 
@@ -78,8 +78,6 @@ function new()
 			buttonDown[buttonNum].isVisible = true
 			
 		end
-		
-		
 	end 
 
 	local function endPulse (num)
@@ -102,13 +100,10 @@ function new()
 		--	print (num)
 		end
 
-		
 		buttonPlayGlows[num].isVisible = true
 		local myClosure = function() return endPulse(num) end
 		timer.performWithDelay(50, myClosure)
 	end
-	
-	
 	
 	trackButtons[1]:addEventListener("touch", trackSwitch)
 	trackButtons[2]:addEventListener("touch", trackSwitch)
