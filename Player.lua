@@ -113,21 +113,27 @@ function new()
 		player:setFillColor(243, 132, 0)
 	end
 	
-	function player:shoot()
-		local bullet1 = BulletRotating.new(player.x - 18, player.y - 10, 0, false, "assets/graphics/bullet11.png")
-
+	function shoot(type)
+		print(type)
+		if (type == "A") then
+			local bullet = BulletRotating.new(player.x - 18, player.y - 10, 0, false, "assets/graphics/basicBulletBlue.png")
+		elseif (type == "B") then
+			local bullet = BulletRotating.new(player.x - 18, player.y - 10, 0, false, "assets/graphics/basicBulletGreen.png")
+		else
+			local bullet = BulletRotating.new(player.x - 18, player.y - 10, 0, false, "assets/graphics/basicBulletRed.png")
+		end
 	end
 
 	function player:track4( event )
-		player.shoot()
+		shoot("A")
 	end
 	
 	function player:track9( event )
-		player.shoot()
+		shoot("B")
 	end
 	
 	function player:track10( event )
-		player.shoot()
+		shoot("C")
 	end
 
 	function player:removePlayer()
