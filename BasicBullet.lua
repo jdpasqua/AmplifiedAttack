@@ -44,7 +44,7 @@ function new(xPos, yPos, name, image, isEnemyBullet, isBounded)
 				_G.enemyCount = _G.enemyCount - 1
 
 				--event.object2.alive = "no"
-				-- Play Sound
+				-- Play Sound----------------------------------------------------
 				local chan = 3
 				if (audio.isChannelPlaying( 3 )) then
 					if (audio.isChannelPlaying( 4 )) then
@@ -60,6 +60,8 @@ function new(xPos, yPos, name, image, isEnemyBullet, isBounded)
 				if _G.trumpetQ > #_G.trumpet then
 					_G.trumpetQ = 1
 				end
+				
+				-- EXPLOSION SPRITE------------------------------------------
 				sprite.add( _G.pow_Set, "pow", 1, 12, 500, 1 )
 				local powInst = sprite.newSprite ( _G.pow_Set )
 				powInst.x = event.object1.x
@@ -76,6 +78,15 @@ function new(xPos, yPos, name, image, isEnemyBullet, isBounded)
 				event.object1.isAlive = "dead"	
 			end
 		-- Player was hit!	
+	--[[	elseif (event.object1.name == "enemy" and event.object2.name == "playerBullet") then
+			print ("____________________________")
+			table.insert(_G.toRemove, event.object2)
+			event.object2.isVisible = false
+			event.object2._functionListeners = nil
+			event.object2._tableListeners = nil
+			event.object2.isActive = "inactive"
+			event.object2.isVisible = false
+		]]	
 		elseif (event.object1.name == "player" and event.object2.name == "enemyBullet" and event.object2.isActive == "active") then			
 			-- destroy the enemy bullet
 			table.insert(_G.toRemove, event.object2)
