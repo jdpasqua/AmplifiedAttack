@@ -17,13 +17,7 @@ new = function ( params )
 	local background2
 	local halfPlayerWidth
 	local halfPlayerHeight
-	local stars_total = 153
-	local stars_field1= 50
-	local stars_field2= 140
-	local stars_field3= 150
-	local stars_field4= 154
-	local star_radius_min  = 2
-	local star_radius_max  = 3
+
 
 	local areTracksInit = 0
 
@@ -177,6 +171,7 @@ new = function ( params )
 	local Player = require("Player")
 	local TrackSwitching = require("trackSwitching")
 	local Boundaries = require("boundaries")
+	local Background = require("background")
 
 	------------------
 	-- Groups
@@ -193,10 +188,6 @@ new = function ( params )
 	_G.gameLayer    = display.newGroup()
 	_G.bulletsLayer = display.newGroup()
 	local enemiesLayer = display.newGroup()
-	local starsLayer = display.newGroup()
-
-	-- create table
-	local stars = {}
 
 	--====================================================================--
 	-- BUTTONS
@@ -205,35 +196,6 @@ new = function ( params )
 	------------------
 	-- Functions
 	------------------
-
-	local function drawStars() 
-		for i = 1, stars_total do
-			local star = {} 
-			star.object = display.newCircle(math.random(display.contentWidth),math.random(display.contentHeight),math.random(star_radius_min,star_radius_max))
-			stars[ i ] = star
-			starsLayer:insert(star.object)
-		end
-	end
-
-	local function drawBackground()
-		background1 = display.newImage( "assets/graphics/bg1.png", 0, -656, true)
-		background1:setReferencePoint(display.TopLeftReferencePoint)
-		background2 = display.newImage( "assets/graphics/bg3.png", 0, -1347 -656, true)
-		background2:setReferencePoint(display.TopLeftReferencePoint)
-	end
-
-	local function updateBackground()
-		if (frameNumber % 2 == 0) then
-			background1.y = background1.y + 1
-			background2.y = background2.y + 1
-		end
-		if (background1.y >= 1024) then
-			background1.y = 0 - background1.contentHeight - (background2.contentHeight - 1024)
-		end
-		if (background2.y >= 1024) then
-			background2.y = 0 - (background1.contentHeight - 1024) - background2.contentHeight
-		end
-	end
 
 	local function pulseBeat()
 		local event = { name="pulse" }
@@ -405,9 +367,7 @@ new = function ( params )
 			end
 			table.remove(swarms[1], 1)
 		else 
-			--	print ("TESTING")
 			if (swarms[1] and _G.enemyCount == 0) then
-				--		print ("123")
 				table.remove(swarms, 1)
 			end
 		end 
@@ -438,34 +398,6 @@ end]]
 		end
 	end
 
-	-- update star locations and setcolor
-	local function updateStars(event)
-		if (_G.gameIsActive) then
-			for i = stars_total,1, -1 do
-				if (i < stars_field1) then
-					stars[i].object:setFillColor(150,150,150)
-					starspeed = 0.6
-				end
-				if (i < stars_field2 and i > stars_field1) then
-					stars[i].object:setFillColor(175,175,175)
-					starspeed = 1
-				end
-				if (i < stars_field3 and i > stars_field2) then
-					stars[i].object:setFillColor(175,175,175)
-					starspeed = 2.5
-				end
-				if (i < stars_field4 and i > stars_field3) then
-					stars[i].object:setFillColor(200,200,200)
-					starspeed = 4
-				end
-				stars[i].object.y  = stars[i].object.y + starspeed      
-				if (stars[i].object.y > display.contentHeight) then
-					stars[i].object.y = stars[i].object.y-display.contentHeight
-				end
-			end
-		end
-	end
-
 	--====================================================================--
 	-- INITIALIZE
 	--====================================================================--
@@ -493,13 +425,8 @@ end]]
 		-- Adjust the volume
 		audio.setMaxVolume( 0.85, { channel=1 } )
 
-		drawStars()
-		drawBackground()
-		--drawPlayer()
-
-		_G.gameLayer:insert(background1)
-		_G.gameLayer:insert(background2)
-		_G.gameLayer:insert(starsLayer)
+		Background.init()
+		
 		_G.gameLayer:insert(bulletsLayer)
 		_G.gameLayer:insert(enemiesLayer)
 
@@ -560,16 +487,12 @@ end]]
 					end
 				end
 
-				updateBackground()
-
-
 			end
 		end
 
 		-- Call the gameLoop function EVERY frame,
 			-- e.g. gameLoop() will be called 30 times per second in our case.
 			Runtime:addEventListener("enterFrame", gameLoop)
-			Runtime:addEventListener("enterFrame", updateStars)		
 
 	end	
 	
