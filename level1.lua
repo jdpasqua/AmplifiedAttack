@@ -122,10 +122,15 @@ new = function ( params )
 	textureCache[4] = display.newImage("assets/graphics/bt_play.png"); 
 	textureCache[4].isVisible = false;
 	local halfEnemyWidth = textureCache[1].contentWidth * .5
-	local pow_sheet = sprite.newSpriteSheet("assets/graphics/pow2.png", 200, 145)
-	_G.pow_Set = sprite.newSpriteSet(pow_sheet, 1, 6)
---	local powSet1 = sprite.newSpriteSet
---	sprite.add( pow_sheet, "pow", 1, 4, 1000, 0 )
+	
+		--local pow_sheet = sprite.newSpriteSheet("assets/graphics/pow2.png", 200, 145)
+	local pow_sheet = sprite.newSpriteSheet("assets/graphics/boom1.png", 96, 96)
+
+	--	_G.SPEAKER_PURPLE = display.newImage("assets/graphics/trumpet_purple.png")
+
+	_G.pow_Set = sprite.newSpriteSet(pow_sheet, 1, 12)--6)
+	--	local powSet1 = sprite.newSpriteSet
+	--	sprite.add( pow_sheet, "pow", 1, 4, 1000, 0 )
 	_G.trumpetQ = 1;
 	_G.trumpet = {
 		--	pew = audio.loadSound("assets/sounds/pew.wav"),
