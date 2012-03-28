@@ -26,10 +26,14 @@ function new()
 		end
 	end
 	
+	function player:activateTouch()
+		player:addEventListener("touch", playerMovement)
+	end		
+	
 	function player:init()
 		
 		player.x = display.contentCenterX
-		player.y = display.contentHeight - player.contentHeight
+		player.y = display.contentHeight + player.contentHeight
 		
 		-- Store half width, used on the game loop
 		halfPlayerWidth = player.contentWidth * .5
@@ -51,8 +55,11 @@ function new()
 
 		-- Add to main layer
 		_G.gameLayer:insert(player)
-		player:addEventListener("touch", playerMovement)
 		Runtime:addEventListener(currentTrack, player)
+		
+		transition.to(player, {time = 1000, 
+							   y = player.y - (2 * player.contentHeight),
+							   onComplete = player.activateTouch })
 
 	end
 
