@@ -27,7 +27,6 @@ function new(xPos, yPos, name, image, isEnemyBullet, isBounded)
 			end					
 		end
 		audio.setVolume (0.30, {channel=chan})
-
 		audio.play(_G.trumpet[_G.trumpetQ], {channel=chan})
 		_G.trumpetQ = _G.trumpetQ + 1
 		if _G.trumpetQ > #_G.trumpet then
@@ -36,7 +35,6 @@ function new(xPos, yPos, name, image, isEnemyBullet, isBounded)
 	end
 
 	local function explode(x, y)
-
 		-- EXPLOSION SPRITE------------------------------------------
 		sprite.add( _G.pow_Set, "pow", 1, 12, 500, 1 )
 		local powInst = sprite.newSprite ( _G.pow_Set )
@@ -48,138 +46,99 @@ function new(xPos, yPos, name, image, isEnemyBullet, isBounded)
 		powInst:play()
 	end
 
+	local function enemyHit(enemy, bullet)
+		enemy.hp = enemy.hp - 1
+		table.insert(_G.toRemove, bullet)
+		bullet.isVisible = false
+		bullet._functionListeners = nil
+		bullet._tableListeners = nil
+		bullet.isActive = "inactive"
+
+		if enemy.hp <= 1 then
+			_G.score = _G.score + 1
+			print (_G.score)
+			_G.scoreText.text = _G.score
+
+			_G.enemyCount = _G.enemyCount - 1
+
+			--bullet.alive = "no"
+			playSound()
+			explode(enemy.x, enemy.y)
+
+			-- We can't remove a body inside a collision event, so queue it to removal.
+			-- It will be removed on the next frame inside the game loop.
+			table.insert(_G.toRemove, enemy)
+			enemy._functionListeners = nil
+			enemy._tableListeners = nil	
+			enemy.isAlive = "dead"	
+		end
+	end
+
 	-- Take care of collisions
 	local function onCollision(event)
 
 		--	print ("COLLISION: " .. event.object1.name .. " WITH " .. event.object2.name)
 
-		if (event.object1.name == "enemy" and event.object2.name == "playerBullet" 
-			and event.object1.isAlive == "alive" and event.object2.isActive == "active") then
+		if (event.object1.name == "enemy" and event.object2.name == "playerBullet" and event.object1.isAlive == "alive" and event.object2.isActive == "active") then
 
-			-- Increase score
-			print (event.object1)
-			event.object1.hp = event.object1.hp - 1
+			enemyHit(event.object1, event.object2)
 
+		elseif (event.object2.name == "enemy" and event.object1.name == "playerBullet" 	and event.object2.isAlive == "alive" and event.object1.isActive == "active") then
+
+			enemyHit(event.object2, event.object1)
+
+
+		elseif (event.object1.name == "player" and event.object2.name == "enemyBullet" and event.object2.isActive == "active") then			
+			-- destroy the enemy bullet
 			table.insert(_G.toRemove, event.object2)
 			event.object2.isVisible = false
 			event.object2._functionListeners = nil
 			event.object2._tableListeners = nil
 			event.object2.isActive = "inactive"
 
-			print (event.object1.hp)
-			if event.object1.hp <= 1 then
-				_G.score = _G.score + 1
-				print (_G.score)
-				_G.scoreText.text = _G.score
+			--audio.play(sounds.gameOver)
 
-				_G.enemyCount = _G.enemyCount - 1
+			--local gameoverText = display.newText("Game Over!", 0, 0, "HelveticaNeue", 35)
+			--gameoverText:setTextColor(255, 255, 255)
+			--gameoverText.x = display.contentCenterX
+			--gameoverText.y = display.contentCenterY
+			--_G.gameLayer:insert(gameoverText)
 
-				--event.object2.alive = "no"
-				playSound()
-				explode(event.object1.x, event.object1.y)
-				
-				-- We can't remove a body inside a collision event, so queue it to removal.
-				-- It will be removed on the next frame inside the game loop.
-				table.insert(_G.toRemove, event.object1)
-				event.object1._functionListeners = nil
-				event.object1._tableListeners = nil	
-				event.object1.isAlive = "dead"	
-			end
-		elseif (event.object2.name == "enemy" and event.object1.name == "playerBullet" 
-			and event.object2.isAlive == "alive" and event.object1.isActive == "active") then
+			-- This will stop the gameLoop
+			--_G.gameIsActive = false
 
-
-			-- Increase score
-			print (event.object2)
-			event.object2.hp = event.object2.hp - 1
-
-			table.insert(_G.toRemove, event.object1)
-			event.object1.isVisible = false
-			event.object1._functionListeners = nil
-			event.object1._tableListeners = nil
-			event.object1.isActive = "inactive"
-
-			print (event.object2.hp)
-			if event.object2.hp <= 1 then
-				_G.score = _G.score + 1
-				print (_G.score)
-				_G.scoreText.text = _G.score
-
-				_G.enemyCount = _G.enemyCount - 1
-
-				--event.object2.alive = "no"
-				playSound()
-				explode(event.object2.x, event.object2.y)
-				
-				-- We can't remove a body inside a collision event, so queue it to removal.
-				-- It will be removed on the next frame inside the game loop.
-				table.insert(_G.toRemove, event.object2)
-				event.object2._functionListeners = nil
-				event.object2._tableListeners = nil	
-				event.object2.isAlive = "dead"	
-			end
-
-
-			-- Player was hit!	
-			--[[	elseif (event.object1.name == "enemy" and event.object2.name == "playerBullet" and event.object1.isAlive == "alive") then
-			print ("false hit")
+		elseif (event.object1.name == "Boundary" and event.object2.isActive == "active") then
 			table.insert(_G.toRemove, event.object2)
 			event.object2.isVisible = false
 			event.object2._functionListeners = nil
 			event.object2._tableListeners = nil
 			event.object2.isActive = "inactive"
+		end	
+	end
 
-]]		elseif (event.object1.name == "player" and event.object2.name == "enemyBullet" and event.object2.isActive == "active") then			
--- destroy the enemy bullet
-table.insert(_G.toRemove, event.object2)
-event.object2.isVisible = false
-event.object2._functionListeners = nil
-event.object2._tableListeners = nil
-event.object2.isActive = "inactive"
+	local collisionFilter 
+	if (isEnemyBullet and (isBounded == false)) then
+		collisionFilter = { categoryBits = 8, maskBits = 1 }
+	elseif (isEnemyBullet and isBounded) then
+		collisionFilter = { categoryBits = 16, maskBits = 33 }
+	elseif (isEnemyBullet == false) then
+		collisionFilter = { categoryBits = 2, maskBits = 4 }
+	end
 
---audio.play(sounds.gameOver)
+	-- Physics
+	physics.addBody(bullet, "dynamic", {bounce = 0, filter = collisionFilter})
 
---local gameoverText = display.newText("Game Over!", 0, 0, "HelveticaNeue", 35)
---gameoverText:setTextColor(255, 255, 255)
---gameoverText.x = display.contentCenterX
---gameoverText.y = display.contentCenterY
---_G.gameLayer:insert(gameoverText)
+	-- Name
+	bullet.name = name
 
--- This will stop the gameLoop
---_G.gameIsActive = false
+	bullet:setReferencePoint( display.CenterReferencePoint )
 
-elseif (event.object1.name == "Boundary" and event.object2.isActive == "active") then
-	table.insert(_G.toRemove, event.object2)
-	event.object2.isVisible = false
-	event.object2._functionListeners = nil
-	event.object2._tableListeners = nil
-	event.object2.isActive = "inactive"
-end	
-end
+	--bullet.onCollision = bullet.onCollision
+	Runtime:addEventListener( "collision", onCollision )
 
-local collisionFilter 
-if (isEnemyBullet and (isBounded == false)) then
-	collisionFilter = { categoryBits = 8, maskBits = 1 }
-elseif (isEnemyBullet and isBounded) then
-	collisionFilter = { categoryBits = 16, maskBits = 33 }
-elseif (isEnemyBullet == false) then
-	collisionFilter = { categoryBits = 2, maskBits = 4 }
-end
+	_G.bulletsLayer:insert(bullet)
+	--timer.performWithDelay(10000, destroyBullet)
 
--- Physics
-physics.addBody(bullet, "dynamic", {bounce = 0, filter = collisionFilter})
-
--- Name
-bullet.name = name
-
-bullet:setReferencePoint( display.CenterReferencePoint )
-
---bullet.onCollision = bullet.onCollision
-Runtime:addEventListener( "collision", onCollision )
-
-_G.bulletsLayer:insert(bullet)
---timer.performWithDelay(10000, destroyBullet)
-
-return bullet
+	return bullet
 
 end
