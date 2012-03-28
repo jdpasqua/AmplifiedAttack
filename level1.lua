@@ -386,8 +386,8 @@ end]]
 					if #swarms[i][j] == 1 then
 						table.insert(spawnEntrance, {enemy = "Skrillot", xpos = display.contentWidth / 2 , ypos = -50, direction = "straight", speed = 500, distance = display.contentHeight / 2 - 300})
 					elseif #swarms[i][j] == 2 then
-						table.insert(spawnEntrance, {enemy = "Skrillot", xpos = display.contentWidth / 8 , ypos = -50, direction = "straight", speed = 500, distance = display.contentHeight / 2 - 400})
-						table.insert(spawnEntrance, {enemy = "Skrillot", xpos = 7 * display.contentWidth / 8 , ypos = -50, direction = "straight", speed = 500, distance = display.contentHeight / 2 - 400})
+						table.insert(spawnEntrance, {enemy = "HomingHornet", xpos = display.contentWidth / 8 , ypos = -50, direction = "straight", speed = 500, distance = display.contentHeight / 2 - 400})
+						table.insert(spawnEntrance, {enemy = "HomingHornet", xpos = 7 * display.contentWidth / 8 , ypos = -50, direction = "straight", speed = 500, distance = display.contentHeight / 2 - 400})
 					elseif swarms[i] == 3 then
 				
 					elseif swarms[i] == 4 then

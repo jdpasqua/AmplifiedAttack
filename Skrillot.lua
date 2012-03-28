@@ -44,15 +44,10 @@ function new(type, entrance)
 	end
 	
 	function enemy:removeSkrillot()
-		print("REMOVE SKRILLOT")
 		Runtime:removeEventListener("track7", bullet)
 		if (enemy) then
 			enemy:removeSelf()
 		end
-	end
-	
-	function enemy:move()
-
 	end
 	
 	function enemy:setColor()
@@ -68,7 +63,6 @@ function new(type, entrance)
 	end
 	
 	function enemy:track7( event )
-		enemy.move()
 		enemy.shoot()
 	end
 	
