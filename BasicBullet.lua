@@ -19,31 +19,59 @@ function new(xPos, yPos, name, image, isEnemyBullet, isBounded)
 
 	local function playSound()
 		local chan = 3
-		if (audio.isChannelPlaying( 3 )) then
-			if (audio.isChannelPlaying( 4 )) then
-				chan = 5
-			else
-				chan = 4
-			end					
-		end
-		audio.setVolume (0.30, {channel=chan})
-		audio.play(_G.trumpet[_G.trumpetQ], {channel=chan})
-		_G.trumpetQ = _G.trumpetQ + 1
-		if _G.trumpetQ > #_G.trumpet then
-			_G.trumpetQ = 1
-		end
+		-- COMBO SOUND
+		if math.fmod(_G.combo, 4) == 0 then 
+			if (audio.isChannelPlaying( 3 )) then
+				if (audio.isChannelPlaying( 4 )) then
+					chan = 5
+				else
+					chan = 4
+				end					
+			end
+			audio.setVolume (0.30, {channel=chan})
+			audio.play(_G.trumpet[_G.trumpetQ], {channel=chan})
+			_G.trumpetQ = _G.trumpetQ + 1
+			if _G.trumpetQ > #_G.trumpet then
+				_G.trumpetQ = 1
+			end
+		else -- NORMAL EXPLOSION
+			if (audio.isChannelPlaying( 3 )) then
+				if (audio.isChannelPlaying( 4 )) then
+					chan = 5
+				else
+					chan = 4
+				end					
+			end
+			audio.setVolume (1.00, {channel=chan})
+			audio.play(_G.explosion[_G.explosionQ], {channel=chan})
+			--[[_G.trumpetQ = _G.trumpetQ + 1
+			if _G.trumpetQ > #_G.trumpet then
+				_G.trumpetQ = 1
+			end]]
+		end 
 	end
 
 	local function explode(x, y)
 		-- EXPLOSION SPRITE------------------------------------------
-		sprite.add( _G.pow_Set, "pow", 1, 12, 500, 1 )
-		local powInst = sprite.newSprite ( _G.pow_Set )
-		powInst.x = x
-		powInst.y = y
-		powInst.xScale = 2
-		powInst.yScale = 2
-		powInst:prepare("pow")
-		powInst:play()
+		sprite.add( _G.boom_Set, "boom", 1, 12, 500, 1 )
+		local boomInst = sprite.newSprite ( _G.boom_Set )
+		boomInst.x = x
+		boomInst.y = y
+		boomInst.xScale = 2
+		boomInst.yScale = 2
+		boomInst:prepare("boom")
+		boomInst:play()
+		
+		if math.fmod(_G.combo, 4) == 0 then
+			sprite.add( _G.pow_Set, "pow", 1, 6, 500, -1 )
+			local powInst = sprite.newSprite ( _G.pow_Set )
+			powInst.x = x
+			powInst.y = y
+		--	powInst.xScale = 2
+		--	powInst.yScale = 2
+			powInst:prepare("pow")
+			powInst:play()
+		end
 	end
 
 	local function enemyHit(enemy, bullet)
@@ -57,6 +85,7 @@ function new(xPos, yPos, name, image, isEnemyBullet, isBounded)
 		enemy:resetColor()
 		
 		if enemy.hp <= 1 then
+			_G.combo = _G.combo + 1
 			_G.score = _G.score + 1
 			print (_G.score)
 			_G.scoreText.text = _G.score

@@ -13,6 +13,7 @@ new = function ( params )
 	_G.gameIsActive = true
 	_G.score = 0
 	_G.toRemove = {}
+	_G.combo = 0
 	local background1
 	local background2
 	local halfPlayerWidth
@@ -130,11 +131,13 @@ new = function ( params )
 	local halfEnemyWidth = textureCache[1].contentWidth * .5
 	
 		--local pow_sheet = sprite.newSpriteSheet("assets/graphics/pow2.png", 200, 145)
-	local pow_sheet = sprite.newSpriteSheet("assets/graphics/boom1.png", 96, 96)
+		local pow_sheet = sprite.newSpriteSheet("assets/graphics/pow2.png", 200, 145)
+		local boom_sheet = sprite.newSpriteSheet("assets/graphics/boom1.png", 96, 96)
 
-	--	_G.SPEAKER_PURPLE = display.newImage("assets/graphics/trumpet_purple.png")
-
-	_G.pow_Set = sprite.newSpriteSet(pow_sheet, 1, 12)--6)
+		--	_G.SPEAKER_PURPLE = display.newImage("assets/graphics/trumpet_purple.png")
+		_G.boom_Set = sprite.newSpriteSet(boom_sheet, 1, 12)--6)
+		_G.pow_Set = sprite.newSpriteSet(pow_sheet, 1, 6)--6)
+		
 	--	local powSet1 = sprite.newSpriteSet
 	--	sprite.add( pow_sheet, "pow", 1, 4, 1000, 0 )
 	_G.trumpetQ = 1;
@@ -146,7 +149,8 @@ new = function ( params )
 			
 		--	gameOver = audio.loadSound("assets/sounds/gameOver.wav")
 	}
-
+	_G.explosionQ = 1;
+	_G.explosion = {audio.loadSound("assets/sounds/explosion1.mp3")}
 	-----------------------
 	--  Music Channels
 	--1 = Background Music
