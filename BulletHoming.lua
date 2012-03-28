@@ -29,7 +29,7 @@ function new(xPos, yPos, trackno)
 		
 		-- Speed is relative to position of player
 		xSpeed = speed * (_G.player.x - bullet.x)
-		ySpeed = speed * (_G.player.y - bullet.y)
+		ySpeed = speed * (_G.player.y + 30 - bullet.y)
 		
 		-- Set a minimum speed
 		if (xSpeed < 0 and xSpeed > -150) then
