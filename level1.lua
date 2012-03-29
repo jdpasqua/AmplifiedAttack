@@ -377,7 +377,7 @@ new = function ( params )
 	-- Spawn Enemy
 	local function spawnEnemy (event)
 	--	print("SPAWN")
-	if (event.note == 'Eb--') then
+--	if (event.note == 'Eb--') then
 --local swarmed = false
 		if swarms[1][1] then
 			for i = 1, #swarms[1][1] do
@@ -405,7 +405,7 @@ new = function ( params )
 --[[if swarmed then
 	table.remove(swarms, 1)
 end]]
-end
+--end
 	end
 
 	
@@ -479,7 +479,7 @@ end
 		pulseBeat()
 
 		_G.player = Player.new()
-		Runtime:addEventListener("track1", spawnEnemy)
+		Runtime:addEventListener("track3", spawnEnemy)
 
 		_G.trackButtons = TrackSwitching.new()
 		
