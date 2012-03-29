@@ -3,6 +3,7 @@ module (..., package.seeall)
 function new()
 
 	local BulletRotating = require("BulletRotating")
+	local BulletExplosion = require("BulletExplosion")
 	local player = display.newImage("assets/graphics/antmaker.png")
 	local playerLEFT = display.newImage("assets/graphics/antmaker_LEFT2.png")
 	local playerRIGHT = display.newImage("assets/graphics/antmaker_RIGHT2.png")
@@ -117,9 +118,11 @@ function new()
 		if (type == "A") then
 			local bullet = BulletRotating.new(player.x - 18, player.y - 10, 0, false, "assets/graphics/basicBulletBlue.png")
 		elseif (type == "B") then
-			local bullet = BulletRotating.new(player.x - 18, player.y - 10, 0, false, "assets/graphics/basicBulletGreen.png")
+			local bullet1 = BulletRotating.new(player.x - 18, player.y - 10, -10, false, "assets/graphics/basicBulletGreen.png")
+			local bullet2 = BulletRotating.new(player.x - 18, player.y - 10, 0, false, "assets/graphics/basicBulletGreen.png")
+			local bullet3 = BulletRotating.new(player.x - 18, player.y - 10, 10, false, "assets/graphics/basicBulletGreen.png")
 		else
-			local bullet = BulletRotating.new(player.x - 18, player.y - 10, 0, false, "assets/graphics/basicBulletRed.png")
+			local explosion = BulletExplosion.new(player.x, player.y)
 		end
 	end
 
