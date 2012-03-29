@@ -17,7 +17,7 @@ function new()
 	trackButtons[1] =  display.newImage("assets/graphics/button_up.png")
 	trackButtons[1].x = 40
 	trackButtons[1].y = 840	
-	trackButtons[1].trackno = "track4"
+	trackButtons[1].trackno = "track2"
 	
 	buttonGlows[2] =  display.newImage("assets/graphics/green_glow.png")
 	buttonGlows[2].x = 40
@@ -29,7 +29,7 @@ function new()
  	trackButtons[2] =  display.newImage("assets/graphics/button_up.png")
 	trackButtons[2].x = 40
 	trackButtons[2].y = 910
-	trackButtons[2].trackno = "track9"
+	trackButtons[2].trackno = "track1"
 	
 	buttonGlows[3] =  display.newImage("assets/graphics/red_glow.png")
 	buttonGlows[3].x = 40
@@ -41,7 +41,7 @@ function new()
  	trackButtons[3] =  display.newImage("assets/graphics/button_up.png")
 	trackButtons[3].x = 40
 	trackButtons[3].y = 980
-	trackButtons[3].trackno = "track11"
+	trackButtons[3].trackno = "track3"
 	
 	local buttonDown = {}
 	buttonDown[1] = display.newImage("assets/graphics/button_down.png")
@@ -101,13 +101,13 @@ function new()
 	function pulseButton (event)
 --		print(event.name)
 		num = 0
-		if event.name == "track4" then
+		if event.name == "track2" then
 			num = 1
 			timer.performWithDelay(50, endOne)
-		elseif event.name == "track9" then
+		elseif event.name == "track1" then
 			timer.performWithDelay(50, endTwo)
 			num = 2
-		elseif (event.name == "track11" and event.note == "E--") then
+		elseif (event.name == "track3") then-- and event.note == "E--") then
 			num = 3
 			timer.performWithDelay(50, endThree)
 		end
@@ -122,9 +122,9 @@ function new()
 	trackButtons[2]:addEventListener("touch", trackSwitch)
 	trackButtons[3]:addEventListener("touch", trackSwitch)
 	
-	Runtime:addEventListener("track4", pulseButton)
-	Runtime:addEventListener("track9", pulseButton)
-	Runtime:addEventListener("track11", pulseButton)
+	Runtime:addEventListener("track2", pulseButton)
+	Runtime:addEventListener("track1", pulseButton)
+	Runtime:addEventListener("track3", pulseButton)
 
 	_G.gameLayer:insert(buttonGlows[1])
 	_G.gameLayer:insert(buttonGlows[2])

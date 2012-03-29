@@ -27,40 +27,58 @@ new = function ( params )
 	tempo[2] = {}
 	tempo[3] = {}
 	tempo[4] = {}
-	tempo[5] = {}
+--[[	tempo[5] = {}
 	tempo[6] = {}
 	tempo[7] = {}
 	tempo[8] = {}
 	tempo[9] = {}
 	tempo[10] = {}
 	tempo[11] = {}
-
+	tempo[12] = {}
+	tempo[13] = {}
+	tempo[14] = {}
+	tempo[15] = {}
+	tempo[16] = {}
+	tempo[17] = {}
+]]
 	local notes = {}
 	notes[1] = {}
 	notes[2] = {}
 	notes[3] = {}
 	notes[4] = {}
-	notes[5] = {}
+--[[	notes[5] = {}
 	notes[6] = {}
 	notes[7] = {}
 	notes[8] = {}
 	notes[9] = {}
 	notes[10] = {}
 	notes[11] = {}
-
+	notes[12] = {}
+	notes[13] = {}
+	notes[14] = {}
+	notes[15] = {}
+	notes[16] = {}
+	notes[17] = {}
+]]
 	local playhead = {}
 	playhead[1] = 1
 	playhead[2] = 1
 	playhead[3] = 1
 	playhead[4] = 1
-	playhead[5] = 1
+--[[	playhead[5] = 1
 	playhead[6] = 1
 	playhead[7] = 1
 	playhead[8] = 1
 	playhead[9] = 1
 	playhead[10] = 1
 	playhead[11] = 1
-	
+	playhead[12] = 1
+	playhead[13] = 1
+	playhead[14] = 1
+	playhead[15] = 1
+	playhead[16] = 1
+	playhead[17] = 1
+]]	
 	--swarms - this indicates how many enemies to send out each swarm (swarm = per note). Limit the notes in spawnEnemy funct.
 	--each element in the array is 1 swarm. The next swarm doesn't begin spawning until 
 	local swarms = {{{"Skrillot", "Skrillot"}, {"Skrillot"}},
@@ -103,7 +121,7 @@ new = function ( params )
 	spawnData["Skrillot"] = {count = 0, maxNum = 5}
 	_G.enemyCount = 0
 	
-	local bpm = 136;
+	local bpm = 75; --136;
 	local timeConvert = 0;	
 
 	local pos = 0
@@ -150,7 +168,7 @@ new = function ( params )
 		--	gameOver = audio.loadSound("assets/sounds/gameOver.wav")
 	}
 	_G.explosionQ = 1;
-	_G.explosion = {audio.loadSound("assets/sounds/explosion1.mp3")}
+	_G.explosion = {audio.loadSound("assets/sounds/future_flute.mp3")}
 	-----------------------
 	--  Music Channels
 	--1 = Background Music
@@ -159,7 +177,7 @@ new = function ( params )
 	-----------------------
 
 	-- Background music
-	backgroundMusic = audio.loadStream("assets/sounds/TopGear3.mp3")
+	backgroundMusic = audio.loadStream("assets/sounds/untitled.mp3")--TopGear3.mp3")
 
 	-- Player Music
 	--playerMusic = audio.loadStream("assets/music/topGear_PlayerSounds.mp3")
@@ -298,10 +316,10 @@ new = function ( params )
 	------------------
 
 	local function init_tracks(track, file)--(fh)
-		for i = 1, 11 do --11
+		for i = 1, 4 do --17 do --11
 			--format file names
-			local tempofn = string.format("assets/MidiExtraction/TopGear/track%u_tempo.txt", i)
-			local notefn = string.format("assets/MidiExtraction/TopGear/track%u_notes.txt", i)
+			local tempofn = string.format("assets/MidiExtraction/untitled/track%u_tempo.txt", i)
+			local notefn = string.format("assets/MidiExtraction/untitled/track%u_notes.txt", i)
 
 			local tempofile = system.pathForFile(tempofn)
 			local notefile = system.pathForFile(notefn)
@@ -315,10 +333,10 @@ new = function ( params )
 			local j = 1
 
 			if track_tempo then
-			--	print ("*********************")
+		--		print ("*********************")
 				while num do
 					tempo[i][j] = tonumber(num)
-				--	print (string.format("%f", tempo[i][j]))
+		--			print (string.format("%f", tempo[i][j]))
 					num = track_tempo:read("*l")
 					j = j + 1
 				end
@@ -334,12 +352,13 @@ new = function ( params )
 					note = track_notes:read("*l")
 					j = j + 1
 				end
-			else 
+			else
 				print ("\n\nKABOOM\n\n")
 			end	
 
 			print (j)		
 		end
+		print ("DONE___________________________________")
 	end
 
 	local function calc_tempo_conversion ()
@@ -457,7 +476,7 @@ end]]
 		pulseBeat()
 
 		_G.player = Player.new()
-		Runtime:addEventListener("track4", spawnEnemy)
+		Runtime:addEventListener("track2", spawnEnemy)
 
 		_G.trackButtons = TrackSwitching.new()
 		
@@ -480,13 +499,13 @@ end]]
 				trackEvent(2)
 				trackEvent(3)
 				trackEvent(4)
-				trackEvent(5)
+		--[[		trackEvent(5)
 				trackEvent(6)
 				trackEvent(7)
 				trackEvent(8)
 				trackEvent(9)
 				trackEvent(10)
-				trackEvent(11)
+				trackEvent(11)]]
 				generateEntrances()
 				--print (string.format("===================TIME CONVERT=%d", timeConvert)) -- TIME CONVERT CHECK
 			end

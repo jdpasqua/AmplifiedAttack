@@ -1,0 +1,1552 @@
+format=1 tracks=18 division=480
+
+CR             0   (BA    1   CR         0)   TR  0   CH 16   Time signature 4/4, clocks/mtick 24, crotchets/32ndnote 8
+CR             0   (BA    1   CR         0)   TR  0   CH 16   Key C major
+CR             0   (BA    1   CR         0)   TR  0   CH 16   Meta Event   type &54   65 0 0 0 0
+CR             0   (BA    1   CR         0)   TR  0   CH 16   Tempo 75
+CR             0   (BA    1   CR         0)   TR  1   CH 16   Text type 3: "Analog Techno Kit"
+CR             0   (BA    1   CR         0)   TR  1   CH 16   Text type 4: "Inst 2"
+CR             0   (BA    1   CR         0)   TR  2   CH 16   Text type 3: "Analog Techno Kit"
+CR             0   (BA    1   CR         0)   TR  2   CH 16   Text type 4: "Inst 2"
+CR             0   (BA    1   CR         0)   TR  3   CH 16   Text type 3: "Analog Techno Kit"
+CR             0   (BA    1   CR         0)   TR  3   CH 16   Text type 4: "Inst 2"
+CR             0   (BA    1   CR         0)   TR  4   CH 16   Text type 3: "Analog Techno Kit"
+CR             0   (BA    1   CR         0)   TR  4   CH 16   Text type 4: "Inst 2"
+CR             0   (BA    1   CR         0)   TR  5   CH 16   Text type 3: "Analog Techno Kit"
+CR             0   (BA    1   CR         0)   TR  5   CH 16   Text type 4: "Inst 2"
+CR             0   (BA    1   CR         0)   TR  6   CH 16   Text type 3: "Analog Techno Kit"
+CR             0   (BA    1   CR         0)   TR  6   CH 16   Text type 4: "Inst 2"
+CR             0   (BA    1   CR         0)   TR  7   CH 16   Text type 3: "Analog Techno Kit"
+CR             0   (BA    1   CR         0)   TR  7   CH 16   Text type 4: "Inst 2"
+CR             0   (BA    1   CR         0)   TR  8   CH 16   Text type 3: "Analog Techno Kit"
+CR             0   (BA    1   CR         0)   TR  8   CH 16   Text type 4: "Inst 2"
+CR             0   (BA    1   CR         0)   TR  9   CH 16   Text type 3: "Vector Techno Groove"
+CR             0   (BA    1   CR         0)   TR  9   CH 16   Text type 4: "Inst 4"
+CR             0   (BA    1   CR         0)   TR 10   CH 16   Text type 3: "Vector Techno Groove"
+CR             0   (BA    1   CR         0)   TR 10   CH 16   Text type 4: "Inst 4"
+CR             0   (BA    1   CR         0)   TR 11   CH 16   Text type 3: "Vector Techno Groove"
+CR             0   (BA    1   CR         0)   TR 11   CH 16   Text type 4: "Inst 4"
+CR             0   (BA    1   CR         0)   TR 12   CH 16   Text type 3: "Vector Techno Groove"
+CR             0   (BA    1   CR         0)   TR 12   CH 16   Text type 4: "Inst 4"
+CR             0   (BA    1   CR         0)   TR 13   CH 16   Text type 3: "Vector Techno Groove"
+CR             0   (BA    1   CR         0)   TR 13   CH 16   Text type 4: "Inst 4"
+CR             0   (BA    1   CR         0)   TR 14   CH 16   Text type 3: "Noisy Vox_Energizer"
+CR             0   (BA    1   CR         0)   TR 14   CH 16   Text type 4: "Inst 17"
+CR             0   (BA    1   CR         0)   TR 15   CH 16   Text type 3: "Steinway Piano"
+CR             0   (BA    1   CR         0)   TR 15   CH 16   Text type 4: "Inst 7"
+CR             0   (BA    1   CR         0)   TR 15   CH  1   NT  C-         1+7/12   von=88
+CR             0   (BA    1   CR         0)   TR 15   CH  1   NT  G         3+33/40   von=95
+CR             0   (BA    1   CR         0)   TR 15   CH  1   NT  C'          67/80   von=89
+CR             0   (BA    1   CR         0)   TR 15   CH  1   NT  Eb'         29/40   von=83
+CR             0   (BA    1   CR         0)   TR 15   CH  1   ST &B0 &40 &7F
+CR             0   (BA    1   CR         0)   TR 15   CH  1   ST &B0 &40 &36
+CR             0   (BA    1   CR         0)   TR 15   CH  1   ST &B0 &40 &66
+CR             0   (BA    1   CR         0)   TR 15   CH  1   ST &B0 &40 &00
+CR             0   (BA    1   CR         0)   TR 15   CH  1   NT  G-      1+263/480   von=74
+CR             0   (BA    1   CR         0)   TR 15   CH  1   NT  D'          7/120   von=84
+CR             0   (BA    1   CR         0)   TR 15   CH  1   NT  G         3+33/40   von=95
+CR             0   (BA    1   CR         0)   TR 15   CH  1   NT  C'          67/80   von=93
+CR             0   (BA    1   CR         0)   TR 15   CH  1   NT  Eb'         29/40
+CR             0   (BA    1   CR         0)   TR 15   CH  1   NT  C           7/120   von=92
+CR             0   (BA    1   CR         0)   TR 15   CH  1   NT  C-         1+7/12   von=91
+CR             0   (BA    1   CR         0)   TR 15   CH  1   NT  D'          7/120   von=85
+CR             0   (BA    1   CR         0)   TR 15   CH  1   NT  G-      1+263/480   von=81
+CR             0   (BA    1   CR         0)   TR 15   CH  1   NT  Eb'         29/40   von=98
+CR             0   (BA    1   CR         0)   TR 15   CH  1   NT  F'          3+3/5   von=76
+CR             0   (BA    1   CR         0)   TR 15   CH  1   NT  C           7/120   von=89
+CR             0   (BA    1   CR         0)   TR 15   CH  1   NT  Eb'         29/40   von=93
+CR             0   (BA    1   CR         0)   TR 15   CH  1   NT  D'          7/120   von=79
+CR             0   (BA    1   CR         0)   TR 15   CH  1   ST &B0 &40 &00
+CR             0   (BA    1   CR         0)   TR 15   CH  1   NT  C-         1+7/12   von=93
+CR             0   (BA    1   CR         0)   TR 15   CH  1   NT  G         3+33/40   von=88
+CR             0   (BA    1   CR         0)   TR 15   CH  1   NT  C'          67/80   von=87
+CR             0   (BA    1   CR         0)   TR 15   CH  1   NT  Eb'         29/40   von=85
+CR             0   (BA    1   CR         0)   TR 16   CH 16   Text type 3: "Inst 11"
+CR             0   (BA    1   CR         0)   TR 16   CH 16   Text type 4: "Inst 11"
+CR             0   (BA    1   CR         0)   TR 17   CH 16   Text type 3: "Full Strings Staccato"
+CR             0   (BA    1   CR         0)   TR 17   CH 16   Text type 4: "Inst 13"
+CR          1/20   (BA    1   CR      1/20)   TR 15   CH  1   ST &B0 &40 &7F
+CR           3/4   (BA    1   CR       3/4)   TR 15   CH  1   NT  D'          13/40   von=83
+CR             1   (BA    1   CR         1)   TR 15   CH  1   NT  G-        263/480   von=55
+CR             1   (BA    1   CR         1)   TR 15   CH  1   NT  C'        1+39/80   von=90
+CR             1   (BA    1   CR         1)   TR 15   CH  1   NT  Eb'       1+13/16   von=98
+CR         1+1/2   (BA    1   CR     1+1/2)   TR 15   CH  1   NT  C         281/480   von=95
+CR             2   (BA    1   CR         2)   TR 15   CH  1   NT  C-        1+23/32
+CR         2+3/4   (BA    1   CR     2+3/4)   TR 15   CH  1   NT  D'        151/480   von=85
+CR             3   (BA    1   CR         3)   TR 15   CH  1   NT  G-        163/240
+CR             3   (BA    1   CR         3)   TR 15   CH  1   NT  Eb'        67/240   von=99
+CR         3+1/4   (BA    1   CR     3+1/4)   TR 15   CH  1   NT  F'           7/20   von=88
+CR         3+1/2   (BA    1   CR     3+1/2)   TR 15   CH  1   NT  C          37/160   von=92
+CR         3+1/2   (BA    1   CR     3+1/2)   TR 15   CH  1   NT  Eb'         11/40
+CR         3+3/4   (BA    1   CR     3+3/4)   TR 15   CH  1   NT  D'         79/240   von=80
+
+CR             4   (BA    2   CR         0)   TR  0   CH 16   Text type 6: "Marker ##"
+CR             4   (BA    2   CR         0)   TR  0   CH 16   End of track
+CR             4   (BA    2   CR         0)   TR 15   CH  1   NT  F--     1+281/480   von=81
+CR             4   (BA    2   CR         0)   TR 15   CH  1   NT  G#          3+3/4   von=89
+CR             4   (BA    2   CR         0)   TR 15   CH  1   NT  C'        117/160   von=83
+CR             4   (BA    2   CR         0)   TR 15   CH  1   NT  Eb'       343/480   von=72
+CR        4+1/30   (BA    2   CR      1/30)   TR 15   CH  1   ST &B0 &40 &00
+CR       4+13/80   (BA    2   CR     13/80)   TR 15   CH  1   ST &B0 &40 &7F
+CR         4+3/4   (BA    2   CR       3/4)   TR 15   CH  1   NT  D'          17/60   von=78
+CR             5   (BA    2   CR         1)   TR 15   CH  1   NT  C-          29/48   von=75
+CR             5   (BA    2   CR         1)   TR 15   CH  1   NT  C'        101/120   von=93
+CR             5   (BA    2   CR         1)   TR 15   CH  1   NT  Eb'     1+173/240   von=72
+CR         5+1/2   (BA    2   CR     1+1/2)   TR 15   CH  1   NT  F-          53/96   von=89
+CR             6   (BA    2   CR         2)   TR 15   CH  1   NT  F--       1+29/48   von=98
+CR             6   (BA    2   CR         2)   TR 15   CH  1   NT  C'        337/480   von=16
+CR         6+3/4   (BA    2   CR     2+3/4)   TR 15   CH  1   NT  D'          25/96   von=72
+CR             7   (BA    2   CR         3)   TR 15   CH  1   NT  C-        129/160   von=78
+CR             7   (BA    2   CR         3)   TR 15   CH  1   NT  Eb'         23/96   von=67
+CR         7+1/4   (BA    2   CR     3+1/4)   TR 15   CH  1   NT  F'           7/24   von=74
+CR         7+1/2   (BA    2   CR     3+1/2)   TR 15   CH  1   NT  F-         67/120   von=89
+CR         7+1/2   (BA    2   CR     3+1/2)   TR 15   CH  1   NT  Eb'        31/120   von=70
+CR         7+3/4   (BA    2   CR     3+3/4)   TR 15   CH  1   NT  D'          11/40   von=73
+CR     7+233/240   (BA    2   CR 3+233/240)   TR 15   CH  1   ST &B0 &40 &00
+
+CR             8   (BA    3   CR         0)   TR 15   CH  1   NT  F--      1+71/120   von=96
+CR             8   (BA    3   CR         0)   TR 15   CH  1   NT  G#          1+3/5   von=92
+CR             8   (BA    3   CR         0)   TR 15   CH  1   NT  C'        343/480   von=91
+CR             8   (BA    3   CR         0)   TR 15   CH  1   NT  Eb'         23/32   von=84
+CR       8+3/160   (BA    3   CR     3/160)   TR 15   CH  1   ST &B0 &40 &7F
+CR         8+3/4   (BA    3   CR       3/4)   TR 15   CH  1   NT  C-         41/480   von=69
+CR         8+3/4   (BA    3   CR       3/4)   TR 15   CH  1   NT  D'        151/480   von=77
+CR             9   (BA    3   CR         1)   TR 15   CH  1   NT  C'         67/120   von=85
+CR             9   (BA    3   CR         1)   TR 15   CH  1   NT  Eb'         59/80   von=83
+CR         9+1/2   (BA    3   CR     1+1/2)   TR 15   CH  1   NT  F-        239/480   von=92
+CR     9+467/480   (BA    3   CR 1+467/480)   TR 15   CH  1   ST &B0 &40 &00
+CR            10   (BA    3   CR         2)   TR 15   CH  1   NT  G--     1+301/480   von=95
+CR            10   (BA    3   CR         2)   TR 15   CH  1   NT  G         1+79/80
+CR            10   (BA    3   CR         2)   TR 15   CH  1   NT  C'        437/480   von=92
+CR            10   (BA    3   CR         2)   TR 15   CH  1   NT  Eb'         79/80   von=87
+CR      10+3/160   (BA    3   CR   2+3/160)   TR 15   CH  1   ST &B0 &40 &7F
+CR        10+3/4   (BA    3   CR     2+3/4)   TR 15   CH  1   NT  D-          69/80   von=74
+CR            11   (BA    3   CR         3)   TR 15   CH  1   NT  C'          89/96   von=85
+CR            11   (BA    3   CR         3)   TR 15   CH  1   NT  D'        109/120   von=87
+CR        11+1/2   (BA    3   CR     3+1/2)   TR 15   CH  1   NT  G-        223/480   von=85
+CR    11+223/240   (BA    3   CR 3+223/240)   TR 14   CH  1   NT  C''     16+139/240   von=60
+CR      11+79/80   (BA    3   CR   3+79/80)   TR 15   CH 16   End of track
+
+CR    15+239/240   (BA    4   CR 3+239/240)   TR 14   CH  1   NT  G''     15+137/480   von=27
+
+CR    19+443/480   (BA    5   CR 3+443/480)   TR 14   CH  1   NT  Eb''    21+151/240   von=72
+
+CR            28   (BA    8   CR         0)   TR  9   CH  1   NT  C''        61/120   von=75
+CR            28   (BA    8   CR         0)   TR 17   CH  1   NT  C--       157/240   von=96
+CR            28   (BA    8   CR         0)   TR 17   CH  1   NT  C-          13/20   von=107
+CR            28   (BA    8   CR         0)   TR 17   CH  1   NT  G-         19/160   von=98
+CR            28   (BA    8   CR         0)   TR 17   CH  1   NT  C             1/8   von=95
+CR            28   (BA    8   CR         0)   TR 17   CH  1   NT  D            1/32   von=77
+CR            28   (BA    8   CR         0)   TR 17   CH  1   NT  Eb         23/160   von=91
+CR        28+1/4   (BA    8   CR       1/4)   TR 17   CH  1   NT  G-          11/96   von=93
+CR        28+1/4   (BA    8   CR       1/4)   TR 17   CH  1   NT  C            7/60   von=95
+CR        28+1/4   (BA    8   CR       1/4)   TR 17   CH  1   NT  Eb           3/20   von=89
+CR        28+1/2   (BA    8   CR       1/2)   TR 17   CH  1   NT  G-           2/15   von=100
+CR        28+1/2   (BA    8   CR       1/2)   TR 17   CH  1   NT  C          59/480   von=95
+CR        28+1/2   (BA    8   CR       1/2)   TR 17   CH  1   NT  Eb           7/40   von=98
+CR        28+3/4   (BA    8   CR       3/4)   TR 17   CH  1   NT  C--         27/40   von=96
+CR        28+3/4   (BA    8   CR       3/4)   TR 17   CH  1   NT  C-        107/160   von=102
+CR        28+3/4   (BA    8   CR       3/4)   TR 17   CH  1   NT  G-          11/60   von=101
+CR        28+3/4   (BA    8   CR       3/4)   TR 17   CH  1   NT  C           13/80   von=103
+CR        28+3/4   (BA    8   CR       3/4)   TR 17   CH  1   NT  C#           1/48   von=55
+CR        28+3/4   (BA    8   CR       3/4)   TR 17   CH  1   NT  D          43/240   von=104
+CR            29   (BA    8   CR         1)   TR 17   CH  1   NT  G-         23/160   von=75
+CR            29   (BA    8   CR         1)   TR 17   CH  1   NT  C          37/240   von=86
+CR            29   (BA    8   CR         1)   TR 17   CH  1   NT  D          71/480   von=87
+CR        29+1/4   (BA    8   CR     1+1/4)   TR 17   CH  1   NT  G-         31/240   von=82
+CR        29+1/4   (BA    8   CR     1+1/4)   TR 17   CH  1   NT  C          43/480   von=62
+CR        29+1/4   (BA    8   CR     1+1/4)   TR 17   CH  1   NT  D            5/32   von=92
+CR        29+1/2   (BA    8   CR     1+1/2)   TR 17   CH  1   NT  C--         19/30   von=99
+CR        29+1/2   (BA    8   CR     1+1/2)   TR 17   CH  1   NT  C-        317/480   von=106
+CR        29+1/2   (BA    8   CR     1+1/2)   TR 17   CH  1   NT  G-         71/480   von=108
+CR        29+1/2   (BA    8   CR     1+1/2)   TR 17   CH  1   NT  C          23/160   von=106
+CR        29+1/2   (BA    8   CR     1+1/2)   TR 17   CH  1   NT  D          73/480   von=104
+CR        29+3/4   (BA    8   CR     1+3/4)   TR 17   CH  1   NT  G-         31/240   von=88
+CR        29+3/4   (BA    8   CR     1+3/4)   TR 17   CH  1   NT  C          31/240   von=96
+CR        29+3/4   (BA    8   CR     1+3/4)   TR 17   CH  1   NT  D           13/80   von=101
+CR            30   (BA    8   CR         2)   TR 17   CH  1   NT  G-           7/48   von=93
+CR            30   (BA    8   CR         2)   TR 17   CH  1   NT  C          23/160   von=95
+CR            30   (BA    8   CR         2)   TR 17   CH  1   NT  D          41/240
+CR        30+1/4   (BA    8   CR     2+1/4)   TR 17   CH  1   NT  C--           3/5   von=93
+CR        30+1/4   (BA    8   CR     2+1/4)   TR 17   CH  1   NT  C-        283/480   von=102
+CR        30+1/4   (BA    8   CR     2+1/4)   TR 17   CH  1   NT  G-            3/8   von=97
+CR        30+1/4   (BA    8   CR     2+1/4)   TR 17   CH  1   NT  C          67/480
+CR        30+1/4   (BA    8   CR     2+1/4)   TR 17   CH  1   NT  D          13/160   von=89
+CR        30+1/4   (BA    8   CR     2+1/4)   TR 17   CH  1   NT  F          71/480   von=106
+CR        30+1/2   (BA    8   CR     2+1/2)   TR 17   CH  1   NT  C          61/480   von=89
+CR        30+1/2   (BA    8   CR     2+1/2)   TR 17   CH  1   NT  F            3/20   von=95
+CR        30+3/4   (BA    8   CR     2+3/4)   TR 17   CH  1   NT  G-           7/48   von=93
+CR        30+3/4   (BA    8   CR     2+3/4)   TR 17   CH  1   NT  C            2/15
+CR        30+3/4   (BA    8   CR     2+3/4)   TR 17   CH  1   NT  F          67/480   von=96
+CR            31   (BA    8   CR         3)   TR  9   CH  1   NT  G''          9/32   von=73
+CR            31   (BA    8   CR         3)   TR 17   CH  1   NT  C--       167/480   von=100
+CR            31   (BA    8   CR         3)   TR 17   CH  1   NT  C-          37/96   von=102
+CR            31   (BA    8   CR         3)   TR 17   CH  1   NT  G-          11/60   von=101
+CR            31   (BA    8   CR         3)   TR 17   CH  1   NT  C             1/6   von=103
+CR            31   (BA    8   CR         3)   TR 17   CH  1   NT  D             1/6
+CR            31   (BA    8   CR         3)   TR 17   CH  1   NT  F          73/480   von=106
+CR        31+1/4   (BA    8   CR     3+1/4)   TR 17   CH  1   NT  G-         71/480   von=85
+CR        31+1/4   (BA    8   CR     3+1/4)   TR 17   CH  1   NT  C           11/80
+CR        31+1/4   (BA    8   CR     3+1/4)   TR 17   CH  1   NT  D            5/32   von=87
+CR        31+1/4   (BA    8   CR     3+1/4)   TR 17   CH  1   NT  F            7/40   von=77
+CR        31+1/2   (BA    8   CR     3+1/2)   TR 17   CH  1   NT  C--       169/480   von=104
+CR        31+1/2   (BA    8   CR     3+1/2)   TR 17   CH  1   NT  C-         89/240   von=100
+CR        31+1/2   (BA    8   CR     3+1/2)   TR 17   CH  1   NT  G-           5/32   von=99
+CR        31+1/2   (BA    8   CR     3+1/2)   TR 17   CH  1   NT  C           11/80   von=102
+CR        31+1/2   (BA    8   CR     3+1/2)   TR 17   CH  1   NT  D          29/480   von=96
+CR        31+1/2   (BA    8   CR     3+1/2)   TR 17   CH  1   NT  Eb         71/480   von=113
+CR        31+3/4   (BA    8   CR     3+3/4)   TR 17   CH  1   NT  G-          11/96   von=92
+CR        31+3/4   (BA    8   CR     3+3/4)   TR 17   CH  1   NT  C          23/240   von=87
+CR        31+3/4   (BA    8   CR     3+3/4)   TR 17   CH  1   NT  Eb         71/480   von=88
+
+CR            32   (BA    9   CR         0)   TR  9   CH  1   NT  C''        51/160   von=33
+CR            32   (BA    9   CR         0)   TR 17   CH  1   NT  C--         47/80   von=103
+CR            32   (BA    9   CR         0)   TR 17   CH  1   NT  C-            3/5   von=105
+CR            32   (BA    9   CR         0)   TR 17   CH  1   NT  G-         19/120   von=110
+CR            32   (BA    9   CR         0)   TR 17   CH  1   NT  C          77/480   von=113
+CR            32   (BA    9   CR         0)   TR 17   CH  1   NT  Eb          13/80
+CR        32+1/4   (BA    9   CR       1/4)   TR 17   CH  1   NT  G-         21/160   von=85
+CR        32+1/4   (BA    9   CR       1/4)   TR 17   CH  1   NT  C           11/80   von=89
+CR        32+1/4   (BA    9   CR       1/4)   TR 17   CH  1   NT  Eb         79/480   von=77
+CR        32+1/2   (BA    9   CR       1/2)   TR 17   CH  1   NT  G-            1/8   von=91
+CR        32+1/2   (BA    9   CR       1/2)   TR 17   CH  1   NT  C          71/480   von=93
+CR        32+1/2   (BA    9   CR       1/2)   TR 17   CH  1   NT  Eb           2/15   von=92
+CR        32+3/4   (BA    9   CR       3/4)   TR 17   CH  1   NT  C--         13/24   von=106
+CR        32+3/4   (BA    9   CR       3/4)   TR 17   CH  1   NT  C-        293/480
+CR        32+3/4   (BA    9   CR       3/4)   TR 17   CH  1   NT  G-          11/80   von=110
+CR        32+3/4   (BA    9   CR       3/4)   TR 17   CH  1   NT  C             1/8   von=107
+CR        32+3/4   (BA    9   CR       3/4)   TR 17   CH  1   NT  Eb         79/480   von=109
+CR            33   (BA    9   CR         1)   TR 17   CH  1   NT  G-          11/80   von=88
+CR            33   (BA    9   CR         1)   TR 17   CH  1   NT  C           11/80   von=91
+CR            33   (BA    9   CR         1)   TR 17   CH  1   NT  Eb            1/6   von=95
+CR        33+1/4   (BA    9   CR     1+1/4)   TR 17   CH  1   NT  G-         29/240   von=97
+CR        33+1/4   (BA    9   CR     1+1/4)   TR 17   CH  1   NT  C          47/480   von=81
+CR        33+1/4   (BA    9   CR     1+1/4)   TR 17   CH  1   NT  Eb          13/80   von=93
+CR        33+1/2   (BA    9   CR     1+1/2)   TR 17   CH  1   NT  C--       107/160   von=102
+CR        33+1/2   (BA    9   CR     1+1/2)   TR 17   CH  1   NT  C-          65/96   von=107
+CR        33+1/2   (BA    9   CR     1+1/2)   TR 17   CH  1   NT  G-        197/480   von=104
+CR        33+1/2   (BA    9   CR     1+1/2)   TR 17   CH  1   NT  C          77/480
+CR        33+1/2   (BA    9   CR     1+1/2)   TR 17   CH  1   NT  C#           1/32   von=92
+CR        33+1/2   (BA    9   CR     1+1/2)   TR 17   CH  1   NT  D           13/80   von=111
+CR        33+3/4   (BA    9   CR     1+3/4)   TR 17   CH  1   NT  C          37/240   von=91
+CR        33+3/4   (BA    9   CR     1+3/4)   TR 17   CH  1   NT  D          41/240   von=89
+CR            34   (BA    9   CR         2)   TR 17   CH  1   NT  G-         17/120   von=80
+CR            34   (BA    9   CR         2)   TR 17   CH  1   NT  C           11/96   von=88
+CR            34   (BA    9   CR         2)   TR 17   CH  1   NT  D          73/480   von=92
+CR        34+1/4   (BA    9   CR     2+1/4)   TR 17   CH  1   NT  C--       281/480   von=95
+CR        34+1/4   (BA    9   CR     2+1/4)   TR 17   CH  1   NT  C-        299/480
+CR        34+1/4   (BA    9   CR     2+1/4)   TR 17   CH  1   NT  G-         41/240   von=102
+CR        34+1/4   (BA    9   CR     2+1/4)   TR 17   CH  1   NT  C          73/480   von=106
+CR        34+1/4   (BA    9   CR     2+1/4)   TR 17   CH  1   NT  D            5/32
+CR        34+1/4   (BA    9   CR     2+1/4)   TR 17   CH  1   NT  F          41/480   von=99
+CR        34+1/2   (BA    9   CR     2+1/2)   TR 17   CH  1   NT  G-           5/32   von=81
+CR        34+1/2   (BA    9   CR     2+1/2)   TR 17   CH  1   NT  C            7/48   von=93
+CR        34+1/2   (BA    9   CR     2+1/2)   TR 17   CH  1   NT  D          27/160   von=88
+CR        34+1/2   (BA    9   CR     2+1/2)   TR 17   CH  1   NT  F          89/480   von=96
+CR        34+3/4   (BA    9   CR     2+3/4)   TR 17   CH  1   NT  G-           2/15
+CR        34+3/4   (BA    9   CR     2+3/4)   TR 17   CH  1   NT  C          19/120   von=97
+CR        34+3/4   (BA    9   CR     2+3/4)   TR 17   CH  1   NT  D           13/80   von=94
+CR        34+3/4   (BA    9   CR     2+3/4)   TR 17   CH  1   NT  F           13/96   von=92
+CR            35   (BA    9   CR         3)   TR  9   CH  1   NT  G''          3/10   von=82
+CR            35   (BA    9   CR         3)   TR 17   CH  1   NT  C--       179/480   von=104
+CR            35   (BA    9   CR         3)   TR 17   CH  1   NT  C-            2/5   von=98
+CR            35   (BA    9   CR         3)   TR 17   CH  1   NT  G-         61/480   von=99
+CR            35   (BA    9   CR         3)   TR 17   CH  1   NT  C           13/80   von=104
+CR            35   (BA    9   CR         3)   TR 17   CH  1   NT  D          83/480
+CR            35   (BA    9   CR         3)   TR 17   CH  1   NT  F          61/480   von=105
+CR        35+1/4   (BA    9   CR     3+1/4)   TR 17   CH  1   NT  G-         19/120   von=89
+CR        35+1/4   (BA    9   CR     3+1/4)   TR 17   CH  1   NT  C            3/20   von=96
+CR        35+1/4   (BA    9   CR     3+1/4)   TR 17   CH  1   NT  D          91/480   von=91
+CR        35+1/4   (BA    9   CR     3+1/4)   TR 17   CH  1   NT  F            2/15   von=96
+CR        35+1/4   (BA    9   CR     3+1/4)   TR 17   CH  1   NT  G            7/60   von=99
+CR        35+1/2   (BA    9   CR     3+1/2)   TR 17   CH  1   NT  C--       139/480   von=101
+CR        35+1/2   (BA    9   CR     3+1/2)   TR 17   CH  1   NT  C-         73/240   von=99
+CR        35+1/2   (BA    9   CR     3+1/2)   TR 17   CH  1   NT  G-           2/15   von=92
+CR        35+1/2   (BA    9   CR     3+1/2)   TR 17   CH  1   NT  C          17/120   von=89
+CR        35+1/2   (BA    9   CR     3+1/2)   TR 17   CH  1   NT  D           13/80   von=86
+CR        35+1/2   (BA    9   CR     3+1/2)   TR 17   CH  1   NT  E            1/15   von=99
+CR        35+1/2   (BA    9   CR     3+1/2)   TR 17   CH  1   NT  F            5/32   von=96
+CR        35+3/4   (BA    9   CR     3+3/4)   TR 17   CH  1   NT  G-           2/15   von=75
+CR        35+3/4   (BA    9   CR     3+3/4)   TR 17   CH  1   NT  C          19/160   von=92
+CR        35+3/4   (BA    9   CR     3+3/4)   TR 17   CH  1   NT  C#         47/480   von=68
+CR        35+3/4   (BA    9   CR     3+3/4)   TR 17   CH  1   NT  D          53/480   von=94
+CR        35+3/4   (BA    9   CR     3+3/4)   TR 17   CH  1   NT  Eb         61/480   von=106
+CR    35+233/240   (BA    9   CR 3+233/240)   TR 14   CH  1   NT  C''        69/160   von=78
+
+CR            36   (BA   10   CR         0)   TR  9   CH  1   NT  C''       193/480   von=57
+CR            36   (BA   10   CR         0)   TR 17   CH  1   NT  F--         37/60   von=100
+CR            36   (BA   10   CR         0)   TR 17   CH  1   NT  F-            5/8   von=110
+CR            36   (BA   10   CR         0)   TR 17   CH  1   NT  G#-          5/32   von=117
+CR            36   (BA   10   CR         0)   TR 17   CH  1   NT  C            3/32   von=104
+CR            36   (BA   10   CR         0)   TR 17   CH  1   NT  Eb           2/15   von=106
+CR        36+1/4   (BA   10   CR       1/4)   TR 17   CH  1   NT  G#-          2/15   von=67
+CR        36+1/4   (BA   10   CR       1/4)   TR 17   CH  1   NT  C           11/96   von=84
+CR        36+1/4   (BA   10   CR       1/4)   TR 17   CH  1   NT  Eb           1/10   von=74
+CR        36+1/2   (BA   10   CR       1/2)   TR 17   CH  1   NT  G#-          3/20   von=99
+CR        36+1/2   (BA   10   CR       1/2)   TR 17   CH  1   NT  C             1/8
+CR        36+1/2   (BA   10   CR       1/2)   TR 17   CH  1   NT  Eb           2/15   von=82
+CR        36+3/4   (BA   10   CR       3/4)   TR 17   CH  1   NT  F--          7/12   von=87
+CR        36+3/4   (BA   10   CR       3/4)   TR 17   CH  1   NT  G--          9/80   von=92
+CR        36+3/4   (BA   10   CR       3/4)   TR 17   CH  1   NT  F-         97/160   von=106
+CR        36+3/4   (BA   10   CR       3/4)   TR 17   CH  1   NT  G#-        47/240   von=113
+CR        36+3/4   (BA   10   CR       3/4)   TR 17   CH  1   NT  C          41/240   von=104
+CR        36+3/4   (BA   10   CR       3/4)   TR 17   CH  1   NT  Eb          13/80   von=102
+CR            37   (BA   10   CR         1)   TR 17   CH  1   NT  G#-         11/80   von=84
+CR            37   (BA   10   CR         1)   TR 17   CH  1   NT  C          23/160   von=86
+CR            37   (BA   10   CR         1)   TR 17   CH  1   NT  Eb            1/8
+CR        37+1/4   (BA   10   CR     1+1/4)   TR 17   CH  1   NT  G#-        61/480   von=100
+CR        37+1/4   (BA   10   CR     1+1/4)   TR 17   CH  1   NT  C          49/480   von=97
+CR        37+1/4   (BA   10   CR     1+1/4)   TR 17   CH  1   NT  Eb         41/240   von=89
+CR        37+1/2   (BA   10   CR     1+1/2)   TR 17   CH  1   NT  F--       329/480   von=104
+CR        37+1/2   (BA   10   CR     1+1/2)   TR 17   CH  1   NT  F-        337/480   von=106
+CR        37+1/2   (BA   10   CR     1+1/2)   TR 17   CH  1   NT  G#-          7/40   von=117
+CR        37+1/2   (BA   10   CR     1+1/2)   TR 17   CH  1   NT  C          27/160   von=103
+CR        37+1/2   (BA   10   CR     1+1/2)   TR 17   CH  1   NT  D          91/480   von=99
+CR        37+3/4   (BA   10   CR     1+3/4)   TR 17   CH  1   NT  G#-        83/480   von=79
+CR        37+3/4   (BA   10   CR     1+3/4)   TR 17   CH  1   NT  C           17/96   von=85
+CR        37+3/4   (BA   10   CR     1+3/4)   TR 17   CH  1   NT  D           13/80   von=87
+CR            38   (BA   10   CR         2)   TR 17   CH  1   NT  G#-        37/240   von=92
+CR            38   (BA   10   CR         2)   TR 17   CH  1   NT  C          71/480   von=88
+CR            38   (BA   10   CR         2)   TR 17   CH  1   NT  D          23/160   von=89
+CR        38+1/4   (BA   10   CR     2+1/4)   TR 17   CH  1   NT  F--       281/480
+CR        38+1/4   (BA   10   CR     2+1/4)   TR 17   CH  1   NT  F-        289/480   von=98
+CR        38+1/4   (BA   10   CR     2+1/4)   TR 17   CH  1   NT  G#-          3/16   von=96
+CR        38+1/4   (BA   10   CR     2+1/4)   TR 17   CH  1   NT  C           17/96   von=95
+CR        38+1/4   (BA   10   CR     2+1/4)   TR 17   CH  1   NT  D          79/480   von=93
+CR        38+1/2   (BA   10   CR     2+1/2)   TR 17   CH  1   NT  G#-        31/160   von=91
+CR        38+1/2   (BA   10   CR     2+1/2)   TR 17   CH  1   NT  C             1/8   von=93
+CR        38+1/2   (BA   10   CR     2+1/2)   TR 17   CH  1   NT  D           13/96   von=94
+CR        38+3/4   (BA   10   CR     2+3/4)   TR 17   CH  1   NT  G#-           1/8   von=89
+CR        38+3/4   (BA   10   CR     2+3/4)   TR 17   CH  1   NT  C          19/120   von=94
+CR        38+3/4   (BA   10   CR     2+3/4)   TR 17   CH  1   NT  D          19/120
+CR            39   (BA   10   CR         3)   TR  9   CH  1   NT  G''       161/480   von=76
+CR            39   (BA   10   CR         3)   TR 17   CH  1   NT  F--           3/8   von=96
+CR            39   (BA   10   CR         3)   TR 17   CH  1   NT  F-        101/240   von=100
+CR            39   (BA   10   CR         3)   TR 17   CH  1   NT  G#-        83/480   von=95
+CR            39   (BA   10   CR         3)   TR 17   CH  1   NT  C          23/240   von=87
+CR            39   (BA   10   CR         3)   TR 17   CH  1   NT  F            7/48   von=104
+CR        39+1/4   (BA   10   CR     3+1/4)   TR 17   CH  1   NT  G#-        73/480   von=52
+CR        39+1/4   (BA   10   CR     3+1/4)   TR 17   CH  1   NT  C            5/48   von=60
+CR        39+1/4   (BA   10   CR     3+1/4)   TR 17   CH  1   NT  F          79/480   von=95
+CR        39+1/2   (BA   10   CR     3+1/2)   TR 17   CH  1   NT  F--         27/80   von=99
+CR        39+1/2   (BA   10   CR     3+1/2)   TR 17   CH  1   NT  F-          37/96   von=98
+CR        39+1/2   (BA   10   CR     3+1/2)   TR 17   CH  1   NT  G#-        31/160   von=107
+CR        39+1/2   (BA   10   CR     3+1/2)   TR 17   CH  1   NT  C          73/480   von=105
+CR        39+1/2   (BA   10   CR     3+1/2)   TR 17   CH  1   NT  Eb         23/160   von=103
+CR        39+3/4   (BA   10   CR     3+3/4)   TR 17   CH  1   NT  G#-        17/120   von=89
+CR        39+3/4   (BA   10   CR     3+3/4)   TR 17   CH  1   NT  C          71/480   von=95
+CR        39+3/4   (BA   10   CR     3+3/4)   TR 17   CH  1   NT  Eb          13/96   von=86
+
+CR            40   (BA   11   CR         0)   TR  9   CH  1   NT  G''       179/480   von=69
+CR            40   (BA   11   CR         0)   TR 17   CH  1   NT  F--        93/160   von=103
+CR            40   (BA   11   CR         0)   TR 17   CH  1   NT  F-        101/160   von=99
+CR            40   (BA   11   CR         0)   TR 17   CH  1   NT  G#-        79/480   von=103
+CR            40   (BA   11   CR         0)   TR 17   CH  1   NT  C          23/160   von=98
+CR            40   (BA   11   CR         0)   TR 17   CH  1   NT  D           7/120   von=79
+CR            40   (BA   11   CR         0)   TR 17   CH  1   NT  Eb         37/240   von=74
+CR        40+1/4   (BA   11   CR       1/4)   TR 17   CH  1   NT  G#-        27/160   von=86
+CR        40+1/4   (BA   11   CR       1/4)   TR 17   CH  1   NT  C            7/60   von=89
+CR        40+1/4   (BA   11   CR       1/4)   TR 17   CH  1   NT  Eb          11/96   von=87
+CR        40+1/2   (BA   11   CR       1/2)   TR 17   CH  1   NT  G#-        17/160   von=85
+CR        40+1/2   (BA   11   CR       1/2)   TR 17   CH  1   NT  C            1/10
+CR        40+1/2   (BA   11   CR       1/2)   TR 17   CH  1   NT  Eb         79/480
+CR        40+3/4   (BA   11   CR       3/4)   TR 17   CH  1   NT  F--       151/240   von=96
+CR        40+3/4   (BA   11   CR       3/4)   TR 17   CH  1   NT  F-        101/160   von=102
+CR        40+3/4   (BA   11   CR       3/4)   TR 17   CH  1   NT  G#-        29/160   von=111
+CR        40+3/4   (BA   11   CR       3/4)   TR 17   CH  1   NT  C          73/480   von=105
+CR        40+3/4   (BA   11   CR       3/4)   TR 17   CH  1   NT  Eb         83/480   von=99
+CR            41   (BA   11   CR         1)   TR  9   CH  1   NT  F''        83/240   von=30
+CR            41   (BA   11   CR         1)   TR 17   CH  1   NT  G#-        73/480   von=93
+CR            41   (BA   11   CR         1)   TR 17   CH  1   NT  C          47/480   von=92
+CR            41   (BA   11   CR         1)   TR 17   CH  1   NT  Eb            1/6
+CR        41+1/4   (BA   11   CR     1+1/4)   TR 17   CH  1   NT  G#-        13/120   von=99
+CR        41+1/4   (BA   11   CR     1+1/4)   TR 17   CH  1   NT  C          17/160   von=92
+CR        41+1/4   (BA   11   CR     1+1/4)   TR 17   CH  1   NT  Eb         83/480   von=84
+CR        41+1/2   (BA   11   CR     1+1/2)   TR 17   CH  1   NT  F--       179/480   von=94
+CR        41+1/2   (BA   11   CR     1+1/2)   TR 17   CH  1   NT  F-        181/480   von=96
+CR        41+1/2   (BA   11   CR     1+1/2)   TR 17   CH  1   NT  G#-        89/480   von=115
+CR        41+1/2   (BA   11   CR     1+1/2)   TR 17   CH  1   NT  C            7/80   von=95
+CR        41+1/2   (BA   11   CR     1+1/2)   TR 17   CH  1   NT  D          27/160   von=97
+CR        41+3/4   (BA   11   CR     1+3/4)   TR 17   CH  1   NT  G#-        19/160   von=95
+CR        41+3/4   (BA   11   CR     1+3/4)   TR 17   CH  1   NT  D          73/480   von=92
+CR      41+89/96   (BA   11   CR   1+89/96)   TR 14   CH  1   NT  Eb''     1+51/160   von=62
+CR    41+113/120   (BA   11   CR 1+113/120)   TR 14   CH  1   NT  G''        61/160   von=71
+CR            42   (BA   11   CR         2)   TR  9   CH  1   NT  G''         31/96   von=60
+CR            42   (BA   11   CR         2)   TR 17   CH  1   NT  G--       161/240   von=99
+CR            42   (BA   11   CR         2)   TR 17   CH  1   NT  G-          65/96   von=107
+CR            42   (BA   11   CR         2)   TR 17   CH  1   NT  Bb-         13/80   von=115
+CR            42   (BA   11   CR         2)   TR 17   CH  1   NT  D            2/15   von=99
+CR        42+1/4   (BA   11   CR     2+1/4)   TR 17   CH  1   NT  Bb-        19/120   von=91
+CR        42+1/4   (BA   11   CR     2+1/4)   TR 17   CH  1   NT  D          73/480   von=95
+CR        42+1/2   (BA   11   CR     2+1/2)   TR  9   CH  1   NT  F''         17/80   von=43
+CR        42+1/2   (BA   11   CR     2+1/2)   TR 17   CH  1   NT  Bb-         11/80
+CR        42+1/2   (BA   11   CR     2+1/2)   TR 17   CH  1   NT  D          21/160   von=93
+CR        42+3/4   (BA   11   CR     2+3/4)   TR 17   CH  1   NT  G--        99/160   von=87
+CR        42+3/4   (BA   11   CR     2+3/4)   TR 17   CH  1   NT  G-          49/80   von=104
+CR        42+3/4   (BA   11   CR     2+3/4)   TR 17   CH  1   NT  Bb-          7/40   von=111
+CR        42+3/4   (BA   11   CR     2+3/4)   TR 17   CH  1   NT  D          27/160   von=104
+CR            43   (BA   11   CR         3)   TR  9   CH  1   NT  Eb''       59/240   von=46
+CR            43   (BA   11   CR         3)   TR 17   CH  1   NT  Bb-        17/120   von=77
+CR            43   (BA   11   CR         3)   TR 17   CH  1   NT  D          37/240   von=97
+CR        43+1/4   (BA   11   CR     3+1/4)   TR 17   CH  1   NT  Bb-        23/160   von=89
+CR        43+1/4   (BA   11   CR     3+1/4)   TR 17   CH  1   NT  D          67/480
+CR        43+1/2   (BA   11   CR     3+1/2)   TR  9   CH  1   NT  D''        37/120   von=68
+CR        43+1/2   (BA   11   CR     3+1/2)   TR 17   CH  1   NT  G--        37/120   von=101
+CR        43+1/2   (BA   11   CR     3+1/2)   TR 17   CH  1   NT  G-         37/160   von=106
+CR        43+1/2   (BA   11   CR     3+1/2)   TR 17   CH  1   NT  Bb-        97/480   von=111
+CR        43+1/2   (BA   11   CR     3+1/2)   TR 17   CH  1   NT  D          19/120   von=103
+CR        43+3/4   (BA   11   CR     3+3/4)   TR 17   CH  1   NT  Bb-        71/480   von=59
+CR        43+3/4   (BA   11   CR     3+3/4)   TR 17   CH  1   NT  D          19/120   von=90
+CR    43+109/120   (BA   11   CR 3+109/120)   TR 17   CH 16   End of track
+CR    43+239/240   (BA   11   CR 3+239/240)   TR 14   CH  1   NT  C''         13/30   von=88
+
+CR            44   (BA   12   CR         0)   TR  9   CH  1   NT  C''       103/240   von=62
+CR            47   (BA   12   CR         3)   TR  9   CH  1   NT  G''         17/40   von=79
+
+CR            48   (BA   13   CR         0)   TR  9   CH  1   NT  C''           1/2   von=76
+CR            51   (BA   13   CR         3)   TR  9   CH  1   NT  G''        83/240   von=87
+CR    51+151/160   (BA   13   CR 3+151/160)   TR 14   CH  1   NT  Eb''     7+51/160   von=58
+CR      51+19/20   (BA   13   CR   3+19/20)   TR 14   CH  1   NT  G''           1/2   von=74
+
+CR            52   (BA   14   CR         0)   TR  9   CH  1   NT  G''          9/20   von=76
+CR            55   (BA   14   CR         3)   TR  9   CH  1   NT  F''         19/60   von=60
+
+CR            56   (BA   15   CR         0)   TR  9   CH  1   NT  G''       199/480   von=59
+CR            57   (BA   15   CR         1)   TR  9   CH  1   NT  F''        63/160   von=58
+CR            58   (BA   15   CR         2)   TR  9   CH  1   NT  G''        43/160   von=59
+CR        58+1/2   (BA   15   CR     2+1/2)   TR  9   CH  1   NT  F''        31/120   von=56
+CR            59   (BA   15   CR         3)   TR  9   CH  1   NT  Eb''        21/80   von=61
+CR        59+1/2   (BA   15   CR     3+1/2)   TR  9   CH  1   NT  D''         23/80   von=76
+CR      59+63/80   (BA   15   CR   3+63/80)   TR  9   CH 16   End of track
+
+CR            60   (BA   16   CR         0)   TR 10   CH  1   NT  C''          3/10   von=76
+CR            60   (BA   16   CR         0)   TR 16   CH  1   NT  C'        2+11/12   von=91
+CR       60+1/30   (BA   16   CR      1/30)   TR  1   CH  1   NT  F-           7/80   von=108
+CR      60+17/60   (BA   16   CR     17/60)   TR  1   CH  1   NT  F-         19/160   von=103
+CR        60+1/2   (BA   16   CR       1/2)   TR 10   CH  1   NT  C''        53/240   von=71
+CR        60+3/4   (BA   16   CR       3/4)   TR 10   CH  1   NT  D''        61/480   von=58
+CR            61   (BA   16   CR         1)   TR 10   CH  1   NT  Eb''      119/480   von=73
+CR        61+1/2   (BA   16   CR     1+1/2)   TR 10   CH  1   NT  Eb''      139/480   von=68
+CR       62+1/30   (BA   16   CR    2+1/30)   TR  1   CH  1   NT  F-           1/10   von=105
+CR      62+17/60   (BA   16   CR   2+17/60)   TR  1   CH  1   NT  F-           2/15   von=102
+CR        62+1/2   (BA   16   CR     2+1/2)   TR 10   CH  1   NT  Eb''         2/15   von=59
+CR        62+3/4   (BA   16   CR     2+3/4)   TR 10   CH  1   NT  D''        19/160   von=60
+CR    62+209/240   (BA   16   CR 2+209/240)   TR 16   CH  1   NT  C''       101/120   von=87
+CR            63   (BA   16   CR         3)   TR 10   CH  1   NT  Eb''       71/480   von=66
+CR        63+1/4   (BA   16   CR     3+1/4)   TR 10   CH  1   NT  D''          2/15   von=70
+CR        63+1/2   (BA   16   CR     3+1/2)   TR 10   CH  1   NT  C''         17/80   von=58
+CR        63+3/4   (BA   16   CR     3+3/4)   TR 10   CH  1   NT  D''        83/480   von=73
+CR      63+15/16   (BA   16   CR   3+15/16)   TR 16   CH  1   NT  C'        2+19/20   von=88
+
+CR            64   (BA   17   CR         0)   TR 10   CH  1   NT  C''        83/240   von=65
+CR       64+1/30   (BA   17   CR      1/30)   TR  1   CH  1   NT  F-           1/12   von=104
+CR      64+17/60   (BA   17   CR     17/60)   TR  1   CH  1   NT  F-         73/480   von=99
+CR        64+1/2   (BA   17   CR       1/2)   TR 10   CH  1   NT  C''        33/160   von=79
+CR        64+3/4   (BA   17   CR       3/4)   TR 10   CH  1   NT  D''        79/480   von=76
+CR            65   (BA   17   CR         1)   TR 10   CH  1   NT  Eb''       37/120   von=78
+CR        65+1/2   (BA   17   CR     1+1/2)   TR 10   CH  1   NT  Eb''         3/10   von=92
+CR    65+473/480   (BA   17   CR 1+473/480)   TR 14   CH  1   NT  C''     1+137/160   von=79
+CR       66+1/30   (BA   17   CR    2+1/30)   TR  1   CH  1   NT  F-         17/160   von=104
+CR      66+17/60   (BA   17   CR   2+17/60)   TR  1   CH  1   NT  F-         17/120   von=101
+CR        66+1/2   (BA   17   CR     2+1/2)   TR 10   CH  1   NT  Eb''       31/120   von=66
+CR        66+3/4   (BA   17   CR     2+3/4)   TR 10   CH  1   NT  D''         11/80   von=59
+CR    66+409/480   (BA   17   CR 2+409/480)   TR 16   CH  1   NT  C''         95/96   von=83
+CR            67   (BA   17   CR         3)   TR 10   CH  1   NT  Eb''       61/480   von=72
+CR        67+1/4   (BA   17   CR     3+1/4)   TR 10   CH  1   NT  D''        19/160   von=71
+CR        67+1/2   (BA   17   CR     3+1/2)   TR 10   CH  1   NT  C''        41/120   von=92
+CR    67+223/240   (BA   17   CR 3+223/240)   TR 16   CH  1   NT  Eb'        3+1/40   von=71
+
+CR            68   (BA   18   CR         0)   TR 10   CH  1   NT  C''        91/240   von=80
+CR       68+1/30   (BA   18   CR      1/30)   TR  1   CH  1   NT  F-         13/160   von=105
+CR      68+17/60   (BA   18   CR     17/60)   TR  1   CH  1   NT  F-         29/240   von=100
+CR        68+1/2   (BA   18   CR       1/2)   TR 10   CH  1   NT  C''          5/24   von=87
+CR            69   (BA   18   CR         1)   TR 10   CH  1   NT  C''         17/96   von=92
+CR        69+1/4   (BA   18   CR     1+1/4)   TR 10   CH  1   NT  D''          7/60   von=83
+CR        69+1/2   (BA   18   CR     1+1/2)   TR 10   CH  1   NT  Eb''        11/40   von=92
+CR            70   (BA   18   CR         2)   TR 10   CH  1   NT  C''       157/480   von=81
+CR       70+1/30   (BA   18   CR    2+1/30)   TR  1   CH  1   NT  F-         43/480   von=106
+CR      70+17/60   (BA   18   CR   2+17/60)   TR  1   CH  1   NT  F-         49/480   von=95
+CR        70+1/2   (BA   18   CR     2+1/2)   TR 10   CH  1   NT  C''        77/240   von=92
+CR      70+71/80   (BA   18   CR   2+71/80)   TR 16   CH  1   NT  Eb''        69/80   von=81
+CR            71   (BA   18   CR         3)   TR 10   CH  1   NT  C''          7/32   von=84
+CR        71+1/4   (BA   18   CR     3+1/4)   TR 10   CH  1   NT  D''        29/240   von=63
+CR        71+1/2   (BA   18   CR     3+1/2)   TR 10   CH  1   NT  Eb''          1/4   von=86
+CR      71+13/15   (BA   18   CR   3+13/15)   TR 14   CH  1   NT  Eb''    1+179/480   von=75
+CR    71+141/160   (BA   18   CR 3+141/160)   TR 14   CH  1   NT  G''      5+73/480   von=80
+
+CR            72   (BA   19   CR         0)   TR 10   CH  1   NT  C''        31/160   von=77
+CR       72+1/30   (BA   19   CR      1/30)   TR  1   CH  1   NT  F-         23/240   von=104
+CR        72+1/4   (BA   19   CR       1/4)   TR 10   CH  1   NT  D''        73/480   von=69
+CR      72+17/60   (BA   19   CR     17/60)   TR  1   CH  1   NT  F-            1/8   von=100
+CR     72+49/120   (BA   19   CR    49/120)   TR  1   CH 16   End of track
+CR        72+1/2   (BA   19   CR       1/2)   TR 10   CH  1   NT  D''        23/160   von=81
+CR            73   (BA   19   CR         1)   TR 10   CH  1   NT  Eb''        23/96   von=69
+CR        73+1/4   (BA   19   CR     1+1/4)   TR 10   CH  1   NT  D''        59/480   von=53
+CR        73+1/2   (BA   19   CR     1+1/2)   TR 10   CH  1   NT  Eb''       31/160   von=74
+CR    73+437/480   (BA   19   CR 1+437/480)   TR 16   CH  1   NT  D''       119/240   von=89
+CR            74   (BA   19   CR         2)   TR 10   CH  1   NT  Eb''         5/24   von=80
+CR       74+1/30   (BA   19   CR    2+1/30)   TR  2   CH  1   NT  F-         23/240   von=107
+CR        74+1/4   (BA   19   CR     2+1/4)   TR 10   CH  1   NT  D''          5/32   von=58
+CR      74+17/60   (BA   19   CR   2+17/60)   TR  2   CH  1   NT  F-           5/32   von=100
+CR        74+1/2   (BA   19   CR     2+1/2)   TR 10   CH  1   NT  Eb''       37/240   von=80
+CR        74+3/4   (BA   19   CR     2+3/4)   TR 10   CH  1   NT  D''        17/120   von=76
+CR            75   (BA   19   CR         3)   TR 10   CH  1   NT  Eb''        11/48   von=75
+CR        75+1/4   (BA   19   CR     3+1/4)   TR 10   CH  1   NT  D''        33/160   von=84
+CR        75+1/2   (BA   19   CR     3+1/2)   TR 10   CH  1   NT  Eb''        17/60   von=71
+CR        75+3/4   (BA   19   CR     3+3/4)   TR 10   CH  1   NT  D''        53/480   von=82
+CR    75+473/480   (BA   19   CR 3+473/480)   TR 16   CH 16   End of track
+
+CR            76   (BA   20   CR         0)   TR 10   CH  1   NT  C''       179/480   von=89
+CR       76+1/30   (BA   20   CR      1/30)   TR  2   CH  1   NT  F-         49/480   von=96
+CR      76+17/60   (BA   20   CR     17/60)   TR  2   CH  1   NT  F-         83/480   von=99
+CR       76+8/15   (BA   20   CR      8/15)   TR  2   CH  1   NT  Eb--       37/160   von=100
+CR        76+3/4   (BA   20   CR       3/4)   TR 10   CH  1   NT  G''         17/60   von=88
+CR      77+17/60   (BA   20   CR   1+17/60)   TR  2   CH  1   NT  F-         49/240   von=104
+CR        77+1/2   (BA   20   CR     1+1/2)   TR 10   CH  1   NT  C''        61/160   von=91
+CR       77+8/15   (BA   20   CR    1+8/15)   TR  2   CH  1   NT  Eb--       89/480   von=98
+CR       78+1/30   (BA   20   CR    2+1/30)   TR  2   CH  1   NT  F-         13/120   von=102
+CR      78+17/60   (BA   20   CR   2+17/60)   TR  2   CH  1   NT  F-            1/8   von=99
+CR        78+1/2   (BA   20   CR     2+1/2)   TR 10   CH  1   NT  C''        97/480   von=87
+CR       78+8/15   (BA   20   CR    2+8/15)   TR  2   CH  1   NT  Eb--       61/480   von=102
+CR        78+3/4   (BA   20   CR     2+3/4)   TR 10   CH  1   NT  D''        71/480   von=76
+CR            79   (BA   20   CR         3)   TR 10   CH  1   NT  Eb''      133/480   von=89
+CR      79+17/60   (BA   20   CR   3+17/60)   TR  2   CH  1   NT  F-         37/240   von=105
+CR        79+1/2   (BA   20   CR     3+1/2)   TR 10   CH  1   NT  Eb''        25/96   von=98
+CR       79+8/15   (BA   20   CR    3+8/15)   TR  2   CH  1   NT  Eb--       19/120   von=102
+
+CR            80   (BA   21   CR         0)   TR 10   CH  1   NT  C''       169/480   von=79
+CR       80+1/30   (BA   21   CR      1/30)   TR  2   CH  1   NT  F-         13/120
+CR      80+17/60   (BA   21   CR     17/60)   TR  2   CH  1   NT  F-         67/480   von=96
+CR       80+8/15   (BA   21   CR      8/15)   TR  2   CH  1   NT  Eb--       83/480   von=106
+CR        80+3/4   (BA   21   CR       3/4)   TR 10   CH  1   NT  G''         19/80   von=92
+CR      81+17/60   (BA   21   CR   1+17/60)   TR  2   CH  1   NT  F-           5/32   von=104
+CR        81+1/2   (BA   21   CR     1+1/2)   TR 10   CH  1   NT  C''        53/120   von=87
+CR       81+8/15   (BA   21   CR    1+8/15)   TR  2   CH  1   NT  Eb--         7/40   von=102
+CR       82+1/30   (BA   21   CR    2+1/30)   TR  2   CH  1   NT  F-          11/96   von=105
+CR      82+17/60   (BA   21   CR   2+17/60)   TR  2   CH  1   NT  F-         61/480   von=100
+CR        82+1/2   (BA   21   CR     2+1/2)   TR 10   CH  1   NT  C''         13/80   von=93
+CR       82+8/15   (BA   21   CR    2+8/15)   TR  2   CH  1   NT  Eb--         7/60   von=102
+CR        82+3/4   (BA   21   CR     2+3/4)   TR 10   CH  1   NT  D''        21/160   von=65
+CR            83   (BA   21   CR         3)   TR 10   CH  1   NT  Eb''      103/480   von=75
+CR      83+17/60   (BA   21   CR   3+17/60)   TR  2   CH  1   NT  F-          11/80   von=107
+CR        83+1/2   (BA   21   CR     3+1/2)   TR 10   CH  1   NT  Eb''       97/480   von=88
+CR       83+8/15   (BA   21   CR    3+8/15)   TR  2   CH  1   NT  Eb--         5/24   von=100
+CR      83+43/48   (BA   21   CR   3+43/48)   TR 14   CH  1   NT  C''     8+161/480   von=77
+
+CR            84   (BA   22   CR         0)   TR 10   CH  1   NT  G''          2/15   von=87
+CR       84+1/30   (BA   22   CR      1/30)   TR  2   CH  1   NT  F-          11/96   von=105
+CR        84+1/4   (BA   22   CR       1/4)   TR 10   CH  1   NT  F''        59/480   von=73
+CR      84+17/60   (BA   22   CR     17/60)   TR  2   CH  1   NT  F-          13/96   von=100
+CR        84+1/2   (BA   22   CR       1/2)   TR 10   CH  1   NT  Eb''       53/240   von=86
+CR       84+8/15   (BA   22   CR      8/15)   TR  2   CH  1   NT  Eb--         5/24   von=102
+CR            85   (BA   22   CR         1)   TR 10   CH  1   NT  G''        23/120   von=88
+CR        85+1/4   (BA   22   CR     1+1/4)   TR 10   CH  1   NT  F''          2/15   von=71
+CR      85+17/60   (BA   22   CR   1+17/60)   TR  2   CH  1   NT  F-           3/20   von=99
+CR        85+1/2   (BA   22   CR     1+1/2)   TR 10   CH  1   NT  Eb''       53/240   von=87
+CR       85+8/15   (BA   22   CR    1+8/15)   TR  2   CH  1   NT  Eb--        13/80   von=103
+CR    85+167/240   (BA   22   CR 1+167/240)   TR  2   CH 16   End of track
+CR            86   (BA   22   CR         2)   TR 10   CH  1   NT  G''        27/160   von=89
+CR       86+1/30   (BA   22   CR    2+1/30)   TR  3   CH  1   NT  F-          11/96   von=103
+CR        86+1/4   (BA   22   CR     2+1/4)   TR 10   CH  1   NT  F''           1/8   von=69
+CR      86+17/60   (BA   22   CR   2+17/60)   TR  3   CH  1   NT  F-          11/96   von=95
+CR        86+1/2   (BA   22   CR     2+1/2)   TR 10   CH  1   NT  Eb''      103/480   von=85
+CR       86+8/15   (BA   22   CR    2+8/15)   TR  3   CH  1   NT  Eb--       77/480   von=104
+CR            87   (BA   22   CR         3)   TR 10   CH  1   NT  G''        73/480   von=92
+CR        87+1/4   (BA   22   CR     3+1/4)   TR 10   CH  1   NT  F''        17/120   von=75
+CR      87+17/60   (BA   22   CR   3+17/60)   TR  3   CH  1   NT  F-          11/80
+CR        87+1/2   (BA   22   CR     3+1/2)   TR 10   CH  1   NT  Eb''      119/480   von=90
+CR       87+8/15   (BA   22   CR    3+8/15)   TR  3   CH  1   NT  Eb--          1/8   von=93
+
+CR            88   (BA   23   CR         0)   TR 10   CH  1   NT  G''          7/48   von=92
+CR       88+1/30   (BA   23   CR      1/30)   TR  3   CH  1   NT  F-         49/480   von=102
+CR        88+1/4   (BA   23   CR       1/4)   TR 10   CH  1   NT  F''        23/160   von=89
+CR      88+17/60   (BA   23   CR     17/60)   TR  3   CH  1   NT  F-           7/60   von=93
+CR        88+1/2   (BA   23   CR       1/2)   TR 10   CH  1   NT  G''        19/160   von=87
+CR       88+8/15   (BA   23   CR      8/15)   TR  3   CH  1   NT  Eb--       13/120   von=102
+CR        88+3/4   (BA   23   CR       3/4)   TR 10   CH  1   NT  F''           1/8   von=76
+CR            89   (BA   23   CR         1)   TR 10   CH  1   NT  G''        17/240   von=87
+CR        89+1/4   (BA   23   CR     1+1/4)   TR 10   CH  1   NT  F''        17/120   von=79
+CR      89+17/60   (BA   23   CR   1+17/60)   TR  3   CH  1   NT  F-         61/480   von=104
+CR        89+1/2   (BA   23   CR     1+1/2)   TR 10   CH  1   NT  G''          7/48   von=90
+CR       89+8/15   (BA   23   CR    1+8/15)   TR  3   CH  1   NT  Eb--       77/480   von=106
+CR        89+3/4   (BA   23   CR     1+3/4)   TR 10   CH  1   NT  F''         11/96   von=60
+CR      89+47/60   (BA   23   CR   1+47/60)   TR 14   CH  1   NT  Eb''    1+413/480   von=51
+CR    89+191/240   (BA   23   CR 1+191/240)   TR 14   CH  1   NT  G''         19/48   von=62
+CR            90   (BA   23   CR         2)   TR 10   CH  1   NT  G''        23/120   von=85
+CR       90+1/30   (BA   23   CR    2+1/30)   TR  3   CH  1   NT  F-           7/60   von=101
+CR        90+1/4   (BA   23   CR     2+1/4)   TR 10   CH  1   NT  F''        59/480   von=55
+CR      90+17/60   (BA   23   CR   2+17/60)   TR  3   CH  1   NT  F-           7/48   von=95
+CR        90+1/2   (BA   23   CR     2+1/2)   TR 10   CH  1   NT  G''        29/160   von=82
+CR       90+8/15   (BA   23   CR    2+8/15)   TR  3   CH  1   NT  Eb--        11/80   von=104
+CR        90+3/4   (BA   23   CR     2+3/4)   TR 10   CH  1   NT  F''        73/480   von=74
+CR            91   (BA   23   CR         3)   TR 10   CH  1   NT  G''       121/480   von=87
+CR        91+1/4   (BA   23   CR     3+1/4)   TR 10   CH  1   NT  F''        23/160   von=84
+CR      91+17/60   (BA   23   CR   3+17/60)   TR  3   CH  1   NT  F-        107/480   von=102
+CR        91+1/2   (BA   23   CR     3+1/2)   TR 10   CH  1   NT  Eb''       23/160   von=80
+CR       91+8/15   (BA   23   CR    3+8/15)   TR  3   CH  1   NT  Eb--       37/240   von=104
+CR        91+3/4   (BA   23   CR     3+3/4)   TR 10   CH  1   NT  D''        73/480   von=76
+CR    91+433/480   (BA   23   CR 3+433/480)   TR 10   CH 16   End of track
+
+CR            92   (BA   24   CR         0)   TR 11   CH  1   NT  C''        37/160   von=89
+CR       92+1/30   (BA   24   CR      1/30)   TR  3   CH  1   NT  F-           1/10   von=100
+CR      92+17/60   (BA   24   CR     17/60)   TR  3   CH  1   NT  F-         67/480   von=102
+CR        92+1/2   (BA   24   CR       1/2)   TR 11   CH  1   NT  C''        37/240   von=74
+CR       92+8/15   (BA   24   CR      8/15)   TR  3   CH  1   NT  Eb--       77/480   von=103
+CR      92+47/60   (BA   24   CR     47/60)   TR  3   CH  1   NT  Eb--       29/240
+CR            93   (BA   24   CR         1)   TR 11   CH  1   NT  C''           1/8   von=76
+CR       93+1/30   (BA   24   CR    1+1/30)   TR  3   CH  1   NT  Eb--         1/10   von=99
+CR        93+1/4   (BA   24   CR     1+1/4)   TR 11   CH  1   NT  D''        23/240   von=98
+CR      93+17/60   (BA   24   CR   1+17/60)   TR  3   CH  1   NT  F-         37/160   von=110
+CR        93+1/2   (BA   24   CR     1+1/2)   TR 11   CH  1   NT  Eb''         9/32   von=104
+CR       93+8/15   (BA   24   CR    1+8/15)   TR  3   CH  1   NT  Eb--       23/120   von=115
+CR       94+1/30   (BA   24   CR    2+1/30)   TR  3   CH  1   NT  F-            1/8   von=104
+CR      94+17/60   (BA   24   CR   2+17/60)   TR  3   CH  1   NT  F-          13/96   von=96
+CR        94+1/2   (BA   24   CR     2+1/2)   TR 11   CH  1   NT  C''        77/480   von=73
+CR       94+8/15   (BA   24   CR    2+8/15)   TR  3   CH  1   NT  Eb--          1/8   von=103
+CR        94+3/4   (BA   24   CR     2+3/4)   TR 11   CH  1   NT  Bb'        23/160   von=88
+CR      94+47/60   (BA   24   CR   2+47/60)   TR  3   CH  1   NT  Eb--       47/480   von=106
+CR            95   (BA   24   CR         3)   TR 11   CH  1   NT  C''        53/240   von=76
+CR       95+1/30   (BA   24   CR    3+1/30)   TR  3   CH  1   NT  Eb--       17/240   von=92
+CR        95+1/4   (BA   24   CR     3+1/4)   TR 11   CH  1   NT  Bb'        77/480   von=67
+CR      95+17/60   (BA   24   CR   3+17/60)   TR  3   CH  1   NT  F-          17/80   von=107
+CR        95+1/2   (BA   24   CR     3+1/2)   TR 11   CH  1   NT  C''        89/480   von=73
+CR       95+8/15   (BA   24   CR    3+8/15)   TR  3   CH  1   NT  Eb--       73/480   von=111
+CR        95+3/4   (BA   24   CR     3+3/4)   TR 11   CH  1   NT  D''        77/480
+
+CR            96   (BA   25   CR         0)   TR 11   CH  1   NT  C''        77/240   von=76
+CR       96+1/30   (BA   25   CR      1/30)   TR  3   CH  1   NT  F-          11/96   von=106
+CR      96+17/60   (BA   25   CR     17/60)   TR  3   CH  1   NT  F-         21/160   von=97
+CR        96+1/2   (BA   25   CR       1/2)   TR 11   CH  1   NT  C''         19/96   von=83
+CR       96+8/15   (BA   25   CR      8/15)   TR  3   CH  1   NT  Eb--       59/480   von=107
+CR      96+47/60   (BA   25   CR     47/60)   TR  3   CH  1   NT  Eb--       49/480
+CR            97   (BA   25   CR         1)   TR 11   CH  1   NT  C''         17/80   von=88
+CR       97+1/30   (BA   25   CR    1+1/30)   TR  3   CH  1   NT  Eb--       41/480   von=102
+CR        97+1/4   (BA   25   CR     1+1/4)   TR 11   CH  1   NT  D''           1/6   von=85
+CR      97+17/60   (BA   25   CR   1+17/60)   TR  3   CH  1   NT  F-         29/160   von=107
+CR        97+1/2   (BA   25   CR     1+1/2)   TR 11   CH  1   NT  Eb''       79/240   von=86
+CR       97+8/15   (BA   25   CR    1+8/15)   TR  3   CH  1   NT  Eb--       37/240   von=109
+CR       98+1/30   (BA   25   CR    2+1/30)   TR  3   CH  1   NT  F-           5/48   von=99
+CR      98+17/60   (BA   25   CR   2+17/60)   TR  3   CH  1   NT  F-         49/480   von=82
+CR        98+1/2   (BA   25   CR     2+1/2)   TR 11   CH  1   NT  C''         11/60   von=87
+CR       98+8/15   (BA   25   CR    2+8/15)   TR  3   CH  1   NT  Eb--       47/240   von=104
+CR        98+3/4   (BA   25   CR     2+3/4)   TR 11   CH  1   NT  Bb'        27/160   von=71
+CR      98+47/60   (BA   25   CR   2+47/60)   TR  3   CH  1   NT  Eb--       13/120   von=96
+CR            99   (BA   25   CR         3)   TR 11   CH  1   NT  C''           1/5   von=87
+CR       99+1/30   (BA   25   CR    3+1/30)   TR  3   CH  1   NT  Eb--       13/120   von=111
+CR        99+1/4   (BA   25   CR     3+1/4)   TR 11   CH  1   NT  Bb'        79/480   von=85
+CR      99+17/60   (BA   25   CR   3+17/60)   TR  3   CH  1   NT  F-           4/15   von=110
+CR        99+1/2   (BA   25   CR     3+1/2)   TR 11   CH  1   NT  C''        31/160   von=86
+CR       99+8/15   (BA   25   CR    3+8/15)   TR  3   CH  1   NT  Eb--      103/480   von=113
+CR        99+3/4   (BA   25   CR     3+3/4)   TR 11   CH  1   NT  D''        27/160   von=78
+CR      99+19/20   (BA   25   CR   3+19/20)   TR 14   CH  1   NT  C''         21/80   von=87
+
+CR           100   (BA   26   CR         0)   TR 11   CH  1   NT  C''         17/80   von=76
+CR      100+1/30   (BA   26   CR      1/30)   TR  3   CH  1   NT  F-         13/120   von=106
+CR       100+1/4   (BA   26   CR       1/4)   TR 11   CH  1   NT  Bb'         11/60   von=62
+CR     100+17/60   (BA   26   CR     17/60)   TR  3   CH  1   NT  F-         17/120   von=102
+CR       100+1/2   (BA   26   CR       1/2)   TR 11   CH  1   NT  C''         13/60   von=84
+CR      100+8/15   (BA   26   CR      8/15)   TR  3   CH  1   NT  Eb--       71/480   von=113
+CR       100+3/4   (BA   26   CR       3/4)   TR 11   CH  1   NT  D''        89/480   von=74
+CR     100+47/60   (BA   26   CR     47/60)   TR  3   CH  1   NT  Eb--        11/96   von=111
+CR           101   (BA   26   CR         1)   TR 11   CH  1   NT  Eb''       37/120   von=76
+CR      101+1/30   (BA   26   CR    1+1/30)   TR  3   CH  1   NT  Eb--       47/480
+CR     101+17/60   (BA   26   CR   1+17/60)   TR  3   CH  1   NT  F-        113/480   von=107
+CR       101+1/2   (BA   26   CR     1+1/2)   TR 11   CH  1   NT  Eb''       73/240   von=72
+CR      101+8/15   (BA   26   CR    1+8/15)   TR  3   CH  1   NT  Eb--        13/96   von=111
+CR           102   (BA   26   CR         2)   TR 11   CH  1   NT  C''         17/80   von=84
+CR      102+1/30   (BA   26   CR    2+1/30)   TR  3   CH  1   NT  F-         49/480   von=107
+CR       102+1/4   (BA   26   CR     2+1/4)   TR 11   CH  1   NT  Bb'        29/160   von=58
+CR     102+17/60   (BA   26   CR   2+17/60)   TR  3   CH  1   NT  F-         49/480   von=97
+CR       102+1/2   (BA   26   CR     2+1/2)   TR 11   CH  1   NT  C''           1/5   von=77
+CR      102+8/15   (BA   26   CR    2+8/15)   TR  3   CH  1   NT  Eb--       67/480   von=104
+CR       102+3/4   (BA   26   CR     2+3/4)   TR 11   CH  1   NT  D''        29/160   von=73
+CR     102+47/60   (BA   26   CR   2+47/60)   TR  3   CH  1   NT  Eb--         9/80   von=111
+CR           103   (BA   26   CR         3)   TR 11   CH  1   NT  Eb''      161/480   von=79
+CR      103+1/30   (BA   26   CR    3+1/30)   TR  3   CH  1   NT  Eb--         5/48   von=109
+CR     103+17/60   (BA   26   CR   3+17/60)   TR  3   CH  1   NT  F-         29/120   von=101
+CR       103+1/2   (BA   26   CR     3+1/2)   TR 11   CH  1   NT  Eb''         9/40   von=77
+CR      103+8/15   (BA   26   CR    3+8/15)   TR  3   CH  1   NT  Eb--       31/240   von=111
+CR     103+39/40   (BA   26   CR   3+39/40)   TR 14   CH  1   NT  Eb''       49/240   von=61
+
+CR           104   (BA   27   CR         0)   TR 11   CH  1   NT  Eb''       43/240   von=74
+CR      104+1/30   (BA   27   CR      1/30)   TR  3   CH  1   NT  F-           5/48   von=100
+CR       104+1/4   (BA   27   CR       1/4)   TR 11   CH  1   NT  D''         21/80   von=81
+CR     104+17/60   (BA   27   CR     17/60)   TR  3   CH  1   NT  F-         71/480   von=98
+CR   104+217/480   (BA   27   CR   217/480)   TR 14   CH  1   NT  G''      14+31/60   von=21
+CR       104+1/2   (BA   27   CR       1/2)   TR 11   CH  1   NT  C''       107/480   von=86
+CR      104+8/15   (BA   27   CR      8/15)   TR  3   CH  1   NT  Eb--         5/32   von=117
+CR       104+3/4   (BA   27   CR       3/4)   TR 11   CH  1   NT  Bb'        29/160   von=89
+CR           105   (BA   27   CR         1)   TR 11   CH  1   NT  D''       133/480   von=79
+CR      105+1/30   (BA   27   CR    1+1/30)   TR  3   CH  1   NT  Eb--       47/480   von=107
+CR       105+1/4   (BA   27   CR     1+1/4)   TR 11   CH  1   NT  C''        73/240   von=86
+CR     105+17/60   (BA   27   CR   1+17/60)   TR  3   CH  1   NT  Eb--       23/240   von=113
+CR     105+17/60   (BA   27   CR   1+17/60)   TR  3   CH  1   NT  F-        103/480   von=108
+CR       105+1/2   (BA   27   CR     1+1/2)   TR 11   CH  1   NT  Bb'        19/120   von=63
+CR      105+8/15   (BA   27   CR    1+8/15)   TR  3   CH  1   NT  Eb--       53/480   von=113
+CR       105+3/4   (BA   27   CR     1+3/4)   TR 11   CH  1   NT  G#'        19/160   von=73
+CR           106   (BA   27   CR         2)   TR 11   CH  1   NT  G#'       121/480   von=62
+CR      106+1/30   (BA   27   CR    2+1/30)   TR  3   CH  1   NT  F-         17/160   von=107
+CR       106+1/4   (BA   27   CR     2+1/4)   TR 11   CH  1   NT  Bb'        19/120   von=64
+CR     106+17/60   (BA   27   CR   2+17/60)   TR  3   CH  1   NT  F-           9/80   von=89
+CR     106+19/48   (BA   27   CR   2+19/48)   TR  3   CH 16   End of track
+CR       106+1/2   (BA   27   CR     2+1/2)   TR 11   CH  1   NT  G#'       151/480   von=62
+CR      106+8/15   (BA   27   CR    2+8/15)   TR  4   CH  1   NT  Eb--         7/60   von=111
+CR       106+3/4   (BA   27   CR     2+3/4)   TR 11   CH  1   NT  Bb'        83/480   von=51
+CR     106+47/60   (BA   27   CR   2+47/60)   TR  4   CH  1   NT  Eb--       23/240   von=106
+CR           107   (BA   27   CR         3)   TR 11   CH  1   NT  G'          17/48   von=67
+CR      107+1/30   (BA   27   CR    3+1/30)   TR  4   CH  1   NT  Eb--       19/240   von=104
+CR     107+17/60   (BA   27   CR   3+17/60)   TR  4   CH  1   NT  F-            1/6   von=107
+CR       107+1/2   (BA   27   CR     3+1/2)   TR 11   CH  1   NT  G'        287/480   von=84
+CR      107+8/15   (BA   27   CR    3+8/15)   TR  4   CH  1   NT  Eb--       31/240   von=115
+
+CR      108+1/30   (BA   28   CR      1/30)   TR  4   CH  1   NT  F-         17/160   von=99
+CR     108+17/60   (BA   28   CR     17/60)   TR  4   CH  1   NT  F-         17/120   von=97
+CR       108+1/2   (BA   28   CR       1/2)   TR 11   CH  1   NT  C'         31/160   von=92
+CR      108+8/15   (BA   28   CR      8/15)   TR  4   CH  1   NT  Eb--       59/480   von=109
+CR       108+3/4   (BA   28   CR       3/4)   TR 11   CH  1   NT  D'           3/16   von=94
+CR     108+47/60   (BA   28   CR     47/60)   TR  4   CH  1   NT  Eb--       13/160   von=102
+CR           109   (BA   28   CR         1)   TR 11   CH  1   NT  Eb'          3/16   von=92
+CR       109+1/4   (BA   28   CR     1+1/4)   TR 11   CH  1   NT  D'         83/480   von=88
+CR     109+17/60   (BA   28   CR   1+17/60)   TR  4   CH  1   NT  Eb--       53/480   von=113
+CR     109+17/60   (BA   28   CR   1+17/60)   TR  4   CH  1   NT  F-         91/480   von=109
+CR       109+1/2   (BA   28   CR     1+1/2)   TR 11   CH  1   NT  Eb'        23/120   von=85
+CR      109+8/15   (BA   28   CR    1+8/15)   TR  4   CH  1   NT  Eb--         2/15   von=113
+CR       109+3/4   (BA   28   CR     1+3/4)   TR 11   CH  1   NT  F'         83/480   von=87
+CR           110   (BA   28   CR         2)   TR 11   CH  1   NT  G'         19/120   von=92
+CR      110+1/30   (BA   28   CR    2+1/30)   TR  4   CH  1   NT  F-         13/120   von=99
+CR       110+1/4   (BA   28   CR     2+1/4)   TR 11   CH  1   NT  F'         79/480
+CR     110+17/60   (BA   28   CR   2+17/60)   TR  4   CH  1   NT  F-         23/160
+CR       110+1/2   (BA   28   CR     2+1/2)   TR 11   CH  1   NT  Eb'         17/60   von=89
+CR      110+8/15   (BA   28   CR    2+8/15)   TR  4   CH  1   NT  Eb--         2/15   von=111
+CR       110+3/4   (BA   28   CR     2+3/4)   TR 11   CH  1   NT  D'          11/80   von=85
+CR     110+47/60   (BA   28   CR   2+47/60)   TR  4   CH  1   NT  Eb--       23/240   von=106
+CR           111   (BA   28   CR         3)   TR 11   CH  1   NT  Eb'        49/240   von=92
+CR      111+1/30   (BA   28   CR    3+1/30)   TR  4   CH  1   NT  Eb--         5/48   von=107
+CR       111+1/4   (BA   28   CR     3+1/4)   TR 11   CH  1   NT  D'          13/80   von=88
+CR     111+17/60   (BA   28   CR   3+17/60)   TR  4   CH  1   NT  F-         19/120   von=103
+CR       111+1/2   (BA   28   CR     3+1/2)   TR 11   CH  1   NT  C'         89/480   von=79
+CR      111+8/15   (BA   28   CR    3+8/15)   TR  4   CH  1   NT  Eb--       73/480   von=115
+CR       111+3/4   (BA   28   CR     3+3/4)   TR 11   CH  1   NT  D'         91/480   von=87
+
+CR           112   (BA   29   CR         0)   TR 11   CH  1   NT  C'          31/96   von=89
+CR      112+1/30   (BA   29   CR      1/30)   TR  4   CH  1   NT  F-          11/96   von=107
+CR     112+17/60   (BA   29   CR     17/60)   TR  4   CH  1   NT  F-           3/20   von=101
+CR       112+1/2   (BA   29   CR       1/2)   TR 11   CH  1   NT  C'         89/480   von=83
+CR      112+8/15   (BA   29   CR      8/15)   TR  4   CH  1   NT  Eb--      101/480   von=109
+CR       112+3/4   (BA   29   CR       3/4)   TR 11   CH  1   NT  D'         71/480   von=89
+CR     112+47/60   (BA   29   CR     47/60)   TR  4   CH  1   NT  F-         37/480   von=104
+CR           113   (BA   29   CR         1)   TR 11   CH  1   NT  Eb'         17/96   von=87
+CR       113+1/4   (BA   29   CR     1+1/4)   TR 11   CH  1   NT  D'         83/480   von=77
+CR     113+17/60   (BA   29   CR   1+17/60)   TR  4   CH  1   NT  F-           1/10   von=89
+CR       113+1/2   (BA   29   CR     1+1/2)   TR 11   CH  1   NT  Eb'         17/96   von=92
+CR      113+8/15   (BA   29   CR    1+8/15)   TR  4   CH  1   NT  Eb--       71/480   von=104
+CR       113+3/4   (BA   29   CR     1+3/4)   TR 11   CH  1   NT  F'          13/80   von=87
+CR           114   (BA   29   CR         2)   TR 11   CH  1   NT  G'         91/480   von=89
+CR     114+3/160   (BA   29   CR   2+3/160)   TR 14   CH  1   NT  C''     17+97/160   von=91
+CR      114+1/30   (BA   29   CR    2+1/30)   TR  4   CH  1   NT  F-         17/160   von=97
+CR       114+1/4   (BA   29   CR     2+1/4)   TR 11   CH  1   NT  F'         23/160   von=88
+CR     114+17/60   (BA   29   CR   2+17/60)   TR  4   CH  1   NT  F-         17/120   von=94
+CR       114+1/2   (BA   29   CR     2+1/2)   TR 11   CH  1   NT  Eb'        23/120   von=90
+CR      114+8/15   (BA   29   CR    2+8/15)   TR  4   CH  1   NT  Eb--       73/480   von=113
+CR       114+3/4   (BA   29   CR     2+3/4)   TR 11   CH  1   NT  D'         29/240   von=88
+CR     114+47/60   (BA   29   CR   2+47/60)   TR  4   CH  1   NT  Eb--        11/96   von=115
+CR           115   (BA   29   CR         3)   TR 11   CH  1   NT  F'            1/5   von=95
+CR      115+1/30   (BA   29   CR    3+1/30)   TR  4   CH  1   NT  Eb--       49/480   von=102
+CR       115+1/4   (BA   29   CR     3+1/4)   TR 11   CH  1   NT  Eb'        77/480   von=84
+CR     115+17/60   (BA   29   CR   3+17/60)   TR  4   CH  1   NT  F-         23/120   von=109
+CR       115+1/2   (BA   29   CR     3+1/2)   TR 11   CH  1   NT  D'         33/160   von=92
+CR      115+8/15   (BA   29   CR    3+8/15)   TR  4   CH  1   NT  Eb--       19/120   von=119
+CR       115+3/4   (BA   29   CR     3+3/4)   TR 11   CH  1   NT  Eb'        41/240   von=90
+
+CR           116   (BA   30   CR         0)   TR 11   CH  1   NT  C'         41/120   von=92
+CR      116+1/30   (BA   30   CR      1/30)   TR  4   CH  1   NT  F-         49/480   von=104
+CR     116+17/60   (BA   30   CR     17/60)   TR  4   CH  1   NT  F-         23/160   von=99
+CR       116+1/2   (BA   30   CR       1/2)   TR 11   CH  1   NT  C'         53/240   von=74
+CR      116+8/15   (BA   30   CR      8/15)   TR  4   CH  1   NT  Eb--       23/160   von=115
+CR       116+3/4   (BA   30   CR       3/4)   TR 11   CH  1   NT  Bb         41/240   von=95
+CR     116+47/60   (BA   30   CR     47/60)   TR  4   CH  1   NT  Eb--         1/10   von=111
+CR           117   (BA   30   CR         1)   TR 11   CH  1   NT  C'         37/160   von=85
+CR      117+1/30   (BA   30   CR    1+1/30)   TR  4   CH  1   NT  Eb--         5/48
+CR       117+1/4   (BA   30   CR     1+1/4)   TR 11   CH  1   NT  D'           7/48   von=87
+CR     117+17/60   (BA   30   CR   1+17/60)   TR  4   CH  1   NT  F-            1/4   von=110
+CR       117+1/2   (BA   30   CR     1+1/2)   TR 11   CH  1   NT  Eb'       151/480   von=98
+CR      117+8/15   (BA   30   CR    1+8/15)   TR  4   CH  1   NT  Eb--       23/160   von=115
+CR           118   (BA   30   CR         2)   TR 11   CH  1   NT  C'          23/80   von=93
+CR      118+1/30   (BA   30   CR    2+1/30)   TR  4   CH  1   NT  F-         47/480   von=104
+CR     118+17/60   (BA   30   CR   2+17/60)   TR  4   CH  1   NT  F-           7/48   von=96
+CR       118+1/2   (BA   30   CR     2+1/2)   TR 11   CH  1   NT  C'        151/480   von=92
+CR      118+8/15   (BA   30   CR    2+8/15)   TR  4   CH  1   NT  Eb--       19/120   von=115
+CR       118+3/4   (BA   30   CR     2+3/4)   TR 11   CH  1   NT  Bb         31/160   von=75
+CR           119   (BA   30   CR         3)   TR 11   CH  1   NT  C'            1/5   von=87
+CR      119+1/30   (BA   30   CR    3+1/30)   TR  4   CH  1   NT  Eb--       23/240   von=106
+CR       119+1/4   (BA   30   CR     3+1/4)   TR 11   CH  1   NT  D'          11/60   von=92
+CR     119+17/60   (BA   30   CR   3+17/60)   TR  4   CH  1   NT  Eb--         7/60
+CR     119+17/60   (BA   30   CR   3+17/60)   TR  4   CH  1   NT  F-        139/480   von=107
+CR       119+1/2   (BA   30   CR     3+1/2)   TR 11   CH  1   NT  Eb'        47/160   von=95
+CR      119+8/15   (BA   30   CR    3+8/15)   TR  4   CH  1   NT  Eb--        23/96   von=113
+CR     119+69/80   (BA   30   CR   3+69/80)   TR 14   CH  1   NT  Eb''     11+7/120   von=68
+CR   119+421/480   (BA   30   CR 3+421/480)   TR 14   CH  1   NT  G''     15+241/480   von=71
+
+CR           120   (BA   31   CR         0)   TR 11   CH  1   NT  C'            1/6   von=96
+CR      120+1/30   (BA   31   CR      1/30)   TR  4   CH  1   NT  F-           7/60   von=101
+CR       120+1/4   (BA   31   CR       1/4)   TR 11   CH  1   NT  D'         83/480   von=95
+CR     120+17/60   (BA   31   CR     17/60)   TR  4   CH  1   NT  F-           5/32   von=97
+CR       120+1/2   (BA   31   CR       1/2)   TR 11   CH  1   NT  Eb'        83/480   von=90
+CR      120+8/15   (BA   31   CR      8/15)   TR  4   CH  1   NT  Eb--       77/480   von=113
+CR       120+3/4   (BA   31   CR       3/4)   TR 11   CH  1   NT  F'         41/240   von=89
+CR     120+47/60   (BA   31   CR     47/60)   TR  4   CH  1   NT  Eb--       13/120   von=111
+CR           121   (BA   31   CR         1)   TR 11   CH  1   NT  G'         91/480
+CR      121+1/30   (BA   31   CR    1+1/30)   TR  4   CH  1   NT  Eb--         7/60   von=109
+CR       121+1/4   (BA   31   CR     1+1/4)   TR 11   CH  1   NT  F'           7/48   von=83
+CR     121+17/60   (BA   31   CR   1+17/60)   TR  4   CH  1   NT  F-         31/160   von=107
+CR       121+1/2   (BA   31   CR     1+1/2)   TR 11   CH  1   NT  G'         31/240   von=85
+CR      121+8/15   (BA   31   CR    1+8/15)   TR  4   CH  1   NT  Eb--         7/40   von=115
+CR       121+3/4   (BA   31   CR     1+3/4)   TR 11   CH  1   NT  G'         47/480   von=29
+CR           122   (BA   31   CR         2)   TR 11   CH  1   NT  G'         73/480   von=86
+CR      122+1/30   (BA   31   CR    2+1/30)   TR  4   CH  1   NT  F-         13/120   von=105
+CR       122+1/4   (BA   31   CR     2+1/4)   TR 11   CH  1   NT  F'         41/240   von=87
+CR     122+17/60   (BA   31   CR   2+17/60)   TR  4   CH  1   NT  F-          13/96
+CR       122+1/2   (BA   31   CR     2+1/2)   TR 11   CH  1   NT  G'         71/480   von=82
+CR      122+8/15   (BA   31   CR    2+8/15)   TR  4   CH  1   NT  Eb--         3/20   von=113
+CR       122+3/4   (BA   31   CR     2+3/4)   TR 11   CH  1   NT  F'         43/240   von=73
+CR     122+47/60   (BA   31   CR   2+47/60)   TR  4   CH  1   NT  Eb--        13/96   von=111
+CR           123   (BA   31   CR         3)   TR 11   CH  1   NT  G'           5/24   von=86
+CR      123+1/30   (BA   31   CR    3+1/30)   TR  4   CH  1   NT  Eb--         7/80   von=103
+CR       123+1/4   (BA   31   CR     3+1/4)   TR 11   CH  1   NT  F'         83/480   von=84
+CR     123+17/60   (BA   31   CR   3+17/60)   TR  4   CH  1   NT  F-         97/480   von=107
+CR       123+1/2   (BA   31   CR     3+1/2)   TR 11   CH  1   NT  Eb'        79/480   von=92
+CR      123+8/15   (BA   31   CR    3+8/15)   TR  4   CH  1   NT  Eb--       73/480   von=115
+CR       123+3/4   (BA   31   CR     3+3/4)   TR 11   CH  1   NT  D'         79/480   von=91
+
+CR           124   (BA   32   CR         0)   TR 11   CH  1   NT  C'        157/480   von=102
+CR      124+1/30   (BA   32   CR      1/30)   TR  4   CH  1   NT  F-           9/80   von=100
+CR     124+17/60   (BA   32   CR     17/60)   TR  4   CH  1   NT  F-         37/240   von=99
+CR       124+1/2   (BA   32   CR       1/2)   TR 11   CH  1   NT  C'           7/40   von=96
+CR      124+8/15   (BA   32   CR      8/15)   TR  4   CH  1   NT  Eb--       17/160   von=111
+CR       124+3/4   (BA   32   CR       3/4)   TR 11   CH  1   NT  D'         71/480   von=79
+CR     124+47/60   (BA   32   CR     47/60)   TR  4   CH  1   NT  Eb--       37/480   von=100
+CR           125   (BA   32   CR         1)   TR 11   CH  1   NT  Eb'        91/480   von=73
+CR      125+1/30   (BA   32   CR    1+1/30)   TR  4   CH  1   NT  Eb--       29/240   von=111
+CR       125+1/4   (BA   32   CR     1+1/4)   TR 11   CH  1   NT  D'         17/120   von=74
+CR     125+17/60   (BA   32   CR   1+17/60)   TR  4   CH  1   NT  F-         79/480   von=108
+CR       125+1/2   (BA   32   CR     1+1/2)   TR 11   CH  1   NT  Eb'         17/96   von=88
+CR      125+8/15   (BA   32   CR    1+8/15)   TR  4   CH  1   NT  Eb--         7/40   von=115
+CR       125+3/4   (BA   32   CR     1+3/4)   TR 11   CH  1   NT  F'         71/480   von=85
+CR           126   (BA   32   CR         2)   TR 11   CH  1   NT  G'          17/60   von=90
+CR      126+1/30   (BA   32   CR    2+1/30)   TR  4   CH  1   NT  F-         53/480   von=102
+CR     126+17/60   (BA   32   CR   2+17/60)   TR  4   CH  1   NT  F-         31/240   von=94
+CR       126+1/2   (BA   32   CR     2+1/2)   TR 11   CH  1   NT  G'        131/480   von=88
+CR      126+8/15   (BA   32   CR    2+8/15)   TR  4   CH  1   NT  Eb--        11/80   von=113
+CR     126+47/60   (BA   32   CR   2+47/60)   TR  4   CH  1   NT  Eb--         7/60   von=111
+CR           127   (BA   32   CR         3)   TR 11   CH  1   NT  G'            1/6   von=87
+CR      127+1/30   (BA   32   CR    3+1/30)   TR  4   CH  1   NT  Eb--         7/60   von=113
+CR       127+1/4   (BA   32   CR     3+1/4)   TR 11   CH  1   NT  F'         17/120   von=77
+CR     127+17/60   (BA   32   CR   3+17/60)   TR  4   CH  1   NT  F-          11/60   von=108
+CR       127+1/2   (BA   32   CR     3+1/2)   TR 11   CH  1   NT  Eb'        37/240   von=71
+CR      127+8/15   (BA   32   CR    3+8/15)   TR  4   CH  1   NT  Eb--        11/80   von=113
+CR       127+3/4   (BA   32   CR     3+3/4)   TR 11   CH  1   NT  D'          11/60   von=72
+
+CR           128   (BA   33   CR         0)   TR 11   CH  1   NT  C'         51/160   von=95
+CR      128+1/30   (BA   33   CR      1/30)   TR  4   CH  1   NT  F-         17/160   von=104
+CR     128+17/60   (BA   33   CR     17/60)   TR  4   CH  1   NT  F-          13/96   von=95
+CR       128+1/2   (BA   33   CR       1/2)   TR 11   CH  1   NT  C'         61/160   von=102
+CR      128+8/15   (BA   33   CR      8/15)   TR  4   CH  1   NT  F-           1/20   von=86
+CR      128+7/12   (BA   33   CR      7/12)   TR  4   CH 16   End of track
+CR           129   (BA   33   CR         1)   TR 11   CH  1   NT  C'           7/40   von=97
+CR       129+1/4   (BA   33   CR     1+1/4)   TR 11   CH  1   NT  D'          13/96   von=91
+CR       129+1/2   (BA   33   CR     1+1/2)   TR 11   CH  1   NT  Eb'        79/480   von=88
+CR       129+3/4   (BA   33   CR     1+3/4)   TR 11   CH  1   NT  F'         79/480   von=89
+CR           130   (BA   33   CR         2)   TR 11   CH  1   NT  G'          11/40   von=92
+CR       130+1/2   (BA   33   CR     2+1/2)   TR 11   CH  1   NT  G'        151/480   von=96
+CR           131   (BA   33   CR         3)   TR 11   CH  1   NT  G'           7/40   von=95
+CR    131+73/480   (BA   33   CR  3+73/480)   TR 14   CH  1   NT  Eb''     4+29/120   von=1
+CR       131+1/4   (BA   33   CR     3+1/4)   TR 11   CH  1   NT  F'         71/480   von=87
+CR       131+1/2   (BA   33   CR     3+1/2)   TR 11   CH  1   NT  Eb'          5/32   von=92
+CR       131+3/4   (BA   33   CR     3+3/4)   TR 11   CH  1   NT  F'           7/60   von=82
+CR   131+439/480   (BA   33   CR 3+439/480)   TR 14   CH  1   NT  C''      12+23/24   von=101
+
+CR           132   (BA   34   CR         0)   TR 11   CH  1   NT  G'         37/120   von=100
+CR      132+1/30   (BA   34   CR      1/30)   TR  5   CH  1   NT  F-           9/80   von=107
+CR     132+17/60   (BA   34   CR     17/60)   TR  5   CH  1   NT  F-          13/80   von=98
+CR       132+1/2   (BA   34   CR       1/2)   TR 11   CH  1   NT  G'            1/3   von=93
+CR      132+8/15   (BA   34   CR      8/15)   TR  5   CH  1   NT  Eb--       17/120   von=113
+CR     132+47/60   (BA   34   CR     47/60)   TR  5   CH  1   NT  Eb--       11/240   von=104
+CR           133   (BA   34   CR         1)   TR 11   CH  1   NT  G'         73/480   von=92
+CR      133+1/30   (BA   34   CR    1+1/30)   TR  5   CH  1   NT  Eb--       47/480   von=113
+CR       133+1/4   (BA   34   CR     1+1/4)   TR 11   CH  1   NT  F'         71/480   von=87
+CR     133+17/60   (BA   34   CR   1+17/60)   TR  5   CH  1   NT  F-          13/80   von=107
+CR       133+1/2   (BA   34   CR     1+1/2)   TR 11   CH  1   NT  Eb'        31/120   von=88
+CR      133+8/15   (BA   34   CR    1+8/15)   TR  5   CH  1   NT  Eb--        11/80   von=113
+CR           134   (BA   34   CR         2)   TR 11   CH  1   NT  G'           5/16   von=99
+CR      134+1/30   (BA   34   CR    2+1/30)   TR  5   CH  1   NT  F-         13/120   von=102
+CR     134+17/60   (BA   34   CR   2+17/60)   TR  5   CH  1   NT  F-         67/480   von=99
+CR       134+1/2   (BA   34   CR     2+1/2)   TR 11   CH  1   NT  G'        157/480   von=97
+CR      134+8/15   (BA   34   CR    2+8/15)   TR  5   CH  1   NT  Eb--        13/96   von=111
+CR     134+47/60   (BA   34   CR   2+47/60)   TR  5   CH  1   NT  Eb--         7/80   von=106
+CR           135   (BA   34   CR         3)   TR 11   CH  1   NT  G'         19/120   von=102
+CR      135+1/30   (BA   34   CR    3+1/30)   TR  5   CH  1   NT  Eb--         3/40   von=103
+CR       135+1/4   (BA   34   CR     3+1/4)   TR 11   CH  1   NT  F'         37/240   von=92
+CR     135+17/60   (BA   34   CR   3+17/60)   TR  5   CH  1   NT  F-         83/480
+CR       135+1/2   (BA   34   CR     3+1/2)   TR 11   CH  1   NT  Eb'       133/480   von=99
+CR      135+8/15   (BA   34   CR    3+8/15)   TR  5   CH  1   NT  Eb--       71/480   von=115
+CR   135+211/240   (BA   34   CR 3+211/240)   TR 14   CH  1   NT  Eb''    10+121/480   von=78
+CR     135+85/96   (BA   34   CR   3+85/96)   TR 14   CH  1   NT  G''       10+7/30   von=89
+
+CR           136   (BA   35   CR         0)   TR 11   CH  1   NT  C'         89/480   von=101
+CR      136+1/30   (BA   35   CR      1/30)   TR  5   CH  1   NT  F-         17/160   von=104
+CR       136+1/4   (BA   35   CR       1/4)   TR 11   CH  1   NT  D'          13/96   von=89
+CR     136+17/60   (BA   35   CR     17/60)   TR  5   CH  1   NT  F-           7/60   von=87
+CR       136+1/2   (BA   35   CR       1/2)   TR 11   CH  1   NT  Eb'        97/480   von=100
+CR      136+8/15   (BA   35   CR      8/15)   TR  5   CH  1   NT  Eb--       17/160   von=111
+CR       136+3/4   (BA   35   CR       3/4)   TR 11   CH  1   NT  C'         33/160   von=76
+CR     136+47/60   (BA   35   CR     47/60)   TR  5   CH  1   NT  Eb--         7/60   von=109
+CR           137   (BA   35   CR         1)   TR 11   CH  1   NT  D'         77/480   von=98
+CR      137+1/30   (BA   35   CR    1+1/30)   TR  5   CH  1   NT  F-         31/240   von=104
+CR       137+1/4   (BA   35   CR     1+1/4)   TR 11   CH  1   NT  Eb'         13/80   von=96
+CR     137+17/60   (BA   35   CR   1+17/60)   TR  5   CH  1   NT  Eb--       11/160   von=111
+CR       137+1/2   (BA   35   CR     1+1/2)   TR 11   CH  1   NT  C'        101/480   von=99
+CR      137+8/15   (BA   35   CR    1+8/15)   TR  5   CH  1   NT  F-           1/30   von=84
+CR       137+3/4   (BA   35   CR     1+3/4)   TR 11   CH  1   NT  D'           5/32
+CR           138   (BA   35   CR         2)   TR 11   CH  1   NT  Eb'        83/480
+CR      138+1/30   (BA   35   CR    2+1/30)   TR  5   CH  1   NT  F-           5/48   von=104
+CR       138+1/4   (BA   35   CR     2+1/4)   TR 11   CH  1   NT  C'        101/480   von=104
+CR     138+17/60   (BA   35   CR   2+17/60)   TR  5   CH  1   NT  F-          11/96   von=92
+CR       138+1/2   (BA   35   CR     2+1/2)   TR 11   CH  1   NT  D'         41/240   von=99
+CR      138+8/15   (BA   35   CR    2+8/15)   TR  5   CH  1   NT  Eb--       31/240   von=113
+CR       138+3/4   (BA   35   CR     2+3/4)   TR 11   CH  1   NT  Eb'        83/480   von=100
+CR     138+47/60   (BA   35   CR   2+47/60)   TR  5   CH  1   NT  Eb--         7/96   von=99
+CR           139   (BA   35   CR         3)   TR 11   CH  1   NT  C'         97/480   von=104
+CR      139+1/30   (BA   35   CR    3+1/30)   TR  5   CH  1   NT  Eb--         7/60   von=113
+CR       139+1/4   (BA   35   CR     3+1/4)   TR 11   CH  1   NT  D'         17/120   von=102
+CR     139+17/60   (BA   35   CR   3+17/60)   TR  5   CH  1   NT  F-         31/160   von=111
+CR       139+1/2   (BA   35   CR     3+1/2)   TR 11   CH  1   NT  Eb'       143/480   von=103
+CR      139+8/15   (BA   35   CR    3+8/15)   TR  5   CH  1   NT  Eb--       23/160   von=113
+CR   139+383/480   (BA   35   CR 3+383/480)   TR 11   CH 16   End of track
+
+CR           140   (BA   36   CR         0)   TR 12   CH  1   NT  C'        103/480   von=107
+CR      140+1/30   (BA   36   CR      1/30)   TR  5   CH  1   NT  F-         59/480   von=103
+CR       140+1/4   (BA   36   CR       1/4)   TR 12   CH  1   NT  D'         67/480   von=99
+CR     140+17/60   (BA   36   CR     17/60)   TR  5   CH  1   NT  F-         23/160   von=93
+CR       140+1/2   (BA   36   CR       1/2)   TR 12   CH  1   NT  Eb'         11/60
+CR      140+8/15   (BA   36   CR      8/15)   TR  5   CH  1   NT  Eb--         7/60   von=113
+CR       140+3/4   (BA   36   CR       3/4)   TR 12   CH  1   NT  D'           7/48
+CR     140+47/60   (BA   36   CR     47/60)   TR  5   CH  1   NT  Eb--       21/160   von=109
+CR           141   (BA   36   CR         1)   TR 12   CH  1   NT  Eb'        29/160   von=102
+CR      141+1/30   (BA   36   CR    1+1/30)   TR  5   CH  1   NT  Eb--       23/240   von=107
+CR       141+1/4   (BA   36   CR     1+1/4)   TR 12   CH  1   NT  F'          11/60   von=101
+CR     141+17/60   (BA   36   CR   1+17/60)   TR  5   CH  1   NT  F-         31/160   von=108
+CR       141+1/2   (BA   36   CR     1+1/2)   TR 12   CH  1   NT  Eb'        91/480   von=104
+CR      141+8/15   (BA   36   CR    1+8/15)   TR  5   CH  1   NT  Eb--         7/40   von=115
+CR       141+3/4   (BA   36   CR     1+3/4)   TR 12   CH  1   NT  D'          19/96   von=96
+CR           142   (BA   36   CR         2)   TR 12   CH  1   NT  C'         33/160   von=95
+CR      142+1/30   (BA   36   CR    2+1/30)   TR  5   CH  1   NT  F-          11/96   von=104
+CR       142+1/4   (BA   36   CR     2+1/4)   TR 12   CH  1   NT  D'          13/80   von=96
+CR     142+17/60   (BA   36   CR   2+17/60)   TR  5   CH  1   NT  F-          13/96   von=93
+CR       142+1/2   (BA   36   CR     2+1/2)   TR 12   CH  1   NT  Eb'        91/480   von=93
+CR      142+8/15   (BA   36   CR    2+8/15)   TR  5   CH  1   NT  Eb--       27/160   von=115
+CR       142+3/4   (BA   36   CR     2+3/4)   TR 12   CH  1   NT  D'           5/32   von=98
+CR           143   (BA   36   CR         3)   TR 12   CH  1   NT  Eb'        29/160   von=100
+CR      143+1/30   (BA   36   CR    3+1/30)   TR  5   CH  1   NT  Eb--       23/240   von=107
+CR       143+1/4   (BA   36   CR     3+1/4)   TR 12   CH  1   NT  F'         37/240   von=99
+CR     143+17/60   (BA   36   CR   3+17/60)   TR  5   CH  1   NT  Eb--       53/480   von=109
+CR     143+17/60   (BA   36   CR   3+17/60)   TR  5   CH  1   NT  F-          19/96   von=106
+CR       143+1/2   (BA   36   CR     3+1/2)   TR 12   CH  1   NT  D'          13/40   von=93
+CR      143+8/15   (BA   36   CR    3+8/15)   TR  5   CH  1   NT  Eb--       31/240   von=109
+
+CR           144   (BA   37   CR         0)   TR 12   CH  1   NT  C'        107/480   von=107
+CR      144+1/30   (BA   37   CR      1/30)   TR  5   CH  1   NT  F-           9/80   von=107
+CR       144+1/4   (BA   37   CR       1/4)   TR 12   CH  1   NT  D'         59/480   von=95
+CR     144+17/60   (BA   37   CR     17/60)   TR  5   CH  1   NT  F-         13/120   von=92
+CR       144+1/2   (BA   37   CR       1/2)   TR 12   CH  1   NT  Eb'        79/480   von=100
+CR      144+8/15   (BA   37   CR      8/15)   TR  5   CH  1   NT  Eb--       67/480   von=113
+CR       144+3/4   (BA   37   CR       3/4)   TR 12   CH  1   NT  D'           5/32   von=94
+CR     144+47/60   (BA   37   CR     47/60)   TR  5   CH  1   NT  Eb--         7/60   von=102
+CR           145   (BA   37   CR         1)   TR 12   CH  1   NT  Eb'        41/240   von=98
+CR     145+1/160   (BA   37   CR   1+1/160)   TR 14   CH  1   NT  C''      18+29/48   von=98
+CR      145+1/30   (BA   37   CR    1+1/30)   TR  5   CH  1   NT  Eb--       19/160   von=107
+CR       145+1/4   (BA   37   CR     1+1/4)   TR 12   CH  1   NT  F'          11/60   von=99
+CR     145+17/60   (BA   37   CR   1+17/60)   TR  5   CH  1   NT  F-         79/480   von=108
+CR       145+1/2   (BA   37   CR     1+1/2)   TR 12   CH  1   NT  Eb'          5/32   von=102
+CR      145+8/15   (BA   37   CR    1+8/15)   TR  5   CH  1   NT  Eb--        11/60   von=113
+CR       145+3/4   (BA   37   CR     1+3/4)   TR 12   CH  1   NT  D'         59/240   von=94
+CR           146   (BA   37   CR         2)   TR 12   CH  1   NT  C'           3/16   von=93
+CR      146+1/30   (BA   37   CR    2+1/30)   TR  5   CH  1   NT  F-         23/160   von=107
+CR       146+1/4   (BA   37   CR     2+1/4)   TR 12   CH  1   NT  D'         83/480   von=100
+CR     146+17/60   (BA   37   CR   2+17/60)   TR  5   CH  1   NT  F-          13/80   von=95
+CR       146+1/2   (BA   37   CR     2+1/2)   TR 12   CH  1   NT  Eb'        29/120   von=95
+CR      146+8/15   (BA   37   CR    2+8/15)   TR  5   CH  1   NT  Eb--       91/480   von=115
+CR       146+3/4   (BA   37   CR     2+3/4)   TR 12   CH  1   NT  D'         29/160   von=92
+CR     146+47/60   (BA   37   CR   2+47/60)   TR  5   CH  1   NT  Eb--          1/8   von=113
+CR           147   (BA   37   CR         3)   TR 12   CH  1   NT  Eb'        71/480   von=95
+CR      147+1/30   (BA   37   CR    3+1/30)   TR  5   CH  1   NT  Eb--       29/240   von=99
+CR       147+1/4   (BA   37   CR     3+1/4)   TR 12   CH  1   NT  F'         17/120   von=99
+CR     147+17/60   (BA   37   CR   3+17/60)   TR  5   CH  1   NT  F-         49/240   von=105
+CR       147+1/2   (BA   37   CR     3+1/2)   TR 12   CH  1   NT  Eb'       133/480   von=106
+CR      147+8/15   (BA   37   CR    3+8/15)   TR  5   CH  1   NT  Eb--          1/6   von=111
+CR   147+209/240   (BA   37   CR 3+209/240)   TR 14   CH  1   NT  Eb''     19+49/96   von=63
+CR       147+7/8   (BA   37   CR     3+7/8)   TR 14   CH  1   NT  G''     19+263/480   von=78
+
+CR           148   (BA   38   CR         0)   TR 12   CH  1   NT  C'         23/120   von=101
+CR      148+1/30   (BA   38   CR      1/30)   TR  5   CH  1   NT  F-         53/480   von=103
+CR       148+1/4   (BA   38   CR       1/4)   TR 12   CH  1   NT  D'         61/480   von=89
+CR     148+17/60   (BA   38   CR     17/60)   TR  5   CH  1   NT  F-         77/480   von=93
+CR       148+1/2   (BA   38   CR       1/2)   TR 12   CH  1   NT  Eb'        37/240   von=93
+CR      148+8/15   (BA   38   CR      8/15)   TR  5   CH  1   NT  Eb--       79/480   von=111
+CR       148+3/4   (BA   38   CR       3/4)   TR 12   CH  1   NT  D'         19/160   von=92
+CR     148+47/60   (BA   38   CR     47/60)   TR  5   CH  1   NT  Eb--          1/6   von=95
+CR           149   (BA   38   CR         1)   TR 12   CH  1   NT  Eb'          3/20   von=99
+CR      149+1/30   (BA   38   CR    1+1/30)   TR  5   CH  1   NT  Eb--       37/240   von=100
+CR       149+1/4   (BA   38   CR     1+1/4)   TR 12   CH  1   NT  F'         71/480   von=96
+CR     149+17/60   (BA   38   CR   1+17/60)   TR  5   CH  1   NT  F-         47/240   von=111
+CR       149+1/2   (BA   38   CR     1+1/2)   TR 12   CH  1   NT  G'           3/10   von=92
+CR      149+8/15   (BA   38   CR    1+8/15)   TR  5   CH  1   NT  Eb--         7/30   von=107
+CR           150   (BA   38   CR         2)   TR 12   CH  1   NT  C'         29/160   von=97
+CR      150+1/30   (BA   38   CR    2+1/30)   TR  5   CH  1   NT  F-         61/480   von=110
+CR       150+1/4   (BA   38   CR     2+1/4)   TR 12   CH  1   NT  D'           7/48   von=92
+CR     150+17/60   (BA   38   CR   2+17/60)   TR  5   CH  1   NT  F-         77/480   von=91
+CR       150+1/2   (BA   38   CR     2+1/2)   TR 12   CH  1   NT  Eb'          7/30   von=100
+CR      150+8/15   (BA   38   CR    2+8/15)   TR  5   CH  1   NT  Eb--        17/96   von=117
+CR       150+3/4   (BA   38   CR     2+3/4)   TR 12   CH  1   NT  D'          13/96   von=91
+CR     150+47/60   (BA   38   CR   2+47/60)   TR  5   CH  1   NT  Eb--         2/15   von=103
+CR           151   (BA   38   CR         3)   TR 12   CH  1   NT  Eb'           1/6   von=99
+CR      151+1/30   (BA   38   CR    3+1/30)   TR  5   CH  1   NT  Eb--       43/480
+CR       151+1/4   (BA   38   CR     3+1/4)   TR 12   CH  1   NT  F'           7/48   von=93
+CR     151+17/60   (BA   38   CR   3+17/60)   TR  5   CH  1   NT  F-        113/480   von=106
+CR       151+1/2   (BA   38   CR     3+1/2)   TR 12   CH  1   NT  G'        137/480   von=99
+CR      151+8/15   (BA   38   CR    3+8/15)   TR  5   CH  1   NT  Eb--       91/480   von=113
+
+CR           152   (BA   39   CR         0)   TR 12   CH  1   NT  G'         29/160   von=92
+CR      152+1/30   (BA   39   CR      1/30)   TR  5   CH  1   NT  F-          11/96   von=101
+CR       152+1/4   (BA   39   CR       1/4)   TR 12   CH  1   NT  F'         71/480   von=93
+CR     152+17/60   (BA   39   CR     17/60)   TR  5   CH  1   NT  F-         27/160   von=93
+CR       152+1/2   (BA   39   CR       1/2)   TR 12   CH  1   NT  G'         71/480   von=92
+CR      152+8/15   (BA   39   CR      8/15)   TR  5   CH  1   NT  Eb--          1/6   von=115
+CR       152+3/4   (BA   39   CR       3/4)   TR 12   CH  1   NT  F'          11/60   von=82
+CR     152+47/60   (BA   39   CR     47/60)   TR  5   CH  1   NT  Eb--       29/240   von=113
+CR           153   (BA   39   CR         1)   TR 12   CH  1   NT  G'        107/480   von=92
+CR      153+1/30   (BA   39   CR    1+1/30)   TR  5   CH  1   NT  Eb--       61/480   von=98
+CR       153+1/4   (BA   39   CR     1+1/4)   TR 12   CH  1   NT  F'          13/80   von=82
+CR     153+17/60   (BA   39   CR   1+17/60)   TR  5   CH  1   NT  F-         29/120   von=104
+CR       153+1/2   (BA   39   CR     1+1/2)   TR 12   CH  1   NT  G'         31/160   von=95
+CR      153+8/15   (BA   39   CR    1+8/15)   TR  5   CH  1   NT  Eb--       31/160   von=113
+CR       153+3/4   (BA   39   CR     1+3/4)   TR 12   CH  1   NT  F'         89/480   von=78
+CR           154   (BA   39   CR         2)   TR 12   CH  1   NT  G'        101/480   von=94
+CR      154+1/30   (BA   39   CR    2+1/30)   TR  5   CH  1   NT  F-           1/10   von=97
+CR       154+1/4   (BA   39   CR     2+1/4)   TR 12   CH  1   NT  F'           7/30   von=91
+CR     154+17/60   (BA   39   CR   2+17/60)   TR  5   CH  1   NT  F-           5/48   von=85
+CR       154+1/2   (BA   39   CR     2+1/2)   TR 12   CH  1   NT  G'           7/32   von=92
+CR      154+8/15   (BA   39   CR    2+8/15)   TR  5   CH  1   NT  Eb--         7/60   von=107
+CR       154+3/4   (BA   39   CR     2+3/4)   TR 12   CH  1   NT  F'           4/15
+CR     154+47/60   (BA   39   CR   2+47/60)   TR  5   CH  1   NT  Eb--       67/480   von=111
+CR           155   (BA   39   CR         3)   TR 12   CH  1   NT  G'         37/160   von=93
+CR      155+1/30   (BA   39   CR    3+1/30)   TR  5   CH  1   NT  F-          13/80   von=108
+CR       155+1/4   (BA   39   CR     3+1/4)   TR 12   CH  1   NT  F'            1/4   von=87
+CR     155+17/60   (BA   39   CR   3+17/60)   TR  5   CH  1   NT  Eb--        19/80   von=111
+CR       155+1/2   (BA   39   CR     3+1/2)   TR 12   CH  1   NT  Eb'          3/10   von=89
+CR       155+3/4   (BA   39   CR     3+3/4)   TR 12   CH  1   NT  D'        127/480   von=92
+
+CR           156   (BA   40   CR         0)   TR 12   CH  1   NT  C'          13/80   von=94
+CR      156+1/30   (BA   40   CR      1/30)   TR  5   CH  1   NT  F-          13/96   von=98
+CR    156+27/160   (BA   40   CR    27/160)   TR  5   CH 16   End of track
+CR       156+1/4   (BA   40   CR       1/4)   TR 12   CH  1   NT  C'         23/160   von=99
+CR       156+1/4   (BA   40   CR       1/4)   TR 12   CH  1   NT  D'         23/240   von=86
+CR       156+1/4   (BA   40   CR       1/4)   TR 12   CH  1   NT  D'         23/240   von=92
+CR     156+17/60   (BA   40   CR     17/60)   TR  6   CH  1   NT  F-         77/480   von=86
+CR       156+1/2   (BA   40   CR       1/2)   TR 12   CH  1   NT  Eb'        73/240   von=100
+CR      156+8/15   (BA   40   CR      8/15)   TR  6   CH  1   NT  E--       119/480   von=96
+CR       156+3/4   (BA   40   CR       3/4)   TR 12   CH  1   NT  D'        157/480   von=96
+CR     156+47/60   (BA   40   CR     47/60)   TR  6   CH  1   NT  F-         11/160   von=77
+CR           157   (BA   40   CR         1)   TR 12   CH  1   NT  Eb'        47/160   von=99
+CR       157+1/4   (BA   40   CR     1+1/4)   TR 12   CH  1   NT  F'         39/160
+CR     157+17/60   (BA   40   CR   1+17/60)   TR  6   CH  1   NT  F-         29/160   von=97
+CR       157+1/2   (BA   40   CR     1+1/2)   TR 12   CH  1   NT  G'         1+1/30   von=98
+CR      157+8/15   (BA   40   CR    1+8/15)   TR  6   CH  1   NT  E--        63/160   von=107
+CR     157+47/60   (BA   40   CR   1+47/60)   TR  6   CH  1   NT  F-         11/120   von=81
+CR     158+17/60   (BA   40   CR   2+17/60)   TR  6   CH  1   NT  F-         43/240   von=93
+CR       158+1/2   (BA   40   CR     2+1/2)   TR 12   CH  1   NT  F'        121/240
+CR      158+8/15   (BA   40   CR    2+8/15)   TR  6   CH  1   NT  E--       137/480   von=104
+CR     158+47/60   (BA   40   CR   2+47/60)   TR  6   CH  1   NT  F-         89/480   von=88
+CR           159   (BA   40   CR         3)   TR 12   CH  1   NT  G'          31/96   von=101
+CR      159+1/30   (BA   40   CR    3+1/30)   TR  6   CH  1   NT  E--          3/20   von=75
+CR       159+1/4   (BA   40   CR     3+1/4)   TR 12   CH  1   NT  F'        139/480   von=99
+CR     159+17/60   (BA   40   CR   3+17/60)   TR  6   CH  1   NT  F-            1/4   von=92
+CR       159+1/2   (BA   40   CR     3+1/2)   TR 12   CH  1   NT  Eb'       131/480   von=100
+CR      159+8/15   (BA   40   CR    3+8/15)   TR  6   CH  1   NT  E--         13/96   von=85
+CR       159+3/4   (BA   40   CR     3+3/4)   TR 12   CH  1   NT  D'          11/40   von=102
+CR     159+47/60   (BA   40   CR   3+47/60)   TR  6   CH  1   NT  F-         37/160   von=91
+
+CR           160   (BA   41   CR         0)   TR 12   CH  1   NT  C'         73/480   von=101
+CR      160+1/30   (BA   41   CR      1/30)   TR  6   CH  1   NT  E--         11/96   von=96
+CR       160+1/4   (BA   41   CR       1/4)   TR 12   CH  1   NT  C'         37/240   von=106
+CR       160+1/4   (BA   41   CR       1/4)   TR 12   CH  1   NT  D'          11/96   von=95
+CR     160+17/60   (BA   41   CR     17/60)   TR  6   CH  1   NT  F-         31/480   von=66
+CR       160+1/2   (BA   41   CR       1/2)   TR 12   CH  1   NT  D'          43/96   von=89
+CR      160+8/15   (BA   41   CR      8/15)   TR  6   CH  1   NT  E--        23/120   von=99
+CR       160+3/4   (BA   41   CR       3/4)   TR 12   CH  1   NT  Eb'          9/80   von=95
+CR       160+3/4   (BA   41   CR       3/4)   TR 12   CH  1   NT  Eb'          9/80   von=91
+CR     160+47/60   (BA   41   CR     47/60)   TR  6   CH  1   NT  F-         61/480   von=85
+CR           161   (BA   41   CR         1)   TR 12   CH  1   NT  D'         27/160   von=93
+CR           161   (BA   41   CR         1)   TR 12   CH  1   NT  Eb'        83/240
+CR       161+1/4   (BA   41   CR     1+1/4)   TR 12   CH  1   NT  F'         43/160   von=102
+CR     161+17/60   (BA   41   CR   1+17/60)   TR  6   CH  1   NT  F-            1/5   von=92
+CR       161+1/2   (BA   41   CR     1+1/2)   TR 12   CH  1   NT  G'          61/80   von=104
+CR      161+8/15   (BA   41   CR    1+8/15)   TR  6   CH  1   NT  E--        53/240   von=101
+CR     161+47/60   (BA   41   CR   1+47/60)   TR  6   CH  1   NT  F-         37/240   von=87
+CR     162+17/60   (BA   41   CR   2+17/60)   TR  6   CH  1   NT  F-          17/80
+CR       162+1/2   (BA   41   CR     2+1/2)   TR 12   CH  1   NT  G'        151/480   von=96
+CR      162+8/15   (BA   41   CR    2+8/15)   TR  6   CH  1   NT  E--       119/480   von=93
+CR       162+3/4   (BA   41   CR     2+3/4)   TR 12   CH  1   NT  F'          25/96   von=94
+CR     162+25/32   (BA   41   CR   2+25/32)   TR  6   CH  1   NT  F-        103/480   von=89
+CR     162+77/96   (BA   41   CR   2+77/96)   TR 14   CH  1   ST &B0 &00 &78
+CR     162+77/96   (BA   41   CR   2+77/96)   TR 14   CH  1   ST &B0 &20 &00
+CR     162+77/96   (BA   41   CR   2+77/96)   TR 14   CH  1   Instrument 119
+CR           163   (BA   41   CR         3)   TR 12   CH  1   NT  G'           4/15   von=98
+CR      163+1/30   (BA   41   CR    3+1/30)   TR  6   CH  1   NT  E--          7/32   von=96
+CR       163+1/4   (BA   41   CR     3+1/4)   TR 12   CH  1   NT  F'          13/48   von=97
+CR     163+17/60   (BA   41   CR   3+17/60)   TR  6   CH  1   NT  F-          17/80   von=95
+CR       163+1/2   (BA   41   CR     3+1/2)   TR 12   CH  1   NT  Eb'        67/240   von=96
+CR      163+8/15   (BA   41   CR    3+8/15)   TR  6   CH  1   NT  E--          7/40   von=89
+CR       163+3/4   (BA   41   CR     3+3/4)   TR 12   CH  1   NT  F'        121/480   von=97
+CR     163+47/60   (BA   41   CR   3+47/60)   TR  6   CH  1   NT  F-         19/160   von=101
+CR   163+221/240   (BA   41   CR 3+221/240)   TR 14   CH  1   NT  C''       14+4/15   von=98
+
+CR           164   (BA   42   CR         0)   TR 12   CH  1   NT  G'         79/480   von=98
+CR      164+1/30   (BA   42   CR      1/30)   TR  6   CH  1   NT  F-         31/240   von=98
+CR       164+1/4   (BA   42   CR       1/4)   TR 12   CH  1   NT  Eb'         13/80   von=102
+CR       164+1/4   (BA   42   CR       1/4)   TR 12   CH  1   NT  F'         37/160   von=92
+CR     164+17/60   (BA   42   CR     17/60)   TR  6   CH  1   NT  F-           7/40   von=97
+CR       164+1/2   (BA   42   CR       1/2)   TR 12   CH  1   NT  F'          13/96   von=91
+CR       164+1/2   (BA   42   CR       1/2)   TR 12   CH  1   NT  G'         37/120   von=99
+CR      164+8/15   (BA   42   CR      8/15)   TR  6   CH  1   NT  E--         17/80   von=89
+CR       164+3/4   (BA   42   CR       3/4)   TR 12   CH  1   NT  F'         47/160   von=102
+CR     164+47/60   (BA   42   CR     47/60)   TR  6   CH  1   NT  F-         41/240
+CR           165   (BA   42   CR         1)   TR 12   CH  1   NT  G'        163/480   von=99
+CR       165+1/4   (BA   42   CR     1+1/4)   TR 12   CH  1   NT  F'         43/160   von=98
+CR     165+17/60   (BA   42   CR   1+17/60)   TR  6   CH  1   NT  F-          23/96   von=99
+CR       165+1/2   (BA   42   CR     1+1/2)   TR 12   CH  1   NT  G'         71/240   von=97
+CR      165+8/15   (BA   42   CR    1+8/15)   TR  6   CH  1   NT  E--         23/96   von=91
+CR       165+3/4   (BA   42   CR     1+3/4)   TR 12   CH  1   NT  F'        131/480   von=96
+CR     165+47/60   (BA   42   CR   1+47/60)   TR  6   CH  1   NT  F-          13/80   von=99
+CR           166   (BA   42   CR         2)   TR 12   CH  1   NT  G'          13/80   von=98
+CR       166+1/4   (BA   42   CR     2+1/4)   TR 12   CH  1   NT  Eb'         17/80   von=104
+CR       166+1/4   (BA   42   CR     2+1/4)   TR 12   CH  1   NT  F'          17/96   von=95
+CR     166+17/60   (BA   42   CR   2+17/60)   TR  6   CH  1   NT  F-           7/40   von=87
+CR     166+17/60   (BA   42   CR   2+17/60)   TR  6   CH  1   NT  G-         71/480   von=89
+CR       166+1/2   (BA   42   CR     2+1/2)   TR 12   CH  1   NT  F'        109/160   von=102
+CR      166+8/15   (BA   42   CR    2+8/15)   TR  6   CH  1   NT  E--        91/480   von=93
+CR           167   (BA   42   CR         3)   TR 12   CH  1   NT  G'         17/160   von=40
+CR           167   (BA   42   CR         3)   TR 12   CH  1   NT  G'         17/160   von=58
+CR      167+1/30   (BA   42   CR    3+1/30)   TR  6   CH  1   NT  F-         47/240   von=95
+CR       167+1/4   (BA   42   CR     3+1/4)   TR 12   CH  1   NT  F'           7/60   von=90
+CR     167+17/60   (BA   42   CR   3+17/60)   TR  6   CH  1   NT  E--        19/120   von=79
+CR      167+8/15   (BA   42   CR    3+8/15)   TR  6   CH  1   NT  F-         47/240   von=88
+CR       167+3/4   (BA   42   CR     3+3/4)   TR 12   CH  1   NT  F'         11/120   von=95
+CR       167+3/4   (BA   42   CR     3+3/4)   TR 12   CH  1   NT  F'         11/120   von=86
+CR     167+47/60   (BA   42   CR   3+47/60)   TR  6   CH  1   NT  E--          7/48   von=82
+CR   167+443/480   (BA   42   CR 3+443/480)   TR 14   CH  1   NT  Eb''     12+1/160   von=60
+CR   167+149/160   (BA   42   CR 3+149/160)   TR 14   CH  1   NT  G''       12+1/40   von=77
+
+CR           168   (BA   43   CR         0)   TR 12   CH  1   NT  G'         31/160   von=99
+CR      168+1/30   (BA   43   CR      1/30)   TR  6   CH  1   NT  F-         31/240   von=95
+CR       168+1/4   (BA   43   CR       1/4)   TR 12   CH  1   NT  Eb'        73/240   von=102
+CR       168+1/4   (BA   43   CR       1/4)   TR 12   CH  1   NT  F'         31/160   von=98
+CR     168+17/60   (BA   43   CR     17/60)   TR  6   CH  1   NT  F-         23/120   von=85
+CR       168+1/2   (BA   43   CR       1/2)   TR 12   CH  1   NT  F'         41/160
+CR      168+8/15   (BA   43   CR      8/15)   TR  6   CH  1   NT  E--         17/80   von=98
+CR       168+3/4   (BA   43   CR       3/4)   TR 12   CH  1   NT  G'          11/32   von=99
+CR     168+47/60   (BA   43   CR     47/60)   TR  6   CH  1   NT  F-         79/480   von=101
+CR           169   (BA   43   CR         1)   TR 12   CH  1   NT  F'        299/480   von=41
+CR     169+17/60   (BA   43   CR   1+17/60)   TR  6   CH  1   NT  E--        67/480   von=78
+CR       169+1/2   (BA   43   CR     1+1/2)   TR 12   CH  1   NT  G'         43/160   von=93
+CR      169+8/15   (BA   43   CR    1+8/15)   TR  6   CH  1   NT  F-          17/80   von=105
+CR       169+3/4   (BA   43   CR     1+3/4)   TR 12   CH  1   NT  F'          23/80   von=85
+CR           170   (BA   43   CR         2)   TR 12   CH  1   NT  G'         47/160   von=93
+CR      170+1/30   (BA   43   CR    2+1/30)   TR  6   CH  1   NT  E--        29/160   von=96
+CR       170+1/4   (BA   43   CR     2+1/4)   TR 12   CH  1   NT  F'         49/160   von=88
+CR     170+17/60   (BA   43   CR   2+17/60)   TR  6   CH  1   NT  F-          17/80   von=101
+CR       170+1/2   (BA   43   CR     2+1/2)   TR 12   CH  1   NT  G'        143/480   von=93
+CR       170+3/4   (BA   43   CR     2+3/4)   TR 12   CH  1   NT  F'           5/16   von=80
+CR     170+47/60   (BA   43   CR   2+47/60)   TR  6   CH  1   NT  E--         17/80   von=98
+CR           171   (BA   43   CR         3)   TR 12   CH  1   NT  G'           5/16   von=91
+CR      171+1/30   (BA   43   CR    3+1/30)   TR  6   CH  1   NT  F-           9/32   von=105
+CR       171+1/4   (BA   43   CR     3+1/4)   TR 12   CH  1   NT  F'         71/240   von=96
+CR       171+1/2   (BA   43   CR     3+1/2)   TR 12   CH  1   NT  Eb'       139/480   von=99
+CR      171+8/15   (BA   43   CR    3+8/15)   TR  6   CH  1   NT  E--          1/10   von=65
+CR      171+8/15   (BA   43   CR    3+8/15)   TR  6   CH  1   NT  F-           1/24   von=87
+CR       171+3/4   (BA   43   CR     3+3/4)   TR 12   CH  1   NT  D'        113/480   von=96
+
+CR           172   (BA   44   CR         0)   TR 12   CH  1   NT  C'          23/80   von=91
+CR      172+1/30   (BA   44   CR      1/30)   TR  6   CH  1   NT  F-            1/8   von=107
+CR    172+19/120   (BA   44   CR    19/120)   TR  6   CH 16   End of track
+CR       172+1/4   (BA   44   CR       1/4)   TR 12   CH  1   NT  D'         31/120   von=94
+CR     172+17/60   (BA   44   CR     17/60)   TR  7   CH  1   NT  F-         79/480   von=89
+CR       172+1/2   (BA   44   CR       1/2)   TR 12   CH  1   NT  C'         37/120   von=90
+CR      172+8/15   (BA   44   CR      8/15)   TR  7   CH  1   NT  E--          5/24   von=101
+CR       172+3/4   (BA   44   CR       3/4)   TR 12   CH  1   NT  D'        169/480   von=93
+CR     172+47/60   (BA   44   CR     47/60)   TR  7   CH  1   NT  F-         97/480   von=87
+CR           173   (BA   44   CR         1)   TR 12   CH  1   NT  Eb'         19/80   von=87
+CR       173+1/4   (BA   44   CR     1+1/4)   TR 12   CH  1   NT  F'         29/120   von=99
+CR     173+17/60   (BA   44   CR   1+17/60)   TR  7   CH  1   NT  E--          7/30   von=96
+CR       173+1/2   (BA   44   CR     1+1/2)   TR 12   CH  1   NT  G'        239/480   von=98
+CR      173+8/15   (BA   44   CR    1+8/15)   TR  7   CH  1   NT  F-           7/32   von=98
+CR   173+479/480   (BA   44   CR 1+479/480)   TR 12   CH  1   NT  C'           5/48   von=86
+CR   173+479/480   (BA   44   CR 1+479/480)   TR 12   CH  1   NT  G'           5/48   von=62
+CR      174+1/30   (BA   44   CR    2+1/30)   TR  7   CH  1   NT  F-           2/15   von=99
+CR       174+1/4   (BA   44   CR     2+1/4)   TR 12   CH  1   NT  C'           7/40   von=47
+CR     174+17/60   (BA   44   CR   2+17/60)   TR  7   CH  1   NT  F-            1/6   von=95
+CR       174+1/2   (BA   44   CR     2+1/2)   TR 12   CH  1   NT  D'           4/15   von=95
+CR      174+8/15   (BA   44   CR    2+8/15)   TR  7   CH  1   NT  E--        43/240   von=92
+CR       174+3/4   (BA   44   CR     2+3/4)   TR 12   CH  1   NT  Eb'          5/12   von=91
+CR     174+47/60   (BA   44   CR   2+47/60)   TR  7   CH  1   NT  F-           7/32   von=94
+CR           175   (BA   44   CR         3)   TR 12   CH  1   NT  F'           7/32   von=98
+CR       175+1/4   (BA   44   CR     3+1/4)   TR 12   CH  1   NT  G'          23/32   von=95
+CR     175+17/60   (BA   44   CR   3+17/60)   TR  7   CH  1   NT  E--        43/240   von=92
+CR      175+8/15   (BA   44   CR    3+8/15)   TR  7   CH  1   NT  F-         49/240   von=99
+
+CR           176   (BA   45   CR         0)   TR 12   CH  1   NT  C'         97/480   von=98
+CR      176+1/30   (BA   45   CR      1/30)   TR  7   CH  1   NT  F-          11/80   von=102
+CR     176+17/60   (BA   45   CR     17/60)   TR  7   CH  1   NT  F-          11/60   von=93
+CR      176+8/15   (BA   45   CR      8/15)   TR  7   CH  1   NT  E--        29/120   von=100
+CR     176+47/60   (BA   45   CR     47/60)   TR  7   CH  1   NT  F-          17/80   von=102
+CR     177+17/60   (BA   45   CR   1+17/60)   TR  7   CH  1   NT  F-         59/480   von=99
+CR      177+8/15   (BA   45   CR    1+8/15)   TR  7   CH  1   NT  E--          2/15
+CR           178   (BA   45   CR         2)   TR 12   CH  1   NT  C'          23/80   von=92
+CR      178+1/30   (BA   45   CR    2+1/30)   TR  7   CH  1   NT  F-            1/8
+CR       178+1/4   (BA   45   CR     2+1/4)   TR 12   CH  1   NT  D'         83/240   von=96
+CR     178+17/60   (BA   45   CR   2+17/60)   TR  7   CH  1   NT  F-           3/16   von=92
+CR    178+53/120   (BA   45   CR  2+53/120)   TR 14   CH  1   NT  C''        23/160   von=27
+CR       178+1/2   (BA   45   CR     2+1/2)   TR 12   CH  1   NT  Eb'         17/60   von=90
+CR      178+8/15   (BA   45   CR    2+8/15)   TR  7   CH  1   NT  E--        59/480   von=88
+CR       178+3/4   (BA   45   CR     2+3/4)   TR 12   CH  1   NT  F'          25/96   von=94
+CR     178+47/60   (BA   45   CR   2+47/60)   TR  7   CH  1   NT  F-        107/480   von=92
+CR           179   (BA   45   CR         3)   TR 12   CH  1   NT  G'           9/32   von=96
+CR       179+1/4   (BA   45   CR     3+1/4)   TR 12   CH  1   NT  F'          31/96   von=92
+CR     179+17/60   (BA   45   CR   3+17/60)   TR  7   CH  1   NT  E--           1/6   von=101
+CR       179+1/2   (BA   45   CR     3+1/2)   TR 12   CH  1   NT  G'         89/240   von=101
+CR      179+8/15   (BA   45   CR    3+8/15)   TR  7   CH  1   NT  F-          21/80   von=107
+CR     179+53/60   (BA   45   CR   3+53/60)   TR 14   CH  1   NT  C''     15+311/480   von=99
+
+CR      180+1/30   (BA   46   CR      1/30)   TR  7   CH  1   NT  F-         19/120   von=110
+CR     180+17/60   (BA   46   CR     17/60)   TR  7   CH  1   NT  F-          13/80   von=95
+CR       180+1/2   (BA   46   CR       1/2)   TR 12   CH  1   NT  G'         31/120   von=94
+CR      180+8/15   (BA   46   CR      8/15)   TR  7   CH  1   NT  E--        33/160   von=98
+CR       180+3/4   (BA   46   CR       3/4)   TR 12   CH  1   NT  F'         71/240   von=75
+CR     180+47/60   (BA   46   CR     47/60)   TR  7   CH  1   NT  F-         59/240   von=104
+CR           181   (BA   46   CR         1)   TR 12   CH  1   NT  Eb'        73/240   von=93
+CR       181+1/4   (BA   46   CR     1+1/4)   TR 12   CH  1   NT  F'        119/480
+CR     181+17/60   (BA   46   CR   1+17/60)   TR  7   CH  1   NT  F-        103/480   von=103
+CR       181+1/2   (BA   46   CR     1+1/2)   TR 12   CH  1   NT  G'        119/240   von=91
+CR      181+8/15   (BA   46   CR    1+8/15)   TR  7   CH  1   NT  E--          7/30   von=109
+CR           182   (BA   46   CR         2)   TR 12   CH  1   NT  C'        101/480
+CR      182+1/30   (BA   46   CR    2+1/30)   TR  7   CH  1   NT  F-          11/80   von=104
+CR       182+1/4   (BA   46   CR     2+1/4)   TR 12   CH  1   NT  D'          23/80   von=76
+CR     182+17/60   (BA   46   CR   2+17/60)   TR  7   CH  1   NT  F-          11/60   von=98
+CR       182+1/2   (BA   46   CR     2+1/2)   TR 12   CH  1   NT  G'          31/96   von=87
+CR      182+8/15   (BA   46   CR    2+8/15)   TR  7   CH  1   NT  E--        47/240   von=107
+CR       182+3/4   (BA   46   CR     2+3/4)   TR 12   CH  1   NT  F'          35/96   von=90
+CR     182+47/60   (BA   46   CR   2+47/60)   TR  7   CH  1   NT  F-         33/160   von=95
+CR           183   (BA   46   CR         3)   TR 12   CH  1   NT  Eb'        67/240
+CR       183+1/4   (BA   46   CR     3+1/4)   TR 12   CH  1   NT  F'         31/120   von=92
+CR     183+17/60   (BA   46   CR   3+17/60)   TR  7   CH  1   NT  E--           1/6   von=106
+CR       183+1/2   (BA   46   CR     3+1/2)   TR 12   CH  1   NT  G'          31/60   von=89
+CR      183+8/15   (BA   46   CR    3+8/15)   TR  7   CH  1   NT  F-        119/480   von=104
+CR   183+103/120   (BA   46   CR 3+103/120)   TR 14   CH  1   NT  Eb''     13+29/32   von=60
+CR   183+139/160   (BA   46   CR 3+139/160)   TR 14   CH  1   NT  G''      13+89/96   von=61
+
+CR           184   (BA   47   CR         0)   TR 12   CH  1   NT  C'         43/160   von=86
+CR      184+1/30   (BA   47   CR      1/30)   TR  7   CH  1   NT  F-         23/160   von=107
+CR       184+1/4   (BA   47   CR       1/4)   TR 12   CH  1   NT  Eb'        61/240
+CR     184+17/60   (BA   47   CR     17/60)   TR  7   CH  1   NT  F-         37/240   von=95
+CR       184+1/2   (BA   47   CR       1/2)   TR 12   CH  1   NT  G'        137/480   von=88
+CR      184+8/15   (BA   47   CR      8/15)   TR  7   CH  1   NT  E--        39/160   von=108
+CR       184+3/4   (BA   47   CR       3/4)   TR 12   CH  1   NT  F'            1/3   von=82
+CR     184+47/60   (BA   47   CR     47/60)   TR  7   CH  1   NT  F-           5/32   von=98
+CR           185   (BA   47   CR         1)   TR 12   CH  1   NT  Eb'       151/480   von=98
+CR       185+1/4   (BA   47   CR     1+1/4)   TR 12   CH  1   NT  F'         39/160   von=92
+CR     185+17/60   (BA   47   CR   1+17/60)   TR  7   CH  1   NT  E--         17/96   von=96
+CR       185+1/2   (BA   47   CR     1+1/2)   TR 12   CH  1   NT  G'        163/480   von=91
+CR      185+8/15   (BA   47   CR    1+8/15)   TR  7   CH  1   NT  F-         83/480   von=87
+CR       185+3/4   (BA   47   CR     1+3/4)   TR 12   CH  1   NT  F'        113/480   von=93
+CR           186   (BA   47   CR         2)   TR 12   CH  1   NT  C'         47/160   von=87
+CR      186+1/30   (BA   47   CR    2+1/30)   TR  7   CH  1   NT  F-         17/120   von=101
+CR       186+1/4   (BA   47   CR     2+1/4)   TR 12   CH  1   NT  Eb'        41/160   von=88
+CR     186+17/60   (BA   47   CR   2+17/60)   TR  7   CH  1   NT  F-            1/6   von=92
+CR       186+1/2   (BA   47   CR     2+1/2)   TR 12   CH  1   NT  G'          19/60   von=86
+CR      186+8/15   (BA   47   CR    2+8/15)   TR  7   CH  1   NT  E--       103/480   von=102
+CR       186+3/4   (BA   47   CR     2+3/4)   TR 12   CH  1   NT  F'         51/160   von=93
+CR     186+47/60   (BA   47   CR   2+47/60)   TR  7   CH  1   NT  F-         73/240   von=101
+CR           187   (BA   47   CR         3)   TR 12   CH  1   NT  Eb'        67/240   von=92
+CR       187+1/4   (BA   47   CR     3+1/4)   TR 12   CH  1   NT  D'        173/480
+CR     187+17/60   (BA   47   CR   3+17/60)   TR  7   CH  1   NT  E--       191/480   von=95
+CR       187+1/2   (BA   47   CR     3+1/2)   TR 12   CH  1   NT  Eb'        73/160   von=96
+CR      187+8/15   (BA   47   CR    3+8/15)   TR  7   CH  1   NT  F-          27/80   von=104
+
+CR           188   (BA   48   CR         0)   TR 12   CH  1   NT  C'            3/5   von=102
+CR      188+1/30   (BA   48   CR      1/30)   TR  7   CH  1   NT  E--       101/480   von=95
+CR       188+1/2   (BA   48   CR       1/2)   TR 12   CH  1   NT  G'        137/480   von=88
+CR      188+8/15   (BA   48   CR      8/15)   TR  7   CH  1   NT  F-           7/32   von=99
+CR       188+3/4   (BA   48   CR       3/4)   TR 12   CH  1   NT  F'        131/480
+CR     188+47/60   (BA   48   CR     47/60)   TR  7   CH  1   NT  E--        71/480   von=96
+CR           189   (BA   48   CR         1)   TR 12   CH  1   NT  Eb'        67/240   von=86
+CR       189+1/4   (BA   48   CR     1+1/4)   TR 12   CH  1   NT  F'           4/15   von=89
+CR     189+17/60   (BA   48   CR   1+17/60)   TR  7   CH  1   NT  E--        37/240   von=103
+CR       189+1/2   (BA   48   CR     1+1/2)   TR 12   CH  1   NT  G'         59/120   von=85
+CR      189+8/15   (BA   48   CR    1+8/15)   TR  7   CH  1   NT  F-         31/160   von=106
+CR     189+47/60   (BA   48   CR   1+47/60)   TR  7   CH  1   NT  E--           1/8   von=90
+CR           190   (BA   48   CR         2)   TR 12   CH  1   NT  C'         91/160   von=81
+CR      190+1/30   (BA   48   CR    2+1/30)   TR  7   CH  1   NT  E--          9/80   von=102
+CR      190+7/48   (BA   48   CR    2+7/48)   TR  7   CH 16   End of track
+CR       190+1/2   (BA   48   CR     2+1/2)   TR 12   CH  1   NT  G'        143/480   von=91
+CR      190+8/15   (BA   48   CR    2+8/15)   TR  8   CH  1   NT  F-         71/480   von=98
+CR       190+3/4   (BA   48   CR     2+3/4)   TR 12   CH  1   NT  F'        133/480   von=86
+CR     190+47/60   (BA   48   CR   2+47/60)   TR  8   CH  1   NT  E--        23/160   von=103
+CR           191   (BA   48   CR         3)   TR 12   CH  1   NT  Eb'           1/3   von=90
+CR       191+1/4   (BA   48   CR     3+1/4)   TR 12   CH  1   NT  F'         49/240   von=89
+CR     191+17/60   (BA   48   CR   3+17/60)   TR  8   CH  1   NT  E--        79/480   von=96
+CR       191+1/2   (BA   48   CR     3+1/2)   TR 12   CH  1   NT  G'        239/480   von=93
+CR      191+8/15   (BA   48   CR    3+8/15)   TR  8   CH  1   NT  F-            1/5   von=101
+CR     191+47/60   (BA   48   CR   3+47/60)   TR  8   CH  1   NT  E--        17/160
+CR   191+479/480   (BA   48   CR 3+479/480)   TR 12   CH  1   NT  C'          17/32   von=65
+
+CR      192+1/30   (BA   49   CR      1/30)   TR  8   CH  1   NT  E--           1/5   von=104
+CR       192+1/2   (BA   49   CR       1/2)   TR 12   CH  1   NT  G'          19/60   von=95
+CR      192+8/15   (BA   49   CR      8/15)   TR  8   CH  1   NT  F-         23/120   von=89
+CR       192+3/4   (BA   49   CR       3/4)   TR 12   CH  1   NT  F'         49/160   von=89
+CR     192+47/60   (BA   49   CR     47/60)   TR  8   CH  1   NT  E--        37/240   von=102
+CR           193   (BA   49   CR         1)   TR 12   CH  1   NT  Eb'          7/24   von=92
+CR       193+1/4   (BA   49   CR     1+1/4)   TR 12   CH  1   NT  F'          23/96   von=94
+CR     193+17/60   (BA   49   CR   1+17/60)   TR  8   CH  1   NT  E--        31/240   von=83
+CR       193+1/2   (BA   49   CR     1+1/2)   TR 12   CH  1   NT  G'        239/480   von=87
+CR      193+8/15   (BA   49   CR    1+8/15)   TR  8   CH  1   NT  F-            1/5   von=104
+CR     193+47/60   (BA   49   CR   1+47/60)   TR  8   CH  1   NT  E--        61/480   von=97
+CR   193+479/480   (BA   49   CR 1+479/480)   TR 12   CH  1   NT  C'        133/240   von=79
+CR      194+1/30   (BA   49   CR    2+1/30)   TR  8   CH  1   NT  F-         83/480   von=98
+CR       194+1/2   (BA   49   CR     2+1/2)   TR 12   CH  1   NT  G'         67/240   von=90
+CR       194+3/4   (BA   49   CR     2+3/4)   TR 12   CH  1   NT  F'         49/160   von=92
+CR     194+47/60   (BA   49   CR   2+47/60)   TR  8   CH  1   NT  F-            1/6   von=81
+CR           195   (BA   49   CR         3)   TR 12   CH  1   NT  Eb'        71/240   von=98
+CR       195+1/4   (BA   49   CR     3+1/4)   TR 12   CH  1   NT  F'        133/480   von=87
+CR       195+1/2   (BA   49   CR     3+1/2)   TR 12   CH  1   NT  G'            2/5   von=89
+CR   195+127/160   (BA   49   CR 3+127/160)   TR 14   CH  1   NT  C''      15+29/30   von=104
+
+CR           196   (BA   50   CR         0)   TR 12   CH  1   NT  G'        151/480   von=76
+CR      196+1/30   (BA   50   CR      1/30)   TR  8   CH  1   NT  E--        13/120   von=104
+CR       196+1/4   (BA   50   CR       1/4)   TR 12   CH  1   NT  G#'       137/480   von=70
+CR     196+17/60   (BA   50   CR     17/60)   TR  8   CH  1   NT  E--        13/120   von=95
+CR       196+1/2   (BA   50   CR       1/2)   TR 12   CH  1   NT  G'        149/480
+CR      196+8/15   (BA   50   CR      8/15)   TR  8   CH  1   NT  E--        61/480   von=99
+CR      196+8/15   (BA   50   CR      8/15)   TR  8   CH  1   NT  F--          1/30   von=88
+CR      196+8/15   (BA   50   CR      8/15)   TR  8   CH  1   NT  F-         29/160   von=104
+CR       196+3/4   (BA   50   CR       3/4)   TR 12   CH  1   NT  G#'         23/80   von=89
+CR     196+47/60   (BA   50   CR     47/60)   TR  8   CH  1   NT  E--         11/96   von=98
+CR           197   (BA   50   CR         1)   TR 12   CH  1   NT  G'        161/480   von=87
+CR      197+1/30   (BA   50   CR    1+1/30)   TR  8   CH  1   NT  E--          7/60
+CR       197+1/4   (BA   50   CR     1+1/4)   TR 12   CH  1   NT  G#'         13/48   von=90
+CR     197+17/60   (BA   50   CR   1+17/60)   TR  8   CH  1   NT  F-        133/480   von=110
+CR       197+1/2   (BA   50   CR     1+1/2)   TR 12   CH  1   NT  G'           5/16   von=88
+CR      197+8/15   (BA   50   CR    1+8/15)   TR  8   CH  1   NT  E--        39/160   von=104
+CR       197+3/4   (BA   50   CR     1+3/4)   TR 12   CH  1   NT  F'         47/160   von=83
+CR     197+95/96   (BA   50   CR   1+95/96)   TR 14   CH  1   NT  Eb''    32+73/480   von=73
+CR   197+159/160   (BA   50   CR 1+159/160)   TR 14   CH  1   NT  G''        32+1/6   von=76
+CR           198   (BA   50   CR         2)   TR 12   CH  1   NT  G'        127/480   von=88
+CR      198+1/30   (BA   50   CR    2+1/30)   TR  8   CH  1   NT  E--          7/60   von=93
+CR      198+1/30   (BA   50   CR    2+1/30)   TR  8   CH  1   NT  F-          17/80   von=96
+CR       198+1/4   (BA   50   CR     2+1/4)   TR 12   CH  1   NT  G#'        29/120   von=92
+CR     198+17/60   (BA   50   CR   2+17/60)   TR  8   CH  1   NT  E--        11/160   von=77
+CR       198+1/2   (BA   50   CR     2+1/2)   TR 12   CH  1   NT  Bb'       151/480   von=73
+CR      198+8/15   (BA   50   CR    2+8/15)   TR  8   CH  1   NT  Eb--       19/160   von=102
+CR      198+8/15   (BA   50   CR    2+8/15)   TR  8   CH  1   NT  F-        103/480   von=95
+CR       198+3/4   (BA   50   CR     2+3/4)   TR 12   CH  1   NT  G#'        73/240   von=79
+CR     198+47/60   (BA   50   CR   2+47/60)   TR  8   CH  1   NT  Eb--       43/480   von=99
+CR           199   (BA   50   CR         3)   TR 12   CH  1   NT  G'         71/240   von=84
+CR      199+1/30   (BA   50   CR    3+1/30)   TR  8   CH  1   NT  Eb--         1/10
+CR      199+1/30   (BA   50   CR    3+1/30)   TR  8   CH  1   NT  F-           7/96   von=87
+CR       199+1/4   (BA   50   CR     3+1/4)   TR 12   CH  1   NT  G#'          5/16   von=89
+CR     199+17/60   (BA   50   CR   3+17/60)   TR  8   CH  1   NT  F-         89/480   von=99
+CR       199+1/2   (BA   50   CR     3+1/2)   TR 12   CH  1   NT  G'         31/120   von=84
+CR      199+8/15   (BA   50   CR    3+8/15)   TR  8   CH  1   NT  E--        79/480   von=104
+CR       199+3/4   (BA   50   CR     3+3/4)   TR 12   CH  1   NT  F'          13/40   von=91
+CR     199+47/60   (BA   50   CR   3+47/60)   TR  8   CH  1   NT  F-           1/10   von=86
+
+CR           200   (BA   51   CR         0)   TR 12   CH  1   NT  G'          19/60   von=88
+CR      200+1/30   (BA   51   CR      1/30)   TR  8   CH  1   NT  Eb--         7/60   von=103
+CR      200+1/30   (BA   51   CR      1/30)   TR  8   CH  1   NT  F-          23/80   von=99
+CR       200+1/4   (BA   51   CR       1/4)   TR 12   CH  1   NT  G#'        43/160
+CR     200+17/60   (BA   51   CR     17/60)   TR  8   CH  1   NT  Eb--         3/32   von=91
+CR       200+1/2   (BA   51   CR       1/2)   TR 12   CH  1   NT  G'         83/240   von=70
+CR      200+8/15   (BA   51   CR      8/15)   TR  8   CH  1   NT  E--         13/96   von=104
+CR      200+8/15   (BA   51   CR      8/15)   TR  8   CH  1   NT  F-         79/240   von=102
+CR       200+3/4   (BA   51   CR       3/4)   TR 12   CH  1   NT  G#'         19/60   von=95
+CR           201   (BA   51   CR         1)   TR 12   CH  1   NT  G'           3/10   von=89
+CR      201+1/30   (BA   51   CR    1+1/30)   TR  8   CH  1   NT  F-         29/160   von=93
+CR       201+1/4   (BA   51   CR     1+1/4)   TR 12   CH  1   NT  G#'       157/480   von=93
+CR     201+17/60   (BA   51   CR   1+17/60)   TR  8   CH  1   NT  Eb--       47/480   von=69
+CR       201+1/2   (BA   51   CR     1+1/2)   TR 12   CH  1   NT  G'         67/240   von=89
+CR      201+8/15   (BA   51   CR    1+8/15)   TR  8   CH  1   NT  E--          7/48   von=107
+CR      201+8/15   (BA   51   CR    1+8/15)   TR  8   CH  1   NT  F-        103/480   von=98
+CR       201+3/4   (BA   51   CR     1+3/4)   TR 12   CH  1   NT  F'        161/480   von=39
+CR           202   (BA   51   CR         2)   TR 12   CH  1   NT  G'          19/60   von=89
+CR      202+1/30   (BA   51   CR    2+1/30)   TR  8   CH  1   NT  Eb--       41/480   von=100
+CR      202+1/30   (BA   51   CR    2+1/30)   TR  8   CH  1   NT  F-          23/96   von=101
+CR       202+1/4   (BA   51   CR     2+1/4)   TR 12   CH  1   NT  G#'         13/48
+CR     202+17/60   (BA   51   CR   2+17/60)   TR  8   CH  1   NT  Eb--         1/15   von=95
+CR       202+1/2   (BA   51   CR     2+1/2)   TR 12   CH  1   NT  Bb'         23/80   von=99
+CR      202+8/15   (BA   51   CR    2+8/15)   TR  8   CH  1   NT  E--         13/96   von=107
+CR      202+8/15   (BA   51   CR    2+8/15)   TR  8   CH  1   NT  F-        121/480   von=103
+CR       202+3/4   (BA   51   CR     2+3/4)   TR 12   CH  1   NT  G#'         29/80   von=88
+CR     202+47/60   (BA   51   CR   2+47/60)   TR  8   CH  1   NT  Eb--       37/480   von=102
+CR           203   (BA   51   CR         3)   TR 12   CH  1   NT  G'           9/32   von=85
+CR      203+1/30   (BA   51   CR    3+1/30)   TR  8   CH  1   NT  Eb--         5/48   von=103
+CR      203+1/30   (BA   51   CR    3+1/30)   TR  8   CH  1   NT  F-         17/160   von=74
+CR       203+1/4   (BA   51   CR     3+1/4)   TR 12   CH  1   NT  F'          23/80   von=95
+CR     203+17/60   (BA   51   CR   3+17/60)   TR  8   CH  1   NT  F-         37/240   von=107
+CR       203+1/2   (BA   51   CR     3+1/2)   TR 12   CH  1   NT  Eb'        71/240   von=99
+CR      203+8/15   (BA   51   CR    3+8/15)   TR  8   CH  1   NT  E--        89/480   von=116
+CR      203+8/15   (BA   51   CR    3+8/15)   TR  8   CH  1   NT  F-         91/480   von=95
+CR       203+3/4   (BA   51   CR     3+3/4)   TR 12   CH  1   NT  D'          21/80   von=100
+CR     203+47/60   (BA   51   CR   3+47/60)   TR  8   CH  1   NT  F-          11/96   von=90
+
+CR           204   (BA   52   CR         0)   TR 13   CH  1   NT  C'       1+37/120   von=113
+CR      204+1/80   (BA   52   CR      1/80)   TR 12   CH 16   End of track
+CR      204+1/30   (BA   52   CR      1/30)   TR  8   CH  1   NT  Eb--       23/160   von=104
+CR      204+1/30   (BA   52   CR      1/30)   TR  8   CH  1   NT  F-           7/48   von=99
+CR     204+17/60   (BA   52   CR     17/60)   TR  8   CH  1   NT  F-           7/48   von=83
+CR      204+8/15   (BA   52   CR      8/15)   TR  8   CH  1   NT  E--         11/80   von=108
+CR      204+8/15   (BA   52   CR      8/15)   TR  8   CH  1   NT  F-         73/480   von=98
+CR     204+47/60   (BA   52   CR     47/60)   TR  8   CH  1   NT  E--        23/240   von=95
+CR     204+47/60   (BA   52   CR     47/60)   TR  8   CH  1   NT  F-           7/48   von=85
+CR      205+1/30   (BA   52   CR    1+1/30)   TR  8   CH  1   NT  F-           7/40   von=95
+CR       205+1/4   (BA   52   CR     1+1/4)   TR 13   CH  1   NT  D'        149/240   von=94
+CR     205+17/60   (BA   52   CR   1+17/60)   TR  8   CH  1   NT  Eb--       19/240   von=106
+CR     205+17/60   (BA   52   CR   1+17/60)   TR  8   CH  1   NT  F-           5/48   von=86
+CR      205+8/15   (BA   52   CR    1+8/15)   TR  8   CH  1   NT  E--          2/15   von=111
+CR      205+8/15   (BA   52   CR    1+8/15)   TR  8   CH  1   NT  F-         71/480   von=99
+CR       205+3/4   (BA   52   CR     1+3/4)   TR 13   CH  1   NT  C'           7/12   von=92
+CR     205+47/60   (BA   52   CR   1+47/60)   TR  8   CH  1   NT  F-         31/240   von=91
+CR      206+1/30   (BA   52   CR    2+1/30)   TR  8   CH  1   NT  Eb--       53/480   von=107
+CR      206+1/30   (BA   52   CR    2+1/30)   TR  8   CH  1   NT  F-          11/80   von=98
+CR       206+1/4   (BA   52   CR     2+1/4)   TR 13   CH  1   NT  Eb'         21/40
+CR     206+17/60   (BA   52   CR   2+17/60)   TR  8   CH  1   NT  F-         67/480   von=95
+CR      206+8/15   (BA   52   CR    2+8/15)   TR  8   CH  1   NT  E--           1/8   von=104
+CR      206+8/15   (BA   52   CR    2+8/15)   TR  8   CH  1   NT  F-           7/48   von=93
+CR       206+3/4   (BA   52   CR     2+3/4)   TR 13   CH  1   NT  D'         41/120   von=96
+CR     206+47/60   (BA   52   CR   2+47/60)   TR  8   CH  1   NT  F-          13/96   von=92
+CR           207   (BA   52   CR         3)   TR 13   CH  1   NT  Eb'         11/40   von=95
+CR      207+1/30   (BA   52   CR    3+1/30)   TR  8   CH  1   NT  E--        23/240   von=102
+CR      207+1/30   (BA   52   CR    3+1/30)   TR  8   CH  1   NT  F-         73/480   von=95
+CR       207+1/4   (BA   52   CR     3+1/4)   TR 13   CH  1   NT  F'          17/48   von=99
+CR     207+17/60   (BA   52   CR   3+17/60)   TR  8   CH  1   NT  E--         7/160   von=84
+CR     207+17/60   (BA   52   CR   3+17/60)   TR  8   CH  1   NT  F-         77/480   von=95
+CR       207+1/2   (BA   52   CR     3+1/2)   TR 13   CH  1   NT  Eb'          9/20   von=92
+CR      207+8/15   (BA   52   CR    3+8/15)   TR  8   CH  1   NT  E--        19/160   von=110
+CR      207+8/15   (BA   52   CR    3+8/15)   TR  8   CH  1   NT  F-           5/32   von=95
+CR       207+3/4   (BA   52   CR     3+3/4)   TR 13   CH  1   NT  D'           5/16   von=93
+CR     207+47/60   (BA   52   CR   3+47/60)   TR  8   CH  1   NT  F-         23/160   von=88
+
+CR           208   (BA   53   CR         0)   TR 13   CH  1   NT  C'        1+13/60   von=107
+CR      208+1/30   (BA   53   CR      1/30)   TR  8   CH  1   NT  Eb--       11/120   von=106
+CR      208+1/30   (BA   53   CR      1/30)   TR  8   CH  1   NT  F-          13/96   von=95
+CR     208+17/60   (BA   53   CR     17/60)   TR  8   CH  1   NT  F-         71/480   von=89
+CR      208+8/15   (BA   53   CR      8/15)   TR  8   CH  1   NT  E--          5/48   von=108
+CR      208+8/15   (BA   53   CR      8/15)   TR  8   CH  1   NT  F-           3/20   von=92
+CR     208+47/60   (BA   53   CR     47/60)   TR  8   CH  1   NT  E--          7/80   von=104
+CR     208+47/60   (BA   53   CR     47/60)   TR  8   CH  1   NT  F-         73/480   von=89
+CR      209+1/30   (BA   53   CR    1+1/30)   TR  8   CH  1   NT  E--          7/80   von=104
+CR      209+1/30   (BA   53   CR    1+1/30)   TR  8   CH  1   NT  F-         23/160   von=93
+CR       209+1/4   (BA   53   CR     1+1/4)   TR 13   CH  1   NT  Eb'           2/3   von=102
+CR     209+17/60   (BA   53   CR   1+17/60)   TR  8   CH  1   NT  F-          13/80   von=102
+CR      209+8/15   (BA   53   CR    1+8/15)   TR  8   CH  1   NT  E--          9/80   von=108
+CR      209+8/15   (BA   53   CR    1+8/15)   TR  8   CH  1   NT  F-         17/120   von=98
+CR       209+3/4   (BA   53   CR     1+3/4)   TR 13   CH  1   NT  C'            5/8   von=100
+CR     209+47/60   (BA   53   CR   1+47/60)   TR  8   CH  1   NT  F-          13/96   von=95
+CR      210+1/30   (BA   53   CR    2+1/30)   TR  8   CH  1   NT  Eb--       47/480   von=103
+CR      210+1/30   (BA   53   CR    2+1/30)   TR  8   CH  1   NT  F-           7/48   von=99
+CR       210+1/4   (BA   53   CR     2+1/4)   TR 13   CH  1   NT  Eb'       131/240   von=96
+CR     210+17/60   (BA   53   CR   2+17/60)   TR  8   CH  1   NT  F-         37/240   von=92
+CR      210+8/15   (BA   53   CR    2+8/15)   TR  8   CH  1   NT  E--         11/96   von=109
+CR      210+8/15   (BA   53   CR    2+8/15)   TR  8   CH  1   NT  F-           3/20   von=98
+CR       210+3/4   (BA   53   CR     2+3/4)   TR 13   CH  1   NT  D'        161/480   von=87
+CR     210+47/60   (BA   53   CR   2+47/60)   TR  8   CH  1   NT  F-         73/480   von=96
+CR           211   (BA   53   CR         3)   TR 13   CH  1   NT  Eb'          5/16   von=95
+CR      211+1/30   (BA   53   CR    3+1/30)   TR  8   CH  1   NT  E--          5/48   von=107
+CR      211+1/30   (BA   53   CR    3+1/30)   TR  8   CH  1   NT  F-         37/240   von=95
+CR       211+1/4   (BA   53   CR     3+1/4)   TR 13   CH  1   NT  F'          35/96   von=93
+CR     211+17/60   (BA   53   CR   3+17/60)   TR  8   CH  1   NT  E--          1/10   von=105
+CR     211+17/60   (BA   53   CR   3+17/60)   TR  8   CH  1   NT  F-         43/240   von=98
+CR       211+1/2   (BA   53   CR     3+1/2)   TR 13   CH  1   NT  Eb'        79/240   von=95
+CR      211+8/15   (BA   53   CR    3+8/15)   TR  8   CH  1   NT  E--        61/480   von=110
+CR      211+8/15   (BA   53   CR    3+8/15)   TR  8   CH  1   NT  F-           7/48   von=98
+CR       211+3/4   (BA   53   CR     3+3/4)   TR 13   CH  1   NT  D'        133/480   von=92
+CR     211+47/60   (BA   53   CR   3+47/60)   TR  8   CH  1   NT  F-         71/480
+CR   211+113/120   (BA   53   CR 3+113/120)   TR 14   CH  1   NT  C''     18+121/480   von=99
+
+CR           212   (BA   54   CR         0)   TR 13   CH  1   NT  C'       1+59/240   von=97
+CR      212+1/30   (BA   54   CR      1/30)   TR  8   CH  1   NT  D--         7/120   von=87
+CR      212+1/30   (BA   54   CR      1/30)   TR  8   CH  1   NT  Eb--       19/240   von=102
+CR      212+1/30   (BA   54   CR      1/30)   TR  8   CH  1   NT  F-           7/48   von=98
+CR     212+17/60   (BA   54   CR     17/60)   TR  8   CH  1   NT  F-           5/32   von=92
+CR      212+8/15   (BA   54   CR      8/15)   TR  8   CH  1   NT  E--         13/96   von=107
+CR      212+8/15   (BA   54   CR      8/15)   TR  8   CH  1   NT  F-           5/32   von=95
+CR     212+47/60   (BA   54   CR     47/60)   TR  8   CH  1   NT  E--          9/80   von=107
+CR     212+47/60   (BA   54   CR     47/60)   TR  8   CH  1   NT  F-           7/60   von=93
+CR      213+1/30   (BA   54   CR    1+1/30)   TR  8   CH  1   NT  E--        13/120   von=106
+CR      213+1/30   (BA   54   CR    1+1/30)   TR  8   CH  1   NT  F-         79/480   von=100
+CR       213+1/4   (BA   54   CR     1+1/4)   TR 13   CH  1   NT  D'        139/240   von=96
+CR     213+17/60   (BA   54   CR   1+17/60)   TR  8   CH  1   NT  F-         83/480   von=96
+CR      213+8/15   (BA   54   CR    1+8/15)   TR  8   CH  1   NT  E--        61/480   von=109
+CR      213+8/15   (BA   54   CR    1+8/15)   TR  8   CH  1   NT  F-         27/160   von=95
+CR       213+3/4   (BA   54   CR     1+3/4)   TR 13   CH  1   NT  C'        281/480   von=94
+CR     213+47/60   (BA   54   CR   1+47/60)   TR  8   CH  1   NT  F-         77/480   von=92
+CR      214+1/30   (BA   54   CR    2+1/30)   TR  8   CH  1   NT  Eb--         5/48   von=103
+CR      214+1/30   (BA   54   CR    2+1/30)   TR  8   CH  1   NT  F-          13/80   von=93
+CR       214+1/4   (BA   54   CR     2+1/4)   TR 13   CH  1   NT  Eb'         21/40   von=99
+CR     214+17/60   (BA   54   CR   2+17/60)   TR  8   CH  1   NT  F-           3/20   von=95
+CR      214+8/15   (BA   54   CR    2+8/15)   TR  8   CH  1   NT  E--        23/160   von=110
+CR      214+8/15   (BA   54   CR    2+8/15)   TR  8   CH  1   NT  F-         79/480   von=95
+CR       214+3/4   (BA   54   CR     2+3/4)   TR 13   CH  1   NT  D'        161/480   von=89
+CR     214+47/60   (BA   54   CR   2+47/60)   TR  8   CH  1   NT  F-           7/40   von=86
+CR           215   (BA   54   CR         3)   TR 13   CH  1   NT  Eb'        73/240   von=95
+CR      215+1/30   (BA   54   CR    3+1/30)   TR  8   CH  1   NT  E--           1/8   von=109
+CR      215+1/30   (BA   54   CR    3+1/30)   TR  8   CH  1   NT  F-         23/160   von=97
+CR       215+1/4   (BA   54   CR     3+1/4)   TR 13   CH  1   NT  F'         47/120   von=93
+CR     215+17/60   (BA   54   CR   3+17/60)   TR  8   CH  1   NT  E--        29/240   von=104
+CR     215+17/60   (BA   54   CR   3+17/60)   TR  8   CH  1   NT  F-          17/80
+CR       215+1/2   (BA   54   CR     3+1/2)   TR 13   CH  1   NT  Eb'        51/160   von=99
+CR      215+8/15   (BA   54   CR    3+8/15)   TR  8   CH  1   NT  E--        37/240   von=108
+CR      215+8/15   (BA   54   CR    3+8/15)   TR  8   CH  1   NT  F-         23/120   von=89
+CR       215+3/4   (BA   54   CR     3+3/4)   TR 13   CH  1   NT  D'         47/160   von=90
+CR     215+47/60   (BA   54   CR   3+47/60)   TR  8   CH  1   NT  F-         23/120   von=92
+
+CR           216   (BA   55   CR         0)   TR 13   CH  1   NT  C'        1+23/80   von=99
+CR      216+1/30   (BA   55   CR      1/30)   TR  8   CH  1   NT  Eb--       13/120   von=107
+CR      216+1/30   (BA   55   CR      1/30)   TR  8   CH  1   NT  F-         27/160   von=86
+CR     216+17/60   (BA   55   CR     17/60)   TR  8   CH  1   NT  F-         41/240   von=98
+CR      216+8/15   (BA   55   CR      8/15)   TR  8   CH  1   NT  E--          2/15   von=109
+CR      216+8/15   (BA   55   CR      8/15)   TR  8   CH  1   NT  F-         37/240   von=99
+CR     216+47/60   (BA   55   CR     47/60)   TR  8   CH  1   NT  E--        19/160   von=108
+CR     216+47/60   (BA   55   CR     47/60)   TR  8   CH  1   NT  F-          13/80   von=97
+CR      217+1/30   (BA   55   CR    1+1/30)   TR  8   CH  1   NT  F-           7/48   von=96
+CR       217+1/4   (BA   55   CR     1+1/4)   TR 13   CH  1   NT  D'        251/480   von=95
+CR     217+17/60   (BA   55   CR   1+17/60)   TR  8   CH  1   NT  E--        17/160   von=106
+CR     217+17/60   (BA   55   CR   1+17/60)   TR  8   CH  1   NT  F-         23/120   von=100
+CR      217+8/15   (BA   55   CR    1+8/15)   TR  8   CH  1   NT  E--         11/80   von=112
+CR      217+8/15   (BA   55   CR    1+8/15)   TR  8   CH  1   NT  F-         71/480   von=105
+CR       217+3/4   (BA   55   CR     1+3/4)   TR 13   CH  1   NT  C'        281/480   von=97
+CR     217+47/60   (BA   55   CR   1+47/60)   TR  8   CH  1   NT  F-           5/32   von=102
+CR      218+1/30   (BA   55   CR    2+1/30)   TR  8   CH  1   NT  D--        41/480   von=99
+CR      218+1/30   (BA   55   CR    2+1/30)   TR  8   CH  1   NT  F-         79/480   von=100
+CR       218+1/4   (BA   55   CR     2+1/4)   TR 13   CH  1   NT  Eb'       137/240   von=104
+CR     218+17/60   (BA   55   CR   2+17/60)   TR  8   CH  1   NT  F-          11/80   von=89
+CR   218+101/240   (BA   55   CR 2+101/240)   TR  8   CH 16   End of track
+CR       218+3/4   (BA   55   CR     2+3/4)   TR 13   CH  1   NT  D'         57/160   von=92
+CR           219   (BA   55   CR         3)   TR 13   CH  1   NT  Eb'         19/60   von=95
+CR       219+1/4   (BA   55   CR     3+1/4)   TR 13   CH  1   NT  F'         83/240   von=94
+CR       219+1/2   (BA   55   CR     3+1/2)   TR 13   CH  1   NT  Eb'         13/40   von=98
+CR       219+3/4   (BA   55   CR     3+3/4)   TR 13   CH  1   NT  D'        121/480   von=96
+
+CR           220   (BA   56   CR         0)   TR 13   CH  1   NT  C'         8+9/40   von=107
+
+CR      228+9/40   (BA   58   CR      9/40)   TR 13   CH 16   End of track
+CR    230+31/160   (BA   58   CR  2+31/160)   TR 14   CH 16   End of track
+# Successfully parsed
+# Duration = 184.155 seconds

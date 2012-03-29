@@ -8,7 +8,7 @@ function new()
 	local playerRIGHT = display.newImage("assets/graphics/antmaker_RIGHT2.png")
 	local halfPlayerWidth
 	local halfPlayerHeight
-	local currentTrack = "track4"
+	local currentTrack = "track2"
 	
 	--------------------------------------------------------------------------------
 	-- Basic controls
@@ -123,18 +123,18 @@ function new()
 		end
 	end
 
-	function player:track4( event )
+	function player:track2( event )
 		shoot("A")
 	end
 	
-	function player:track9( event )
+	function player:track1( event )
 		shoot("B")
 	end
 	
-	function player:track11( event )
-		if (event.note == "E--") then
+	function player:track3( event )
+	--	if (event.note == "E--") then
 			shoot("C")
-		end
+	--	end
 	end
 
 	function player:removePlayer()
