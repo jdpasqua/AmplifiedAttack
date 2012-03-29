@@ -366,8 +366,6 @@ new = function ( params )
 
 	-- Spawn Enemy
 	local function spawnEnemy (event)
-	--if (event.note == 'Eb--') then
---local swarmed = false
 		if swarms[1][1] then
 			for i = 1, #swarms[1][1] do
 				--	if (spawnData["Skrillot"].count < spawnData["Skrillot"].maxNum) then
@@ -481,8 +479,10 @@ end]]
 		btPause.y = 25
 		localGroup:insert( btPause )
 		_G.player = Player.new()
+
 		--Runtime:addEventListener("track1", spawnEnemy)
 		timer.performWithDelay(8000, timedSpawnEnemies)
+
 		_G.trackButtons = TrackSwitching.new()
 		
 		local boundaries = Boundaries.new()

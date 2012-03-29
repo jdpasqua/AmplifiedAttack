@@ -3,10 +3,11 @@ module (..., package.seeall)
 function new()
 
 	local BulletRotating = require("BulletRotating")
+
 	local BulletExplosion = require("BulletExplosion")
-	local player = display.newImage("assets/graphics/antmaker.png")
-	local playerLEFT = display.newImage("assets/graphics/antmaker_LEFT2.png")
-	local playerRIGHT = display.newImage("assets/graphics/antmaker_RIGHT2.png")
+	local player = display.newImage("assets/graphics/antmaker4.png")
+	local playerLEFT = display.newImage("assets/graphics/antmaker_LEFT4.png")
+	local playerRIGHT = display.newImage("assets/graphics/antmaker_RIGHT4.png")
 	local halfPlayerWidth
 	local halfPlayerHeight
 	local currentTrack = "track2"
@@ -23,7 +24,7 @@ function new()
 		
 		playerLEFT.y = player.y + 2
 		playerRIGHT.y = player.y + 2
-		
+		player.alpha = 0.1
 		if event.x > player.x then
 		--	player.isVisible = false
 			playerLEFT.isVisible = false
@@ -36,6 +37,8 @@ function new()
 			
 		else --if event.x <= player.x and event.x <= player.x then
 	--		player.isVisible = true
+			player.alpha = 1
+	
 			playerLEFT.isVisible = false
 			playerRIGHT.isVisible = false
 			
