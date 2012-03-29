@@ -128,7 +128,9 @@ function new()
 	end
 	
 	function player:track1( event )
-		shoot("B")
+		if (event.note == "Eb--" or event.note == "E--") then 
+			shoot("B")
+		end
 	end
 	
 	function player:track3( event )

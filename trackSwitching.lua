@@ -104,7 +104,7 @@ function new()
 		if event.name == "track2" then
 			num = 1
 			timer.performWithDelay(50, endOne)
-		elseif event.name == "track1" then
+		elseif (event.name == "track1" and (event.note == "Eb--" or event.note == "E--")) then
 			timer.performWithDelay(50, endTwo)
 			num = 2
 		elseif (event.name == "track3") then-- and event.note == "E--") then
