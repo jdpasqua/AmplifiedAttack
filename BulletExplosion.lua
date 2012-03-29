@@ -9,7 +9,7 @@ function new(xPos, yPos)
 	function explosion:init()
 		
 		for i = 0, 360, 10 do 
-			local bullet = BulletRotating.new(xPos, yPos, i)
+			local bullet = BulletRotating.new(xPos, yPos, i, false, "assets/graphics/basicBulletRed.png")
 		end
 		
 	end
