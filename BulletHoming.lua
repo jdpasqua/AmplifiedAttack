@@ -8,7 +8,7 @@ function new(xPos, yPos, trackno)
 	
 	function bullet:removeBullet()
 		if (bullet) then
-			Runtime:removeEventListener("track11", bullet)
+			Runtime:removeEventListener("track1", bullet)
 			display.remove(bullet)
 			bullet = nil
 		end
@@ -19,7 +19,7 @@ function new(xPos, yPos, trackno)
 		timer.performWithDelay(10000, bullet.removeBullet)
 
 		-- Event Listener
-		Runtime:addEventListener( "track11", bullet )
+		Runtime:addEventListener( "track1", bullet )
 		bullet.move()
 		_G.bulletsLayer:insert(bullet)
 	end
@@ -49,8 +49,8 @@ function new(xPos, yPos, trackno)
 		bullet:setLinearVelocity(xSpeed, ySpeed)
 	end
 
-	function bullet:track11( event )
-		if (bullet.isActive == "active" and event.note == "E--") then
+	function bullet:track1( event )
+		if (bullet.isActive == "active" and event.note == "Eb--" or event.note == "E--") then
 			bullet.move()
 		end
 	end
