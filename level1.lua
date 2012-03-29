@@ -81,10 +81,10 @@ new = function ( params )
 ]]	
 	--swarms - this indicates how many enemies to send out each swarm (swarm = per note). Limit the notes in spawnEnemy funct.
 	--each element in the array is 1 swarm. The next swarm doesn't begin spawning until 
-	local swarms = {{{"Skrillot", "Skrillot"}, {"Skrillot"}},
-					{{"Skrillot", "Skrillot"}, {"Skrillot"}},
-					{{"Skrillot", "Skrillot"}, {"Skrillot"}},
-					{{"Skrillot", "Skrillot"}, {"Skrillot"}},
+	local swarms = {{{"Skrillot", "Skrillot"}, {"HomingHornet"}},
+					{{"HomingHornet", "Skrillot"}, {"Skrillot"}, {"HomingHornet", "Skrillot"}},
+					{{"Skrillot", "HomingHornet"}, {"Skrillot"}, {"Skrillot", "Skrillot"}},
+					{{"HomingHornet", "Skrillot"}, {"HomingHornet", "Skrillot"}, {"HomingHornet"}},
 					{{"Skrillot", "Skrillot"}, {"HomingHornet"}},
 					{{"HomingHornet", "Skrillot"}, {"HomingHornet"}},
 					{{"Skrillot", "Skrillot"}, {"HomingHornet"}, {"Skrillot", "HomingHornet"}},
@@ -377,7 +377,7 @@ new = function ( params )
 	-- Spawn Enemy
 	local function spawnEnemy (event)
 	--	print("SPAWN")
---	if (event.note == 'F--') then
+	if (event.note == 'Eb--') then
 --local swarmed = false
 		if swarms[1][1] then
 			for i = 1, #swarms[1][1] do
@@ -405,6 +405,7 @@ new = function ( params )
 --[[if swarmed then
 	table.remove(swarms, 1)
 end]]
+end
 	end
 
 	
@@ -416,11 +417,13 @@ end]]
 				--for k = 2, swarms[i][j][1] do
 					if #swarms[i][j] == 1 then
 						local rand = math.random(1,7)
-						table.insert(spawnEntrance, {enemy = swarms[i][j][1], xpos = rand * display.contentWidth / 8 , ypos = -50, direction = "straight", speed = 500, distance = display.contentHeight / 2 - 300})
+						local randY = math.random(2,10)
+						table.insert(spawnEntrance, {enemy = swarms[i][j][1], xpos = rand * display.contentWidth / 8 , ypos = -50, direction = "straight", speed = 2 * randY * display.contentHeight / 20 + 500, distance = randY * display.contentHeight / 20})
 					elseif #swarms[i][j] == 2 then
 						local rand = math.random(1,3)
-						table.insert(spawnEntrance, {enemy = swarms[i][j][1], xpos = rand * display.contentWidth / 8 , ypos = -50, direction = "straight", speed = 500, distance = display.contentHeight / 2 - 400})
-						table.insert(spawnEntrance, {enemy = swarms[i][j][2], xpos = (8 - rand) * display.contentWidth / 8 , ypos = -50, direction = "straight", speed = 500, distance = display.contentHeight / 2 - 400})
+						local randY = math.random(2,10)
+						table.insert(spawnEntrance, {enemy = swarms[i][j][1], xpos = rand * display.contentWidth / 8 , ypos = -50, direction = "straight", speed = 2 * randY * display.contentHeight / 20 + 500, distance = randY * display.contentHeight / 20})
+						table.insert(spawnEntrance, {enemy = swarms[i][j][2], xpos = (8 - rand) * display.contentWidth / 8 , ypos = -50, direction = "straight", speed = 2 * randY * display.contentHeight / 20 + 500, distance = randY * display.contentHeight / 20})
 					elseif swarms[i] == 3 then
 				
 					elseif swarms[i] == 4 then
@@ -476,7 +479,7 @@ end]]
 		pulseBeat()
 
 		_G.player = Player.new()
-		Runtime:addEventListener("track2", spawnEnemy)
+		Runtime:addEventListener("track1", spawnEnemy)
 
 		_G.trackButtons = TrackSwitching.new()
 		
