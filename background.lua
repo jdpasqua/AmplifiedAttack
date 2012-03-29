@@ -12,7 +12,11 @@ module (..., package.seeall)
 	local background2
 	local starsLayer = display.newGroup()
 	local stars = {}
-
+	_G.redTint = display.newRect(0, 0, display.contentWidth, display.contentHeight)
+	_G.redTint:setFillColor(255, 0, 0)
+	_G.redTint.alpha = 0.2
+	_G.redTint.isVisible = false
+	
 	local function drawStars() 
 		for i = 1, stars_total do
 			local star = {} 

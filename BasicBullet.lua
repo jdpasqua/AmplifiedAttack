@@ -104,6 +104,16 @@ function new(xPos, yPos, name, image, isEnemyBullet, isBounded)
 			enemy.isAlive = "dead"	
 		end
 	end
+	
+	local function clearRedTint()
+		_G.redTint.isVisible = false
+	end
+	
+	local function pulseRedTint()
+		_G.redTint.isVisible = true
+		timer.performWithDelay(100, clearRedTint)
+	end
+	
 
 	-- Take care of collisions
 	local function onCollision(event)
@@ -127,6 +137,8 @@ function new(xPos, yPos, name, image, isEnemyBullet, isBounded)
 			event.object2._tableListeners = nil
 			event.object2.isActive = "inactive"
 
+			pulseRedTint()
+
 			--audio.play(sounds.gameOver)
 
 			--local gameoverText = display.newText("Game Over!", 0, 0, "HelveticaNeue", 35)
@@ -137,6 +149,7 @@ function new(xPos, yPos, name, image, isEnemyBullet, isBounded)
 
 			-- This will stop the gameLoop
 			--_G.gameIsActive = false
+			
 
 		elseif (event.object1.name == "Boundary" and event.object2.isActive == "active") then
 			table.insert(_G.toRemove, event.object2)
