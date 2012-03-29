@@ -81,21 +81,16 @@ new = function ( params )
 ]]	
 	--swarms - this indicates how many enemies to send out each swarm (swarm = per note). Limit the notes in spawnEnemy funct.
 	--each element in the array is 1 swarm. The next swarm doesn't begin spawning until 
-	local swarms = {{{"Skrillot", "Skrillot"}, {"HomingHornet"}},
-					{{"HomingHornet", "Skrillot"}, {"Skrillot"}, {"HomingHornet", "Skrillot"}},
-					{{"Skrillot", "HomingHornet"}, {"Skrillot"}, {"Skrillot", "Skrillot"}},
-					{{"HomingHornet", "Skrillot"}, {"HomingHornet", "Skrillot"}, {"HomingHornet"}},
-					{{"Skrillot", "Skrillot"}, {"HomingHornet"}},
-					{{"HomingHornet", "Skrillot"}, {"HomingHornet"}},
-					{{"Skrillot", "Skrillot"}, {"HomingHornet"}, {"Skrillot", "HomingHornet"}},
-					{{"HomingHornet", "Skrillot"}, {"HomingHornet"}, {"HomingHornet"}},
-					{{"Skrillot", "HomingHornet"}, {"HomingHornet"}, {"Skrillot"}, {"HomingHornet"}},
-					{{"Skrillot", "Skrillot"}, {"HomingHornet"}, {"HomingHornet"}},
-					{{"HomingHornet", "Skrillot"}, {"HomingHornet"}},
-					{{"Skrillot", "Skrillot"}, {"HomingHornet"}},
-					{{"HomingHornet", "Skrillot"}, {"HomingHornet"}},
-					{{"Skrillot", "HomingHornet"}, {"Skrillot"}},
-					{{"Skrillot", "HomingHornet"}, {"HomingHornet"}}}
+	local swarms = {{{"Skrillot"}},
+					{{"Skrillot", "Skrillot"}},
+					{{"Skrillot", "Skrillot"}, {"Skrillot"}},
+					{{"Skrillot", "Skrillot"}, {"Skrillot", "Skrillot"}},
+					{{"HomingHornet", "HomingHornet"}},
+					{{"HomingHornet", "Skrillot"}, {"Skrillot", "HomingHornet"}},
+					{{"Skrillot", "Skrillot"}, {"HomingHornet", "HomingHornet"}},
+					{{"HomingHornet", "HomingHornet"}, {"HomingHornet", "HomingHornet"}},
+					{{"HomingHornet", "HomingHornet"}, {"HomingHornet", "HomingHornet"}, {"HomingHornet", "HomingHornet"}},
+					{{"Skrillot", "Skrillot"}, {"Skrillot", "Skrillot"}, {"Skrillot", "Skrillot"}}}
 	--these are enemy entrance/spawn instructions, even tho this is hard coded now, it will be easy to make a function to generate 
 	-- patterns eventually. Separate swarms with newlines to easily visualize. Max number of enemies can be set below.(see spawnData)
 	-- this will be heavily changed in structure as well, but thought I would commit for now anyways
@@ -120,7 +115,6 @@ new = function ( params )
 	local spawnData = {} -- {current number, max number, [...]}
 	spawnData["Skrillot"] = {count = 0, maxNum = 5}
 	_G.enemyCount = 0
-	
 	local bpm = 75; --136;
 	local timeConvert = 0;	
 
@@ -228,11 +222,7 @@ new = function ( params )
 	-- Functions
 	------------------
 
-	local function pulseBeat()
-		local event = { name="pulse" }
-		Runtime:dispatchEvent( event )
-		--timer.performWithDelay( 500, pulseBeat )
-	end
+
 
 	local function trackEvent(trackno)
 		local curTime = system.getTimer() - _G.totalPauseTime --os.difftime(os.time(), launchTime)
@@ -376,8 +366,7 @@ new = function ( params )
 
 	-- Spawn Enemy
 	local function spawnEnemy (event)
-	--	print("SPAWN")
-	if (event.note == 'Eb--') then
+	--if (event.note == 'Eb--') then
 --local swarmed = false
 		if swarms[1][1] then
 			for i = 1, #swarms[1][1] do
@@ -405,25 +394,41 @@ new = function ( params )
 --[[if swarmed then
 	table.remove(swarms, 1)
 end]]
-end
+--end
 	end
-
+	local function timedSpawnEnemies()
+		--local event = { name="pulse" }
+		--Runtime:dispatchEvent( event )
+		spawnEnemy()
+		timer.performWithDelay( 3000, timedSpawnEnemies )
+	end
 	
 	local function generateEntrances()
 		-- swarmEnemies = random, ratio, or setType
 		-- formation
+		local prev1 = -1
+		local prev2 = -2
 		for i = 1, #swarms do 
 			for j = 1, #swarms[i] do 
 				--for k = 2, swarms[i][j][1] do
 					if #swarms[i][j] == 1 then
 						local rand = math.random(1,7)
-						local randY = math.random(2,10)
-						table.insert(spawnEntrance, {enemy = swarms[i][j][1], xpos = rand * display.contentWidth / 8 , ypos = -50, direction = "straight", speed = 2 * randY * display.contentHeight / 20 + 500, distance = randY * display.contentHeight / 20})
+						local randY = math.random(1,5)
+						
+						table.insert(spawnEntrance, {enemy = swarms[i][j][1], xpos = display.contentWidth / 2 , 
+									ypos = -50, direction = "straight", speed = 2 * randY * display.contentHeight / 20 + 500, distance = randY * display.contentHeight / 10})
 					elseif #swarms[i][j] == 2 then
 						local rand = math.random(1,3)
-						local randY = math.random(2,10)
-						table.insert(spawnEntrance, {enemy = swarms[i][j][1], xpos = rand * display.contentWidth / 8 , ypos = -50, direction = "straight", speed = 2 * randY * display.contentHeight / 20 + 500, distance = randY * display.contentHeight / 20})
-						table.insert(spawnEntrance, {enemy = swarms[i][j][2], xpos = (8 - rand) * display.contentWidth / 8 , ypos = -50, direction = "straight", speed = 2 * randY * display.contentHeight / 20 + 500, distance = randY * display.contentHeight / 20})
+						local randY = math.random(1,5)
+						while (randY == prev1 or randY == prev2) do
+							randY = math.random(1, 5)
+						end
+						prev2 = prev1
+						prev1 = randY
+						table.insert(spawnEntrance, {enemy = swarms[i][j][1], xpos = rand * display.contentWidth / 8 , ypos = -50, 
+									direction = "straight", speed = 2 * randY * display.contentHeight / 20 + 500, distance = randY * display.contentHeight / 10})
+						table.insert(spawnEntrance, {enemy = swarms[i][j][2], xpos = (8 - rand) * display.contentWidth / 8 , ypos = -50, 
+									direction = "straight", speed = 2 * randY * display.contentHeight / 20 + 500, distance = randY * display.contentHeight / 10})
 					elseif swarms[i] == 3 then
 				
 					elseif swarms[i] == 4 then
@@ -461,7 +466,7 @@ end
 		-- Adjust the volume
 		audio.setMaxVolume( 0.85, { channel=1 } )
 
-		Background.init()
+		_G.background = Background.init()
 		
 		_G.gameLayer:insert(bulletsLayer)
 		_G.gameLayer:insert(enemiesLayer)
@@ -475,12 +480,9 @@ end
 		btPause.x = 740
 		btPause.y = 25
 		localGroup:insert( btPause )
-
-		pulseBeat()
-
 		_G.player = Player.new()
-		Runtime:addEventListener("track1", spawnEnemy)
-
+		--Runtime:addEventListener("track1", spawnEnemy)
+		timer.performWithDelay(8000, timedSpawnEnemies)
 		_G.trackButtons = TrackSwitching.new()
 		
 		local boundaries = Boundaries.new()
