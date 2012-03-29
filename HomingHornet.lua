@@ -4,15 +4,13 @@ function new(type, entrance)
 	
 	local BulletHoming = require("BulletHoming")
 	local easingx  = require("easing")
-	local trackno = "track11"
-	local note = "E--"
-	
+	local trackno = "track11"	
 	local BasicEnemy = require("BasicEnemy")
 	local enemy = BasicEnemy.new("HomingHornet", "assets/graphics/hominghornet2.png", trackno, 3)
 	local rotationAngle = 0
 	local bullet1
 	local isShooting = false
-	local trackno = "track11" 
+	local trackno = "track1" 
 		function enemy:enableShooting() 
 			if (enemy.isAlive == "alive") then  
 				isShooting = true
@@ -52,8 +50,8 @@ function new(type, entrance)
 			end
 		end
 
-		function enemy:track11( event )
-			if (event.note == note) then
+		function enemy:track1( event )
+			if (event.note == "Eb--" or event.note == "E--") then
 				enemy.shoot()
 			end
 		end

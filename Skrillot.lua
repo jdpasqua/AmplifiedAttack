@@ -7,7 +7,7 @@ function new(type, entrance)
 	local BulletSplitter = require ("BulletSpreader")
 	local BulletExplosion = require ("BulletExplosion")
 	local easingx  = require("easing")
-	local trackno = "track7"
+	local trackno = "track2"
 	
 	local BasicEnemy = require("BasicEnemy")
 	local enemy = BasicEnemy.new("Skrillot", "assets/graphics/skrillot2.png", trackno, 3)
@@ -46,7 +46,7 @@ function new(type, entrance)
 	end
 	
 	function enemy:removeSkrillot()
-		Runtime:removeEventListener("track7", bullet)
+		Runtime:removeEventListener("track2", bullet)
 		if (enemy) then
 			enemy:removeSelf()
 		end
@@ -64,7 +64,7 @@ function new(type, entrance)
 		end
 	end
 	
-	function enemy:track7( event )
+	function enemy:track2( event )
 		enemy.shoot()
 	end
 	
