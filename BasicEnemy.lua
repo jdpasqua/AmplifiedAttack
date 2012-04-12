@@ -5,7 +5,7 @@ function new(type, image, trackno, hp)
 	local enemy = display.newImage(image)
 	local enemyCollisionFilter = { categoryBits = 4, maskBits = 3 }
 
-	enemy:scale(1.6, 1.6)
+	enemy:scale(2, 2)
 	enemy.name = "enemy"
 	enemy.type = "Skrillot"
 	enemy.trackno = trackno
