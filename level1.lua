@@ -198,6 +198,8 @@ new = function ( params )
 	local Background = require("background")
 	local Brute = require("Brute")
 
+	system.activate( "multitouch" )
+
 	------------------
 	-- Groups
 	------------------
@@ -221,8 +223,6 @@ new = function ( params )
 	------------------
 	-- Functions
 	------------------
-
-
 
 	local function trackEvent(trackno)
 		local curTime = system.getTimer() - _G.totalPauseTime --os.difftime(os.time(), launchTime)
