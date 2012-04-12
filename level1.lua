@@ -81,12 +81,11 @@ new = function ( params )
 ]]	
 	--swarms - this indicates how many enemies to send out each swarm (swarm = per note). Limit the notes in spawnEnemy funct.
 	--each element in the array is 1 swarm. The next swarm doesn't begin spawning until 
-	local swarms = {{{"Skrillot"}},
-					{{"Skrillot", "Skrillot"}},
-					{{"Skrillot", "Skrillot"}, {"Skrillot"}},
-					{{"Skrillot", "Skrillot"}, {"Skrillot", "Skrillot"}},
-					{{"HomingHornet", "HomingHornet"}},
-					{{"HomingHornet", "Skrillot"}, {"Skrillot", "HomingHornet"}},
+	local swarms = {{{"Skrillot", "Skrillot"}, {"Skrillot"}},
+					{{"Skrillot", "Skrillot"}, {"Brute3"}, {"Brute3", "Brute3"}},
+					{{"Brute", "Brute"}, {"Skrillot"}, {"Skrillot", "Skrillot"}},
+					{{"HomingHornet", "HomingHornet"}, {"Skrillot"}, {"HomingHornet", "HomingHornet"}},
+					{{"Brute", "Brute"}, {"HomingHornet"}, {"Skrillot", "Skrillot"}},
 					{{"Skrillot", "Skrillot"}, {"HomingHornet", "HomingHornet"}},
 					{{"HomingHornet", "HomingHornet"}, {"HomingHornet", "HomingHornet"}},
 					{{"HomingHornet", "HomingHornet"}, {"HomingHornet", "HomingHornet"}, {"HomingHornet", "HomingHornet"}},
@@ -197,6 +196,7 @@ new = function ( params )
 	local TrackSwitching = require("trackSwitching")
 	local Boundaries = require("boundaries")
 	local Background = require("background")
+	local Brute = require("Brute")
 
 	------------------
 	-- Groups
@@ -372,8 +372,13 @@ new = function ( params )
 				--		spawnData["Skrillot"].count = spawnData["Skrillot"].count + 1 
 				if (spawnEntrance[1].enemy == "Skrillot") then
 					basicBox = Skrillot.new(1, spawnEntrance[1])
-				else
+				elseif (spawnEntrance[1].enemy == "HomingHornet") then
 					basicBox = HomingHornet.new(1, spawnEntrance[1])
+				elseif (spawnEntrance[1].enemy == "Brute3") then
+					basicBox = Brute.new(1, spawnEntrance[1])
+					basicBox.bypass = true
+				else
+					basicBox = Brute.new(1, spawnEntrance[1])
 				end
 					table.remove(spawnEntrance, 1)
 					basicBox.init()
@@ -398,7 +403,7 @@ end]]
 		--local event = { name="pulse" }
 		--Runtime:dispatchEvent( event )
 		spawnEnemy()
-		timer.performWithDelay( 3000, timedSpawnEnemies )
+		timer.performWithDelay( 1000, timedSpawnEnemies )
 	end
 	
 	local function generateEntrances()
