@@ -23,12 +23,17 @@ function new(type, entrance)
 			enemy.x = entrance.xpos
 			enemy.y = entrance.ypos
 
+			if (enemy.x >= (display.contentWidth / 2)) then
+				enemy.x = enemy.x + 400
+			else
+				enemy.x = enemy.x - 400
+			end
 --			enemy.setColor()
 
 			if (entrance.direction == "straight") then
 				transition.to(enemy, {
 			                	time = entrance.speed,
-			                	x = enemy.x,
+			                	x = entrance.xpos,
 			                	y = enemy.y + entrance.distance,
 			                	--transition = easingx.easeIn, --OutBack,
 			 					onComplete = enemy.enableShooting })
