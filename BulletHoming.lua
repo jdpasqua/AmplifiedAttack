@@ -16,7 +16,7 @@ function new(xPos, yPos, trackno)
 
 	function bullet:init()
 
-		timer.performWithDelay(10000, bullet.removeBullet)
+		timer.performWithDelay(7000, bullet.removeBullet)
 
 		-- Event Listener
 		Runtime:addEventListener( "track1", bullet )
