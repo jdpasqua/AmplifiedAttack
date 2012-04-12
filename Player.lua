@@ -8,17 +8,73 @@ function new()
 	local player = display.newImage("assets/graphics/antmaker4.png")
 	local playerLEFT = display.newImage("assets/graphics/antmaker_LEFT4.png")
 	local playerRIGHT = display.newImage("assets/graphics/antmaker_RIGHT4.png")
+	local touchArea = display.newRect(0, 0, 1000, 1000)
+	touchArea.alpha = 0.01
 	local halfPlayerWidth
 	local halfPlayerHeight
 	local currentTrack = "track2"
+	local lastTouchX
+	local lastTouchY
 	
 	--------------------------------------------------------------------------------
 	-- Basic controls
 	--------------------------------------------------------------------------------
-	function playerMovement(event)
+	
+	function movePlayer() 
+		-- Speed is relative to position of player
+		local speed = 20
+		local xDistance = (lastTouchX - _G.player.x)
+		local yDistance = (lastTouchY - _G.player.y)
+		
+		if (math.sqrt(yDistance*yDistance +  xDistance*xDistance) < speed) then		
+			player.x = lastTouchX;
+			player.y = lastTouchY;
+		else
+			local radian = math.atan2(yDistance, xDistance);
+			player.x = player.x + math.cos(radian) * speed;
+			player.y = player.y + math.sin(radian) * speed;
+		end
+		--[[
+		local xSpeed
+		local ySpeed
+		local speed = 3
+		local min
+		local max = 25
+		
+		-- Speed is relative to position of player
+		xSpeed = (lastTouchX - _G.player.x)
+		ySpeed = (lastTouchY - _G.player.y + 30)
+		
+		if (xSpeed > max) then 
+			xSpeed = max
+		elseif (xSpeed < -max) then
+			xSpeed = -max
+		end
+		
+		if (ySpeed > max) then 
+			ySpeed = max
+		elseif (ySpeed < -max) then
+			ySpeed = -max
+		end
+		
+		player.x = player.x + (xSpeed)
+		player.y = player.y + (ySpeed)
+		
+		--player:setLinearVelocity(xSpeed, ySpeed)
+		]]--
+	end
+	
+	function updateTouchLocation(event)
 		-- Doesn't respond if the game is ended
 		if not _G.gameIsActive then return false end
 
+		-- Don't let the player move onto the track switching buttons
+		if (not (event.x < 110 and event.y > 740)) then
+			lastTouchX = event.x
+			lastTouchY = event.y
+		end
+		
+		--[[
 		playerLEFT.x = player.x 
 		playerRIGHT.x = player.x
 		
@@ -59,10 +115,14 @@ function new()
 			playerRIGHT.y = event.y + 2
 			
 		end
+		]]--
 	end
 	
 	function player:activateTouch()
-		player:addEventListener("touch", playerMovement)
+		lastTouchX = player.x
+		lastTouchY = player.y
+		touchArea:addEventListener("touch", updateTouchLocation)
+		Runtime:addEventListener("enterFrame", movePlayer)
 	end		
 	
 	function player:init()
